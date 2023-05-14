@@ -55,9 +55,11 @@ void Player_ReserveTank(Player *player) {
 	}
 
 	if (player->input->toggleFaceButtons & DPadUp) {
+        if (player->rings < 20) return;
         if (player->level4 == true) {
             PlayAudioFromDAT(Sound::SFX::TornadoHit);
 		    player->level4 = false;
+            player->rings -= 20;
             Player_ReserveTank_UpdateStats(player, &Level3);
             Player_CreateReserveTankParticles(player);
 		    player->currentAir = player->gearStats[player->level].maxAir;
@@ -66,6 +68,7 @@ void Player_ReserveTank(Player *player) {
             }else {
                 PlayAudioFromDAT(Sound::SFX::TornadoHit);
                 player->level -= 1;
+                player->rings -= 20;
                 Player_ReserveTank_UpdateStats(player, &Level3);
                 Player_CreateReserveTankParticles(player);
 		        player->currentAir = player->gearStats[player->level].maxAir;
