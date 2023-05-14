@@ -1,12 +1,6 @@
-# Sonic Riders Tournament Edition
+# Sonic Riders Tournament Edition: certified bitch edition
 
-This repo contains a WIP decompilation and disassembly of Sonic Riders (USA), which also includes source code of Sonic Riders Tournament Edition.
-
-It builds the following DOL:
-
-main.dol: `sha1: d19be7725ff01f3cbdc61cb45b73f75068681f05`
-
-**NOTE:** The DOL is currently *shiftable*. This means you can add data anywhere you want, without it breaking the entire game.
+This is quite simply a playground for Riders modification. For actual progress and information, you'll want to go to [sonicriderssrte](https://github.com/RidersBoulevard/sonicriderste).
 
 ## Building
 
