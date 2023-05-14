@@ -15,3 +15,4 @@ As this project contains custom character/gear additions, all custom model files
 - SYB6: Hero Cruiser gear model
 - SYB7: Falco Badnik gear model
 - SYB8: Caliburn gear model
+- SYB9: Reserve Tank model

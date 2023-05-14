@@ -4,7 +4,7 @@
 #include "containers/graphicalobject.hpp"
 
 #define CharacterEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 8!
-#define GearEXLoadSlots 9 //SYB: WE CHANGED THIS FROM 5!
+#define GearEXLoadSlots 10 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -201,6 +201,13 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				-1,
 				Berserker,
 				0xF5,                 0x1A
+		},
+                {
+				EXLoadType,
+				SYBReserveTankEXLoad,
+				-1,
+				AirTank,
+				0xF1,                 0x1A
 		}
 };
 

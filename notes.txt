@@ -1,13 +1,3 @@
-TRUE BLUE MODEL IDS:
-SYB0: Seelkadoom
-SYB1: Super Sonic Cosm.
-SYB2: Super Shadow Cosm.
-SYB3: G.U.N. Bike
-SYB4: Seelkadoom Default
-SYB5: Shadow Android
-SYB6: Hero Cruiser
-SYB7: Falco
-
 BASIC EXLOAD FILES:
 exloads.cpp
 exloads.hpp
@@ -21,8 +11,10 @@ data.s (the Gear stats such as who can select it are in here)
 GEAR STAT CHANGES:
 Gear stats are stored in the /gears folder by name.
 They are activated in handlers.cpp, literally going through all of them and going:
-"if (player->extremeGear != GEAR NAME) return;"
+"if (player->extremeGear != GEAR NAME) return;".
+
+CHARACTER STRUCTS:
+These can be found in rodata.s. Find them with the comment.
 
 ADDING FILES:
-
 All .cpp files need to be added in CMakeLists.txt. Can find them easily enough with the pointer.

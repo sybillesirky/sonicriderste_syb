@@ -22,7 +22,3 @@ For maximum compatibility, you should use the MSYS2 terminal included with your 
 6. After that, make a new folder in the root folder of the project, where the build files will be going to. For example, you can name the folder `build`.
 7. Navigate into that directory using the `cd` command again. Then run the following command to generate the Makefiles: `$DEVKITPRO/devkitPPC/bin/powerpc-eabi-cmake ../`
 8. Run `make` in the same directory to build the DOL file. The `main.dol` file will be built and compiled into the same build folder you created.
-
-## Contributions
-
-Contributions and PRs are welcome.

@@ -4170,16 +4170,16 @@ lbl_001C4CB0:
     .4byte 0x00000000
 .global Characters
 Characters:
-    # 0x1C4CC0
-    .4byte 0x00000053
-    .4byte 0x00000000
-    .4byte 0x3F800000
-    .4byte 0x00000000
-    .4byte 0x02030400
-    .4byte 0x03040400
-    .4byte 0x03030300
-    .4byte 0x03030300
-    .4byte 0x01010054
+    # 0x1C4CC0          # SYB: Sonic starts next line. I'mm arking him fully for convenience, and only doing character names from then on.
+    .4byte 0x00000053   # SYB: Type, Stats, Handedness & model letter (so S for Sonic).
+    .4byte 0x00000000   # SYB: Nothing.
+    .4byte 0x3F800000   # SYB: Camera Height
+    .4byte 0x00000000   # SYB: Speed multiplier
+    .4byte 0x02030400   # SYB: "Dash" per level (last zeroes are dummy.)
+    .4byte 0x03040400   # SYB: "Limit" per level
+    .4byte 0x03030300   # SYB: "Power" per level
+    .4byte 0x03030300   # SYB: "Cornering/Weight" per level
+    .4byte 0x01010054   # SYB: Tails
     .4byte 0x00000000
     .4byte 0x3F4CCCCD
     .4byte 0x00000000
@@ -4187,7 +4187,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x04040400
     .4byte 0x01010100
-    .4byte 0x0202004B
+    .4byte 0x0202004B   # SYB: Knuckles
     .4byte 0x00000000
     .4byte 0x3F8CCCCD
     .4byte 0x00000000
@@ -4195,7 +4195,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x04040400
     .4byte 0x06060600
-    .4byte 0x02020041
+    .4byte 0x02020041   # SYB: Amy
     .4byte 0x01000000
     .4byte 0x3F666666
     .4byte 0x00000000
@@ -4203,7 +4203,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x01010100
     .4byte 0x02020200
-    .4byte 0x0000014A
+    .4byte 0x0000014A   # SYB: Jet
     .4byte 0x00000000
     .4byte 0x3F800000
     .4byte 0x3D21391E
@@ -4211,7 +4211,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x02020200
     .4byte 0x02020200
-    .4byte 0x0202014D
+    .4byte 0x0202014D   # SYB: Storm
     .4byte 0x00000000
     .4byte 0x3F8CCCCD
     .4byte 0x3D21391E
@@ -4219,7 +4219,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x02020200
     .4byte 0x06060600
-    .4byte 0x01010157
+    .4byte 0x01010157   # SYB: Wave
     .4byte 0x01000000
     .4byte 0x3F666666
     .4byte 0x00000000
@@ -4227,7 +4227,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x03030300
     .4byte 0x01010100
-    .4byte 0x02020045
+    .4byte 0x02020045   # SYB: Eggman
     .4byte 0x00000000
     .4byte 0x3F99999A
     .4byte 0x3CA1391E
@@ -4235,7 +4235,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x04040400
     .4byte 0x07070700
-    .4byte 0x01010143
+    .4byte 0x01010143   # SYB: Cream
     .4byte 0x01000000
     .4byte 0x3F4CCCCD
     .4byte 0x3CA1391E
@@ -4243,7 +4243,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x03030300
     .4byte 0x00000000
-    .4byte 0x01010152
+    .4byte 0x01010152   # SYB: Rouge
     .4byte 0x01000000
     .4byte 0x3F666666
     .4byte 0x00000000
@@ -4251,7 +4251,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x01010100
     .4byte 0x05050500
-    .4byte 0x00000144
+    .4byte 0x00000144   # SYB: Shadow
     .4byte 0x00000000
     .4byte 0x3F800000
     .4byte 0x3CA1391E
@@ -4259,7 +4259,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x03030300
     .4byte 0x03030300
-    .4byte 0x00000050
+    .4byte 0x00000050   # SYB: Super Sonic
     .4byte 0x00000000
     .4byte 0x3F800000
     .4byte 0x00000000
@@ -4267,7 +4267,7 @@ Characters:
     .4byte 0x04040500
     .4byte 0x04040400
     .4byte 0x00000000
-    .4byte 0x01010030
+    .4byte 0x01010030   # SYB: NiGHTS
     .4byte 0x00000000
     .4byte 0x3F800000
     .4byte 0x3D21391E
@@ -4275,7 +4275,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x02020200
     .4byte 0x00000000
-    .4byte 0x02020031
+    .4byte 0x02020031   # SYB: AiAi
     .4byte 0x00000000
     .4byte 0x3F800000
     .4byte 0x00000000
@@ -4283,7 +4283,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x03030300
     .4byte 0x02020200
-    .4byte 0x00000032
+    .4byte 0x00000032   # SYB: Ulala
     .4byte 0x01000000
     .4byte 0x3F800000
     .4byte 0x00000000
@@ -4291,7 +4291,7 @@ Characters:
     .4byte 0x03040400
     .4byte 0x05050500
     .4byte 0x04040400
-    .4byte 0x0300005A
+    .4byte 0x0300005A   # SYB: E10G
     .4byte 0x00000000
     .4byte 0x3F800000
     .4byte 0x3DA1391E
@@ -4299,7 +4299,7 @@ Characters:
     .4byte 0x01020200
     .4byte 0x03030300
     .4byte 0x04040400
-    .4byte 0x0000004F
+    .4byte 0x0000004F   # SYB: E10R/E10B
     .4byte 0x00000000
     .4byte 0x3F800000
     .4byte 0x00000000
@@ -26384,6 +26384,7 @@ EXLoadHUDColors:
 	.long 0x0 # SYB: Hero Cruiser
 	.long 0x0 # SYB: Falco Board
 	.long 0x0 # SYB: Caliburn
+    .long 0x0 # SYB: Reserve Tank
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27111,6 +27112,16 @@ EXLoadBoostColors:
     .single -1
 	
 	# SYB: Caliburn
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+
+    # SYB: Reserve Tank
     .single -1
     .single -1
     .single -1
