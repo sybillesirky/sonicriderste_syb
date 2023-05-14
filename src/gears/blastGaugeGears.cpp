@@ -1,9 +1,12 @@
 #include "blastGaugeGears.hpp"
 #include "macros.hpp"
+#include "cosmetics/player/exloads.hpp"
 // TODO: add union for shortcutAirGainMultiplier and add `s32 currentBlastGaugeAmount`
 
 ASMUsed void Player_checkGearIfUsesBlastGauge(Player *player)
 {
+    EnabledEXLoads exLoads;
+    FetchEnabledEXLoadIDs(player, exLoads);
     if (player->specialFlags & ringGear)
     {
         switch (player->extremeGear)

@@ -33,7 +33,6 @@
 #include "mechanics/autopilot.hpp"
 #include "gears/hypersonic.hpp"
 #include "mechanics/archetype/afterburner.hpp"
-//#include "gears/faster.hpp"
 //#include "gears/hyperhangon.hpp"
 //#include "gears/slidebooster.hpp"
 //#include "gears/olliekinggear.hpp"
@@ -41,6 +40,7 @@
 //#include "gears/turbostar.hpp"
 //#include "gears/airtank.hpp"
 //#include "gears/eggsterminator.hpp"
+#include "gears/SYB/test_gunbike.hpp" //SYB: I added this!
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -98,4 +98,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_IgnoreTurbulenceHandler(player);
     Player_AirOutButton(player);
     Player_Afterburner(player);
+	SYB_Player_GunBike(player); //SYB: I added this!
 }

@@ -166,7 +166,7 @@ set(DOL_SOURCES     # main
 		src/handlers/ingame/customhud.cpp
 		src/mechanics/archetype/afterburner.cpp
         src/handlers/player/voicelines.cpp
-		src/handlers/player/voicelines.hpp)           # main
+		src/gears/SYB/test_gunbike.cpp)           # main
 
 #====================================================================================
 # Extra plumbing stuff. Hopefully nothing in here will need to be changed

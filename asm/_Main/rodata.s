@@ -26376,6 +26376,14 @@ EXLoadHUDColors:
     .long 0x0 # metal sonic scarf
     .long 0x4a0015ff # reala
     .long 0x210d00ff # gongon
+	.long 0xD2C864FF # SYB: Super Sonic Cosm.
+	.long 0xd0d19fff # SYB: Super Shadow Cosm.
+	.long 0x2C35E8FF # SYB: Seelkadoom
+	.long 0x0 # SYB: GunBike
+    .4byte 0xBD9322FF # SYB: Android
+	.long 0x0 # SYB: Hero Cruiser
+	.long 0x0 # SYB: Falco Board
+	.long 0x0 # SYB: Caliburn
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27031,6 +27039,86 @@ EXLoadBoostColors:
    .single 0.4549019607843137
    .single 0.5294117647058824
    .single 1
+   
+   # SYB: Super Sonic Cosm.
+    .4byte 0x3F800000
+    .4byte 0x3F6EEEEF
+    .4byte 0x00000000
+    .4byte 0x3F800000
+    .4byte 0x00000000
+    .4byte 0x3D888889
+    .4byte 0x3F800000
+    .4byte 0x3F800000
+	
+	# SYB: Super Shadow Cosm.
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+	
+	# SYB: Seelkadoom
+    .4byte 0x3D888889
+    .4byte 0x00000000
+    .4byte 0x3F7EFEFF
+    .4byte 0x3F800000
+    .4byte 0x3F4BCBCC
+    .4byte 0x3F2BABAC
+    .4byte 0x00000000
+    .4byte 0x3F800000
+	
+	# SYB: GunBike
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+	
+	# SYB: Android
+    .single 1
+    .single 0.7215686274509804
+    .single 0.1215686274509804
+    .single 1
+    .single 0.1686274509803922
+    .single 0.5294117647058824
+    .single 1
+    .single 1
+	
+	# SYB: Hero Cruiser
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+	
+	# SYB: Falco Board
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+	
+	# SYB: Caliburn
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
 
 .global data_C24D08B0
 data_C24D08B0:

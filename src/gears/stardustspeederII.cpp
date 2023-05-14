@@ -12,6 +12,7 @@ void Player_StardustSpeederII(Player *player) {
 	FetchEnabledEXLoadIDs(player, exLoads);
 
 	if (exLoads.gearExLoadID != StardustSpeederEXLoad) return;
+	if (player->extremeGear != HighBooster) return;
 
 	// player->specialFlags |= lowerDecel;
 	if (player->state == StartLine) player->currentAir = player->gearStats[1].maxAir;

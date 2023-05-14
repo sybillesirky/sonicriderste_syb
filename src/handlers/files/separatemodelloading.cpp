@@ -49,6 +49,8 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
             sprintf(filename.data(), "EB0");
         } else if (exLoads.characterExLoadID == HatsuneMikuEXLoad && !player->playerType) {
             sprintf(filename.data(), "EB1");
+		} else if (exLoads.characterExLoadID == SYBSeelkadoomEXLoad && !player->playerType) {
+            sprintf(filename.data(), "SYB4");
         } else{
 			sprintf(filename.data(), "P%c00", character.model);
 		}
@@ -66,10 +68,29 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 					break;
 				default: sprintf(filename.data(), "PB%d", gear.model);
 			}
-		}else if(exLoads.gearExLoadID == StardustSpeederEXLoad){ sprintf(filename.data(), "EB2"); }
-		else{
+		}else{
 			sprintf(filename.data(), "PB%d", gear.model);
 		}
+	}
+	
+	switch(exLoads.gearExLoadID){ // SYB: We added this for Heavy Bike experimentation, and it's MUCH cleaner.
+		case StardustSpeederEXLoad:
+			sprintf(filename.data(), "EB2");
+			break;
+		case SYBGunBikeEXLoad:
+			sprintf(filename.data(), "SYB3");
+			break;
+		case SYBHeroCruiserEXLoad:
+			sprintf(filename.data(), "SYB6");
+			break;
+		case SYBFalcoBoardEXLoad:
+			sprintf(filename.data(), "SYB7");
+			break;
+		case SYBCaliburnEXLoad:
+			sprintf(filename.data(), "SYB8");
+			break;
+		default:
+			break;
 	}
 
 	if(player->gearType != Skates && player->extremeGear != ChaosEmerald){
@@ -109,6 +130,8 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
             sprintf(CSS_BoardFilename[index], "EB0");
 		} else if (exLoads.characterExLoadID == HatsuneMikuEXLoad) {
             sprintf(CSS_BoardFilename[index], "EB1");
+		} else if (exLoads.characterExLoadID == SYBSeelkadoomEXLoad) {
+            sprintf(CSS_BoardFilename[index], "SYB4");
         } else {
             sprintf(CSS_BoardFilename[index], "P%c00", character.model);
         }
@@ -126,11 +149,33 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 					break;
 				default: sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
 			}
-		}else if(exLoads.gearExLoadID == StardustSpeederEXLoad){ sprintf(CSS_BoardFilename[index], "EB2"); }
-		else{
+		}else{
 			sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
 		}
 	}
+	
+	switch(exLoads.gearExLoadID){ // SYB: We added this for Heavy Bike experimentation, and it's MUCH cleaner.
+		case StardustSpeederEXLoad:
+			sprintf(CSS_BoardFilename[index], "EB2");
+			break;
+		case SYBGunBikeEXLoad:
+			sprintf(CSS_BoardFilename[index], "SYB3");
+			break;
+		case SYBHeroCruiserEXLoad:
+			sprintf(CSS_BoardFilename[index], "SYB6");
+			break;
+		case SYBFalcoBoardEXLoad:
+			sprintf(CSS_BoardFilename[index], "SYB7");
+			break;
+		case SYBCaliburnEXLoad:
+			sprintf(CSS_BoardFilename[index], "SYB8");
+			break;
+		default:
+			break;
+	}
+		
+		//else if(exLoads.gearExLoadID == StardustSpeederEXLoad){ sprintf(CSS_BoardFilename[index], "EB2");
+		//}else if(exLoads.gearExLoadID == SYBGunBikeEXLoad){sprintf(CSS_BoardFilename[index], "SYB3");}
 
 	if(gearType != Skates && player->extremeGear != ChaosEmerald){
 		CSSModel &modelData = cssModel[index];

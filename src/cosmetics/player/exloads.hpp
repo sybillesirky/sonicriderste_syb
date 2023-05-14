@@ -3,8 +3,8 @@
 #include "context.hpp"
 #include "containers/graphicalobject.hpp"
 
-#define CharacterEXLoadSlots 8
-#define GearEXLoadSlots 5
+#define CharacterEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 8!
+#define GearEXLoadSlots 9 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -108,6 +108,34 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
                 -1,
                 0xF2,                 static_cast<u16>(-1)
         },
+		{
+                EXLoadType,
+                SYBSuperSonicEXLoad,
+                Sonic,
+                -1,
+                0xF0,                 static_cast<u16>(-1)
+        },
+		{
+                EXLoadType,
+                SYBSuperShadowEXLoad,
+                Shadow,
+                -1,
+                0xF0,                 static_cast<u16>(-1)
+        },
+		{
+                EXLoadType,
+                SYBSeelkadoomEXLoad,
+                Shadow,
+                -1,
+                0xF3,                 static_cast<u16>(-1)
+        },
+		{
+                EXLoadType,
+                SYBAndroidEXLoad,
+                Shadow,
+                -1,
+                0xD6,                 static_cast<u16>(-1)
+        }
 };
 
 constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
@@ -145,6 +173,34 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				-1,
 				HighBooster,
 				0xF5,                 0xF6
+		},
+		{
+				LLoadType,
+				SYBGunBikeEXLoad,
+				-1,
+				AirTank,
+				0xF5,                 0xF6
+		},
+		{
+				LLoadType,
+				SYBHeroCruiserEXLoad,
+				-1,
+				CoverS,
+				0xF5,                 0x1A
+		},
+		{
+				LLoadType,
+				SYBFalcoBoardEXLoad,
+				-1,
+				BlueStar2,
+				0xF5,                 0x1A
+		},
+		{
+				LLoadType,
+				SYBCaliburnEXLoad,
+				-1,
+				Berserker,
+				0xF5,                 0x1A
 		}
 };
 
@@ -167,6 +223,10 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F,
         1.1F, // reala
         1.4F, // gongon
+		-1.0F, // SYB: Super Sonic
+		-1.0F, // SYB: Super Shadow
+		-1.0F, // SYB: Seelkadoom
+		-1.0F, // SYB: Android
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -188,6 +248,10 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype,
         BoostArchetype, // reala
         AllRounder, // gongon
+		CombatArchetype, //SYB: Super Sonic
+		CombatArchetype, //SYB: Super Shadow
+		DriftArchetype, //SYB: Seelkadoom
+		CombatArchetype, //SYB: Android
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);
