@@ -117,6 +117,19 @@ void ShootingStarLevelHandler(Player *player) {
 			Player_CreateShootingStarParticles(player);
 			player->currentAir = player->gearStats[player->level].maxAir;
 		}
+		if (player->level4 == true) {
+			Player_ShootingStar_UpdateStats(player, &Level4);
+			return;
+		} else switch (player->level) {
+			case 2:
+				Player_ShootingStar_UpdateStats(player, &Level3);
+				break;
+			case 1:
+				Player_ShootingStar_UpdateStats(player, &Level2);
+				break;
+			default:
+				Player_ShootingStar_UpdateStats(player, &Level1);
+		}
 	}
 }
 
@@ -128,7 +141,7 @@ void Player_ShootingStar(Player *player) {
 	if (player->extremeGear != DefaultGear) return; // SYB: Was going to be Legend but considering its ASM quirks we have to live with Default.
 	player->specialFlags |= (noSpeedLossChargingJump);
     
-	// player->rings = ShS_tricks_accum; // Test.
+	// player->currentLap = ShS_tricks_accum; // Test.
 
 	ShootingStarTrickMultHandler(player);
 
@@ -146,7 +159,7 @@ void Player_ShootingStar(Player *player) {
 		if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
 			if (player->trickRank != XRank && flag_beenTricking == true) {
 				if (player->level > 0) {
-					if (player->rings > 20) {
+					if (player->rings >= 20) {
 						player->rings -= 20;
 					} else {
 						ShS_tricks_accum -= 10;
