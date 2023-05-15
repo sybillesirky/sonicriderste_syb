@@ -5,7 +5,7 @@
 
 constexpr GearLevelStats Level3 = {
 		300000, // max air
-		300, // air drain
+		400, // air drain
 		600, // drift cost
 		0x9C40, // boost cost
 		0x4E20, // tornado cost
@@ -36,7 +36,7 @@ void Player_ReserveTank_UpdateStats(Player *player, const GearLevelStats *stats)
     player->gearStats[player->level].boostCost = stats->boostCost;
     player->gearStats[player->level].tornadoCost = stats->tornadoCost;
     player->gearStats[player->level].boostSpeed = stats->boostSpeed;
-    player->shortcutAirGainMultiplier = 0.5;
+    player->shortcutAirGainMultiplier = 0;
 }
 
 void Player_ReserveTank(Player *player) {
