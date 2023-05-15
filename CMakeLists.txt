@@ -167,7 +167,8 @@ set(DOL_SOURCES     # main
 		src/mechanics/archetype/afterburner.cpp
         src/handlers/player/voicelines.cpp
 		src/gears/SYB/test_gunbike.cpp
-		src/gears/SYB/reservetank.cpp)           # main
+		src/gears/SYB/reservetank.cpp
+		src/gears/SYB/shootingstar.cpp )           # main
 
 #====================================================================================
 # Extra plumbing stuff. Hopefully nothing in here will need to be changed

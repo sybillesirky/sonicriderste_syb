@@ -42,6 +42,7 @@
 //#include "gears/eggsterminator.hpp"
 #include "gears/SYB/test_gunbike.hpp" //SYB: I added this!
 #include "gears/SYB/reservetank.hpp" //SYB: I added this!
+#include "gears/SYB/shootingstar.hpp" //SYB: I added this!
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -101,4 +102,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_Afterburner(player);
 	SYB_Player_GunBike(player); //SYB: I added this!
     Player_ReserveTank(player); //SYB: I added this!
+    Player_ShootingStar(player);
 }
