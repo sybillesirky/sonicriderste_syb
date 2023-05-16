@@ -34,7 +34,7 @@ constexpr GearLevelStats Level3 = {
 };
 
 constexpr GearLevelStats Level2 = {
-		200000, // max air
+		150000, // max air
 		300, // air drain
 		600, // drift cost
 		0x9C40, // boost cost
@@ -98,7 +98,7 @@ void Player_ShootingStar(Player *player) {
 
 			// Add the trick count, then set it back to zero.
 			ShS_tricks_accum += player->trickCount;
-			player->trickCount = 0; // Double check this to see if this has influence on Rank.
+			player->trickCount = 0;
 
 			// If trick rank is lower than X, then induce penalties if level 2 or higher.
 			if (player->trickRank != XRank && flag_beenTricking == true) {
@@ -115,39 +115,40 @@ void Player_ShootingStar(Player *player) {
 		}
 
 		if (flag_beenTricking == true) { // Prevents constant updating.
+			if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
+				u8 ShS_stored_level = player->level;
+				if (player->level4 == true) {
+					ShS_stored_level = 3;
+				}
 
-			u8 ShS_stored_level = player->level;
-			if (player->level4 == true) {
-				ShS_stored_level = 3;
-			}
-
-			// Update the level and stats now that we have the new amount of tricks.
-			if (ShS_tricks_accum >= 30) { // Level 4
-				player->level = 2;
-				player->level4 = true;
-				Player_ShootingStar_UpdateStats(player, &Level3);
-				player->gearStats[player->level].boostSpeed = pSpeed(255);
-			} else if (ShS_tricks_accum >= 20) { // Level 3
-				player->level = 2;
-				player->level4 = false;
-				Player_ShootingStar_UpdateStats(player, &Level3);
-			} else if (ShS_tricks_accum >= 10) { // Level 2
-				player->level = 1;
-				player->level4 = false;
-				Player_ShootingStar_UpdateStats(player, &Level2);
-			} else { // Level 1
-				player->level = 0;
-				player->level4 = false;
-				Player_ShootingStar_UpdateStats(player, &Level1);
-			}
-
-			//If the level was changed, refill air gauge and play particles.
-			if (player->level != ShS_stored_level) {
-				if (player->level4 == true && ShS_stored_level == 3) {
+				// Update the level and stats now that we have the new amount of tricks.
+				if (ShS_tricks_accum >= 30) { // Level 4
+					player->level = 2;
 					player->level4 = true;
-				} else {
-					player->currentAir = player->gearStats[player->level].maxAir;
-					PlayAudioFromDAT(Sound::SFX::TornadoHit);
+					Player_ShootingStar_UpdateStats(player, &Level3);
+					player->gearStats[player->level].boostSpeed = pSpeed(255);
+				} else if (ShS_tricks_accum >= 20) { // Level 3
+					player->level = 2;
+					player->level4 = false;
+					Player_ShootingStar_UpdateStats(player, &Level3);
+				} else if (ShS_tricks_accum >= 10) { // Level 2
+					player->level = 1;
+					player->level4 = false;
+					Player_ShootingStar_UpdateStats(player, &Level2);
+				} else { // Level 1
+					player->level = 0;
+					player->level4 = false;
+					Player_ShootingStar_UpdateStats(player, &Level1);
+				}	
+
+				//If the level was changed, refill air gauge and play particles.
+				if (player->level != ShS_stored_level) {
+					if (player->level4 == true && ShS_stored_level == 3) {
+						player->level4 = true;
+					} else {
+						player->currentAir = player->gearStats[player->level].maxAir;
+						PlayAudioFromDAT(Sound::SFX::TornadoHit);
+					}
 				}
 			}
 		}
@@ -161,6 +162,7 @@ void Player_ShootingStar(Player *player) {
         Player_ShootingStar_UpdateStats(player, &Level1);
 		player->level = 0;
 		player->level4 = false;
+		flag_beenTricking = false;
         player->currentAir = player->gearStats[player->level].maxAir;
 	}
 }
