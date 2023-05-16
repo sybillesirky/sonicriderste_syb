@@ -3,6 +3,8 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
+u8 Player_ReserveTank_TankAmount = 2; // Doesn't track Level 4 because that one is not problematic.
+
 constexpr GearLevelStats Level3 = {
 		300000, // max air
 		400, // air drain
@@ -52,6 +54,7 @@ void Player_ReserveTank(Player *player) {
 		player->level = 2;
         player->level4 = true;
         player->currentAir = player->gearStats[player->level].maxAir;
+        Player_ReserveTank_TankAmount = 2;
 	}
 
 	if (player->input->toggleFaceButtons & DPadUp) {
@@ -69,10 +72,15 @@ void Player_ReserveTank(Player *player) {
                 PlayAudioFromDAT(Sound::SFX::TornadoHit);
                 player->level -= 1;
                 player->rings -= 20;
+                Player_ReserveTank_TankAmount -= 1;
                 Player_ReserveTank_UpdateStats(player, &Level3);
                 Player_CreateReserveTankParticles(player);
 		        player->currentAir = player->gearStats[player->level].maxAir;
                 }
+    }
+
+    if (player->previousState == Death) {
+        player ->level = Player_ReserveTank_TankAmount;
     }
 
 }

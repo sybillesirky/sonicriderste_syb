@@ -117,10 +117,7 @@ void ShootingStarLevelHandler(Player *player) {
 			Player_CreateShootingStarParticles(player);
 			player->currentAir = player->gearStats[player->level].maxAir;
 		}
-		if (player->level4 == true) {
-			Player_ShootingStar_UpdateStats(player, &Level4);
-			return;
-		} else switch (player->level) {
+		switch (player->level) {
 			case 2:
 				Player_ShootingStar_UpdateStats(player, &Level3);
 				break;
@@ -129,6 +126,10 @@ void ShootingStarLevelHandler(Player *player) {
 				break;
 			default:
 				Player_ShootingStar_UpdateStats(player, &Level1);
+		}
+		if (player->level4 == true) {
+			player->gearStats[player->level].boostSpeed = pSpeed(255);
+			Player_CreateShootingStarParticles(player);
 		}
 	}
 }
@@ -140,12 +141,12 @@ void Player_ShootingStar(Player *player) {
 	if (exLoads.gearExLoadID != SYBShootingStarEXLoad) return;
 	if (player->extremeGear != DefaultGear) return; // SYB: Was going to be Legend but considering its ASM quirks we have to live with Default.
 	player->specialFlags |= (noSpeedLossChargingJump);
-    
-	// player->currentLap = ShS_tricks_accum; // Test.
 
 	ShootingStarTrickMultHandler(player);
 
-	ShootingStarLevelHandler(player);
+	if (flag_beenTricking == true) {
+		Player_CreateShootingStarParticles(player);
+	}
 
 	if (ShS_tricks_accum > 40) { // No buffer beyond Level 4 allowed.
 		ShS_tricks_accum = 40;
@@ -172,6 +173,8 @@ void Player_ShootingStar(Player *player) {
 		}
 		flag_beenTricking = false;
 	}
+
+	ShootingStarLevelHandler(player);
 
 	if (player->state == StartLine) {
 		ShS_tricks_accum = 0;
