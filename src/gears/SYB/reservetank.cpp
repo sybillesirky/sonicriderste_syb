@@ -60,7 +60,7 @@ void Player_ReserveTank(Player *player) {
 	if (player->input->toggleFaceButtons & DPadUp) {
         if (player->rings < 20) return;
         if (player->level4 == true) {
-            PlayAudioFromDAT(Sound::SFX::TornadoHit);
+            PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39));
 		    player->level4 = false;
             player->rings -= 20;
             Player_ReserveTank_UpdateStats(player, &Level3);
@@ -69,7 +69,7 @@ void Player_ReserveTank(Player *player) {
         }else if (player->level <= 0) {
 			return;
             }else {
-                PlayAudioFromDAT(Sound::SFX::TornadoHit);
+                PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39));
                 player->level -= 1;
                 player->rings -= 20;
                 Player_ReserveTank_TankAmount -= 1;

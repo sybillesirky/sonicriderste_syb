@@ -93,7 +93,7 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 			sprintf(filename.data(), "SYB9");
 			break;
 		case SYBShootingStarEXLoad:
-			sprintf(filename.data(), "SYB7");
+			sprintf(filename.data(), "SYBA");
 			break;
 		default:
 			break;
@@ -180,7 +180,7 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 			sprintf(CSS_BoardFilename[index], "SYB9");
 			break;
 		case SYBShootingStarEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYB7");
+			sprintf(CSS_BoardFilename[index], "SYBA");
 			break;
 		default:
 			break;
