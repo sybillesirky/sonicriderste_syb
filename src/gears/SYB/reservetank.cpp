@@ -7,7 +7,7 @@ u8 Player_ReserveTank_TankAmount = 2; // Doesn't track Level 4 because that one 
 
 constexpr GearLevelStats Level3 = {
 		300000, // max air
-		400, // air drain
+		800, // air drain
 		600, // drift cost
 		0x9C40, // boost cost
 		0x4E20, // tornado cost

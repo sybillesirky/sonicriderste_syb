@@ -26,31 +26,31 @@ void Player_CreateShootingStarParticles(Player *player) {
 }
 
 constexpr GearLevelStats Level3 = {
-		300000, // max air
-		250, // air drain
-		300, // drift cost
+		200000, // max air
+		200, // air drain
+		333, // drift cost
 		0x9C40, // boost cost
-		0x4E20, // tornado cost
+		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(260) // boost speed
+		pSpeed(250) // boost speed
 };
 
 constexpr GearLevelStats Level2 = {
 		150000, // max air
-		250, // air drain
-		200, // drift cost
+		16, // air drain
+		333, // drift cost
 		0x9C40, // boost cost
-		0x4E20, // tornado cost
+		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(240) // boost speed
+		pSpeed(235) // boost speed
 };
 
 constexpr GearLevelStats Level1 = {
 		100000, // max air
-		250, // air drain
-		100, // drift cost
+		16, // air drain
+		333, // drift cost
 		0x9C40, // boost cost
-		0x4E20, // tornado cost
+		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(210) // boost speed
 };
@@ -60,6 +60,7 @@ void ShootingStarTrickMultHandler(Player *player) {
 		player->trickSpeed = player->trickSpeed * 1;
 		ShS_trick_tracked = player->trickSpeed;
 	}
+
 }
 
 void Player_ShootingStar_UpdateStats(Player *player, const GearLevelStats *stats) {
@@ -73,7 +74,7 @@ void Player_ShootingStar(Player *player) {
 
 	if (exLoads.gearExLoadID != SYBShootingStarEXLoad) return;
 	if (player->extremeGear != DefaultGear) return; // SYB: Was going to be Legend but considering its ASM quirks we have to live with Default.
-	player->specialFlags |= (noSpeedLossTurning | noSpeedLossChargingJump);
+	player->specialFlags = (noSpeedLossTurning);
 
 	// Trick speed bonus handler.
 	ShootingStarTrickMultHandler(player);
@@ -96,6 +97,7 @@ void Player_ShootingStar(Player *player) {
 			// If trick rank is lower than X, then induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && flag_beenTricking == true) {
 				if (player->level > 0) {
+					player->speed += pSpeed(30);
 					if (player->rings >= 20) {
 						player->rings -= 20;
 					} else {
