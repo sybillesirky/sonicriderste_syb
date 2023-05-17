@@ -42,7 +42,7 @@ constexpr GearLevelStats Level2 = {
 		0x9C40, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(235) // boost speed
+		pSpeed(230) // boost speed
 };
 
 constexpr GearLevelStats Level1 = {
@@ -97,7 +97,7 @@ void Player_ShootingStar(Player *player) {
 			// If trick rank is lower than X, then induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && flag_beenTricking == true) {
 				if (player->level > 0) {
-					player->speed += pSpeed(30);
+					player->speed += pSpeed(40);
 					if (player->rings >= 20) {
 						player->rings -= 20;
 					} else {

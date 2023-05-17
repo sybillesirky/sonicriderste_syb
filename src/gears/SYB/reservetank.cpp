@@ -55,7 +55,7 @@ void Player_ReserveTank(Player *player) {
         player->level4 = true;
         player->currentAir = player->gearStats[player->level].maxAir;
         Player_ReserveTank_TankAmount = 2;
-        player->unk9C8 = 0x3f000000;
+        player->unk9C8 = 0x3f400000;
 	}
 
 	if (player->input->toggleFaceButtons & DPadUp) {
