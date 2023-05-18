@@ -26386,6 +26386,8 @@ EXLoadHUDColors:
 	.long 0x0 # SYB: Caliburn
     .long 0x0 # SYB: Reserve Tank
     .long 0x0 # SYB: Shooting Star
+    .long 0x0 # SYB: Money Crisis
+    .long 0x0 # SYB: Airship
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27133,6 +27135,26 @@ EXLoadBoostColors:
     .single -1
 
     # SYB: Shooting Star
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+
+    # SYB: Money Crisis
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+
+    # SYB: Airship
     .single -1
     .single -1
     .single -1

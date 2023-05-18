@@ -42,6 +42,13 @@ inline f32 CustomBoostSpeeds(Player *player, f32 boostSpeed, s32 level) {
 
 inline f32 CustomTopSpeeds(Player *player, f32 topSpeed, s32 level) {
 	// this top speed is additive, usually adds on top of 162 speed
+	EnabledEXLoads exLoads;
+	FetchEnabledEXLoadIDs(player, exLoads);
+
+	if (exLoads.gearExLoadID == SYBAirshipEXLoad) { // SYB: Airship set base top speed to 200.
+		topSpeed += pSpeed(55);
+	}
+	
 	if (player->character == Emerl) {
 		topSpeed += EmerlTopSpeedBonus[level];
 	} else {
@@ -170,6 +177,13 @@ inline u32 CustomSpecialFlags(Player *player, u32 specialFlags) {
 }
 
 inline f32 CustomAcceleration(Player *player, f32 acceleration) {
+	EnabledEXLoads exLoads;
+	FetchEnabledEXLoadIDs(player, exLoads);
+
+	if (exLoads.gearExLoadID == SYBAirshipEXLoad) { // SYB: Airship bonus acceleration.
+		acceleration = 0.0010f;
+	}
+
 	if (player->extremeGear == ChaosEmerald) {
 		switch (player->character) {
 			case Knuckles:

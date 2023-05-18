@@ -168,7 +168,8 @@ set(DOL_SOURCES     # main
         src/handlers/player/voicelines.cpp
 		src/gears/SYB/test_gunbike.cpp
 		src/gears/SYB/reservetank.cpp
-		src/gears/SYB/shootingstar.cpp )           # main
+		src/gears/SYB/shootingstar.cpp
+		src/gears/SYB/airship.cpp )           # main
 
 #====================================================================================
 # Extra plumbing stuff. Hopefully nothing in here will need to be changed

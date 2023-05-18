@@ -5,7 +5,6 @@
 
 u8 ShS_tricks_accum = 0; // This keeps track of the total amount of tricks done, for level up.
 bool flag_beenTricking = false; // Roundabout way to determine a trick has happened.
-u32 ShS_trick_tracked = 0x0000;
 u8 ShS_stored_level = 0;
 
 void Player_CreateShootingStarParticles(Player *player) {
@@ -55,14 +54,6 @@ constexpr GearLevelStats Level1 = {
 		pSpeed(210) // boost speed
 };
 
-void ShootingStarTrickMultHandler(Player *player) {
-	if (player->trickSpeed != ShS_trick_tracked) {
-		player->trickSpeed = player->trickSpeed * 1;
-		ShS_trick_tracked = player->trickSpeed;
-	}
-
-}
-
 void Player_ShootingStar_UpdateStats(Player *player, const GearLevelStats *stats) {
     player->gearStats[player->level].driftCost = stats->driftingAirCost;
     player->gearStats[player->level].boostSpeed = stats->boostSpeed;
@@ -75,9 +66,6 @@ void Player_ShootingStar(Player *player) {
 	if (exLoads.gearExLoadID != SYBShootingStarEXLoad) return;
 	if (player->extremeGear != DefaultGear) return; // SYB: Was going to be Legend but considering its ASM quirks we have to live with Default.
 	player->specialFlags = (noSpeedLossTurning);
-
-	// Trick speed bonus handler.
-	ShootingStarTrickMultHandler(player);
 
 	// Ensure player never gets a buffer of tricks beyond Level 4.
 	if (ShS_tricks_accum > 20) {

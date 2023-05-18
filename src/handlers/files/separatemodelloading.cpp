@@ -95,6 +95,12 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		case SYBShootingStarEXLoad:
 			sprintf(filename.data(), "SYBA");
 			break;
+		case SYBMoneyCrisisEXLoad:
+			sprintf(filename.data(), "SYBB");
+			break;
+		case SYBAirshipEXLoad:
+			sprintf(filename.data(), "SYBC");
+			break;
 		default:
 			break;
 	}
@@ -181,6 +187,12 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 			break;
 		case SYBShootingStarEXLoad:
 			sprintf(CSS_BoardFilename[index], "SYBA");
+			break;
+		case SYBMoneyCrisisEXLoad:
+			sprintf(CSS_BoardFilename[index], "SYBB");
+			break;
+		case SYBAirshipEXLoad:
+			sprintf(CSS_BoardFilename[index], "SYBC");
 			break;
 		default:
 			break;
