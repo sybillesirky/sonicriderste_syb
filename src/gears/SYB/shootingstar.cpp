@@ -100,6 +100,7 @@ void Player_ShootingStar(Player *player) {
 					player->speed += pSpeed(40);
 					if (player->rings >= 20) {
 						player->rings -= 20;
+						PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
 					} else {
 						ShS_tricks_accum -= 10;
 					}
@@ -128,10 +129,10 @@ void Player_ShootingStar(Player *player) {
 					Player_ShootingStar_UpdateStats(player, &Level1);
 				}	
 
-				//If the level was changed, refill air gauge and play particles.
+				//If the level was changed, refill air gauge and play VFX/SFX.
 				if (player->level != ShS_stored_level) {
 					player->currentAir = player->gearStats[player->level].maxAir;
-					PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD));
+					PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
 					Player_CreateShootingStarParticles(player);
 				}
 			}

@@ -39,6 +39,7 @@ void Player_ReserveTank_UpdateStats(Player *player, const GearLevelStats *stats)
     player->gearStats[player->level].tornadoCost = stats->tornadoCost;
     player->gearStats[player->level].boostSpeed = stats->boostSpeed;
     player->shortcutAirGainMultiplier = 0;
+    player->unk9C8 = 0x3f000000; // This is the trick air gain mult.
 }
 
 void Player_ReserveTank(Player *player) {
@@ -55,13 +56,12 @@ void Player_ReserveTank(Player *player) {
         player->level4 = true;
         player->currentAir = player->gearStats[player->level].maxAir;
         Player_ReserveTank_TankAmount = 2;
-        player->unk9C8 = 0x3f400000;
 	}
 
 	if (player->input->toggleFaceButtons & DPadUp) {
         if (player->rings < 20) return;
         if (player->level4 == true) {
-            PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39));
+            PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
 		    player->level4 = false;
             player->rings -= 20;
             Player_ReserveTank_UpdateStats(player, &Level3);
@@ -70,7 +70,7 @@ void Player_ReserveTank(Player *player) {
         }else if (player->level <= 0) {
 			return;
             }else {
-                PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39));
+                PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); //Ring loss SFX
                 player->level -= 1;
                 player->rings -= 20;
                 Player_ReserveTank_TankAmount -= 1;
