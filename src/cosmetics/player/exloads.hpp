@@ -207,7 +207,7 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				SYBReserveTankEXLoad,
 				-1,
 				AirTank,
-				0xF1,                 0x1A
+				0xED,                 0x1A
 		},
                 {
 				EXLoadType,
@@ -237,10 +237,16 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F,
         1.1F, // reala
         1.4F, // gongon
-		-1.0F, // SYB: Super Sonic
-		-1.0F, // SYB: Super Shadow
-		-1.0F, // SYB: Seelkadoom
-		-1.0F, // SYB: Android
+	-1.0F, // SYB: Super Sonic
+	-1.0F, // SYB: Super Shadow
+	-1.0F, // SYB: Seelkadoom
+	-1.0F, // SYB: Gun Bike
+        -1.0F, // SYB: Android
+        -1.0F, // SYB: Hero Cruiser
+        -1.0F, // SYB: Falco Board
+        -1.0F, // SYB: Caliburn
+        -1.0F, // SYB: Reserve Tank
+        -1.0F, // SYB: Shooting Star
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -262,10 +268,16 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype,
         BoostArchetype, // reala
         AllRounder, // gongon
-		CombatArchetype, //SYB: Super Sonic
-		CombatArchetype, //SYB: Super Shadow
-		DriftArchetype, //SYB: Seelkadoom
-		CombatArchetype, //SYB: Android
+	CombatArchetype, //SYB: Super Sonic
+	CombatArchetype, //SYB: Super Shadow
+	DriftArchetype, //SYB: Seelkadoom
+        NoEXLoadArchetype, //SYB: Gun Bike
+	CombatArchetype, //SYB: Android
+        NoEXLoadArchetype, //SYB: Hero Cruiser
+        NoEXLoadArchetype, //SYB: Falco Board
+        NoEXLoadArchetype, //SYB: Caliburn
+        NoEXLoadArchetype, //SYB: Reserve Tank
+        NoEXLoadArchetype, //SYB: Shooting Star
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);

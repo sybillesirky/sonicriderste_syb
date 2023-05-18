@@ -26385,6 +26385,7 @@ EXLoadHUDColors:
 	.long 0x0 # SYB: Falco Board
 	.long 0x0 # SYB: Caliburn
     .long 0x0 # SYB: Reserve Tank
+    .long 0x0 # SYB: Shooting Star
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27122,6 +27123,16 @@ EXLoadBoostColors:
     .single -1
 
     # SYB: Reserve Tank
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+
+    # SYB: Shooting Star
     .single -1
     .single -1
     .single -1
