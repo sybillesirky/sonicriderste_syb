@@ -78,7 +78,7 @@ void Player_Airship(Player *player) {
         if (player->state == Fall || player->state == Jump || player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp) {
             if (ArSBoostCooldown == 0 && player->currentAir > 40000) {
                 player->speed += pSpeed(200);
-                player->verticalSpeed += 0.5;
+                // player->verticalSpeed += 0.5; // Air Dash height bonus. Legacy.
                 player->currentAir -= 30000;
                 ArSBoostCooldown = 120;
                 PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
