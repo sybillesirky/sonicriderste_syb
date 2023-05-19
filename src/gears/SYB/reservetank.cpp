@@ -7,8 +7,8 @@ u8 Player_ReserveTank_TankAmount = 2; // Doesn't track Level 4 because that one 
 
 constexpr GearLevelStats Level3 = {
 		300000, // max air
-		800, // air drain
-		600, // drift cost
+		64, // air drain
+		400, // drift cost
 		0x9C40, // boost cost
 		0x4E20, // tornado cost
 		pSpeed(100), // drift dash speed, unused
@@ -34,12 +34,13 @@ void Player_CreateReserveTankParticles(Player *player) {
 
 void Player_ReserveTank_UpdateStats(Player *player, const GearLevelStats *stats) {
     player->gearStats[player->level].maxAir = stats->maxAir;
+    player->gearStats[player->level].airDrain = stats->passiveAirDrain;
     player->gearStats[player->level].driftCost = stats->driftingAirCost;
     player->gearStats[player->level].boostCost = stats->boostCost;
     player->gearStats[player->level].tornadoCost = stats->tornadoCost;
     player->gearStats[player->level].boostSpeed = stats->boostSpeed;
     player->shortcutAirGainMultiplier = 0;
-    player->unk9C8 = 0x3f000000; // This is the trick air gain mult.
+    player->unk9C8 = 0x3f666666; // This is the trick air gain mult.
 }
 
 void Player_ReserveTank(Player *player) {
