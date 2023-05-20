@@ -228,7 +228,7 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				SYBAirshipEXLoad,
 				-1,
 				LightBoard,
-				0xD6,                 0x1A
+				0xF5,                 0x1A
 		}
 };
 

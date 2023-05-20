@@ -9,7 +9,7 @@ constexpr GearLevelStats Level3 = {
 		200000, // max air
 		32, // air drain
 		0x0000014D, // drift cost
-		0x9C40, // boost cost
+		0x4E20, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(245) // boost speed
@@ -19,8 +19,8 @@ constexpr GearLevelStats Level2 = {
 		150000, // max air
 		16, // air drain
 		0x000000FA, // drift cost
-		0x7530, // boost cost
-		0x9C40, // tornado cost
+		0x4E20, // boost cost
+		0x7530, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(225) // boost speed
 };
@@ -29,8 +29,8 @@ constexpr GearLevelStats Level1 = {
 		100000, // max air
 		16, // air drain
 		0x000000A6, // drift cost
-		0x61A8, // boost cost
-		0x9C40, // tornado cost
+		0x3A98, // boost cost
+		0x61A8, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(195) // boost speed
 };
