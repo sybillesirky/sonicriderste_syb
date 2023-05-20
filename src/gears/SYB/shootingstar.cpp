@@ -54,9 +54,22 @@ constexpr GearLevelStats Level1 = {
 		pSpeed(210) // boost speed
 };
 
-void Player_ShootingStar_UpdateStats(Player *player, const GearLevelStats *stats) {
-    player->gearStats[player->level].driftCost = stats->driftingAirCost;
-    player->gearStats[player->level].boostSpeed = stats->boostSpeed;
+void Player_ShootingStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
+    player->gearStats[inputLevel].maxAir = stats->maxAir;
+    player->gearStats[inputLevel].airDrain = stats->passiveAirDrain;
+    player->gearStats[inputLevel].driftCost = stats->driftingAirCost;
+    player->gearStats[inputLevel].boostCost = stats->boostCost;
+    player->gearStats[inputLevel].tornadoCost = stats->tornadoCost;
+    player->gearStats[inputLevel].boostSpeed = stats->boostSpeed;
+}
+
+void Player_ShootingStar_SetStats(Player *player) {
+    if (player->specialFlags != (noSpeedLossTurning)) {
+        player->specialFlags = (noSpeedLossTurning);
+        Player_ShootingStar_LevelUpdater(player, &Level1, 0);
+        Player_ShootingStar_LevelUpdater(player, &Level2, 1);
+        Player_ShootingStar_LevelUpdater(player, &Level3, 2);
+    }
 }
 
 void Player_ShootingStar(Player *player) {
@@ -65,7 +78,6 @@ void Player_ShootingStar(Player *player) {
 
 	if (exLoads.gearExLoadID != SYBShootingStarEXLoad) return;
 	if (player->extremeGear != DefaultGear) return; // SYB: Was going to be Legend but considering its ASM quirks we have to live with Default.
-	player->specialFlags = (noSpeedLossTurning);
 
 	// Ensure player never gets a buffer of tricks beyond Level 4.
 	if (ShS_tricks_accum > 20) {
@@ -74,7 +86,7 @@ void Player_ShootingStar(Player *player) {
 
 	// Basically define "player is in trick state".
 	if (player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp || player->state == HalfPipeTrick) {
-		flag_beenTricking = true; // This makes sure the Rank check only fires once.
+		flag_beenTricking = true; // This makes sure trick landing behaviours only fire once.
 	}
 
 	// What happens once player has left trick state.
@@ -82,7 +94,7 @@ void Player_ShootingStar(Player *player) {
 		if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
 			ShS_tricks_accum += player->trickCount;
 
-			// If trick rank is lower than X, then induce penalties if level 2 or higher.
+			// If trick rank is lower than X, induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && flag_beenTricking == true) {
 				if (player->level > 0) {
 					player->speed += pSpeed(40);
@@ -105,16 +117,10 @@ void Player_ShootingStar(Player *player) {
 				// Update the level and stats now that we have the new amount of tricks.
 				if (ShS_tricks_accum >= 20) { // Level 3
 					player->level = 2;
-					player->level4 = false;
-					Player_ShootingStar_UpdateStats(player, &Level3);
 				} else if (ShS_tricks_accum >= 10) { // Level 2
 					player->level = 1;
-					player->level4 = false;
-					Player_ShootingStar_UpdateStats(player, &Level2);
 				} else { // Level 1
 					player->level = 0;
-					player->level4 = false;
-					Player_ShootingStar_UpdateStats(player, &Level1);
 				}	
 
 				//If the level was changed, refill air gauge and play VFX/SFX.
@@ -132,9 +138,7 @@ void Player_ShootingStar(Player *player) {
 
 	if (player->state == StartLine) { // Initialising behaviours.
 		ShS_tricks_accum = 0;
-        Player_ShootingStar_UpdateStats(player, &Level1);
-		player->level = 0;
+        Player_ShootingStar_SetStats(player);
 		flag_beenTricking = false;
-        player->currentAir = player->gearStats[player->level].maxAir;
 	}
 }

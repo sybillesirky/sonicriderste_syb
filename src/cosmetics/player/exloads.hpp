@@ -284,7 +284,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype,
         BoostArchetype, // reala
         AllRounder, // gongon
-	CombatArchetype, //SYB: Super Sonic
+	LateBooster, //SYB: Super Sonic
 	CombatArchetype, //SYB: Super Shadow
 	DriftArchetype, //SYB: Seelkadoom
         NoEXLoadArchetype, //SYB: Gun Bike

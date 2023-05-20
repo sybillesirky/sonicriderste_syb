@@ -4,7 +4,6 @@
 #include "lib/sound.hpp"
 
 u8 ArSBoostCooldown = 0;
-u8 ArSLevelTracker = 0;
 
 constexpr GearLevelStats Level3 = {
 		200000, // max air
@@ -13,7 +12,7 @@ constexpr GearLevelStats Level3 = {
 		0x61A8, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(250) // boost speed
+		pSpeed(245) // boost speed
 };
 
 constexpr GearLevelStats Level2 = {
@@ -23,7 +22,7 @@ constexpr GearLevelStats Level2 = {
 		0x7530, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(230) // boost speed
+		pSpeed(225) // boost speed
 };
 
 constexpr GearLevelStats Level1 = {
@@ -33,31 +32,24 @@ constexpr GearLevelStats Level1 = {
 		0x9C40, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(210) // boost speed
+		pSpeed(195) // boost speed
 };
 
-void Player_Airship_LevelUpdater(Player *player, const GearLevelStats *stats) {
-    player->gearStats[player->level].maxAir = stats->maxAir;
-    player->gearStats[player->level].airDrain = stats->passiveAirDrain;
-    player->gearStats[player->level].driftCost = stats->driftingAirCost;
-    player->gearStats[player->level].boostCost = stats->boostCost;
-    player->gearStats[player->level].tornadoCost = stats->tornadoCost;
-    player->gearStats[player->level].boostSpeed = stats->boostSpeed;
+void Player_Airship_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
+    player->gearStats[inputLevel].maxAir = stats->maxAir;
+    player->gearStats[inputLevel].airDrain = stats->passiveAirDrain;
+    player->gearStats[inputLevel].driftCost = stats->driftingAirCost;
+    player->gearStats[inputLevel].boostCost = stats->boostCost;
+    player->gearStats[inputLevel].tornadoCost = stats->tornadoCost;
+    player->gearStats[inputLevel].boostSpeed = stats->boostSpeed;
 }
 
-void Player_Airship_LevelTracking(Player *player) {
-    if (player->level != ArSLevelTracker) {
-        switch (player->level) {
-            case 2:
-                Player_Airship_LevelUpdater(player, &Level3);
-                break;
-            case 1:
-                Player_Airship_LevelUpdater(player, &Level2);
-                break;
-            default:
-                Player_Airship_LevelUpdater(player, &Level1);
-        }
-        ArSLevelTracker = player->level;
+void Player_Airship_SetStats(Player *player) {
+    if (player->specialFlags != (noSpecialFlags)) {
+        player->specialFlags = (noSpecialFlags);
+        Player_Airship_LevelUpdater(player, &Level1, 0);
+        Player_Airship_LevelUpdater(player, &Level2, 1);
+        Player_Airship_LevelUpdater(player, &Level3, 2);
     }
 }
 
@@ -67,21 +59,18 @@ void Player_Airship(Player *player) {
 
 	if (exLoads.gearExLoadID != SYBAirshipEXLoad) return;
 	if (player->extremeGear != LightBoard) return;
-	player->specialFlags = (noSpecialFlags);
 
     if (ArSBoostCooldown != 0) {
         ArSBoostCooldown -= 1;
     }
 
-    Player_Airship_LevelTracking(player);
-
     if (player->input->toggleFaceButtons & XButton) {
         if (player->state == Fall || player->state == Jump || player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp) {
-            if (ArSBoostCooldown == 0 && player->currentAir > 40000) {
+            if (ArSBoostCooldown == 0 && player->currentAir > player->gearStats[player->level].boostCost * 1.2) {
                 player->speed += pSpeed(200);
-                player->verticalSpeed += 0.1;
+                player->verticalSpeed -= 0.5;
                 // player->verticalSpeed += 0.5; // Air Dash height bonus. Legacy.
-                player->currentAir -= 30000;
+                player->currentAir -= player->gearStats[player->level].boostCost * 1.2;
                 ArSBoostCooldown = 120;
                 PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
             }
@@ -89,7 +78,7 @@ void Player_Airship(Player *player) {
     }
 
     if (player->state == StartLine) { // Initialising behaviours.
-        Player_Airship_LevelUpdater(player, &Level1);
+        Player_Airship_SetStats(player);
 	}
 
 }

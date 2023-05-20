@@ -7,8 +7,8 @@ u8 Player_ReserveTank_TankAmount = 2; // Doesn't track Level 4 because that one 
 
 constexpr GearLevelStats Level3 = {
 		300000, // max air
-		64, // air drain
-		400, // drift cost
+		120, // air drain
+		600, // drift cost
 		0x9C40, // boost cost
 		0x4E20, // tornado cost
 		pSpeed(100), // drift dash speed, unused
@@ -40,7 +40,19 @@ void Player_ReserveTank_UpdateStats(Player *player, const GearLevelStats *stats)
     player->gearStats[player->level].tornadoCost = stats->tornadoCost;
     player->gearStats[player->level].boostSpeed = stats->boostSpeed;
     player->shortcutAirGainMultiplier = 0;
-    player->unk9C8 = 0x3f666666; // This is the trick air gain mult.
+    player->unk9C8 = 0x3ecccccd; // This is the trick air gain mult. Currently 0.4.
+    player->unk9D0 = 0x3f800000; // This is the QTE air gain mult. Currently 1.
+}
+
+void Player_ReserveTank_SetBaseStats(Player *player) {
+    if (player->specialFlags != (noPits)) {
+        player->specialFlags = (noPits);
+        Player_ReserveTank_UpdateStats(player, &Level3);
+		player->level = 2;
+        player->level4 = true;
+        player->currentAir = player->gearStats[player->level].maxAir;
+        Player_ReserveTank_TankAmount = 2;
+    }
 }
 
 void Player_ReserveTank(Player *player) {
@@ -49,14 +61,9 @@ void Player_ReserveTank(Player *player) {
 
 	if (exLoads.gearExLoadID != SYBReserveTankEXLoad) return;
 	if (player->extremeGear != AirTank) return;
-	player->specialFlags |= (noPits);
 
-	if (player->state == StartLine) {
-        Player_ReserveTank_UpdateStats(player, &Level3);
-		player->level = 2;
-        player->level4 = true;
-        player->currentAir = player->gearStats[player->level].maxAir;
-        Player_ReserveTank_TankAmount = 2;
+	if (player->state == StartLine) { // Initialising behaviour.
+        Player_ReserveTank_SetBaseStats(player);
 	}
 
 	if (player->input->toggleFaceButtons & DPadUp) {

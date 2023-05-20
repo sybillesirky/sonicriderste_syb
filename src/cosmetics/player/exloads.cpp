@@ -34,6 +34,12 @@ ASMUsed bool IsAnyE10EXLoad(const Player *player) {
     return (exLoads.characterExLoadID == E10BEXLoad || exLoads.characterExLoadID == E10REXLoad);
 }
 
+ASMUsed bool SYBIsSuperSonicEXLoad(const Player *player) { // SYB: I added this!
+    EnabledEXLoads exLoads{};
+    FetchEnabledEXLoadIDs(player, exLoads);
+    return (exLoads.characterExLoadID == SYBSuperSonicEXLoad);
+}
+
 void CheckEXLoadHUDColors(Player *player, EXLoadColors &returnValues) {
 	returnValues.colors = nullptr;
 	returnValues.index = 0;
@@ -372,8 +378,6 @@ const char* GetEXLoadCharacterModel(Player *player) {
             return "EC2";
         case GonGonEXLoad:
             return "EC3";
-		case SYBSuperSonicEXLoad:
-			return "SYB1";
 		case SYBSuperShadowEXLoad:
 			return "SYB2";
 		case SYBSeelkadoomEXLoad:

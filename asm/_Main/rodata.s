@@ -4170,7 +4170,7 @@ lbl_001C4CB0:
     .4byte 0x00000000
 .global Characters
 Characters:
-    # 0x1C4CC0          # SYB: Sonic starts next line. I'mm arking him fully for convenience, and only doing character names from then on.
+    # 0x1C4CC0          # SYB: Sonic starts next line. I'm marking him fully for convenience, and only doing character names from then on.
     .4byte 0x00000053   # SYB: Type, Stats, Handedness & model letter (so S for Sonic).
     .4byte 0x00000000   # SYB: Nothing.
     .4byte 0x3F800000   # SYB: Camera Height
@@ -26376,7 +26376,7 @@ EXLoadHUDColors:
     .long 0x0 # metal sonic scarf
     .long 0x4a0015ff # reala
     .long 0x210d00ff # gongon
-	.long 0xD2C864FF # SYB: Super Sonic Cosm.
+	.long 0x0 # SYB: Super Sonic
 	.long 0xd0d19fff # SYB: Super Shadow Cosm.
 	.long 0x2C35E8FF # SYB: Seelkadoom
 	.long 0x0 # SYB: GunBike
@@ -27044,15 +27044,15 @@ EXLoadBoostColors:
    .single 0.5294117647058824
    .single 1
    
-   # SYB: Super Sonic Cosm.
-    .4byte 0x3F800000
-    .4byte 0x3F6EEEEF
-    .4byte 0x00000000
-    .4byte 0x3F800000
-    .4byte 0x00000000
-    .4byte 0x3D888889
-    .4byte 0x3F800000
-    .4byte 0x3F800000
+   # SYB: Super Sonic
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
 	
 	# SYB: Super Shadow Cosm.
     .single -1
