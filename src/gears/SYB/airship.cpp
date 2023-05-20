@@ -3,13 +3,13 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-u8 ArSBoostCooldown = 0;
+// u8 ArSBoostCooldown = 0; THIS IS NOW SYBArSShSCounter.
 
 constexpr GearLevelStats Level3 = {
 		200000, // max air
 		32, // air drain
 		0x0000014D, // drift cost
-		0x61A8, // boost cost
+		0x9C40, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(245) // boost speed
@@ -29,7 +29,7 @@ constexpr GearLevelStats Level1 = {
 		100000, // max air
 		16, // air drain
 		0x000000A6, // drift cost
-		0x9C40, // boost cost
+		0x61A8, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(195) // boost speed
@@ -60,18 +60,18 @@ void Player_Airship(Player *player) {
 	if (exLoads.gearExLoadID != SYBAirshipEXLoad) return;
 	if (player->extremeGear != LightBoard) return;
 
-    if (ArSBoostCooldown != 0) {
-        ArSBoostCooldown -= 1;
+    if (player->SYBArSShSCounter != 0) {
+        player->SYBArSShSCounter -= 1;
     }
 
     if (player->input->toggleFaceButtons & XButton) {
         if (player->state == Fall || player->state == Jump || player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp) {
-            if (ArSBoostCooldown == 0 && player->currentAir > player->gearStats[player->level].boostCost * 1.2) {
-                player->speed += pSpeed(200);
-                player->verticalSpeed -= 0.5;
-                // player->verticalSpeed += 0.5; // Air Dash height bonus. Legacy.
-                player->currentAir -= player->gearStats[player->level].boostCost * 1.2;
-                ArSBoostCooldown = 120;
+            if (player->SYBArSShSCounter == 0 && player->currentAir > player->gearStats[player->level].boostCost * 1.5) {
+                player->speed += pSpeed(150);
+                player->verticalSpeed -= 0.1;
+                // player->verticalSpeed += 0.5; // Air Dash height bonus. Legacy!
+                player->currentAir -= player->gearStats[player->level].boostCost * 1.5;
+                player->SYBArSShSCounter = 180;
                 PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
             }
         }

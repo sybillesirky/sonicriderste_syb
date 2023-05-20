@@ -3,12 +3,12 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-u8 Player_ReserveTank_TankAmount = 2; // Doesn't track Level 4 because that one is not problematic.
+// u8 Player_ReserveTank_TankAmount = 2; // Doesn't track Level 4 because that one is not problematic. THIS IS NOW SYBShSRsTLevelTracker.
 
 constexpr GearLevelStats Level3 = {
 		300000, // max air
 		120, // air drain
-		600, // drift cost
+		200, // drift cost
 		0x9C40, // boost cost
 		0x4E20, // tornado cost
 		pSpeed(100), // drift dash speed, unused
@@ -51,7 +51,7 @@ void Player_ReserveTank_SetBaseStats(Player *player) {
 		player->level = 2;
         player->level4 = true;
         player->currentAir = player->gearStats[player->level].maxAir;
-        Player_ReserveTank_TankAmount = 2;
+        player->SYBShSRsTLevelTracker = 2;
     }
 }
 
@@ -81,7 +81,7 @@ void Player_ReserveTank(Player *player) {
                 PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); //Ring loss SFX
                 player->level -= 1;
                 player->rings -= 20;
-                Player_ReserveTank_TankAmount -= 1;
+                player->SYBShSRsTLevelTracker -= 1;
                 Player_ReserveTank_UpdateStats(player, &Level3);
                 Player_CreateReserveTankParticles(player);
 		        player->currentAir = player->gearStats[player->level].maxAir;
@@ -89,7 +89,7 @@ void Player_ReserveTank(Player *player) {
     }
 
     if (player->previousState == Death) {
-        player ->level = Player_ReserveTank_TankAmount;
+        player ->level = player->SYBShSRsTLevelTracker;
     }
 
 }
