@@ -61,6 +61,9 @@ void Player_ShootingStar_LevelUpdater(Player *player, const GearLevelStats *stat
     player->gearStats[inputLevel].boostCost = stats->boostCost;
     player->gearStats[inputLevel].tornadoCost = stats->tornadoCost;
     player->gearStats[inputLevel].boostSpeed = stats->boostSpeed;
+	if (player->characterArchetype == BoostArchetype) {
+		 player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
+	}
 }
 
 void Player_ShootingStar_SetStats(Player *player) {

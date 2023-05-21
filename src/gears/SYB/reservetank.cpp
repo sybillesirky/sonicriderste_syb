@@ -39,9 +39,12 @@ void Player_ReserveTank_UpdateStats(Player *player, const GearLevelStats *stats)
     player->gearStats[player->level].boostCost = stats->boostCost;
     player->gearStats[player->level].tornadoCost = stats->tornadoCost;
     player->gearStats[player->level].boostSpeed = stats->boostSpeed;
-    player->shortcutAirGainMultiplier = 0;
-    player->unk9C8 = 0x3ecccccd; // This is the trick air gain mult. Currently 0.4.
-    player->unk9D0 = 0x3f800000; // This is the QTE air gain mult. Currently 1.
+    player->shortcutAirGainMultiplier = 0x3f000000; // Currently 0.5.
+    player->unk9C8 = 0x3f000000; // This is the trick air gain mult. Currently 0.5.
+    // player->unk9D0 = 0x3f800000; // This is the QTE air gain mult. Currently 1.
+    if (player->characterArchetype == BoostArchetype) {
+		 player->gearStats[player->level].boostSpeed += BoostArchetypeBoostSpeeds[player->level];
+	}
 }
 
 void Player_ReserveTank_SetBaseStats(Player *player) {

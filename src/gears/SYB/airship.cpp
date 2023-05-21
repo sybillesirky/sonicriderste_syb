@@ -42,6 +42,9 @@ void Player_Airship_LevelUpdater(Player *player, const GearLevelStats *stats, in
     player->gearStats[inputLevel].boostCost = stats->boostCost;
     player->gearStats[inputLevel].tornadoCost = stats->tornadoCost;
     player->gearStats[inputLevel].boostSpeed = stats->boostSpeed;
+    if (player->characterArchetype == BoostArchetype) {
+		 player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
+	}
 }
 
 void Player_Airship_SetStats(Player *player) {
