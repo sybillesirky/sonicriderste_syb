@@ -129,7 +129,9 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
         gearType = Board;
     }else if(player->extremeGear < Darkness){
         gearType = Bike;
-    }
+    }else if(player->extremeGear == TestGear){
+		gearType = Board;
+	}
 
 	static char CSS_BoardFilename[4][8]; // Used to be global, Should this be static?
 
@@ -257,6 +259,8 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 		gearType = Board;
 	}else if(player->extremeGear < Darkness){
 		gearType = Bike;
+	}else if(player->extremeGear == TestGear){
+		gearType = Board;
 	}
 
 	if(player->extremeGear == HeavyBike){
@@ -327,6 +331,8 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
+	}else if(player->extremeGear == TestGear){
+		gearType = 0;
 	}
 
 	if(gearType != 1 && IsSeparateBoardModelActive[player->index]){
@@ -345,6 +351,8 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
+	}else if(player->extremeGear == TestGear){
+		gearType = 0;
 	}
 
 	if(gearType != 1 && IsSeparateBoardModelActive[player->index]){

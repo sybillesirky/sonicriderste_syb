@@ -71,11 +71,11 @@ void Player_Airship(Player *player) {
         if (player->state == Fall || player->state == Jump || player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp) {
             if (player->SYBArSShSCounter == 0 && player->currentAir > player->gearStats[player->level].boostCost * 1.5) {
                 player->speed += pSpeed(150);
-                player->verticalSpeed -= 0.1;
+                player->verticalSpeed -= 0.2;
                 // player->verticalSpeed += 0.5; // Air Dash height bonus. Legacy!
                 player->currentAir -= player->gearStats[player->level].boostCost * 1.5;
                 player->SYBArSShSCounter = 180;
-                PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
+                if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
             }
         }
     }

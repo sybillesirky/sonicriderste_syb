@@ -72,7 +72,7 @@ void Player_ReserveTank(Player *player) {
 	if (player->input->toggleFaceButtons & DPadUp) {
         if (player->rings < 20) return;
         if (player->level4 == true) {
-            PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
 		    player->level4 = false;
             player->rings -= 20;
             Player_ReserveTank_UpdateStats(player, &Level3);
@@ -81,7 +81,7 @@ void Player_ReserveTank(Player *player) {
         }else if (player->level <= 0) {
 			return;
             }else {
-                PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); //Ring loss SFX
+                if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); //Ring loss SFX
                 player->level -= 1;
                 player->rings -= 20;
                 player->SYBShSRsTLevelTracker -= 1;

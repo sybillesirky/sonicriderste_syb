@@ -103,7 +103,7 @@ void Player_ShootingStar(Player *player) {
 					player->speed += pSpeed(40);
 					if (player->rings >= 20) {
 						player->rings -= 20;
-						PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
+						if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
 					} else {
 						player->SYBArSShSCounter -= 10;
 					}
@@ -129,7 +129,7 @@ void Player_ShootingStar(Player *player) {
 				//If the level was changed, refill air gauge and play VFX/SFX.
 				if (player->level != player->SYBShSRsTLevelTracker) {
 					player->currentAir = player->gearStats[player->level].maxAir;
-					PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
+					if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
 					Player_CreateShootingStarParticles(player);
 				}
 			}

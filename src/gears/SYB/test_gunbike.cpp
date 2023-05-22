@@ -17,5 +17,6 @@ void SYB_Player_GunBike(Player *player) {
 	if (player->input->toggleFaceButtons & DPadUp) {
         PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, bike_soundID));
 		//bike_soundID += 1;
+		player->unkBAC ^= 0x0100; //Handedness Swap!
     }
 }
