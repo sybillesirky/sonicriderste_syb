@@ -209,6 +209,15 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				break;
 			}
 
+			case LightBoard: {
+				if (exLoads.gearExLoadID == SYBAirshipEXLoad) {
+					if (Player->SYBArSShSCounter != 0) {
+						color = 0xFF0000FF;
+					}
+				}
+				break;
+			}
+
 			// case SuperHangOn:
 			// 	struct HHOInfo *hhoInfo = &PlayerHHOInfo[Player->index];
 			// 	if (exLoads.gearExLoadID == HyperHangOnEXLoad)
