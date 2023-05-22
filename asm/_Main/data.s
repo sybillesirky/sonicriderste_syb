@@ -23783,7 +23783,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFE37FF # E-Rider
+    .4byte 0xFFFFFFFF # E-Rider
     .byte 0x02 # gear type
     .byte 0x28 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -23904,7 +23904,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFE37FF # Air Tank
+    .4byte 0xFFFFFFFF # Air Tank
     .byte 0x02 # gear type
     .byte 0x29 # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -24025,7 +24025,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFF7FF # Heavy Bike
+    .4byte 0xFFFFFFFF # Heavy Bike
     .byte 0x02 # gear type
     .byte 0x2A # model id
     .2byte 0x0320 # ring cost in gear shop
@@ -24146,7 +24146,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFF637FF # Destroyer
+    .4byte 0xFFFFFFFF # Destroyer
     .byte 0x02 # gear type
     .byte 0x2B # model id
     .2byte 0x0DAC # ring cost in gear shop
@@ -24267,7 +24267,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFF637FF # Omnipotence
+    .4byte 0xFFFFFFFF # Omnipotence
     .byte 0x02 # gear type
     .byte 0x2C # model id
     .2byte 0x1388 # ring cost in gear shop
@@ -24388,7 +24388,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFF637FF # Cover-S
+    .4byte 0xFFFFFFFF # Cover-S
     .byte 0x02 # gear type
     .byte 0x2D # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -24509,7 +24509,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFE37FF # Cover-F
+    .4byte 0xFFFFFFFF # Cover-F
     .byte 0x02 # gear type
     .byte 0x2E # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -24630,7 +24630,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFE37FF # Cover-P
+    .4byte 0xFFFFFFFF # Cover-P
     .byte 0x02 # gear type
     .byte 0x2F # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -24751,7 +24751,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFE37FF # Hang-On
+    .4byte 0xFFFFFFFF # Hang-On
     .byte 0x02 # gear type
     .byte 0x30 # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -24872,7 +24872,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFE37FF # Super Hang-On
+    .4byte 0xFFFFFFFF # Super Hang-On
     .byte 0x02 # gear type
     .byte 0x31 # model id
     .2byte 0x09C4 # ring cost in gear shop
@@ -24993,7 +24993,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x007E777F # Darkness
+    .4byte 0xFFFFFFFF # Darkness
     .byte 0x01 # gear type
     .byte 0x46 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -25114,7 +25114,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0x0076777F # Grinder
+    .4byte 0xFFFFFFFF # Grinder
     .byte 0x01 # gear type
     .byte 0x47 # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -25235,7 +25235,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0x007E777F # Advantage-S
+    .4byte 0xFFFFFFFF # Advantage-S
     .byte 0x01 # gear type
     .byte 0x48 # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -25356,7 +25356,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0x007E777F # Advantage-F
+    .4byte 0xFFFFFFFF # Advantage-F
     .byte 0x01 # gear type
     .byte 0x49 # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -25477,7 +25477,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0x0076777F # Advantage-P
+    .4byte 0xFFFFFFFF # Advantage-P
     .byte 0x01 # gear type
     .byte 0x4A # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -25598,7 +25598,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0x007E7F7F # Cannonball //SYB: We changed this from 7E777F
+    .4byte 0xFFFFFFFF # Cannonball //SYB: We changed this from 7E777F
     .byte 0x01 # gear type
     .byte 0x4B # model id
     .2byte 0x0DAC # ring cost in gear shop
@@ -25719,7 +25719,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0x007E7F7F # Test Gear
+    .4byte 0xFFFFFFFF # Test Gear
     .byte 0x00 # gear type
     .byte 0x04 # model id
     .2byte 0x0DAC # ring cost in gear shop

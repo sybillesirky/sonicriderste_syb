@@ -59,14 +59,32 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		IsSeparateBoardModelActive[player->index] = true;
 		const Gear &gear = Gears[player->extremeGear];
 		if(player->character == Storm && player->gearType == Bike){
-			sprintf(filename.data(), "PB%dB", gear.model);
-		}else if(player->extremeGear == HeavyBike){
-			switch(player->character){
-				case Ulala:
-				case E10G:
-				case E10R: sprintf(filename.data(), "PB20B");
+			sprintf(filename.data(), "PB%dB", gear.model);}
+		//}else if(player->extremeGear == HeavyBike){
+		//	switch(player->character){
+		//		case Ulala:
+		//		case E10G:
+		//		case E10R: sprintf(filename.data(), "PB20B");
+		//			break;
+		//		default: sprintf(filename.data(), "PB%d", gear.model);
+		//	}
+		//}else{
+		//	sprintf(filename.data(), "PB%d", gear.model);
+		//}
+
+	if (player->character == Ulala ||	//SYB: This is custom. GEAR REPLICA
+		player->character == E10G ||
+		player->character == E10R ||
+		player->character == SuperSonic) {
+			switch(player->extremeGear) {
+				case HeavyBike:
+					sprintf(filename.data(), "PB20B");
 					break;
-				default: sprintf(filename.data(), "PB%d", gear.model);
+				case Cannonball:
+						sprintf(filename.data(), "RB75");
+						break;
+				default:
+					sprintf(filename.data(), "PS00");
 			}
 		}else{
 			sprintf(filename.data(), "PB%d", gear.model);
@@ -133,6 +151,22 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 		gearType = Board;
 	}
 
+	switch(player->character) {
+		case Ulala:
+			if (gearType == Bike) {
+				gearType = Board;
+			}
+			break;
+		case E10G:
+		case E10R:
+		case SuperSonic:
+			IsSeparateBoardModelActive[index] = true;
+			gearType = Board;
+			break;
+		default:
+			break;
+	}
+
 	static char CSS_BoardFilename[4][8]; // Used to be global, Should this be static?
 
 	if(player->extremeGear == DefaultGear){
@@ -154,18 +188,35 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 		IsSeparateBoardModelActive[index] = true;
 		const Gear &gear = Gears[player->extremeGear];
 		if(player->character == Storm && gearType == Bike){
-			sprintf(CSS_BoardFilename[index], "PB%dB", gear.model);
-		}else if(player->extremeGear == HeavyBike){
-			switch(player->character){
-				case Ulala:
-				case E10G:
-				case E10R: sprintf(CSS_BoardFilename[index], "PB20B");
-					break;
-				default: sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
+			sprintf(CSS_BoardFilename[index], "PB%dB", gear.model);}
+		//}else if(player->extremeGear == HeavyBike){
+		//	switch(player->character){
+		//		case Ulala:
+		//		case E10G:
+		//		case E10R: sprintf(CSS_BoardFilename[index], "PB20B");
+		//			break;
+		//		default: sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
+		//	}
+		//}else{
+		//	sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
+		//}
+		if (player->character == Ulala ||	//SYB: This is custom. GEARREPLICA
+			player->character == E10G ||
+			player->character == E10R ||
+			player->character == SuperSonic) {
+				switch(player->extremeGear) {
+					case HeavyBike:
+						sprintf(CSS_BoardFilename[index], "PB20B");
+						break;
+					case Cannonball:
+						sprintf(CSS_BoardFilename[index], "RB75");
+						break;
+					default:
+						sprintf(CSS_BoardFilename[index], "PS00");
+				}
+			}else{
+				sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
 			}
-		}else{
-			sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
-		}
 	}
 	
 	switch(exLoads.gearExLoadID){ // SYB: We added this for Heavy Bike experimentation, and it's MUCH cleaner.
@@ -263,15 +314,30 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 		gearType = Board;
 	}
 
-	if(player->extremeGear == HeavyBike){
-		switch(player->character){
-			case Ulala:
-			case E10G:
-			case E10R: gearType = Board;
-				break;
-			default:
-				break;
-		}
+	//if(player->extremeGear == HeavyBike){
+	//	switch(player->character){
+	//		case Ulala:
+	//		case E10G:
+	//		case E10R: gearType = Board;
+	//			break;
+	//		default:
+	//			break;
+	//	}
+	//}
+
+	switch(player->character) {
+		case Ulala:
+			if (gearType == Bike) {
+				gearType = Board;
+			}
+			break;
+		case E10G:
+		case E10R:
+		case SuperSonic:
+			gearType = Board;
+			break;
+		default:
+			break;
 	}
 
 	if (gearType != Skates && player->extremeGear != ChaosEmerald) {
@@ -335,6 +401,21 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 		gearType = 0;
 	}
 
+	switch(player->character) {
+		case Ulala:
+			if (gearType == 2) {
+				gearType = 0;
+			}
+			break;
+		case E10G:
+		case E10R:
+		case SuperSonic:
+			gearType = 0;
+			break;
+		default:
+			break;
+	}
+
 	if(gearType != 1 && IsSeparateBoardModelActive[player->index]){
 		// not skates
 		func_8004EBCC(weightVertPtr, bss_BoardOnlyModelData[player->index], lbl_1000DF64[player->index]);
@@ -353,6 +434,21 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 		gearType = 2;
 	}else if(player->extremeGear == TestGear){
 		gearType = 0;
+	}
+
+	switch(player->character) {
+		case Ulala:
+			if (gearType == 2) {
+				gearType = 0;
+			}
+			break;
+		case E10G:
+		case E10R:
+		case SuperSonic:
+			gearType = 0;
+			break;
+		default:
+			break;
 	}
 
 	if(gearType != 1 && IsSeparateBoardModelActive[player->index]){
