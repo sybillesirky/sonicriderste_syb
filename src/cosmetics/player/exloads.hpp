@@ -3,8 +3,8 @@
 #include "context.hpp"
 #include "containers/graphicalobject.hpp"
 
-#define CharacterEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 8!
-#define GearEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 5!
+#define CharacterEXLoadSlots 11 //SYB: WE CHANGED THIS FROM 8!
+#define GearEXLoadSlots 9 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -117,13 +117,6 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
         },
 		{
                 EXLoadType,
-                SYBSuperShadowEXLoad,
-                Shadow,
-                -1,
-                0xF0,                 static_cast<u16>(-1)
-        },
-		{
-                EXLoadType,
                 SYBSeelkadoomEXLoad,
                 Shadow,
                 -1,
@@ -181,27 +174,6 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				AirTank,
 				0xF5,                 0xF6
 		},
-		{
-				LLoadType,
-				SYBHeroCruiserEXLoad,
-				-1,
-				CoverS,
-				0xF5,                 0x1A
-		},
-		{
-				LLoadType,
-				SYBFalcoBoardEXLoad,
-				-1,
-				BlueStar2,
-				0xF5,                 0x1A
-		},
-		{
-				LLoadType,
-				SYBCaliburnEXLoad,
-				-1,
-				Berserker,
-				0xF5,                 0x1A
-		},
                 {
 				EXLoadType,
 				SYBReserveTankEXLoad,
@@ -214,13 +186,6 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				SYBShootingStarEXLoad,
 				-1,
 				DefaultGear,
-				0xF1,                 0x1A
-		},
-                {
-				LLoadType,
-				SYBMoneyCrisisEXLoad,
-				-1,
-				CoverP,
 				0xF1,                 0x1A
 		},
                 {
@@ -252,16 +217,11 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         1.1F, // reala
         1.4F, // gongon
 	-1.0F, // SYB: Super Sonic
-	-1.0F, // SYB: Super Shadow
 	-1.0F, // SYB: Seelkadoom
 	-1.0F, // SYB: Gun Bike
         -1.0F, // SYB: Android
-        -1.0F, // SYB: Hero Cruiser
-        -1.0F, // SYB: Falco Board
-        -1.0F, // SYB: Caliburn
         -1.0F, // SYB: Reserve Tank
         -1.0F, // SYB: Shooting Star
-        -1.0F, // SYB: Money Crisis
         -1.0F, // SYB: Airship
 };
 
@@ -285,16 +245,11 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         BoostArchetype, // reala
         AllRounder, // gongon
 	LateBooster, //SYB: Super Sonic
-	CombatArchetype, //SYB: Super Shadow
 	DriftArchetype, //SYB: Seelkadoom
         NoEXLoadArchetype, //SYB: Gun Bike
 	CombatArchetype, //SYB: Android
-        NoEXLoadArchetype, //SYB: Hero Cruiser
-        NoEXLoadArchetype, //SYB: Falco Board
-        NoEXLoadArchetype, //SYB: Caliburn
         NoEXLoadArchetype, //SYB: Reserve Tank
         NoEXLoadArchetype, //SYB: Shooting Star
-        NoEXLoadArchetype, //SYB: Money Crisis
         NoEXLoadArchetype, //SYB: Airship
 };
 

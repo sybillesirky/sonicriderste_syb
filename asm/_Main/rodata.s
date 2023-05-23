@@ -26377,16 +26377,11 @@ EXLoadHUDColors:
     .long 0x4a0015ff # reala
     .long 0x210d00ff # gongon
 	.long 0x0 # SYB: Super Sonic
-	.long 0xd0d19fff # SYB: Super Shadow Cosm.
 	.long 0x2C35E8FF # SYB: Seelkadoom
 	.long 0x0 # SYB: GunBike
     .4byte 0xBD9322FF # SYB: Android
-	.long 0x0 # SYB: Hero Cruiser
-	.long 0x0 # SYB: Falco Board
-	.long 0x0 # SYB: Caliburn
     .long 0x0 # SYB: Reserve Tank
     .long 0x0 # SYB: Shooting Star
-    .long 0x0 # SYB: Money Crisis
     .long 0x0 # SYB: Airship
 
 .global AllCharacterBoostColors
@@ -27054,16 +27049,6 @@ EXLoadBoostColors:
     .single -1
     .single -1
 	
-	# SYB: Super Shadow Cosm.
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-	
 	# SYB: Seelkadoom
     .4byte 0x3D888889
     .4byte 0x00000000
@@ -27093,36 +27078,6 @@ EXLoadBoostColors:
     .single 0.5294117647058824
     .single 1
     .single 1
-	
-	# SYB: Hero Cruiser
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-	
-	# SYB: Falco Board
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-	
-	# SYB: Caliburn
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
 
     # SYB: Reserve Tank
     .single -1
@@ -27135,16 +27090,6 @@ EXLoadBoostColors:
     .single -1
 
     # SYB: Shooting Star
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-
-    # SYB: Money Crisis
     .single -1
     .single -1
     .single -1

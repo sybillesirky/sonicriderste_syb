@@ -80,9 +80,18 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 				case HeavyBike:
 					sprintf(filename.data(), "PB20B");
 					break;
+				case AdvantageS:
+					sprintf(filename.data(), "PB15");
+					break;
+				case AdvantageF:
+					sprintf(filename.data(), "RB73");
+					break;
+				case AdvantageP:
+					sprintf(filename.data(), "RB74");
+					break;
 				case Cannonball:
-						sprintf(filename.data(), "RB75");
-						break;
+					sprintf(filename.data(), "RB75");
+					break;
 				default:
 					sprintf(filename.data(), "PS00");
 			}
@@ -98,23 +107,11 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		case SYBGunBikeEXLoad:
 			sprintf(filename.data(), "SYB3");
 			break;
-		case SYBHeroCruiserEXLoad:
-			sprintf(filename.data(), "SYB6");
-			break;
-		case SYBFalcoBoardEXLoad:
-			sprintf(filename.data(), "SYB7");
-			break;
-		case SYBCaliburnEXLoad:
-			sprintf(filename.data(), "SYB8");
-			break;
 		case SYBReserveTankEXLoad:
 			sprintf(filename.data(), "SYB9");
 			break;
 		case SYBShootingStarEXLoad:
 			sprintf(filename.data(), "SYBA");
-			break;
-		case SYBMoneyCrisisEXLoad:
-			sprintf(filename.data(), "SYBB");
 			break;
 		case SYBAirshipEXLoad:
 			sprintf(filename.data(), "SYBC");
@@ -147,9 +144,7 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
         gearType = Board;
     }else if(player->extremeGear < Darkness){
         gearType = Bike;
-    }else if(player->extremeGear == TestGear){
-		gearType = Board;
-	}
+    }
 
 	switch(player->character) {
 		case Ulala:
@@ -208,6 +203,15 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 					case HeavyBike:
 						sprintf(CSS_BoardFilename[index], "PB20B");
 						break;
+					case AdvantageS:
+						sprintf(CSS_BoardFilename[index], "PB15");
+						break;
+					case AdvantageF:
+						sprintf(CSS_BoardFilename[index], "RB73");
+						break;
+					case AdvantageP:
+						sprintf(CSS_BoardFilename[index], "RB74");
+						break;
 					case Cannonball:
 						sprintf(CSS_BoardFilename[index], "RB75");
 						break;
@@ -226,23 +230,11 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 		case SYBGunBikeEXLoad:
 			sprintf(CSS_BoardFilename[index], "SYB3");
 			break;
-		case SYBHeroCruiserEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYB6");
-			break;
-		case SYBFalcoBoardEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYB7");
-			break;
-		case SYBCaliburnEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYB8");
-			break;
 		case SYBReserveTankEXLoad:
 			sprintf(CSS_BoardFilename[index], "SYB9");
 			break;
 		case SYBShootingStarEXLoad:
 			sprintf(CSS_BoardFilename[index], "SYBA");
-			break;
-		case SYBMoneyCrisisEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYBB");
 			break;
 		case SYBAirshipEXLoad:
 			sprintf(CSS_BoardFilename[index], "SYBC");
@@ -310,8 +302,6 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 		gearType = Board;
 	}else if(player->extremeGear < Darkness){
 		gearType = Bike;
-	}else if(player->extremeGear == TestGear){
-		gearType = Board;
 	}
 
 	//if(player->extremeGear == HeavyBike){
@@ -397,8 +387,6 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
-	}else if(player->extremeGear == TestGear){
-		gearType = 0;
 	}
 
 	switch(player->character) {
@@ -432,8 +420,6 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
-	}else if(player->extremeGear == TestGear){
-		gearType = 0;
 	}
 
 	switch(player->character) {
