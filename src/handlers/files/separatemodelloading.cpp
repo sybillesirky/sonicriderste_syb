@@ -76,24 +76,34 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		player->character == E10G ||
 		player->character == E10R ||
 		player->character == SuperSonic) {
-			switch(player->extremeGear) {
-				case HeavyBike:
-					sprintf(filename.data(), "PB20B");
-					break;
-				case AdvantageS:
-					sprintf(filename.data(), "PB15");
-					break;
-				case AdvantageF:
-					sprintf(filename.data(), "RB73");
-					break;
-				case AdvantageP:
-					sprintf(filename.data(), "RB74");
-					break;
-				case Cannonball:
-					sprintf(filename.data(), "RB75");
-					break;
-				default:
-					sprintf(filename.data(), "PS00");
+			if (player->extremeGear >= ERider) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
+				switch(player->extremeGear) {
+					case HeavyBike:
+						sprintf(filename.data(), "PB20B");
+						break;
+					case Darkness:
+						sprintf(filename.data(), "PD00");
+						break;
+					case Grinder:
+						sprintf(filename.data(), "RB71");
+						break;
+					case AdvantageS:
+						sprintf(filename.data(), "PB15");
+						break;
+					case AdvantageF:
+						sprintf(filename.data(), "RB73");
+						break;
+					case AdvantageP:
+						sprintf(filename.data(), "RB74");
+						break;
+					case Cannonball:
+						sprintf(filename.data(), "RB75");
+						break;
+					default:
+						sprintf(filename.data(), "PS00");
+				}
+			}else {
+				sprintf(filename.data(), "PB%d", gear.model);
 			}
 		}else{
 			sprintf(filename.data(), "PB%d", gear.model);
@@ -199,25 +209,34 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 			player->character == E10G ||
 			player->character == E10R ||
 			player->character == SuperSonic) {
-				switch(player->extremeGear) {
-					case HeavyBike:
-						sprintf(CSS_BoardFilename[index], "PB20B");
-						break;
-					case AdvantageS:
-						sprintf(CSS_BoardFilename[index], "PB15");
-						break;
-					case AdvantageF:
-						sprintf(CSS_BoardFilename[index], "RB73");
-						break;
-					case AdvantageP:
-						sprintf(CSS_BoardFilename[index], "RB74");
-						break;
-					case Cannonball:
-						sprintf(CSS_BoardFilename[index], "RB75");
-						break;
-					default:
-						sprintf(CSS_BoardFilename[index], "PS00");
-				}
+				if (player->extremeGear >= ERider) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
+					switch(player->extremeGear) {
+						case HeavyBike:
+							sprintf(CSS_BoardFilename[index], "PB20B");
+							break;
+						case Darkness:
+							sprintf(CSS_BoardFilename[index], "PD00");
+							break;
+						case Grinder:
+							sprintf(CSS_BoardFilename[index], "RB71");
+							break;
+						case AdvantageS:
+							sprintf(CSS_BoardFilename[index], "PB15");
+							break;
+						case AdvantageF:
+							sprintf(CSS_BoardFilename[index], "RB73");
+							break;
+						case AdvantageP:
+							sprintf(CSS_BoardFilename[index], "RB74");
+							break;
+						case Cannonball:
+							sprintf(CSS_BoardFilename[index], "RB75");
+							break;
+						default:
+							sprintf(CSS_BoardFilename[index], "PS00");
+					}
+				}else{
+					sprintf(CSS_BoardFilename[index], "PB%d", gear.model);}
 			}else{
 				sprintf(CSS_BoardFilename[index], "PB%d", gear.model);
 			}
