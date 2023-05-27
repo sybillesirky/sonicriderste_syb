@@ -78,8 +78,23 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		player->character == SuperSonic) {
 			if (player->extremeGear >= ERider) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
 				switch(player->extremeGear) {
+					case ERider:
+						sprintf(filename.data(), "RB40");
+						break;
 					case HeavyBike:
 						sprintf(filename.data(), "PB20B");
+						break;
+					case CoverS:
+						sprintf(filename.data(), "RB44");
+						break;
+					case CoverF:
+						sprintf(filename.data(), "RB45");
+						break;
+					case CoverP:
+						sprintf(filename.data(), "RB46");
+						break;
+					case HangOn:
+						sprintf(filename.data(), "RB47");
 						break;
 					case Darkness:
 						sprintf(filename.data(), "PD00");
@@ -88,7 +103,7 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 						sprintf(filename.data(), "RB71");
 						break;
 					case AdvantageS:
-						sprintf(filename.data(), "PB15");
+						sprintf(filename.data(), "RB72");
 						break;
 					case AdvantageF:
 						sprintf(filename.data(), "RB73");
@@ -211,8 +226,23 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 			player->character == SuperSonic) {
 				if (player->extremeGear >= ERider) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
 					switch(player->extremeGear) {
+						case ERider:
+							sprintf(CSS_BoardFilename[index], "RB40");
+							break;
 						case HeavyBike:
 							sprintf(CSS_BoardFilename[index], "PB20B");
+							break;
+						case CoverS:
+							sprintf(CSS_BoardFilename[index], "RB44");
+							break;
+						case CoverF:
+							sprintf(CSS_BoardFilename[index], "RB45");
+							break;
+						case CoverP:
+							sprintf(CSS_BoardFilename[index], "RB46");
+							break;
+						case HangOn:
+							sprintf(CSS_BoardFilename[index], "RB47");
 							break;
 						case Darkness:
 							sprintf(CSS_BoardFilename[index], "PD00");
@@ -221,7 +251,7 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 							sprintf(CSS_BoardFilename[index], "RB71");
 							break;
 						case AdvantageS:
-							sprintf(CSS_BoardFilename[index], "PB15");
+							sprintf(CSS_BoardFilename[index], "RB72");
 							break;
 						case AdvantageF:
 							sprintf(CSS_BoardFilename[index], "RB73");
