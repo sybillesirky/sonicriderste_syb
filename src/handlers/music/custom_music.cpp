@@ -48,6 +48,9 @@ USED void CustomMusicRandomizer(const u32 mode) {
             break;
         case 1: // menu music mode
             songID = lbl_RNG_Number(MENU_MUSIC_COUNT);
+            if (gsActivePad.holdButtons & XButton) {
+                    songID = 0x7E;
+                }   
             break;
         case 2: // race end music mode
             songID = lbl_RNG_Number(RACE_END_MUSIC_COUNT);
@@ -87,6 +90,11 @@ USED BOOL CustomMusicPlayer(const u32 mode) {
             PlayADX(gpasAdxtHandle_Bgm, stageMusic[(CurrentStage-1)*4 + songID]);
             break;
         case 1: // play menu music
+            if (songID == 0x7E) // Cumulus
+            {
+                PlayADX(gpasAdxtHandle_Bgm, Cumulus);
+                break;
+            }
             if (songID >= MENU_MUSIC_COUNT) {return FALSE;}
             PlayADX(gpasAdxtHandle_Bgm, menuMusic[songID]);
             break;

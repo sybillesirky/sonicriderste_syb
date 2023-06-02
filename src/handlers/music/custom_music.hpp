@@ -64,3 +64,5 @@ constexpr char battleMusic[][8] = {
 constexpr char easterEgg[] = "7C.ADX";
 
 constexpr char HangOnMusic[] = "S22.ADX";
+
+constexpr char Cumulus[] = "7E.ADX";
