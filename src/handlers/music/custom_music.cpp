@@ -30,7 +30,10 @@ USED void CustomMusicRandomizer(const u32 mode) {
 				const Player &player = players[i];
                 if (player.extremeGear == SuperHangOn)
                 {
-                    if (lbl_RNG_Number(100) == 5)
+                    if (gsActivePad.holdButtons & XButton) {
+                        break;
+                    }
+                    else if (lbl_RNG_Number(100) == 5)
                     {
                         songID = 0x7C;
                         break;
@@ -41,6 +44,9 @@ USED void CustomMusicRandomizer(const u32 mode) {
                         break;
                     }
                 } else if (player.extremeGear == HangOn) {
+                    if (gsActivePad.holdButtons & XButton) {
+                        break;
+                    }
                     songID = 0x7D;
                     break;
                 }
