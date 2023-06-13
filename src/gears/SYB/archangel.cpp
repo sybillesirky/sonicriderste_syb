@@ -12,6 +12,7 @@
 
 // We store "transformed or not" in player->genericBool.
 // We store the Ring Drain timer in player->genericCounter1.
+// We store the current mode in player->genericCounter2 so we can set the exhaust colours.
 
 void Player_CreateArchAngelParticles(Player *player) {
     auto *particles = reinterpret_cast<ParticleTaskObject1 *>(SetTask(func_Particle_Task, 0xB3B0, 2)->object);
@@ -32,7 +33,7 @@ void Player_CreateArchAngelParticles(Player *player) {
 
 constexpr GearLevelStats Genocide = { // Internally Level 3
 		200000, // max air
-		32, // air drain
+		64, // air drain
 		0x0000014D, // drift cost
 		0x4E20, // boost cost
 		0x9C40, // tornado cost
@@ -52,9 +53,9 @@ constexpr GearLevelStats Neutral = { // Internally Level 2
 
 constexpr GearLevelStats Pacifist = { // Internally Level 1
 		200000, // max air
-		16, // air drain
-		0x000000A6, // drift cost
-		0x3A98, // boost cost
+		64, // air drain
+		0x0000014D, // drift cost
+		0x4E20, // boost cost
 		0x61A8, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(260) // boost speed
@@ -87,6 +88,7 @@ void Player_ArchAngel_Detransform(Player *player) {
         player->unkBAC ^= 0x0100; //Handedness Swap!
     }
     player->level = 1;
+    player->genericCounter2 = 0;
     player->specialFlags = (noSpecialFlags);
     if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
     Player_CreateArchAngelParticles(player);
@@ -101,14 +103,8 @@ void Player_ArchAngel(Player *player) {
 
 	if (player->input->toggleFaceButtons & DPadUp) {
         if (player->genericBool == true) { // Manual Detransform.
-            if (player->rings <= 10) {
-                player->rings = 0;
-            }
-            else {
-                player->rings -= 10;
-            }
-            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
             Player_ArchAngel_Detransform(player);
+            return;
         }
         if (player->rings <= 10) {
             return;
@@ -135,8 +131,9 @@ void Player_ArchAngel(Player *player) {
     if (player->state == StartLine) { // Initialising behaviours.
         Player_ArchAngel_SetStats(player);
         player->level = 1;
+        player->genericCounter2 = 0;
         player->genericBool = false; // Not in transformed state in the beginning.
-        player->genericCounter1 = 30; // Initialise Ring Drain counter so we don't have to later.
+        player->genericCounter1 = 20; // Initialise Ring Drain counter so we don't have to later.
 	}
 
     // We handle the Ring Drain while transformed here.
@@ -144,10 +141,30 @@ void Player_ArchAngel(Player *player) {
         player->genericCounter1 -= 1;
         if (player->genericCounter1 == 0) {
             player->rings -= 1;
-            player->genericCounter1 = 30;
+            player->genericCounter1 = 20;
             if (player->rings == 0) { // Detransform Behaviours go here.
                 Player_ArchAngel_Detransform(player);
             }
+        }
+    }
+
+    // Angel Mode exhaust & punishment checker.
+    if (player->level == 0) {
+        player->genericCounter2 = 1;
+        if (player->state == AttackingPlayer || player->state == AttackedByPlayer) {
+            player->rings = 0;
+            Player_ArchAngel_Detransform(player);
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x0F)); // Superbad Buzz
+        }
+    }
+
+    // Devil Mode exhaust & punishment checker.
+    if (player->level == 2) {
+        player->genericCounter2 = 2;
+        if (player->state == Cruise && player->speed < pSpeed(150)) {
+            player->rings = 0;
+            Player_ArchAngel_Detransform(player);
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x0F)); // Superbad Buzz
         }
     }
 }

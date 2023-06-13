@@ -218,6 +218,17 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				break;
 			}
 
+			case DefaultGear: {
+				if (exLoads.gearExLoadID == SYBArchAngelEXLoad) {
+					if (Player->genericCounter2 == 1) { // Angel Cyan
+						color = 0x00FFFFFF;
+					}
+					else if (Player->genericCounter2 == 2) { // Devil Red
+						color = 0xFF0000FF;
+					}
+				}
+			}
+
 			// case SuperHangOn:
 			// 	struct HHOInfo *hhoInfo = &PlayerHHOInfo[Player->index];
 			// 	if (exLoads.gearExLoadID == HyperHangOnEXLoad)
