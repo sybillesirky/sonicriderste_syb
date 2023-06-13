@@ -1591,9 +1591,9 @@ struct Player {
 	/* 0x106A */ u8 grindRailDash;
 	/* 0x106B */ u8 flyHoopDash;
 	/* 0x106C */ BOOL splashCanyonFlyRoute;
-	/* 0x106D */ u8 SYBArSShSCounter; // SYB: TENTATIVE: ArS cooldown / ShS trick accum unk106D
-	/* 0x106E */ u8 SYBShSRsTLevelTracker; // SYB: TENTATIVE: ShS level tracker / RsT level tracker unk106E
-	/* 0x106F */ BOOL SYBBeenTricking; // SYB: TENTATIVE: ShS BeenTricking flag unk106F
+	/* 0x106D */ u8 genericCounter1; // SYB: Used for Shooting Star's Trick Counter & Airship's Air Dash cooldown.
+	/* 0x106E */ u8 genericCounter2; // SYB: Used to track the level on Shooting Star & Reserve Tank.
+	/* 0x106F */ BOOL genericBool; // SYB: Used to track trick state on Shooting Star.
 	/* 0x1070 */ u8 unk1070;
 	/* 0x1071 */ u8 unk1071;
 	/* 0x1072 */ u8 unk1072;

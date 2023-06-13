@@ -54,7 +54,7 @@ void Player_ReserveTank_SetBaseStats(Player *player) {
 		player->level = 2;
         player->level4 = true;
         player->currentAir = player->gearStats[player->level].maxAir;
-        player->SYBShSRsTLevelTracker = 2;
+        player->genericCounter2 = 2;
     }
 }
 
@@ -84,7 +84,7 @@ void Player_ReserveTank(Player *player) {
                 if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); //Ring loss SFX
                 player->level -= 1;
                 player->rings -= 20;
-                player->SYBShSRsTLevelTracker -= 1;
+                player->genericCounter2 -= 1;
                 Player_ReserveTank_UpdateStats(player, &Level3);
                 Player_CreateReserveTankParticles(player);
 		        player->currentAir = player->gearStats[player->level].maxAir;
@@ -92,7 +92,7 @@ void Player_ReserveTank(Player *player) {
     }
 
     if (player->previousState == Death) {
-        player ->level = player->SYBShSRsTLevelTracker;
+        player ->level = player->genericCounter2;
     }
 
 }

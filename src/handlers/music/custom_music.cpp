@@ -31,7 +31,7 @@ USED void CustomMusicRandomizer(const u32 mode) {
                 if (player.extremeGear == SuperHangOn)
                 {
                     if (gsActivePad.holdButtons & XButton) {
-                        break;
+                        break; // Music bypass
                     }
                     else if (lbl_RNG_Number(100) == 5)
                     {
@@ -45,7 +45,7 @@ USED void CustomMusicRandomizer(const u32 mode) {
                     }
                 } else if (player.extremeGear == HangOn) {
                     if (gsActivePad.holdButtons & XButton) {
-                        break;
+                        break; // Music bypass
                     }
                     songID = 0x7D;
                     break;

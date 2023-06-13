@@ -211,7 +211,7 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 
 			case LightBoard: {
 				if (exLoads.gearExLoadID == SYBAirshipEXLoad) {
-					if (Player->SYBArSShSCounter != 0) {
+					if (Player->genericCounter1 != 0) {
 						color = 0xFF0000FF;
 					}
 				}
