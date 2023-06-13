@@ -26383,6 +26383,7 @@ EXLoadHUDColors:
     .long 0x0 # SYB: Reserve Tank
     .long 0x0 # SYB: Shooting Star
     .long 0x0 # SYB: Airship
+    .long 0x0 # SYB: ArchAngel
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27100,6 +27101,16 @@ EXLoadBoostColors:
     .single -1
 
     # SYB: Airship
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+
+    # SYB: ArchAngel
     .single -1
     .single -1
     .single -1
