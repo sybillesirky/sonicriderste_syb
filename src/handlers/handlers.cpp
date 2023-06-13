@@ -40,6 +40,7 @@
 //#include "gears/turbostar.hpp"
 //#include "gears/airtank.hpp"
 //#include "gears/eggsterminator.hpp"
+#include "gears/SYB/test_gunbike.hpp" //SYB: I added this!
 #include "gears/SYB/reservetank.hpp" //SYB: I added this!
 #include "gears/SYB/shootingstar.hpp" //SYB: I added this!
 #include "gears/SYB/airship.hpp" //SYB: I added this!
@@ -101,6 +102,7 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_IgnoreTurbulenceHandler(player);
     Player_AirOutButton(player);
     Player_Afterburner(player);
+    SYB_Player_GunBike(player);
     Player_ReserveTank(player); //SYB: I added this!
     Player_ShootingStar(player); //SYB: I added this!
     Player_Airship(player); //SYB: I added this!
