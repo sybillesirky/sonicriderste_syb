@@ -27,6 +27,7 @@ void SYB_Player_GunBike(Player *player) {
 		//	player->state = Jump;
 		//}
 		if (player->state == Fall || player->state == Jump) {
+			player->genericBool = true;
 			player->verticalSpeed = 0;
 			player->rings = player->gravity;
 			if (player->input->holdFaceButtons & LStickLeft) {
@@ -42,5 +43,14 @@ void SYB_Player_GunBike(Player *player) {
 				player->verticalRotation -= test_turnspeed;
 			}
 		}
+	}
+	else {
+		if (player->state == Fall || player->state == Jump) {
+			if (player->genericBool == true) {
+				player->state = Fall;
+				player->speed += pSpeed(200);
+			}
+		}
+		player->genericBool = false;
 	}
 }
