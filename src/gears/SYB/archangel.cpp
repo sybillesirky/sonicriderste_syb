@@ -3,13 +3,6 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-// CONCEPT: ARCHANGEL
-// A Gear that starts off mediocre and doesn't level up (stuck at level 2), but can change its properties
-// through what I want to call an "offering", either to the Angel or to the Devil (said outcome is random).
-// ANGEL: Go down to Level 1, but your speed increases greatly.
-// DEVIL: Go up to level 3, but you boost cost increases greatly.
-// Your mode lasts for as long as you have Rings. Rings go down by 1 per second (60 frames). (THAT IS SUBJECT TO CHANGE.)
-
 // We store "transformed or not" in player->genericBool.
 // We store the Ring Drain timer in player->genericCounter1.
 // We store the current mode in player->genericCounter2 so we can set the exhaust colours.
@@ -92,6 +85,7 @@ void Player_ArchAngel_Detransform(Player *player) {
     player->specialFlags = (noSpecialFlags);
     if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
     Player_CreateArchAngelParticles(player);
+    player->currentAir = player->gearStats[player->level].maxAir;
 }
 
 void Player_ArchAngel(Player *player) {
@@ -110,13 +104,13 @@ void Player_ArchAngel(Player *player) {
             return;
         }
         if (lbl_RNG_Number(2) == 0) { // Pacifist Mode
-            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x40));
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x40)); // UFO SFX
             player->specialFlags |= noSpeedLossChargingJump;
             player->level = 0;
             player->genericBool = true;
         }
         else { // Genocide Mode
-            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x1C));
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x1C)); // Roar SFX
             player->specialFlags |= berserkerEffect;
             player->specialFlags |= noPits;
             player->specialFlags |= noSpeedLossTurning;
@@ -128,10 +122,12 @@ void Player_ArchAngel(Player *player) {
         player->rings -= 10;
     }
 
-    if (player->state == StartLine) { // Initialising behaviours.
+    // Initialising behaviours.
+    if (player->state == StartLine) {
         Player_ArchAngel_SetStats(player);
         player->level = 1;
         player->genericCounter2 = 0;
+        player->currentAir = player->gearStats[player->level].maxAir;
         player->genericBool = false; // Not in transformed state in the beginning.
         player->genericCounter1 = 20; // Initialise Ring Drain counter so we don't have to later.
 	}
@@ -158,13 +154,23 @@ void Player_ArchAngel(Player *player) {
         }
     }
 
-    // Devil Mode exhaust & punishment checker.
+    // Devil Mode behaviours.
     if (player->level == 2) {
+
+        // For exhaust trial.
         player->genericCounter2 = 2;
+
+        // Punishment checker.
         if (player->state == Cruise && player->speed < pSpeed(150)) {
             player->rings = 0;
             Player_ArchAngel_Detransform(player);
             if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x0F)); // Superbad Buzz
+        }
+
+        // Ring gain on hit.
+        if (player->previousState == AttackingPlayer) {
+            player->rings += 30;
+            player->previousState = Cruise;
         }
     }
 }

@@ -46,6 +46,14 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
             } else bcm += 0.05f;
             break;
 
+        case DefaultGear:
+            if (exLoads.gearExLoadID == SYBArchAngelEXLoad) {
+                if (player->level == 2) {
+                    bcm += 0.07f;
+                }
+            }
+            break;
+
         // case TurboStar: // experimental
         // if (exLoads.gearExLoadID == OllieKingGearEXLoad) break;
         //         switch (player->level) {
