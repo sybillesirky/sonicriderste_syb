@@ -8,7 +8,7 @@
 constexpr GearLevelStats Level3 = {
 		300000, // max air
 		120, // air drain
-		200, // drift cost
+		0x0000029A, // drift cost
 		0x9C40, // boost cost
 		0x4E20, // tornado cost
 		pSpeed(100), // drift dash speed, unused

@@ -150,6 +150,9 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		case SYBArchAngelEXLoad:
 			sprintf(filename.data(), "SYBD");
 			break;
+		case SYBWindStarEXLoad:
+			sprintf(filename.data(), "SYBE");
+			break;
 		default:
 			break;
 	}
@@ -305,6 +308,9 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 			break;
 		case SYBArchAngelEXLoad:
 			sprintf(CSS_BoardFilename[index], "SYBD");
+			break;
+		case SYBWindStarEXLoad:
+			sprintf(CSS_BoardFilename[index], "SYBE");
 			break;
 		default:
 			break;

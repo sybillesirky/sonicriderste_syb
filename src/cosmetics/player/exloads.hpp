@@ -4,7 +4,7 @@
 #include "containers/graphicalobject.hpp"
 
 #define CharacterEXLoadSlots 11 //SYB: WE CHANGED THIS FROM 8!
-#define GearEXLoadSlots 10 //SYB: WE CHANGED THIS FROM 5!
+#define GearEXLoadSlots 11 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -201,6 +201,13 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				-1,
 				DefaultGear,
 				0xF5,                 0x1A
+		},
+                {
+                                EXLoadType,
+				SYBWindStarEXLoad,
+				-1,
+				AutoSlider,
+				0xF5,                 0x1A
 		}
 };
 
@@ -231,6 +238,7 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F, // SYB: Shooting Star
         -1.0F, // SYB: Airship
         -1.0F, // SYB: ArchAngel
+        -1.0F, // SYB: Wind Star
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -260,6 +268,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype, //SYB: Shooting Star
         NoEXLoadArchetype, //SYB: Airship
         NoEXLoadArchetype, //SYB: ArchAngel
+        NoEXLoadArchetype, //SYB: Wind Star
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);

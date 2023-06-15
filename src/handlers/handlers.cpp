@@ -45,6 +45,7 @@
 #include "gears/SYB/shootingstar.hpp" //SYB: I added this!
 #include "gears/SYB/airship.hpp" //SYB: I added this!
 #include "gears/SYB/archangel.hpp" //SYB: I added this!
+#include "gears/SYB/windstar.hpp" //SYB: I added this!
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -107,4 +108,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_ShootingStar(player); //SYB: I added this!
     Player_Airship(player); //SYB: I added this!
     Player_ArchAngel(player); //SYB: I added this!
+    Player_WindStar(player); //SYB: I added this!
 }

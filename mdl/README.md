@@ -20,3 +20,4 @@ As this project contains custom character/gear additions, all custom model files
 - SYBB: 
 - SYBC: Airship Model
 - SYBD: ArchAngel model
+- SYBE: Wind Star Model
