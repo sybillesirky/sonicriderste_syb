@@ -81,20 +81,26 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 					case ERider:
 						sprintf(filename.data(), "RB40");
 						break;
+					case AirTank:
+						sprintf(filename.data(), "RB41");
+						break;
 					case HeavyBike:
 						sprintf(filename.data(), "PB20B");
 						break;
-					case CoverS:
+					case Omnipotence:
 						sprintf(filename.data(), "RB44");
 						break;
-					case CoverF:
+					case CoverS:
 						sprintf(filename.data(), "RB45");
 						break;
-					case CoverP:
+					case CoverF:
 						sprintf(filename.data(), "RB46");
 						break;
-					case HangOn:
+					case CoverP:
 						sprintf(filename.data(), "RB47");
+						break;
+					case HangOn:
+						sprintf(filename.data(), "RB48");
 						break;
 					case Darkness:
 						sprintf(filename.data(), "PD00");
@@ -232,20 +238,26 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 						case ERider:
 							sprintf(CSS_BoardFilename[index], "RB40");
 							break;
+						case AirTank:
+							sprintf(CSS_BoardFilename[index], "RB41");
+							break;
 						case HeavyBike:
 							sprintf(CSS_BoardFilename[index], "PB20B");
 							break;
-						case CoverS:
+						case Omnipotence:
 							sprintf(CSS_BoardFilename[index], "RB44");
 							break;
-						case CoverF:
+						case CoverS:
 							sprintf(CSS_BoardFilename[index], "RB45");
 							break;
-						case CoverP:
+						case CoverF:
 							sprintf(CSS_BoardFilename[index], "RB46");
 							break;
-						case HangOn:
+						case CoverP:
 							sprintf(CSS_BoardFilename[index], "RB47");
+							break;
+						case HangOn:
+							sprintf(CSS_BoardFilename[index], "RB48");
 							break;
 						case Darkness:
 							sprintf(CSS_BoardFilename[index], "PD00");
