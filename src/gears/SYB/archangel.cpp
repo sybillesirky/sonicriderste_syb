@@ -103,6 +103,8 @@ void Player_ArchAngel(Player *player) {
         if (player->rings <= 10) {
             return;
         }
+
+        // Angel/Devil Mode behaviours.
         if (lbl_RNG_Number(2) == 0) { // Pacifist Mode
             if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x40)); // UFO SFX
             player->specialFlags |= noSpeedLossChargingJump;
@@ -118,6 +120,9 @@ void Player_ArchAngel(Player *player) {
             player->unkBAC ^= 0x0100; //Handedness Swap!
             player->genericBool = true;
         }
+
+        // Generic transformation behaviour.
+        player->currentAir += 50000;
         Player_CreateArchAngelParticles(player);
         player->rings -= 10;
     }
