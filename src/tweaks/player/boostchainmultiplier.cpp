@@ -55,10 +55,7 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
             break;
 
         case AutoSlider:
-            if (exLoads.gearExLoadID == SYBWindStarEXLoad) {
-                bcm += player->rings / 666.67f;
-            }
-            else if (exLoads.gearExLoadID == SYBRoadStarEXLoad) {
+            if (exLoads.gearExLoadID == SYBRoadStarEXLoad) {
                 bcm += player->rings / 666.67f;
             }
 

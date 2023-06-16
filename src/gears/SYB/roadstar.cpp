@@ -31,7 +31,7 @@ constexpr GearLevelStats Level1 = {
 		0x61A8, // boost cost
 		0x61A8, // tornado cost
 		pSpeed(500), // drift dash speed, unused
-		pSpeed(190) // boost speed
+		pSpeed(195) // boost speed
 };
 
 constexpr GearLevelStats Level2 = {
@@ -41,7 +41,7 @@ constexpr GearLevelStats Level2 = {
 		0x7530, // boost cost
 		0x7530, // tornado cost
 		pSpeed(500), // drift dash speed, unused
-		pSpeed(220) // boost speed
+		pSpeed(225) // boost speed
 };
 
 constexpr GearLevelStats Level3 = {
@@ -51,7 +51,7 @@ constexpr GearLevelStats Level3 = {
 		0x9C40, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(500), // drift dash speed, unused
-		pSpeed(235) // boost speed
+		pSpeed(240) // boost speed
 };
 
 void Player_RoadStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
@@ -68,7 +68,7 @@ void Player_RoadStar_LevelUpdater(Player *player, const GearLevelStats *stats, i
 }
 
 void Player_RoadStar_SetStats(Player *player) {
-    if (player->gearStats[0].boostCost != 190) {
+    if (player->gearStats[0].boostCost != 195) {
         Player_RoadStar_LevelUpdater(player, &Level1, 0);
         Player_RoadStar_LevelUpdater(player, &Level2, 1);
         Player_RoadStar_LevelUpdater(player, &Level3, 2);
@@ -83,8 +83,8 @@ void Player_RoadStar(Player *player) {
 	if (player->extremeGear != AutoSlider) return;
 
 	// Ensure player never gets a buffer of tricks beyond Level 3.
-	if (player->genericCounter1 > 30) {
-		player->genericCounter1 = 30;
+	if (player->genericCounter1 > 24) {
+		player->genericCounter1 = 24;
 	}
 
 	// Basically define "player is in trick state".
@@ -104,9 +104,9 @@ void Player_RoadStar(Player *player) {
 				player->genericCounter2 = player->level;
 
 				// Update the level and stats now that we have the new amount of tricks.
-				if (player->genericCounter1 >= 30) { // Level 3
+				if (player->genericCounter1 >= 24) { // Level 3
 					player->level = 2;
-				} else if (player->genericCounter1 >= 15) { // Level 2
+				} else if (player->genericCounter1 >= 12) { // Level 2
 					player->level = 1;
 				} else { // Level 1
 					player->level = 0;
