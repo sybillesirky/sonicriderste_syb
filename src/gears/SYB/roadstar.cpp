@@ -1,4 +1,4 @@
-#include "windstar.hpp"
+#include "roadstar.hpp"
 #include "handlers/player/initgeardata.hpp"
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
@@ -7,7 +7,7 @@
 // player->genericCounter1 = Trick Accumulator
 // player->genericCounter2 = Level Tracker
 
-void Player_CreateWindStarParticles(Player *player) {
+void Player_CreateRoadStarParticles(Player *player) {
     auto *particles = reinterpret_cast<ParticleTaskObject1 *>(SetTask(func_Particle_Task, 0xB3B0, 2)->object);
     particles->unk72 = player->index;
     particles->unk0 = 0.0f;
@@ -54,7 +54,7 @@ constexpr GearLevelStats Level3 = {
 		pSpeed(235) // boost speed
 };
 
-void Player_WindStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
+void Player_RoadStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
     player->gearStats[inputLevel].maxAir = stats->maxAir;
     player->gearStats[inputLevel].airDrain = stats->passiveAirDrain;
     player->gearStats[inputLevel].driftCost = stats->driftingAirCost;
@@ -67,19 +67,19 @@ void Player_WindStar_LevelUpdater(Player *player, const GearLevelStats *stats, i
 	}
 }
 
-void Player_WindStar_SetStats(Player *player) {
+void Player_RoadStar_SetStats(Player *player) {
     if (player->gearStats[0].boostCost != 190) {
-        Player_WindStar_LevelUpdater(player, &Level1, 0);
-        Player_WindStar_LevelUpdater(player, &Level2, 1);
-        Player_WindStar_LevelUpdater(player, &Level3, 2);
+        Player_RoadStar_LevelUpdater(player, &Level1, 0);
+        Player_RoadStar_LevelUpdater(player, &Level2, 1);
+        Player_RoadStar_LevelUpdater(player, &Level3, 2);
     }
 }
 
-void Player_WindStar(Player *player) {
+void Player_RoadStar(Player *player) {
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 
-	if (exLoads.gearExLoadID != SYBWindStarEXLoad) return;
+	if (exLoads.gearExLoadID != SYBRoadStarEXLoad) return;
 	if (player->extremeGear != AutoSlider) return;
 
 	// Ensure player never gets a buffer of tricks beyond Level 3.
@@ -116,7 +116,7 @@ void Player_WindStar(Player *player) {
 				if (player->level != player->genericCounter2) {
 					player->currentAir = player->gearStats[player->level].maxAir;
 					if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
-					Player_CreateWindStarParticles(player);
+					Player_CreateRoadStarParticles(player);
 				}
 			}
 		}
@@ -127,7 +127,7 @@ void Player_WindStar(Player *player) {
 
 	if (player->state == StartLine) { // Initialising behaviours.
 		player->genericCounter1 = 0;
-        Player_WindStar_SetStats(player);
+        Player_RoadStar_SetStats(player);
 		player->genericBool = false;
 	}
 

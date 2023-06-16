@@ -326,7 +326,8 @@ enum EXLoads {NoneEXLoad,
         TheBeastEXLoad, E10BEXLoad, HatsuneMikuEXLoad, MetalSonicScarfEXLoad,
         RealaEXLoad, GonGonEXLoad, SYBSuperSonicEXLoad, SYBSeelkadoomEXLoad,
 		SYBGunBikeEXLoad, SYBAndroidEXLoad, SYBReserveTankEXLoad,
-		SYBShootingStarEXLoad, SYBAirshipEXLoad, SYBArchAngelEXLoad, SYBWindStarEXLoad, EXLoadCount};
+		SYBShootingStarEXLoad, SYBAirshipEXLoad, SYBArchAngelEXLoad,
+		SYBWindStarEXLoad, SYBRoadStarEXLoad, EXLoadCount};
 
 struct Collision {
 	union {
@@ -1546,7 +1547,7 @@ struct Player {
 	/* 0x103D */ u8 unk103D;
 	/* 0x103E */ u8 unk103E;
 	/* 0x103F */ u8 unk103F;
-	/* 0x1040 */ u8 unk1040;
+	/* 0x1040 */ u8 unk1040; // Set to 1 if performing a tornado.
 	/* 0x1041 */ u8 unk1041;
 	/* 0x1042 */ u8 turbulenceTrickType;
 	/* 0x1043 */ u8 qteState;

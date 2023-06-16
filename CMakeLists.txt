@@ -171,7 +171,8 @@ set(DOL_SOURCES     # main
 		src/gears/SYB/shootingstar.cpp
 		src/gears/SYB/airship.cpp 
 		src/gears/SYB/archangel.cpp
-		src/gears/SYB/windstar.cpp )           # main
+		src/gears/SYB/windstar.cpp
+		src/gears/SYB/roadstar.cpp )           # main
 
 #====================================================================================
 # Extra plumbing stuff. Hopefully nothing in here will need to be changed

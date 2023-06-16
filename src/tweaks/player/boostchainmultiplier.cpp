@@ -58,6 +58,9 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
             if (exLoads.gearExLoadID == SYBWindStarEXLoad) {
                 bcm += player->rings / 666.67f;
             }
+            else if (exLoads.gearExLoadID == SYBRoadStarEXLoad) {
+                bcm += player->rings / 666.67f;
+            }
 
         // case TurboStar: // experimental
         // if (exLoads.gearExLoadID == OllieKingGearEXLoad) break;
