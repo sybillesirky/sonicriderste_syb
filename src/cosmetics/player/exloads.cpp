@@ -382,6 +382,10 @@ const char* GetEXLoadCharacterModel(Player *player) {
 			return "SYB0";
 		case SYBAndroidEXLoad:
 			return "SYB5";
+		case SYBFlySonicEXLoad:
+			return "PSCO";
+		case SYBPowerSonicEXLoad:
+			return "PSCO";
         default:
             return nullptr;
     }

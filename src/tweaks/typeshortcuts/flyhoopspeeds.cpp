@@ -260,6 +260,10 @@ ASMUsed void CustomFlyHoopSpeeds(Player *player, Object *object, f32 currentFlyH
 		}
 	}
 
+	if (player->characterArchetype == AttunedArchetype) { // ATN: Attuned Archetype speed bonus.
+		newFlyHoopSpeed *= 1.2f;
+	}
+
 	switch(player->extremeGear){
 		case CoverS:
 			if(player->characterptr->type != 0x1){

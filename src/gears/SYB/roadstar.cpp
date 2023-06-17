@@ -68,7 +68,7 @@ void Player_RoadStar_LevelUpdater(Player *player, const GearLevelStats *stats, i
 }
 
 void Player_RoadStar_SetStats(Player *player) {
-    if (player->gearStats[0].boostCost != 195) {
+    if (player->gearStats[0].boostSpeed != 195) {
         Player_RoadStar_LevelUpdater(player, &Level1, 0);
         Player_RoadStar_LevelUpdater(player, &Level2, 1);
         Player_RoadStar_LevelUpdater(player, &Level3, 2);

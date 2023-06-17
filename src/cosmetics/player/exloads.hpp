@@ -3,7 +3,7 @@
 #include "context.hpp"
 #include "containers/graphicalobject.hpp"
 
-#define CharacterEXLoadSlots 11 //SYB: WE CHANGED THIS FROM 8!
+#define CharacterEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 8!
 #define GearEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
@@ -128,7 +128,21 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
                 Shadow,
                 -1,
                 0xD6,                 static_cast<u16>(-1)
-        }
+        },
+                {
+                EXLoadType,
+                SYBFlySonicEXLoad,
+                Silver,
+                -1,
+                0x3D,                 static_cast<u16>(-1)
+        },
+                {
+                EXLoadType,
+                SYBPowerSonicEXLoad,
+                Knuckles,
+                -1,
+                0x3D,                 static_cast<u16>(-1)
+        },
 };
 
 constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
@@ -247,6 +261,8 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F, // SYB: ArchAngel
         -1.0F, // SYB: Wind Star
         -1.0F, // SYB: Road Star
+        -1.0F, // SYB: Attuned Fly Type
+        -1.0F, // SYB: Attuned Power Type
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -269,7 +285,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         BoostArchetype, // reala
         AllRounder, // gongon
 	LateBooster, //SYB: Super Sonic
-	DriftArchetype, //SYB: Seelkadoom
+	AttunedArchetype, //SYB: Seelkadoom
         NoEXLoadArchetype, //SYB: Gun Bike
 	CombatArchetype, //SYB: Android
         NoEXLoadArchetype, //SYB: Reserve Tank
@@ -278,6 +294,8 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype, //SYB: ArchAngel
         NoEXLoadArchetype, //SYB: Wind Star
         NoEXLoadArchetype, //SYB: Road Star
+        AttunedArchetype, //SYB: Attuned Fly Type
+        AttunedArchetype, //SYB: Attuned Power Type
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);

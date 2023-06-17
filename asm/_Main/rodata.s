@@ -26386,6 +26386,8 @@ EXLoadHUDColors:
     .long 0x0 # SYB: ArchAngel
     .long 0x0 # SYB: Wind Star
     .long 0x0 # SYB: Road Star
+    .long 0x2C35E8FF # SYB: Attuned Fly Type
+    .long 0x2C35E8FF # SYB: Attuned Power Type
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27141,6 +27143,26 @@ EXLoadBoostColors:
     .single -1
     .single -1
     .single -1
+
+    # SYB: Attuned Fly Type
+    .4byte 0x3D888889
+    .4byte 0x00000000
+    .4byte 0x3F7EFEFF
+    .4byte 0x3F800000
+    .4byte 0x3F4BCBCC
+    .4byte 0x3F2BABAC
+    .4byte 0x00000000
+    .4byte 0x3F800000
+
+    # SYB: Attuned Power Type
+    .4byte 0x3D888889
+    .4byte 0x00000000
+    .4byte 0x3F7EFEFF
+    .4byte 0x3F800000
+    .4byte 0x3F4BCBCC
+    .4byte 0x3F2BABAC
+    .4byte 0x00000000
+    .4byte 0x3F800000
 
 .global data_C24D08B0
 data_C24D08B0:

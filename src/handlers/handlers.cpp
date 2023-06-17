@@ -47,6 +47,7 @@
 #include "gears/SYB/archangel.hpp" //SYB: I added this!
 #include "gears/SYB/windstar.hpp" //SYB: I added this!
 #include "gears/SYB/roadstar.hpp" //SYB: I added this!
+#include "tweaks/player/archetype/SYB/attunedarchetype.hpp" //SYB: I added this. Highly experimental!
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -111,4 +112,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_ArchAngel(player); //SYB: I added this!
     Player_WindStar(player); //SYB: I added this!
     Player_RoadStar(player); //SYB: I added this!
+    // Player_AttunedArchetype(player); //SYB: I added this!
 }

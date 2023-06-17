@@ -68,11 +68,10 @@ void Player_WindStar_LevelUpdater(Player *player, const GearLevelStats *stats, i
 }
 
 void Player_WindStar_SetStats(Player *player) {
-    if (player->gearStats[0].boostCost != 190) {
-        Player_WindStar_LevelUpdater(player, &Level1, 0);
-        Player_WindStar_LevelUpdater(player, &Level2, 1);
-        Player_WindStar_LevelUpdater(player, &Level3, 2);
-    }
+	player->specialFlags = (tornadoBoost);
+    Player_WindStar_LevelUpdater(player, &Level1, 0);
+    Player_WindStar_LevelUpdater(player, &Level2, 1);
+    Player_WindStar_LevelUpdater(player, &Level3, 2);
 }
 
 void Player_WindStar(Player *player) {
@@ -83,8 +82,8 @@ void Player_WindStar(Player *player) {
 	if (player->extremeGear != AutoSlider) return;
 
 	// Ensure player never gets a buffer of tricks beyond Level 3.
-	if (player->genericCounter1 > 30) {
-		player->genericCounter1 = 30;
+	if (player->genericCounter1 > 24) {
+		player->genericCounter1 = 24;
 	}
 
 	// Basically define "player is in trick state".
@@ -104,9 +103,9 @@ void Player_WindStar(Player *player) {
 				player->genericCounter2 = player->level;
 
 				// Update the level and stats now that we have the new amount of tricks.
-				if (player->genericCounter1 >= 30) { // Level 3
+				if (player->genericCounter1 >= 24) { // Level 3
 					player->level = 2;
-				} else if (player->genericCounter1 >= 15) { // Level 2
+				} else if (player->genericCounter1 >= 12) { // Level 2
 					player->level = 1;
 				} else { // Level 1
 					player->level = 0;
@@ -125,10 +124,44 @@ void Player_WindStar(Player *player) {
 		player->genericBool = false;
 	}
 
-	if (player->state == StartLine) { // Initialising behaviours.
+	// Initialising behaviours.
+	if (player->state == StartLine) {
 		player->genericCounter1 = 0;
-        Player_WindStar_SetStats(player);
+		if (player->gearStats[0].boostSpeed != 190) {
+			Player_WindStar_SetStats(player);
+    	}
 		player->genericBool = false;
+	}
+
+	// Tailwind Mode Activation.
+	if (player->unk1040 == 1 && player->genericBool2 == false) { // If we did a tornado while not transformed.
+		if (player->rings >= 20) {
+			player->genericCounter3 = 20;
+			player->genericBool2 = true; // Activate mode.
+			player->speed += pSpeed(50);
+			PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3D)); // Speed Shoes SFX
+
+			// Update Boost Speeds
+			player->gearStats[0].boostSpeed += pSpeed(20);
+			player->gearStats[1].boostSpeed += pSpeed(20);
+			player->gearStats[2].boostSpeed += pSpeed(20);
+		}
+    }
+
+	// Tailwind Mode Deactivation.
+	if (player->genericBool2 == true && player->rings == 0) {
+		Player_WindStar_SetStats(player);
+		player->genericBool2 = false;
+	}
+
+	// Tailwind Mode Buffs.
+	if (player->genericBool2 == true) {
+		player->currentAir += 200;
+		if (player->genericCounter3 <= 0) {
+			player->rings -= 1;
+			player->genericCounter3 = 21;
+		}
+		player->genericCounter3 -= 1;
 	}
 
 }

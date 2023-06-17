@@ -227,6 +227,16 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 						color = 0xFF0000FF;
 					}
 				}
+				break;
+			}
+
+			case AutoSlider: {
+				if (exLoads.gearExLoadID == SYBWindStarEXLoad) {
+					if (Player->genericBool2 == true) {
+						color = 0x00CC00FF;
+					}
+				}
+				break;
 			}
 
 			// case SuperHangOn:
