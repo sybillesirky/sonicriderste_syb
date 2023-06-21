@@ -13,7 +13,7 @@ constexpr CharacterArchetypes AllCharacterArchetypes[] = {
 		AllRounder, // eggman
 		AllRounder, // cream
 		DriftArchetype, // rouge
-		AllRounder, // shadow
+		CombatArchetype, // shadow SYB: Popular demand change.
 		SuperSonicArchetype, // super sonic
 		TopSpeedArchetype, // nights
 		LateBooster, // aiai

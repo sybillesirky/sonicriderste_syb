@@ -280,7 +280,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype,
         NoEXLoadArchetype,
         NoEXLoadArchetype,
-        CombatArchetype, // hatsune miku
+        AllRounder, // hatsune miku SYB: This is changed due to popular demand.
         NoEXLoadArchetype,
         BoostArchetype, // reala
         AllRounder, // gongon
