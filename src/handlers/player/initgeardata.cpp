@@ -48,6 +48,10 @@ inline f32 CustomTopSpeeds(Player *player, f32 topSpeed, s32 level) {
 	if (exLoads.gearExLoadID == SYBAirshipEXLoad) { // SYB: Airship set base top speed to 185.
 		topSpeed += pSpeed(40);
 	}
+
+	if (exLoads.gearExLoadID == SYBShootingStarEXLoad) { // SYB: Shooting Star set base top speed to 185.
+		topSpeed -= pSpeed(10);
+	}
 	
 	if (player->character == Emerl) {
 		topSpeed += EmerlTopSpeedBonus[level];

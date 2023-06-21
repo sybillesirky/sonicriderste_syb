@@ -67,8 +67,8 @@ void Player_ShootingStar_LevelUpdater(Player *player, const GearLevelStats *stat
 }
 
 void Player_ShootingStar_SetStats(Player *player) {
-    if (player->specialFlags != (noSpeedLossTurning)) {
-        player->specialFlags = (noSpeedLossTurning);
+    if (player->gearStats[0].boostSpeed != pSpeed(210)) {
+        player->specialFlags &= ~noSpeedLossChargingJump;
         Player_ShootingStar_LevelUpdater(player, &Level1, 0);
         Player_ShootingStar_LevelUpdater(player, &Level2, 1);
         Player_ShootingStar_LevelUpdater(player, &Level3, 2);
@@ -100,7 +100,7 @@ void Player_ShootingStar(Player *player) {
 			// If trick rank is lower than X, induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && player->genericBool == true) {
 				if (player->level > 0) {
-					player->speed += pSpeed(20);
+					player->speed += pSpeed(25);
 					if (player->rings >= 20) {
 						player->rings -= 20;
 						if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
