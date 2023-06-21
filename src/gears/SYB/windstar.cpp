@@ -25,33 +25,33 @@ void Player_CreateWindStarParticles(Player *player) {
 }
 
 constexpr GearLevelStats Level1 = {
-		100000, // max air
-		16, // air drain
-		0x000000A6, // drift cost
-		0x61A8, // boost cost
-		0x61A8, // tornado cost
-		pSpeed(500), // drift dash speed, unused
-		pSpeed(190) // boost speed
+	100000, // max air
+	16, // air drain
+	0x000000A6, // drift cost
+	0x61A8, // boost cost
+	0x61A8, // tornado cost
+	pSpeed(500), // drift dash speed, unused
+	pSpeed(190) // boost speed
 };
 
 constexpr GearLevelStats Level2 = {
-		150000, // max air
-		16, // air drain
-		0x000000FA, // drift cost
-		0x7530, // boost cost
-		0x7530, // tornado cost
-		pSpeed(500), // drift dash speed, unused
-		pSpeed(220) // boost speed
+	150000, // max air
+	16, // air drain
+	0x000000FA, // drift cost
+	0x7530, // boost cost
+	0x7530, // tornado cost
+	pSpeed(500), // drift dash speed, unused
+	pSpeed(220) // boost speed
 };
 
 constexpr GearLevelStats Level3 = {
-		200000, // max air
-		16, // air drain
-		0x0000014D, // drift cost
-		0x9C40, // boost cost
-		0x9C40, // tornado cost
-		pSpeed(500), // drift dash speed, unused
-		pSpeed(235) // boost speed
+	200000, // max air
+	16, // air drain
+	0x0000014D, // drift cost
+	0x9C40, // boost cost
+	0x9C40, // tornado cost
+	pSpeed(500), // drift dash speed, unused
+	pSpeed(235) // boost speed
 };
 
 void Player_WindStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
@@ -63,7 +63,7 @@ void Player_WindStar_LevelUpdater(Player *player, const GearLevelStats *stats, i
     //player->gearStats[inputLevel].driftDashSpeed = stats->driftDashSpeed;
     player->gearStats[inputLevel].boostSpeed = stats->boostSpeed;
 	if (player->characterArchetype == BoostArchetype) {
-		 player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
+		player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
 	}
 }
 

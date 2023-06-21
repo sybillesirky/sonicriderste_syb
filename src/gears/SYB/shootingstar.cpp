@@ -36,7 +36,7 @@ constexpr GearLevelStats Level3 = {
 
 constexpr GearLevelStats Level2 = {
 		150000, // max air
-		16, // air drain
+		32, // air drain
 		100, // drift cost
 		0x9C40, // boost cost
 		0x9C40, // tornado cost
@@ -48,8 +48,8 @@ constexpr GearLevelStats Level1 = {
 		100000, // max air
 		16, // air drain
 		100, // drift cost
-		0x9C40, // boost cost
-		0x9C40, // tornado cost
+		0x7530, // boost cost
+		0x7530, // tornado cost
 		pSpeed(100), // drift dash speed, unused
 		pSpeed(210) // boost speed
 };
@@ -100,7 +100,7 @@ void Player_ShootingStar(Player *player) {
 			// If trick rank is lower than X, induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && player->genericBool == true) {
 				if (player->level > 0) {
-					player->speed += pSpeed(40);
+					player->speed += pSpeed(20);
 					if (player->rings >= 20) {
 						player->rings -= 20;
 						if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
