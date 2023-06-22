@@ -113,14 +113,14 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
                 SYBSuperSonicEXLoad,
                 Sonic,
                 -1,
-                0xF0,                 static_cast<u16>(-1)
+                0xA0,                 static_cast<u16>(-1)
         },
 		{
                 EXLoadType,
                 SYBSeelkadoomEXLoad,
                 Shadow,
                 -1,
-                0xF3,                 static_cast<u16>(-1)
+                0xC7,                 static_cast<u16>(-1)
         },
 		{
                 EXLoadType,
@@ -134,7 +134,7 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
                 SYBChristmasNightsEXLoad,
                 Nights,
                 -1,
-                0xD6,                 static_cast<u16>(-1)
+                0xC1,                 static_cast<u16>(-1)
         }
 };
 
@@ -178,7 +178,7 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				LLoadType,
 				SYBGunBikeEXLoad,
 				-1,
-				AirTank,
+				TotalGearAmount,
 				0xF5,                 0xF6
 		},
                 {
