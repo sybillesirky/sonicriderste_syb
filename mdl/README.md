@@ -17,8 +17,9 @@ As this project contains custom character/gear additions, all custom model files
 - SYB8: Caliburn gear model
 - SYB9: Reserve Tank model
 - SYBA: Shooting Star model
-- SYBB: 
-- SYBC: Airship Model
+- SYBB: Money Crisis model
+- SYBC: Airship model
 - SYBD: ArchAngel model
-- SYBE: Wind Star Model
-- SYBF: Road Star Model
+- SYBE: Wind Star model
+- SYBF: Road Star model
+- SYBG: Christmas NiGHTS model

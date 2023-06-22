@@ -87,6 +87,9 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 					case HeavyBike:
 						sprintf(filename.data(), "PB20B");
 						break;
+					case Destroyer:
+						sprintf(filename.data(), "RB43");
+						break;
 					case Omnipotence:
 						sprintf(filename.data(), "RB44");
 						break;
@@ -101,6 +104,9 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 						break;
 					case HangOn:
 						sprintf(filename.data(), "RB48");
+						break;
+					case SuperHangOn:
+						sprintf(filename.data(), "RB49");
 						break;
 					case Darkness:
 						sprintf(filename.data(), "PD00");
@@ -250,6 +256,9 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 						case HeavyBike:
 							sprintf(CSS_BoardFilename[index], "PB20B");
 							break;
+						case Destroyer:
+							sprintf(CSS_BoardFilename[index], "RB43");
+							break;
 						case Omnipotence:
 							sprintf(CSS_BoardFilename[index], "RB44");
 							break;
@@ -264,6 +273,9 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 							break;
 						case HangOn:
 							sprintf(CSS_BoardFilename[index], "RB48");
+							break;
+						case SuperHangOn:
+							sprintf(CSS_BoardFilename[index], "RB49");
 							break;
 						case Darkness:
 							sprintf(CSS_BoardFilename[index], "PD00");

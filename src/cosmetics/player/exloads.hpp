@@ -3,7 +3,7 @@
 #include "context.hpp"
 #include "containers/graphicalobject.hpp"
 
-#define CharacterEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 8!
+#define CharacterEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 8!
 #define GearEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
@@ -131,18 +131,11 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
         },
                 {
                 EXLoadType,
-                SYBFlySonicEXLoad,
-                Silver,
+                SYBChristmasNightsEXLoad,
+                Nights,
                 -1,
-                0x3D,                 static_cast<u16>(-1)
-        },
-                {
-                EXLoadType,
-                SYBPowerSonicEXLoad,
-                Knuckles,
-                -1,
-                0x3D,                 static_cast<u16>(-1)
-        },
+                0xD6,                 static_cast<u16>(-1)
+        }
 };
 
 constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
@@ -261,8 +254,7 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F, // SYB: ArchAngel
         -1.0F, // SYB: Wind Star
         -1.0F, // SYB: Road Star
-        -1.0F, // SYB: Attuned Fly Type
-        -1.0F, // SYB: Attuned Power Type
+        -1.0F, // SYB: Christmas NiGHTS
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -287,15 +279,14 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
 	LateBooster, //SYB: Super Sonic
 	AttunedArchetype, //SYB: Seelkadoom
         NoEXLoadArchetype, //SYB: Gun Bike
-	CombatArchetype, //SYB: Android
+	AttunedArchetype, //SYB: Android
         NoEXLoadArchetype, //SYB: Reserve Tank
         NoEXLoadArchetype, //SYB: Shooting Star
         NoEXLoadArchetype, //SYB: Airship
         NoEXLoadArchetype, //SYB: ArchAngel
         NoEXLoadArchetype, //SYB: Wind Star
         NoEXLoadArchetype, //SYB: Road Star
-        AttunedArchetype, //SYB: Attuned Fly Type
-        AttunedArchetype, //SYB: Attuned Power Type
+        AttunedArchetype, //SYB: Christmas NiGHTS
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);
