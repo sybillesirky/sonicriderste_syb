@@ -59,7 +59,7 @@ constexpr char raceEndMusic[][8] = {
 constexpr char battleMusic[][8] = {
 		"70.ADX", "71.ADX", "72.ADX", "73.ADX",
 		"74.ADX", "75.ADX", "76.ADX", "77.ADX",
-		"78.ADX", "79.ADX", "7A.ADX","7B.ADX"};
+		"78.ADX", "79.ADX", "7A.ADX", "7B.ADX"};
 
 constexpr char easterEgg[] = "7C.ADX";
 

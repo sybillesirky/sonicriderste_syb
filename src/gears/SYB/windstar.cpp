@@ -31,7 +31,7 @@ constexpr GearLevelStats Level1 = {
 	0x61A8, // boost cost
 	0x61A8, // tornado cost
 	pSpeed(500), // drift dash speed, unused
-	pSpeed(190) // boost speed
+	pSpeed(200) // boost speed
 };
 
 constexpr GearLevelStats Level2 = {
@@ -127,7 +127,7 @@ void Player_WindStar(Player *player) {
 	// Initialising behaviours.
 	if (player->state == StartLine) {
 		player->genericCounter1 = 0;
-		if (player->gearStats[0].boostSpeed != 190) {
+		if (player->gearStats[0].boostSpeed != 200) {
 			Player_WindStar_SetStats(player);
     	}
 		player->genericBool = false;
@@ -154,6 +154,14 @@ void Player_WindStar(Player *player) {
 		player->genericBool2 = false;
 	}
 
+	// Tailwind: Deactivate when QTE.
+	if (player->state == QTE || player->state == QTE2) {
+		if (player->genericBool2 == true) {
+			Player_WindStar_SetStats(player);
+			player->genericBool2 = false;
+		}
+	}
+
 	// Tailwind Mode Buffs.
 	if (player->genericBool2 == true) {
 		player->currentAir += 200;
@@ -163,5 +171,4 @@ void Player_WindStar(Player *player) {
 		}
 		player->genericCounter3 -= 1;
 	}
-
 }

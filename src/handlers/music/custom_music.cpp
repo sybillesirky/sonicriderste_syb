@@ -62,7 +62,7 @@ USED void CustomMusicRandomizer(const u32 mode) {
             songID = lbl_RNG_Number(RACE_END_MUSIC_COUNT);
             break;
         case 3: // battle music mode
-            songID = lbl_RNG_Number(BATTLE_MUSIC_COUNT);
+            //songID = lbl_RNG_Number(BATTLE_MUSIC_COUNT);
             break;
 		default:
 			break;
@@ -109,8 +109,9 @@ USED BOOL CustomMusicPlayer(const u32 mode) {
             PlayADX(gpasAdxtHandle_Bgm, raceEndMusic[songID]);
             break;
         case 3: // play battle music
-            if (songID >= BATTLE_MUSIC_COUNT) {return FALSE;}
-            PlayADX(gpasAdxtHandle_Bgm, battleMusic[songID]);
+            //if (songID >= BATTLE_MUSIC_COUNT) {return FALSE;}
+            //PlayADX(gpasAdxtHandle_Bgm, battleMusic[songID]);
+            PlayADX(gpasAdxtHandle_Bgm, "SV1.ADX"); // SYB: Removal of custom Battle Mode music.
             break;
 		default:
 			break;
