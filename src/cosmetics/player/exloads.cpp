@@ -400,6 +400,12 @@ const char* GetEXLoadSkateModelStart(Player *player) {
             return "S2";
         case GonGonEXLoad:
             return "S3";
+		case SYBAndroidEXLoad:
+			return "CA";	// SYB: Colors Android
+		case SYBSeelkadoomEXLoad:
+			return "CS";	// SYB: Colors Seelkadoom
+		case SYBChristmasNightsEXLoad:
+			return "CC";	// SYB: Colors Christmas NiGHTS
         default:
             return nullptr;
     }
