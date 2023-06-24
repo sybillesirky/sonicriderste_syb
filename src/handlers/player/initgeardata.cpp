@@ -293,6 +293,8 @@ ASMUsed void InitGearData(Player *arg0) {
 		temp_r6 = &StatPresets[2];
 	}else if (exLoadsptr && exLoadsptr->characterExLoadID == SYBAndroidEXLoad) {	// SYB: Shadow Android Power Type
 		temp_r6 = &StatPresets[2];
+	}else if (exLoadsptr && exLoadsptr->characterExLoadID == SYBMetalSonic30EXLoad) {	// SYB: Metal 3.0 Fly Type
+		temp_r6 = &StatPresets[1];
 	} else {
 		temp_r6 = &StatPresets[temp_r7->statPreset];
 	}
@@ -445,6 +447,8 @@ ASMUsed void InitGearData(Player *arg0) {
 		arg0->typeAttributes = PowerType | temp_r5->extraTypeAttributes;
 	}else if (exLoadsptr && exLoadsptr->characterExLoadID == SYBAndroidEXLoad) { // SYB: Android Power Type
 		arg0->typeAttributes = PowerType | temp_r5->extraTypeAttributes;
+	}else if (exLoadsptr && exLoadsptr->characterExLoadID == SYBMetalSonic30EXLoad) { // SYB: Metal 3.0 Fly Type
+		arg0->typeAttributes = FlyType | temp_r5->extraTypeAttributes;
 	} else if (isSuperCharacter(*arg0, MetalSonic)) {
 		arg0->typeAttributes = (SpeedType | PowerType);
 	} else {
