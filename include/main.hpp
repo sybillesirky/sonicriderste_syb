@@ -329,7 +329,7 @@ enum EXLoads {NoneEXLoad,
 		SYBGunBikeEXLoad, SYBAndroidEXLoad, SYBReserveTankEXLoad,
 		SYBShootingStarEXLoad, SYBAirshipEXLoad, SYBArchAngelEXLoad,
 		SYBWindStarEXLoad, SYBRoadStarEXLoad, SYBChristmasNightsEXLoad, 
-		EXLoadCount};
+		SYBMetalSonic30EXLoad, EXLoadCount};
 
 struct Collision {
 	union {

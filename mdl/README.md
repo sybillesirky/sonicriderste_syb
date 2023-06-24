@@ -23,3 +23,4 @@ As this project contains custom character/gear additions, all custom model files
 - SYBE: Wind Star model
 - SYBF: Road Star model
 - SYBG: Christmas NiGHTS model
+- SYBH: Metal Sonic 3.0 model

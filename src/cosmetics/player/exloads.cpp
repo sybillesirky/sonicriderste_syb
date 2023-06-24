@@ -394,6 +394,8 @@ const char* GetEXLoadCharacterModel(Player *player) {
 			return "SYB5";
 		case SYBChristmasNightsEXLoad:
 			return "SYBG";
+		case SYBMetalSonic30EXLoad:
+			return "SYBH";
         default:
             return nullptr;
     }

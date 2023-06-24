@@ -3,7 +3,7 @@
 #include "context.hpp"
 #include "containers/graphicalobject.hpp"
 
-#define CharacterEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 8!
+#define CharacterEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 8!
 #define GearEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
@@ -135,6 +135,13 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
                 Nights,
                 -1,
                 0xC1,                 static_cast<u16>(-1)
+        },
+        {
+                EXLoadType,
+                SYBMetalSonic30EXLoad,
+                MetalSonic,
+                -1,
+                0xC1,                 static_cast<u16>(-1)
         }
 };
 
@@ -244,7 +251,7 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F,
         1.1F, // reala
         1.4F, // gongon
-	-1.0F, // SYB: Super Sonic
+	-1.0F, // SYB: Super Sonic UNUSED
 	-1.0F, // SYB: Seelkadoom
 	-1.0F, // SYB: Gun Bike
         -1.0F, // SYB: Android
@@ -255,6 +262,7 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F, // SYB: Wind Star
         -1.0F, // SYB: Road Star
         -1.0F, // SYB: Christmas NiGHTS
+        -1.0F, // SYB: Metal Sonic 3.0
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -276,7 +284,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype,
         BoostArchetype, // reala
         AllRounder, // gongon
-	LateBooster, //SYB: Super Sonic
+	LateBooster, //SYB: Super Sonic UNUSED
 	AttunedArchetype, //SYB: Seelkadoom
         NoEXLoadArchetype, //SYB: Gun Bike
 	AttunedArchetype, //SYB: Android
@@ -287,6 +295,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype, //SYB: Wind Star
         NoEXLoadArchetype, //SYB: Road Star
         AttunedArchetype, //SYB: Christmas NiGHTS
+        LateBooster, //SYB: Metal Sonic 3.0
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);

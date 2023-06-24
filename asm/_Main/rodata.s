@@ -26387,6 +26387,7 @@ EXLoadHUDColors:
     .long 0x0 # SYB: Wind Star
     .long 0x0 # SYB: Road Star
     .long 0xd9190fFF # SYB: Christmas NiGHTS
+    .4byte 0x404040FF # SYB: Metal Sonic 3.0
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27151,6 +27152,16 @@ EXLoadBoostColors:
     .4byte 0x3F5BDBDC
     .4byte 0x3E30B0B1
     .4byte 0x3E30B0B1
+    .4byte 0x3F800000
+
+    # SYB: Metal Sonic 3.0
+    .4byte 0x3F800000
+    .4byte 0x3F6EEEEF
+    .4byte 0x00000000
+    .4byte 0x3F800000
+    .4byte 0x00000000
+    .4byte 0x3D888889
+    .4byte 0x3F800000
     .4byte 0x3F800000
 
 .global data_C24D08B0
