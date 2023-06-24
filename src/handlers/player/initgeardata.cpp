@@ -45,6 +45,13 @@ inline f32 CustomTopSpeeds(Player *player, f32 topSpeed, s32 level) {
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 
+	// SYB: Top Speed Archetype exclusivity fix.
+	if (player->character == Nights) {
+		if (exLoads.characterExLoadID == RealaEXLoad || exLoads.characterExLoadID == SYBChristmasNightsEXLoad) {
+			topSpeed -= pSpeed(6);
+		}
+	}
+
 	if (exLoads.gearExLoadID == SYBAirshipEXLoad) { // SYB: Airship set base top speed to 185.
 		topSpeed += pSpeed(40);
 	}

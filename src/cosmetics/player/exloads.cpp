@@ -26,6 +26,11 @@ void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads) {
 	if((exLoadIndex = Player_EXLoadData[controllerPort][GearEXLoadMode].exLoadIndex)) {
 		exLoads.gearExLoadID = GearEXLoadDataSlots[exLoadIndex].exLoadID;
 	}
+
+	// SYB: Purge EX-Load stats from Supers.
+    if (isSuperCharacter(*player) && player->character != SuperSonic) {
+        exLoads.characterExLoadID = NoneEXLoad;
+    }
 }
 
 ASMUsed bool IsAnyE10EXLoad(const Player *player) {
@@ -49,6 +54,11 @@ void CheckEXLoadHUDColors(Player *player, EXLoadColors &returnValues) {
     EnabledEXLoads enabledExLoads{};
     FetchEnabledEXLoadIDs(player, enabledExLoads);
     if (enabledExLoads.characterExLoadID == E10BEXLoad) return;
+
+	// SYB: Purge EX-Load colours from Supers.
+	if (isSuperCharacter(*player) && player->character != SuperSonic) {
+        return;
+    }
 
 	const u8 controllerPort = player->input->port;
 	u8 exLoadIndex;
