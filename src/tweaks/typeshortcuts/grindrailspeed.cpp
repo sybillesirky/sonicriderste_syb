@@ -64,6 +64,14 @@ ASMUsed s16 lbl_GrindRailSpeed(s16 railSpeed, Player *player) {
 				railSpeed = 405;
 			}
 			break;
+		case DarkDesert:	// SYB: Dark Desert attempted Speed buffs.
+			if (player->railID == 0) {
+				railSpeed = 285;	// SYB: This is normally 255.
+			}
+			else if (player->railID == 1) {	// SYB: Normally slow as fuck!
+				railSpeed = 500;
+			}
+			break;
 		default:
 			break;
 	}

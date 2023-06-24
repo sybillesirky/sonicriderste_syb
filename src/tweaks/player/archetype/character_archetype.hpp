@@ -4,12 +4,12 @@
 
 constexpr CharacterArchetypes AllCharacterArchetypes[] = {
 		LateBooster, // sonic
-		CombatArchetype, // tails
+		LateBooster, // tails
 		CombatArchetype, // knuckles
 		DriftArchetype, // amy
 		TopSpeedArchetype, // jet
 		TopSpeedArchetype, // storm
-		LateBooster, // wave
+		CombatArchetype, // wave
 		AllRounder, // eggman
 		AllRounder, // cream
 		DriftArchetype, // rouge

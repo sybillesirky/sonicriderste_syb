@@ -7035,7 +7035,7 @@ lbl_001C73B4:
     # 0x1C73B4
     .4byte 0xBF800000
     .4byte 0x42700000
-    .single 60 # tails level 3 stun timer, counts by 0.5 per frame
+    .single 45 # tails level 3 stun timer, counts by 0.5 per frame  // SYB: Changed this from 60.
     .4byte 0x40A00000
 .global lbl_001C73C4
 lbl_001C73C4:

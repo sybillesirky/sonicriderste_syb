@@ -40,10 +40,10 @@ USED void CustomGameObjectSpawner() {
         }
         case DarkDesert:
         {
-            *static_cast<u32*>(startOfGameObjects) = objectAmount + 5;
-            gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop1, gameObjectStructEnd);
-            gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop2, gameObjectStructEnd);
-            gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop3, gameObjectStructEnd);
+            *static_cast<u32*>(startOfGameObjects) = objectAmount + 2; // SYB: This is 5 in TE 2.2.
+            //gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop1, gameObjectStructEnd); //SYB: Nobody likes these.
+            //gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop2, gameObjectStructEnd);
+            //gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop3, gameObjectStructEnd);
 
             gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_itembox1, gameObjectStructEnd);
             gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_itembox2, gameObjectStructEnd);
@@ -81,7 +81,8 @@ USED BOOL GameObjectDespawner(ObjectInfo *objectInfo, u32 object_id) {
     
     if (objectInfo->objectType == ItemBox && CurrentStage != MetalCity) {
         if (objectInfo->itemID == HundredRings || objectInfo->itemID == MaxAir)
-        return TRUE;
+        //return TRUE;
+        return FALSE;   // SYB: Their functionality is still gone, so we might as well keep them for aesthetics.
     }
 
     switch (CurrentStage) {

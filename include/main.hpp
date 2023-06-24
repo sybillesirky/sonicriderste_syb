@@ -302,7 +302,7 @@ enum CharacterArchetypes {
 	SuperSonicArchetype,
 	BoostArchetype,
 	TricksterArchetype,
-	AttunedArchetype, // SYB: I added this. Highly experimental.
+	AttunedArchetype, // SYB: I added this.
 	NoneArchetype,
 	ArchetypeCount,
     NoEXLoadArchetype = -1
