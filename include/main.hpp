@@ -303,6 +303,7 @@ enum CharacterArchetypes {
 	BoostArchetype,
 	TricksterArchetype,
 	AttunedArchetype, // SYB: I added this.
+	CollectorArchetype, // SYB: I added this.
 	NoneArchetype,
 	ArchetypeCount,
     NoEXLoadArchetype = -1

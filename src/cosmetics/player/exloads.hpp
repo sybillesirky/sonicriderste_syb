@@ -295,7 +295,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         NoEXLoadArchetype, //SYB: Wind Star
         NoEXLoadArchetype, //SYB: Road Star
         AttunedArchetype, //SYB: Christmas NiGHTS
-        LateBooster, //SYB: Metal Sonic 3.0
+        CollectorArchetype, //SYB: Metal Sonic 3.0
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);
