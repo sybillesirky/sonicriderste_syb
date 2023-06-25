@@ -46,4 +46,9 @@ void lbl_FastFall(Player *player){
 			player->currentAir -= (650 - (650 / 4 * static_cast<s32>(airReduction)));
 		}
 	}
+
+	// SYB: Fix negative Air phenomenon.
+	if (player->currentAir < 0) {
+		player->currentAir = 0;
+	}
 }
