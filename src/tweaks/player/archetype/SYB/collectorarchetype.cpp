@@ -15,10 +15,10 @@ USED void Collector_RingBoxSpeedGain(Player *player, Object *object) {
     object->item_id == TwentyRings ||
     object->item_id == ThirtyRings ||
     object->item_id == FiveRings) {
-    player->speed += pSpeed(50);
+    player->speed += pSpeed(25);
     }
     else if (object->item_id == RNG) {
-        player->speed += pSpeed(25);
+        player->speed += pSpeed(10);
     }
 }
 

@@ -24,3 +24,5 @@ As this project contains custom character/gear additions, all custom model files
 - SYBF: Road Star model
 - SYBG: Christmas NiGHTS model
 - SYBH: Metal Sonic 3.0 model
+- SYBI: TEMP Red Sonic model
+- SYBJ: TEMP Blue Knuckles model

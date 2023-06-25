@@ -26388,6 +26388,8 @@ EXLoadHUDColors:
     .long 0x0 # SYB: Road Star
     .long 0xd9190fFF # SYB: Christmas NiGHTS
     .4byte 0x404040FF # SYB: Metal Sonic 3.0
+    .4byte 0xAA2828FF # Red Sonic
+    .4byte 0x64C8D2FF # Blue Knuckles
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27162,6 +27164,26 @@ EXLoadBoostColors:
     .4byte 0x00000000
     .4byte 0x3D888889
     .4byte 0x3F800000
+    .4byte 0x3F800000
+
+    # SYB: Red Sonic
+    .4byte 0x3F6BEBEC
+    .4byte 0x3CA0A0A1
+    .4byte 0x00000000
+    .4byte 0x3F800000
+    .4byte 0x00000000
+    .4byte 0x3F66E6E7
+    .4byte 0x3F6BEBEC
+    .4byte 0x3F800000
+
+    # SYB: Blue Knuckles
+    .4byte 0x3D888889
+    .4byte 0x00000000
+    .4byte 0x3F7EFEFF
+    .4byte 0x3F800000
+    .4byte 0x3F4BCBCC
+    .4byte 0x3F2BABAC
+    .4byte 0x00000000
     .4byte 0x3F800000
 
 .global data_C24D08B0

@@ -396,6 +396,10 @@ const char* GetEXLoadCharacterModel(Player *player) {
 			return "SYBG";
 		case SYBMetalSonic30EXLoad:
 			return "SYBH";
+		case SYBRedSonicEXLoad:
+			return "SYBI";
+		case SYBBlueKnucklesEXLoad:
+			return "SYBJ";
         default:
             return nullptr;
     }
