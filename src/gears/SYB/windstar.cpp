@@ -171,4 +171,15 @@ void Player_WindStar(Player *player) {
 		}
 		player->genericCounter3 -= 1;
 	}
+
+	if (player->previousState == Death) { // Apply Level again on death.
+		if (player->genericCounter1 >= 24) { // Level 3
+			player->level = 2;
+		} else if (player->genericCounter1 >= 12) { // Level 2
+			player->level = 1;
+		} else { // Level 1
+			player->level = 0;
+		}
+		player->previousState = Cruise;
+	}
 }

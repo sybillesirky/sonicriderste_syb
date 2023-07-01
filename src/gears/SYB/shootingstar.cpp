@@ -144,4 +144,15 @@ void Player_ShootingStar(Player *player) {
         Player_ShootingStar_SetStats(player);
 		player->genericBool = false;
 	}
+
+	if (player->previousState == Death) { // Apply Level again on death.
+		if (player->genericCounter1 >= 20) { // Level 3
+			player->level = 2;
+		} else if (player->genericCounter1 >= 10) { // Level 2
+			player->level = 1;
+		} else { // Level 1
+			player->level = 0;
+		}
+		player->previousState = Cruise;
+	}
 }
