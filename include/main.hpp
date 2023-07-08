@@ -1440,7 +1440,7 @@ struct Player {
 	/* 0xF34 */ u32 unkF34;
 	/* 0xF38 */ Player *attackedPlayer; // has pointer to the player who you're being attacked by
 	/* 0xF3C */ Player *attackingPlayer; // has pointer to the player you're attacking
-	/* 0xF40 */ u32 unkF40;
+	/* 0xF40 */ u32 unkF40; // TODO: Attack Struct: Play with this!
 	/* 0xF44 */ u32 unkF44;
 	/* 0xF48 */ u32 unkF48;
 	/* 0xF4C */ u32 unkF4C;
