@@ -49,8 +49,8 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
             sprintf(filename.data(), "EB0");
         } else if (exLoads.characterExLoadID == HatsuneMikuEXLoad && !player->playerType) {
             sprintf(filename.data(), "EB1");
-		} else if (exLoads.characterExLoadID == SYBSeelkadoomEXLoad && !player->playerType) {
-            sprintf(filename.data(), "SYB4");
+		//} else if (exLoads.characterExLoadID == SYBSeelkadoomEXLoad && !player->playerType) {
+        //    sprintf(filename.data(), "SYB4");
         } else{
 			sprintf(filename.data(), "P%c00", character.model);
 		}
@@ -145,22 +145,22 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 			sprintf(filename.data(), "SYB3");
 			break;
 		case SYBReserveTankEXLoad:
-			sprintf(filename.data(), "SYB9");
+			sprintf(filename.data(), "SG01");
 			break;
 		case SYBShootingStarEXLoad:
-			sprintf(filename.data(), "SYBA");
+			sprintf(filename.data(), "SG02");
 			break;
 		case SYBAirshipEXLoad:
-			sprintf(filename.data(), "SYBC");
+			sprintf(filename.data(), "SG03");
 			break;
 		case SYBArchAngelEXLoad:
-			sprintf(filename.data(), "SYBD");
+			sprintf(filename.data(), "SG04");
 			break;
 		case SYBWindStarEXLoad:
-			sprintf(filename.data(), "SYBE");
+			sprintf(filename.data(), "SG05");
 			break;
 		case SYBRoadStarEXLoad:
-			sprintf(filename.data(), "SYBF");
+			sprintf(filename.data(), "SG06");
 			break;
 		default:
 			break;
@@ -219,8 +219,8 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
             sprintf(CSS_BoardFilename[index], "EB0");
 		} else if (exLoads.characterExLoadID == HatsuneMikuEXLoad) {
             sprintf(CSS_BoardFilename[index], "EB1");
-		} else if (exLoads.characterExLoadID == SYBSeelkadoomEXLoad) {
-            sprintf(CSS_BoardFilename[index], "SYB4");
+		//} else if (exLoads.characterExLoadID == SYBSeelkadoomEXLoad) {
+        //    sprintf(CSS_BoardFilename[index], "SYB4");
         } else {
             sprintf(CSS_BoardFilename[index], "P%c00", character.model);
         }
@@ -313,22 +313,22 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 			sprintf(CSS_BoardFilename[index], "SYB3");
 			break;
 		case SYBReserveTankEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYB9");
+			sprintf(CSS_BoardFilename[index], "SG01");
 			break;
 		case SYBShootingStarEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYBA");
+			sprintf(CSS_BoardFilename[index], "SG02");
 			break;
 		case SYBAirshipEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYBC");
+			sprintf(CSS_BoardFilename[index], "SG03");
 			break;
 		case SYBArchAngelEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYBD");
+			sprintf(CSS_BoardFilename[index], "SG04");
 			break;
 		case SYBWindStarEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYBE");
+			sprintf(CSS_BoardFilename[index], "SG05");
 			break;
 		case SYBRoadStarEXLoad:
-			sprintf(CSS_BoardFilename[index], "SYBF");
+			sprintf(CSS_BoardFilename[index], "SG06");
 			break;
 		default:
 			break;
