@@ -127,7 +127,7 @@ void Player_WindStar(Player *player) {
 	// Initialising behaviours.
 	if (player->state == StartLine) {
 		player->genericCounter1 = 0;
-		if (player->gearStats[0].boostSpeed != 200) {
+		if (player->gearStats[1].boostSpeed != pSpeed(225)) {
 			Player_WindStar_SetStats(player);
     	}
 		player->genericBool = false;
