@@ -39,9 +39,9 @@ constexpr GearLevelStats Level2 = {
 	16, // air drain
 	0x000000FA, // drift cost
 	0x7530, // boost cost
-	0x7530, // tornado cost
+	0x61A8, // tornado cost
 	pSpeed(500), // drift dash speed, unused
-	pSpeed(220) // boost speed
+	pSpeed(225) // boost speed
 };
 
 constexpr GearLevelStats Level3 = {
@@ -49,9 +49,9 @@ constexpr GearLevelStats Level3 = {
 	16, // air drain
 	0x0000014D, // drift cost
 	0x9C40, // boost cost
-	0x9C40, // tornado cost
+	0x61A8, // tornado cost
 	pSpeed(500), // drift dash speed, unused
-	pSpeed(235) // boost speed
+	pSpeed(240) // boost speed
 };
 
 void Player_WindStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
@@ -135,7 +135,7 @@ void Player_WindStar(Player *player) {
 
 	// Tailwind Mode Activation.
 	if (player->unk1040 == 1 && player->genericBool2 == false) { // If we did a tornado while not transformed.
-		if (player->rings >= 20) {
+		if (player->rings >= 1) {
 			player->genericCounter3 = 20;
 			player->genericBool2 = true; // Activate mode.
 			player->speed += pSpeed(50);
@@ -154,8 +154,8 @@ void Player_WindStar(Player *player) {
 		player->genericBool2 = false;
 	}
 
-	// Tailwind: Deactivate when QTE.
-	if (player->state == QTE || player->state == QTE2) {
+	// Tailwind: Deactivate when QTE/Death.
+	if (player->state == QTE || player->state == QTE2 || player->state == Death) {
 		if (player->genericBool2 == true) {
 			Player_WindStar_SetStats(player);
 			player->genericBool2 = false;
@@ -163,7 +163,7 @@ void Player_WindStar(Player *player) {
 	}
 
 	// Tailwind Mode Buffs.
-	if (player->genericBool2 == true) {
+	if (player->genericBool2 == true && player->state == Cruise) {
 		player->currentAir += 200;
 		if (player->genericCounter3 <= 0) {
 			player->rings -= 1;

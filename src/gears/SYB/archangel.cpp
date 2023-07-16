@@ -31,7 +31,7 @@ constexpr GearLevelStats Genocide = { // Internally Level 3
 		0x4E20, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(240) // boost speed
+		pSpeed(245) // boost speed
 };
 
 constexpr GearLevelStats Neutral = { // Internally Level 2
@@ -51,7 +51,7 @@ constexpr GearLevelStats Pacifist = { // Internally Level 1
 		0x4E20, // boost cost
 		0x61A8, // tornado cost
 		pSpeed(100), // drift dash speed, unused
-		pSpeed(260) // boost speed
+		pSpeed(255) // boost speed
 };
 
 void Player_ArchAngel_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
@@ -133,7 +133,7 @@ void Player_ArchAngel(Player *player) {
         player->genericCounter2 = 0;
         player->currentAir = player->gearStats[player->level].maxAir;
         player->genericBool = false; // Not in transformed state in the beginning.
-        player->genericCounter1 = 20; // Initialise Ring Drain counter so we don't have to later.
+        player->genericCounter1 = 30; // Initialise Ring Drain counter so we don't have to later.
 	}
 
     // We handle the Ring Drain while transformed here.
@@ -141,7 +141,7 @@ void Player_ArchAngel(Player *player) {
         player->genericCounter1 -= 1;
         if (player->genericCounter1 == 0) {
             player->rings -= 1;
-            player->genericCounter1 = 20;
+            player->genericCounter1 = 30;
             if (player->rings == 0) { // Detransform Behaviours go here.
                 Player_ArchAngel_Detransform(player);
             }
@@ -173,6 +173,7 @@ void Player_ArchAngel(Player *player) {
 
         // Ring gain on hit.
         if (player->previousState == AttackingPlayer) {
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::VSFX, 0x0A)); // Superbad Buzz
             player->rings += 30;
             player->previousState = Cruise;
         }
