@@ -93,8 +93,22 @@ void Player_ShootingStar(Player *player) {
 	}
 
 	// What happens once player has left trick state.
-	if (player->previousState == FrontflipRamp || player->previousState == BackflipRamp || player->previousState == ManualRamp || player->previousState == HalfPipeTrick) {
-		if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
+	if (player->previousState == FrontflipRamp ||
+		player->previousState == BackflipRamp ||
+		player->previousState == ManualRamp ||
+		player->previousState == HalfPipeTrick ||
+		player->previousState == Fly ||			// These three are added solely for ShS
+		player->previousState == RailGrind ||	// so that it waits for shortcut exit
+		player->previousState == Fall) {		// before applying Pay to Win.
+
+		if (player->state == RailGrind || player->state == Fly || player->state == Fall)  {
+			if (player->trickRank == CRank) {	// Prevent penalties if C Rank, like what happens normally.
+				player->genericBool = false;
+			}
+			return;		// We return so we wait out the end of the shortcut, otherwise it will still reset beenTricking.
+		}
+
+		if (player->state == Cruise && player->genericBool == true) {
 			player->genericCounter1 += player->trickCount;
 
 			// If trick rank is lower than X, induce penalties if level 2 or higher.
@@ -114,7 +128,7 @@ void Player_ShootingStar(Player *player) {
 		}
 
 		if (player->genericBool == true) { // Prevents constant updating.
-			if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
+			if (player->state == Cruise) {
 				player->genericCounter2 = player->level;
 
 				// Update the level and stats now that we have the new amount of tricks.
