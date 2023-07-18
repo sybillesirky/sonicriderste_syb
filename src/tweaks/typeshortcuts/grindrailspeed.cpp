@@ -87,7 +87,11 @@ ASMUsed s16 lbl_GrindRailSpeed(s16 railSpeed, Player *player) {
 	}
 
 	if (player->characterArchetype == AttunedArchetype) { // ATN: Attuned Archetype bonus speed.
-		railSpeed *= 1.1f;
+		f32 MIPercentage; 
+		MIPercentage = player->magneticImpulse_timer / MI_MaximumCap * 100;
+		if (MIPercentage <= 50) {
+			railSpeed *= 1.085f;
+		}
 	}
 
 	switch(player->extremeGear) {
