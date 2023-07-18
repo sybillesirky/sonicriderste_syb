@@ -232,7 +232,7 @@ void func_SetPlayerActionType(Player *playerPtr, u32 stateInt) {
 				gearSpecialFlags = player.gearptr->specialFlags;
 
 				if(player.characterArchetype == BoostArchetype) {
-					player.unkB08 = 0x9040F;
+					player.unkB08 = 0x9040F;	// SYB TEMP: This handles Boost retention.
 				} else {
 					player.unkB08 = 0x9000F;
 				}

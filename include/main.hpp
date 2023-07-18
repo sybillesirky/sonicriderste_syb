@@ -1609,7 +1609,7 @@ struct Player {
 	/* 0x1078 */ u8 hangOn_infiniteRingTimer;
 	/* 0x1079 */ u8 magneticImpulse_soundStatus;
 	/* 0x107A */ u8 unk107A;
-	/* 0x107B */ u8 unk107B;
+	/* 0x107B */ BOOL BoostArchetypeAttackAllowed;
 	/* 0x107C */ u8 characterArchetype;
 	union {
 		/* 0x107D */ BOOL hovercraft_alternatingRingPickup;
