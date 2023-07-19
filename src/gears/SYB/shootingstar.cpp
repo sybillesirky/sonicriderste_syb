@@ -98,7 +98,9 @@ void Player_ShootingStar(Player *player) {
 			player->genericCounter1 += player->trickCount;
 
 			// If trick rank is lower than X, induce penalties if level 2 or higher.
-			if (player->trickCount < 4 && player->genericBool == true) {
+			if (player->trickCount < 4 && 
+				player->genericBool == true &&
+				player->state == Cruise) { // SYB: No more P2W if Fly/Grind.
 				if (player->level > 0) {
 					player->speed += pSpeed(50);
 					if (player->rings >= 20) {
