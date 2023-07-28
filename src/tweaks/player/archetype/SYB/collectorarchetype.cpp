@@ -6,6 +6,7 @@
 ASMUsed void Collector_RingSpeedGain(Player *player) {
     if (player->characterArchetype != CollectorArchetype) return;
     player->speed += pSpeed(5);
+    player->currentAir += 2000;
 }
 
 ASMUsed void Collector_RingBoxSpeedGain(Player *player, Object *object) {

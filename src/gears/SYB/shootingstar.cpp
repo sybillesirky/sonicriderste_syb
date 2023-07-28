@@ -102,7 +102,7 @@ void Player_ShootingStar(Player *player) {
 				player->genericBool == true &&
 				player->state == Cruise) { // SYB: No more P2W if Fly/Grind.
 				if (player->level > 0) {
-					player->speed += pSpeed(50);
+					player->speed += pSpeed(60);
 					if (player->rings >= 20) {
 						player->rings -= 20;
 						if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX

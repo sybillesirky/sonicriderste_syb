@@ -51,7 +51,7 @@ constexpr GearLevelStats Level3 = {
 		0x9C40, // boost cost
 		0x9C40, // tornado cost
 		pSpeed(500), // drift dash speed, unused
-		pSpeed(250) // boost speed
+		pSpeed(245) // boost speed
 };
 
 void Player_RoadStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
