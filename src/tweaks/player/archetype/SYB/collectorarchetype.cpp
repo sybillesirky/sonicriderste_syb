@@ -6,10 +6,13 @@
 ASMUsed void Collector_RingSpeedGain(Player *player) {
     if (player->characterArchetype != CollectorArchetype) return;
     player->speed += pSpeed(5);
-    player->currentAir += 2000;
+    if (~player->specialFlags & ringGear) { // SYB: Otherwise these fuckers get 3x Ring pickup.
+        player->currentAir += 2000;
+    }
 }
 
 ASMUsed void Collector_RingBoxSpeedGain(Player *player, Object *object) {
+    // This is currently unused.
     if (player->characterArchetype != CollectorArchetype) return;
     if (object->object_type != ItemBox) return;
     if (
@@ -25,6 +28,7 @@ ASMUsed void Collector_RingBoxSpeedGain(Player *player, Object *object) {
 }
 
 void Player_CollectorArchetype(Player *player) {
+    // Legacy.
     if (player->characterArchetype != CollectorArchetype) return;
 
     player->rings = 100;
