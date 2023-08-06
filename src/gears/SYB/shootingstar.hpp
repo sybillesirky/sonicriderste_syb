@@ -2,6 +2,14 @@
 
 #include "context.hpp"
 
+struct ShootingStarInfo {
+    u8 trickAccumulator;
+    u8 levelHolder;
+    BOOL beenTricking;
+};
+
+extern ShootingStarInfo PlayerShootingStarInfo[8];
+
 global {
     void Player_ShootingStar(Player *player);
 }

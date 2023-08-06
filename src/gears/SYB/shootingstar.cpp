@@ -3,9 +3,7 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-// u8 ShS_tricks_accum = 0; // This keeps track of the total amount of tricks done, for level up. THIS IS NOW u8 SYBArSShSCounter.
-// bool flag_beenTricking = false; // Roundabout way to determine a trick has happened. THIS IS NOW BOOL SYBBeenTricking.
-// u8 ShS_stored_level = 0; THIS IS NOW SYBShSRsTLevelTracker.
+ShootingStarInfo PlayerShootingStarInfo[8];
 
 void Player_CreateShootingStarParticles(Player *player) {
     auto *particles = reinterpret_cast<ParticleTaskObject1 *>(SetTask(func_Particle_Task, 0xB3B0, 2)->object);
@@ -84,24 +82,26 @@ void Player_ShootingStar(Player *player) {
 	if (exLoads.gearExLoadID != SYBShootingStarEXLoad) return;
 	if (player->extremeGear != DefaultGear) return; // SYB: Was going to be Legend but considering its ASM quirks we have to live with Default.
 
+	ShootingStarInfo *ShSInfo = &PlayerShootingStarInfo[player->index];
+
 	// Ensure player never gets a buffer of tricks beyond Level 3.
-	if (player->genericCounter1 > 20) {
-		player->genericCounter1 = 20;
+	if (ShSInfo->trickAccumulator > 20) {
+		ShSInfo->trickAccumulator = 20;
 	}
 
 	// Basically define "player is in trick state".
 	if (player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp || player->state == HalfPipeTrick) {
-		player->genericBool = true; // This makes sure trick landing behaviours only fire once.
+		ShSInfo->beenTricking = true; // This makes sure trick landing behaviours only fire once.
 	}
 
 	// What happens once player has left trick state.
 	if (player->previousState == FrontflipRamp || player->previousState == BackflipRamp || player->previousState == ManualRamp || player->previousState == HalfPipeTrick) {
 		if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
-			player->genericCounter1 += player->trickCount;
+			ShSInfo->trickAccumulator += player->trickCount;
 
 			// If trick rank is lower than X, induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && 
-				player->genericBool == true &&
+				ShSInfo->beenTricking == true &&
 				player->state == Cruise) { // SYB: No more P2W if Fly/Grind.
 				if (player->level > 0) {
 					player->speed += pSpeed(40);
@@ -109,7 +109,7 @@ void Player_ShootingStar(Player *player) {
 						player->rings -= 20;
 						if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
 					} else {
-						player->genericCounter1 -= 10;
+						ShSInfo->trickAccumulator -= 10;
 					}
 				}
 
@@ -117,42 +117,42 @@ void Player_ShootingStar(Player *player) {
 			player->trickCount = 0;
 		}
 
-		if (player->genericBool == true) { // Prevents constant updating.
+		if (ShSInfo->beenTricking == true) { // Prevents constant updating.
 			if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
-				player->genericCounter2 = player->level;
+				ShSInfo->levelHolder = player->level;
 
 				// Update the level and stats now that we have the new amount of tricks.
-				if (player->genericCounter1 >= 20) { // Level 3
+				if (ShSInfo->trickAccumulator >= 20) { // Level 3
 					player->level = 2;
-				} else if (player->genericCounter1 >= 10) { // Level 2
+				} else if (ShSInfo->trickAccumulator >= 10) { // Level 2
 					player->level = 1;
 				} else { // Level 1
 					player->level = 0;
 				}	
 
 				//If the level was changed, refill air gauge and play VFX/SFX.
-				if (player->level != player->genericCounter2) {
+				if (player->level != ShSInfo->levelHolder) {
 					player->currentAir = player->gearStats[player->level].maxAir;
-					if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
 					Player_CreateShootingStarParticles(player);
+					if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
 				}
 			}
 		}
 
 		// Specify that player is no longer in trick state.
-		player->genericBool = false;
+		ShSInfo->beenTricking = false;
 	}
 
 	if (player->state == StartLine) { // Initialising behaviours.
-		player->genericCounter1 = 0;
+		ShSInfo->trickAccumulator = 0;
         Player_ShootingStar_SetStats(player);
-		player->genericBool = false;
+		ShSInfo->beenTricking = false;
 	}
 
 	if (player->previousState == Death) { // Apply Level again on death.
-		if (player->genericCounter1 >= 20) { // Level 3
+		if (ShSInfo->trickAccumulator >= 20) { // Level 3
 			player->level = 2;
-		} else if (player->genericCounter1 >= 10) { // Level 2
+		} else if (ShSInfo->trickAccumulator >= 10) { // Level 2
 			player->level = 1;
 		} else { // Level 1
 			player->level = 0;
