@@ -69,6 +69,7 @@ void Player_ShootingStar_LevelUpdater(Player *player, const GearLevelStats *stat
 void Player_ShootingStar_SetStats(Player *player) {
     if (player->gearStats[0].boostSpeed != pSpeed(210)) {
         player->specialFlags &= ~noSpeedLossChargingJump;
+		player->specialFlags &= ~iceImmunity;
 		player->specialFlags ^= SYBTEMPShSDecel;
         Player_ShootingStar_LevelUpdater(player, &Level1, 0);
         Player_ShootingStar_LevelUpdater(player, &Level2, 1);
@@ -103,7 +104,7 @@ void Player_ShootingStar(Player *player) {
 				player->genericBool == true &&
 				player->state == Cruise) { // SYB: No more P2W if Fly/Grind.
 				if (player->level > 0) {
-					player->speed += pSpeed(60);
+					player->speed += pSpeed(40);
 					if (player->rings >= 20) {
 						player->rings -= 20;
 						if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
