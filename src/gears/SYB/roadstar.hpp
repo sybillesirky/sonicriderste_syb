@@ -2,6 +2,14 @@
 
 #include "context.hpp"
 
+struct RoadStarInfo {
+    u8 trickAccumulator;
+    u8 levelHolder;
+    BOOL beenTricking;
+};
+
+extern RoadStarInfo PlayerRoadStarInfo[8];
+
 global {
 void Player_RoadStar(Player *player);
 }

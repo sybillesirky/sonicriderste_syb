@@ -3,9 +3,7 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-// player->genericBool = TRUE if in Trick state.
-// player->genericCounter1 = Trick Accumulator
-// player->genericCounter2 = Level Tracker
+RoadStarInfo PlayerRoadStarInfo[8];
 
 void Player_CreateRoadStarParticles(Player *player) {
     auto *particles = reinterpret_cast<ParticleTaskObject1 *>(SetTask(func_Particle_Task, 0xB3B0, 2)->object);
@@ -25,33 +23,33 @@ void Player_CreateRoadStarParticles(Player *player) {
 }
 
 constexpr GearLevelStats Level1 = {
-		100000, // max air
-		16, // air drain
-		0x000000A6, // drift cost
-		0x61A8, // boost cost
-		0x61A8, // tornado cost
-		pSpeed(500), // drift dash speed, unused
-		pSpeed(210) // boost speed
+	100000, // max air
+	16, // air drain
+	0x000000A6, // drift cost
+	0x61A8, // boost cost
+	0x61A8, // tornado cost
+	pSpeed(500), // drift dash speed, unused
+	pSpeed(210) // boost speed
 };
 
 constexpr GearLevelStats Level2 = {
-		150000, // max air
-		16, // air drain
-		0x000000FA, // drift cost
-		0x7530, // boost cost
-		0x7530, // tornado cost
-		pSpeed(500), // drift dash speed, unused
-		pSpeed(230) // boost speed
+	150000, // max air
+	16, // air drain
+	0x000000FA, // drift cost
+	0x7530, // boost cost
+	0x7530, // tornado cost
+	pSpeed(500), // drift dash speed, unused
+	pSpeed(230) // boost speed
 };
 
 constexpr GearLevelStats Level3 = {
-		200000, // max air
-		16, // air drain
-		0x0000014D, // drift cost
-		0x9C40, // boost cost
-		0x9C40, // tornado cost
-		pSpeed(500), // drift dash speed, unused
-		pSpeed(245) // boost speed
+	200000, // max air
+	16, // air drain
+	0x0000014D, // drift cost
+	0x9C40, // boost cost
+	0x9C40, // tornado cost
+	pSpeed(500), // drift dash speed, unused
+	pSpeed(245) // boost speed
 };
 
 void Player_RoadStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
@@ -63,15 +61,15 @@ void Player_RoadStar_LevelUpdater(Player *player, const GearLevelStats *stats, i
     //player->gearStats[inputLevel].driftDashSpeed = stats->driftDashSpeed;
     player->gearStats[inputLevel].boostSpeed = stats->boostSpeed;
 	if (player->characterArchetype == BoostArchetype) {
-		 player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
+		player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
 	}
 }
 
 void Player_RoadStar_SetStats(Player *player) {
     if (player->gearStats[0].boostSpeed != pSpeed(210)) {
-        Player_RoadStar_LevelUpdater(player, &Level1, 0);
-        Player_RoadStar_LevelUpdater(player, &Level2, 1);
-        Player_RoadStar_LevelUpdater(player, &Level3, 2);
+    Player_RoadStar_LevelUpdater(player, &Level1, 0);
+    Player_RoadStar_LevelUpdater(player, &Level2, 1);
+    Player_RoadStar_LevelUpdater(player, &Level3, 2);
     }
 }
 
@@ -82,38 +80,40 @@ void Player_RoadStar(Player *player) {
 	if (exLoads.gearExLoadID != SYBRoadStarEXLoad) return;
 	if (player->extremeGear != AutoSlider) return;
 
+	RoadStarInfo *RdSInfo = &PlayerRoadStarInfo[player->index];
+
 	// Ensure player never gets a buffer of tricks beyond Level 3.
-	if (player->genericCounter1 > 20) {
-		player->genericCounter1 = 20;
+	if (RdSInfo->trickAccumulator > 20) {
+		RdSInfo->trickAccumulator = 20;
 	}
 
 	// Basically define "player is in trick state".
 	if (player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp || player->state == HalfPipeTrick) {
-		player->genericBool = true; // This makes sure trick landing behaviours only fire once.
+		RdSInfo->beenTricking = true; // This makes sure trick landing behaviours only fire once.
 	}
 
 	// What happens once player has left trick state.
 	if (player->previousState == FrontflipRamp || player->previousState == BackflipRamp || player->previousState == ManualRamp || player->previousState == HalfPipeTrick) {
 		if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
-			player->genericCounter1 += player->trickCount;
+			RdSInfo->trickAccumulator += player->trickCount;
 			player->trickCount = 0;
 		}
 
-		if (player->genericBool == true) { // Prevents constant updating.
+		if (RdSInfo->beenTricking == true) { // Prevents constant updating.
 			if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
-				player->genericCounter2 = player->level;
+				RdSInfo->levelHolder = player->level;
 
 				// Update the level and stats now that we have the new amount of tricks.
-				if (player->genericCounter1 >= 20) { // Level 3
+				if (RdSInfo->trickAccumulator >= 20) { // Level 3
 					player->level = 2;
-				} else if (player->genericCounter1 >= 10) { // Level 2
+				} else if (RdSInfo->trickAccumulator >= 10) { // Level 2
 					player->level = 1;
 				} else { // Level 1
 					player->level = 0;
 				}	
 
 				//If the level was changed, refill air gauge and play VFX/SFX.
-				if (player->level != player->genericCounter2) {
+				if (player->level != RdSInfo->levelHolder) {
 					player->currentAir = player->gearStats[player->level].maxAir;
 					if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
 					Player_CreateRoadStarParticles(player);
@@ -122,19 +122,19 @@ void Player_RoadStar(Player *player) {
 		}
 
 		// Specify that player is no longer in trick state.
-		player->genericBool = false;
+		RdSInfo->beenTricking = false;
 	}
 
 	if (player->state == StartLine) { // Initialising behaviours.
-		player->genericCounter1 = 0;
+		RdSInfo->trickAccumulator = 0;
         Player_RoadStar_SetStats(player);
-		player->genericBool = false;
+		RdSInfo->beenTricking = false;
 	}
 
 	if (player->previousState == Death) { // Apply Level again on death.
-		if (player->genericCounter1 >= 24) { // Level 3
+		if (RdSInfo->trickAccumulator >= 24) { // Level 3
 			player->level = 2;
-		} else if (player->genericCounter1 >= 12) { // Level 2
+		} else if (RdSInfo->trickAccumulator >= 12) { // Level 2
 			player->level = 1;
 		} else { // Level 1
 			player->level = 0;
