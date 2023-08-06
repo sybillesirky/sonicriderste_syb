@@ -4,7 +4,7 @@
 #include "containers/graphicalobject.hpp"
 
 #define CharacterEXLoadSlots 15 //SYB: WE CHANGED THIS FROM 8!
-#define GearEXLoadSlots 12 //SYB: WE CHANGED THIS FROM 5!
+#define GearEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -243,6 +243,13 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				-1,
 				AutoSlider,
 				0xF1,                 0x1A
+		},
+                {
+				EXLoadType,
+				SYBDarkShootingStarEXLoad,
+				-1,
+				DefaultGear,
+				0xC4,                 0x1A
 		}
 };
 

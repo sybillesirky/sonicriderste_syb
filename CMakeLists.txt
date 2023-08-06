@@ -173,7 +173,8 @@ set(DOL_SOURCES     # main
 		src/gears/SYB/archangel.cpp
 		src/gears/SYB/windstar.cpp
 		src/gears/SYB/roadstar.cpp
-		src/tweaks/player/archetype/SYB/collectorarchetype.cpp )           # main
+		src/tweaks/player/archetype/SYB/collectorarchetype.cpp 
+		src/gears/SYB/darkshootingstar.cpp )           # main
 
 #====================================================================================
 # Extra plumbing stuff. Hopefully nothing in here will need to be changed
