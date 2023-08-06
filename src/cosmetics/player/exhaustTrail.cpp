@@ -11,6 +11,7 @@
 #include "gears/dynamo.hpp"
 #include "gears/SYB/darkshootingstar.hpp"
 #include "gears/SYB/airship.hpp"
+#include "gears/SYB/windstar.hpp"
 
 global char bss_C24D91DC[4]; /*asm*/
 
@@ -245,7 +246,10 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 
 			case AutoSlider: {
 				if (exLoads.gearExLoadID == SYBWindStarEXLoad) {
-					if (Player->genericBool2 == true) {
+
+					struct WindStarInfo *WdSInfo = &PlayerWindStarInfo[Player->index];
+
+					if (WdSInfo->tailwindActive == true) {
 						color = 0x00CC00FF;
 					}
 				}

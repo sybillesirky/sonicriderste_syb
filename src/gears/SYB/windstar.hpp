@@ -2,6 +2,16 @@
 
 #include "context.hpp"
 
+struct WindStarInfo {
+    u8 trickAccumulator;
+    u8 levelHolder;
+    u8 tailwindFrames;
+    BOOL beenTricking;
+    BOOL tailwindActive;
+};
+
+extern WindStarInfo PlayerWindStarInfo[8];
+
 global {
 void Player_WindStar(Player *player);
 }

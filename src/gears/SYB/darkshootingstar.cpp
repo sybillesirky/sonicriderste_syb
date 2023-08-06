@@ -27,33 +27,33 @@ void Player_CreateDarkShootingStarParticles(Player *player) {
 }
 
 constexpr GearLevelStats Level3 = {
-		200000, // max air
-		64, // air drain
-		100, // drift cost
-		0x9C40, // boost cost
-		0x9C40, // tornado cost
-		pSpeed(100), // drift dash speed, unused
-		pSpeed(250) // boost speed
+	200000, // max air
+	64, // air drain
+	100, // drift cost
+	0x9C40, // boost cost
+	0x9C40, // tornado cost
+	pSpeed(100), // drift dash speed, unused
+	pSpeed(250) // boost speed
 };
 
 constexpr GearLevelStats Level2 = {
-		150000, // max air
-		32, // air drain
-		100, // drift cost
-		0x9C40, // boost cost
-		0x9C40, // tornado cost
-		pSpeed(100), // drift dash speed, unused
-		pSpeed(230) // boost speed
+	150000, // max air
+	32, // air drain
+	100, // drift cost
+	0x9C40, // boost cost
+	0x9C40, // tornado cost
+	pSpeed(100), // drift dash speed, unused
+	pSpeed(230) // boost speed
 };
 
 constexpr GearLevelStats Level1 = {
-		100000, // max air
-		16, // air drain
-		100, // drift cost
-		0x7530, // boost cost
-		0x7530, // tornado cost
-		pSpeed(100), // drift dash speed, unused
-		pSpeed(210) // boost speed
+	100000, // max air
+	16, // air drain
+	100, // drift cost
+	0x7530, // boost cost
+	0x7530, // tornado cost
+	pSpeed(100), // drift dash speed, unused
+	pSpeed(210) // boost speed
 };
 
 void Player_DarkShootingStar_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
@@ -82,12 +82,10 @@ void Player_DarkShootingStar(Player *player) {
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 
-    DarkShootingStarInfo *DShSInfo = &PlayerDarkShootingStarInfo[player->index];
-
-    player->rings = DShSInfo->trickAccumulator;
-
 	if (exLoads.gearExLoadID != SYBDarkShootingStarEXLoad) return;
 	if (player->extremeGear != DefaultGear) return; // SYB: Was going to be Legend but considering its ASM quirks we have to live with Default.
+
+    DarkShootingStarInfo *DShSInfo = &PlayerDarkShootingStarInfo[player->index];
 
 	// Ensure player never gets a buffer of tricks beyond Level 3.
 	if (DShSInfo->trickAccumulator > 20) {

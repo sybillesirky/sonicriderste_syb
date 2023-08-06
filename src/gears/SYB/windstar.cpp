@@ -3,9 +3,7 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-// player->genericBool = TRUE if in Trick state.
-// player->genericCounter1 = Trick Accumulator
-// player->genericCounter2 = Level Tracker
+WindStarInfo PlayerWindStarInfo[8];
 
 void Player_CreateWindStarParticles(Player *player) {
     auto *particles = reinterpret_cast<ParticleTaskObject1 *>(SetTask(func_Particle_Task, 0xB3B0, 2)->object);
@@ -81,38 +79,40 @@ void Player_WindStar(Player *player) {
 	if (exLoads.gearExLoadID != SYBWindStarEXLoad) return;
 	if (player->extremeGear != AutoSlider) return;
 
+	WindStarInfo *WdSInfo = &PlayerWindStarInfo[player->index];
+
 	// Ensure player never gets a buffer of tricks beyond Level 3.
-	if (player->genericCounter1 > 24) {
-		player->genericCounter1 = 24;
+	if (WdSInfo->trickAccumulator > 24) {
+		WdSInfo->trickAccumulator = 24;
 	}
 
 	// Basically define "player is in trick state".
 	if (player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp || player->state == HalfPipeTrick) {
-		player->genericBool = true; // This makes sure trick landing behaviours only fire once.
+		WdSInfo->beenTricking = true; // This makes sure trick landing behaviours only fire once.
 	}
 
 	// What happens once player has left trick state.
 	if (player->previousState == FrontflipRamp || player->previousState == BackflipRamp || player->previousState == ManualRamp || player->previousState == HalfPipeTrick) {
 		if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
-			player->genericCounter1 += player->trickCount;
+			WdSInfo->trickAccumulator += player->trickCount;
 			player->trickCount = 0;
 		}
 
-		if (player->genericBool == true) { // Prevents constant updating.
+		if (WdSInfo->beenTricking == true) { // Prevents constant updating.
 			if (player->state == Cruise || player->state == Fly || player->state == RailGrind) {
-				player->genericCounter2 = player->level;
+				WdSInfo->levelHolder = player->level;
 
 				// Update the level and stats now that we have the new amount of tricks.
-				if (player->genericCounter1 >= 24) { // Level 3
+				if (WdSInfo->trickAccumulator >= 24) { // Level 3
 					player->level = 2;
-				} else if (player->genericCounter1 >= 12) { // Level 2
+				} else if (WdSInfo->trickAccumulator >= 12) { // Level 2
 					player->level = 1;
 				} else { // Level 1
 					player->level = 0;
 				}	
 
 				//If the level was changed, refill air gauge and play VFX/SFX.
-				if (player->level != player->genericCounter2) {
+				if (player->level != WdSInfo->levelHolder) {
 					player->currentAir = player->gearStats[player->level].maxAir;
 					if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
 					Player_CreateWindStarParticles(player);
@@ -121,23 +121,23 @@ void Player_WindStar(Player *player) {
 		}
 
 		// Specify that player is no longer in trick state.
-		player->genericBool = false;
+		WdSInfo->beenTricking = false;
 	}
 
 	// Initialising behaviours.
 	if (player->state == StartLine) {
-		player->genericCounter1 = 0;
+		WdSInfo->trickAccumulator = 0;
 		if (player->gearStats[1].boostSpeed != pSpeed(225)) {
 			Player_WindStar_SetStats(player);
     	}
-		player->genericBool = false;
+		WdSInfo->beenTricking = false;
 	}
 
 	// Tailwind Mode Activation.
-	if (player->unk1040 == 1 && player->genericBool2 == false) { // If we did a tornado while not transformed.
+	if (player->unk1040 == 1 && WdSInfo->tailwindActive == false) { // If we did a tornado while not transformed.
 		if (player->rings >= 1) {
-			player->genericCounter3 = 20;
-			player->genericBool2 = true; // Activate mode.
+			WdSInfo->tailwindFrames = 20;
+			WdSInfo->tailwindActive = true; // Activate mode.
 			player->speed += pSpeed(50);
 			PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3D)); // Speed Shoes SFX
 
@@ -149,33 +149,33 @@ void Player_WindStar(Player *player) {
     }
 
 	// Tailwind Mode Deactivation.
-	if (player->genericBool2 == true && player->rings == 0) {
+	if (WdSInfo->tailwindActive == true && player->rings == 0) {
 		Player_WindStar_SetStats(player);
-		player->genericBool2 = false;
+		WdSInfo->tailwindActive = false;
 	}
 
 	// Tailwind: Deactivate when QTE/Death.
 	if (player->state == QTE || player->state == QTE2 || player->state == Death) {
-		if (player->genericBool2 == true) {
+		if (WdSInfo->tailwindActive == true) {
 			Player_WindStar_SetStats(player);
-			player->genericBool2 = false;
+			WdSInfo->tailwindActive = false;
 		}
 	}
 
 	// Tailwind Mode Buffs.
-	if (player->genericBool2 == true && player->state == Cruise) {
+	if (WdSInfo->tailwindActive == true && player->state == Cruise) {
 		player->currentAir += 200;
-		if (player->genericCounter3 <= 0) {
+		if (WdSInfo->tailwindFrames <= 0) {
 			player->rings -= 1;
-			player->genericCounter3 = 21;
+			WdSInfo->tailwindFrames = 21;
 		}
-		player->genericCounter3 -= 1;
+		WdSInfo->tailwindFrames -= 1;
 	}
 
 	if (player->previousState == Death) { // Apply Level again on death.
-		if (player->genericCounter1 >= 24) { // Level 3
+		if (WdSInfo->trickAccumulator >= 24) { // Level 3
 			player->level = 2;
-		} else if (player->genericCounter1 >= 12) { // Level 2
+		} else if (WdSInfo->trickAccumulator >= 12) { // Level 2
 			player->level = 1;
 		} else { // Level 1
 			player->level = 0;

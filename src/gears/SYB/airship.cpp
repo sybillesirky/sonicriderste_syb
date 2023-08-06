@@ -62,10 +62,10 @@ void Player_Airship(Player *player) {
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 
-    AirshipInfo *AirshipInfo = &PlayerAirshipInfo[player->index];
-
 	if (exLoads.gearExLoadID != SYBAirshipEXLoad) return;
 	if (player->extremeGear != LightBoard) return;
+
+    AirshipInfo *AirshipInfo = &PlayerAirshipInfo[player->index];
 
     if (AirshipInfo->airdashCooldown != 0) {
         AirshipInfo->airdashCooldown -= 1;
