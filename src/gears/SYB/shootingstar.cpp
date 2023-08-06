@@ -69,6 +69,7 @@ void Player_ShootingStar_LevelUpdater(Player *player, const GearLevelStats *stat
 void Player_ShootingStar_SetStats(Player *player) {
     if (player->gearStats[0].boostSpeed != pSpeed(210)) {
         player->specialFlags &= ~noSpeedLossChargingJump;
+		player->specialFlags ^= SYBTEMPShSDecel;
         Player_ShootingStar_LevelUpdater(player, &Level1, 0);
         Player_ShootingStar_LevelUpdater(player, &Level2, 1);
         Player_ShootingStar_LevelUpdater(player, &Level3, 2);

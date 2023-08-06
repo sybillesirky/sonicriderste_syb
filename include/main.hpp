@@ -95,6 +95,7 @@ enum SpecialFlags : u32{
 	noBoostChain 				= 1<<22,
 	noSpeedLossTurning 			= 1<<23,
     ignoreOffroad    			= 1<<24, // This special flag is used in assembly. If you change this special flag value, make sure to switch it around in text.s
+	SYBTEMPShSDecel				= 0x800000,
 };
 ENUM_FLAG_OPERATORS(SpecialFlags) // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast,readability-identifier-length)
 //#define	alwaysIgnoreTurbulence      0x00000001UL

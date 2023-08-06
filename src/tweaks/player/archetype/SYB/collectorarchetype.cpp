@@ -27,6 +27,17 @@ ASMUsed void Collector_RingBoxSpeedGain(Player *player, Object *object) {
     }
 }
 
+ASMUsed void ForFun_DieOn100Box(Player *player, Object *object) {
+    return; // This code is funny so I don't wanna completely disable it.
+    if (object->object_type != ItemBox) return;
+    if (
+    object->item_id == HundredRings ||
+    object->item_id == MaxAir) {
+        player->previousState = player->state;
+        player->state = Death;
+    }
+}
+
 void Player_CollectorArchetype(Player *player) {
     // Legacy.
     if (player->characterArchetype != CollectorArchetype) return;
