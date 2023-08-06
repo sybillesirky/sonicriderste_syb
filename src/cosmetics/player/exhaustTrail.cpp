@@ -226,10 +226,10 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 
 			case DefaultGear: {
 				if (exLoads.gearExLoadID == SYBArchAngelEXLoad) {
-					if (Player->genericCounter2 == 1) { // Angel Cyan
+					if (Player->level == 0) { // Angel Cyan
 						color = 0x00FFFFFF;
 					}
-					else if (Player->genericCounter2 == 2) { // Devil Red
+					else if (Player->level == 2) { // Devil Red
 						color = 0xFF0000FF;
 					}
 				}

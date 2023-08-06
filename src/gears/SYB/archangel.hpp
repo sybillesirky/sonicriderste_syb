@@ -1,6 +1,14 @@
 #pragma once
 
 #include "context.hpp"
+
+struct ArchAngelInfo {
+    BOOL isTransformed;
+    u32 ringDrainTickRate;
+};
+
+extern ArchAngelInfo PlayerArchAngelInfo[8];
+
 global {
 void Player_ArchAngel(Player *player);
 }
