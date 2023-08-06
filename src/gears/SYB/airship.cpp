@@ -5,6 +5,8 @@
 
 // u8 ArSBoostCooldown = 0; THIS IS NOW SYBArSShSCounter. IS NOW genericCounter1
 
+AirshipInfo PlayerAirshipInfo[8];
+
 constexpr GearLevelStats Level3 = {
 		200000, // max air
 		32, // air drain
@@ -60,21 +62,23 @@ void Player_Airship(Player *player) {
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 
+    AirshipInfo *AirshipInfo = &PlayerAirshipInfo[player->index];
+
 	if (exLoads.gearExLoadID != SYBAirshipEXLoad) return;
 	if (player->extremeGear != LightBoard) return;
 
-    if (player->genericCounter1 != 0) {
-        player->genericCounter1 -= 1;
+    if (AirshipInfo->airdashCooldown != 0) {
+        AirshipInfo->airdashCooldown -= 1;
     }
 
     if (player->input->toggleFaceButtons & XButton) {
         if (player->state == Fall || player->state == Jump || player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp) {
-            if (player->genericCounter1 == 0 && player->currentAir > player->gearStats[player->level].boostCost * 1.5) {
+            if (AirshipInfo->airdashCooldown == 0 && player->currentAir > player->gearStats[player->level].boostCost * 2) {
                 player->speed += pSpeed(150);
                 player->verticalSpeed -= 0.2;
                 // player->verticalSpeed += 0.5; // Air Dash height bonus. Legacy!
                 player->currentAir -= player->gearStats[player->level].boostCost * 2;
-                player->genericCounter1 = 180;
+                AirshipInfo->airdashCooldown = 180;
                 if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
             }
         }

@@ -56,7 +56,7 @@ inline f32 CustomTopSpeeds(Player *player, f32 topSpeed, s32 level) {
 		topSpeed += pSpeed(40);
 	}
 
-	if (exLoads.gearExLoadID == SYBShootingStarEXLoad) { // SYB: Shooting Star set base top speed to 185.
+	if (exLoads.gearExLoadID == SYBShootingStarEXLoad || exLoads.gearExLoadID == SYBDarkShootingStarEXLoad) { // SYB: Shooting Star set base top speed to 185.
 		topSpeed -= pSpeed(10);
 	}
 	

@@ -3,7 +3,7 @@
 #include "context.hpp"
 
 global {
-void Player_ShootingStar(Player *player);
+    void Player_ShootingStar(Player *player);
 }
 
 global void* gpsTexList_Particle;

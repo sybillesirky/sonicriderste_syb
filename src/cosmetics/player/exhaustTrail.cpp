@@ -9,6 +9,8 @@
 #include "exloads.hpp"
 #include "gears/hyperhangon.hpp"
 #include "gears/dynamo.hpp"
+#include "gears/SYB/darkshootingstar.hpp"
+#include "gears/SYB/airship.hpp"
 
 global char bss_C24D91DC[4]; /*asm*/
 
@@ -211,7 +213,10 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 
 			case LightBoard: {
 				if (exLoads.gearExLoadID == SYBAirshipEXLoad) {
-					if (Player->genericCounter1 != 0) {
+
+					struct AirshipInfo *AirshipInfo = &PlayerAirshipInfo[Player->index];
+
+					if (AirshipInfo->airdashCooldown != 0) {
 						color = 0xFF0000FF;
 					}
 				}
@@ -225,6 +230,14 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 					}
 					else if (Player->genericCounter2 == 2) { // Devil Red
 						color = 0xFF0000FF;
+					}
+				}
+				else if (exLoads.gearExLoadID == SYBDarkShootingStarEXLoad) {
+
+					struct DarkShootingStarInfo *DShSInfo = &PlayerDarkShootingStarInfo[Player->index];
+
+					if (DShSInfo->P2WActive == true) {
+						color = 0x00CC00FF;
 					}
 				}
 				break;

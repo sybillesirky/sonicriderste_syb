@@ -26390,6 +26390,7 @@ EXLoadHUDColors:
     .4byte 0x404040FF # SYB: Metal Sonic 3.0
     .4byte 0xAA2828FF # Red Sonic
     .4byte 0x64C8D2FF # Blue Knuckles
+    .long 0x0 # SYB: Dark Shooting Star
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27185,6 +27186,16 @@ EXLoadBoostColors:
     .4byte 0x3F2BABAC
     .4byte 0x00000000
     .4byte 0x3F800000
+
+    # SYB: Dark Shooting Star
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
 
 .global data_C24D08B0
 data_C24D08B0:

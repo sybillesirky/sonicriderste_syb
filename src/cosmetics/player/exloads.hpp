@@ -286,6 +286,7 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F, // SYB: Metal Sonic 3.0
         -1.0F, // SYB: Red Sonic
         -1.0F, // SYB: Blue Knuckles
+        -1.0F, // SYB: Dark Shooting Star
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -321,6 +322,7 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         CollectorArchetype, //SYB: Metal Sonic 3.0
         CollectorArchetype, //SYB: Red Sonic
         CollectorArchetype, //SYB: Blue Knuckles
+        NoEXLoadArchetype, //SYB: Dark Shooting Star
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);

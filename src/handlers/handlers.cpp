@@ -114,5 +114,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_WindStar(player); //SYB: I added this!
     Player_RoadStar(player); //SYB: I added this!
     //Player_CollectorArchetype(player); //SYB: I added this!
-    //Player_DarkShootingStar(player); //SYB: I added this!
+    Player_DarkShootingStar(player); //SYB: I added this!
 }
