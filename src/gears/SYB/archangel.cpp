@@ -83,10 +83,9 @@ void Player_ArchAngel_Detransform(Player *player) {
     }
     player->level = 1;
     player->specialFlags = (noSpecialFlags);
-    if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // This line specifically kills the audio.
     Player_CreateArchAngelParticles(player);
     player->currentAir = player->gearStats[player->level].maxAir;
-    // Moving the broken line here somehow fixes it.
+    if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD));
 }
 
 void Player_ArchAngel(Player *player) {

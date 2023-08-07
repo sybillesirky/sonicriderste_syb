@@ -3,12 +3,12 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-// u8 Player_ReserveTank_TankAmount = 2; // Doesn't track Level 4 because that one is not problematic. THIS IS NOW SYBShSRsTLevelTracker.
+ReserveTankInfo PlayerReserveTankInfo[8];
 
 constexpr GearLevelStats Level3 = {
 		300000, // max air
 		120, // air drain
-		0x0000029A, // drift cost
+		0x0000029A, // drift cost, temp unused
 		0x9C40, // boost cost
 		0x4E20, // tornado cost
 		pSpeed(100), // drift dash speed, unused
@@ -35,7 +35,6 @@ void Player_CreateReserveTankParticles(Player *player) {
 void Player_ReserveTank_UpdateStats(Player *player, const GearLevelStats *stats) {
     player->gearStats[player->level].maxAir = stats->maxAir;
     player->gearStats[player->level].airDrain = stats->passiveAirDrain;
-    player->gearStats[player->level].driftCost = stats->driftingAirCost;
     player->gearStats[player->level].boostCost = stats->boostCost;
     player->gearStats[player->level].tornadoCost = stats->tornadoCost;
     player->gearStats[player->level].boostSpeed = stats->boostSpeed;
@@ -48,13 +47,16 @@ void Player_ReserveTank_UpdateStats(Player *player, const GearLevelStats *stats)
 }
 
 void Player_ReserveTank_SetBaseStats(Player *player) {
+
+    ReserveTankInfo *RsTInfo = &PlayerReserveTankInfo[player->index];
+
     if (player->specialFlags != (noPits)) {
         player->specialFlags = (noPits);
         Player_ReserveTank_UpdateStats(player, &Level3);
 		player->level = 2;
         player->level4 = true;
         player->currentAir = player->gearStats[player->level].maxAir;
-        player->genericCounter2 = 2;
+        RsTInfo->tankAmount = 2;
     }
 }
 
@@ -64,6 +66,8 @@ void Player_ReserveTank(Player *player) {
 
 	if (exLoads.gearExLoadID != SYBReserveTankEXLoad) return;
 	if (player->extremeGear != AirTank) return;
+
+    ReserveTankInfo *RsTInfo = &PlayerReserveTankInfo[player->index];
 
 	if (player->state == StartLine) { // Initialising behaviour.
         Player_ReserveTank_SetBaseStats(player);
@@ -84,7 +88,7 @@ void Player_ReserveTank(Player *player) {
                 if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); //Ring loss SFX
                 player->level -= 1;
                 player->rings -= 20;
-                player->genericCounter2 -= 1;
+                RsTInfo->tankAmount -= 1;
                 Player_ReserveTank_UpdateStats(player, &Level3);
                 Player_CreateReserveTankParticles(player);
 		        player->currentAir = player->gearStats[player->level].maxAir;
@@ -92,7 +96,7 @@ void Player_ReserveTank(Player *player) {
     }
 
     if (player->previousState == Death) {
-        player ->level = player->genericCounter2;
+        player ->level = RsTInfo->tankAmount;
     }
 
 }
