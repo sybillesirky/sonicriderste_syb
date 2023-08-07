@@ -83,9 +83,9 @@ void Player_ArchAngel_Detransform(Player *player) {
     }
     player->level = 1;
     player->specialFlags = (noSpecialFlags);
+    if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD));
     Player_CreateArchAngelParticles(player);
     player->currentAir = player->gearStats[player->level].maxAir;
-    if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD));
 }
 
 void Player_ArchAngel(Player *player) {
