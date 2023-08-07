@@ -3,8 +3,6 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-// u8 ArSBoostCooldown = 0; THIS IS NOW SYBArSShSCounter. IS NOW genericCounter1
-
 AirshipInfo PlayerAirshipInfo[8];
 
 constexpr GearLevelStats Level3 = {

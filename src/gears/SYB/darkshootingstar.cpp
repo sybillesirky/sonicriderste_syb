@@ -3,10 +3,6 @@
 #include "cosmetics/player/exloads.hpp"
 #include "lib/sound.hpp"
 
-// u8 ShS_tricks_accum = 0; // This keeps track of the total amount of tricks done, for level up. THIS IS NOW u8 SYBArSShSCounter.
-// bool flag_beenTricking = false; // Roundabout way to determine a trick has happened. THIS IS NOW BOOL SYBBeenTricking.
-// u8 ShS_stored_level = 0; THIS IS NOW SYBShSRsTLevelTracker.
-
 DarkShootingStarInfo PlayerDarkShootingStarInfo[8];
 
 void Player_CreateDarkShootingStarParticles(Player *player) {
@@ -104,11 +100,11 @@ void Player_DarkShootingStar(Player *player) {
 
 			// If trick rank is lower than X, induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && 
-				DShSInfo->beenTricking == true) { // SYB: No more P2W if Fly/Grind.
+				DShSInfo->beenTricking == true) {
 				if (player->level > 0) {
 					// Activate mode
                     DShSInfo->P2WActive = true;
-                    DShSInfo->P2WFrames += 300;
+                    DShSInfo->P2WFrames += 300; // 5 seconds.
 
                     // Set new boost speeds
                     player->gearStats[0].boostSpeed = pSpeed(230);
