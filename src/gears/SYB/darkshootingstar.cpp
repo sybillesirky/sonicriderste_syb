@@ -104,8 +104,7 @@ void Player_DarkShootingStar(Player *player) {
 
 			// If trick rank is lower than X, induce penalties if level 2 or higher.
 			if (player->trickCount < 4 && 
-				DShSInfo->beenTricking == true &&
-				player->state == Cruise) { // SYB: No more P2W if Fly/Grind.
+				DShSInfo->beenTricking == true) { // SYB: No more P2W if Fly/Grind.
 				if (player->level > 0) {
 					// Activate mode
                     DShSInfo->P2WActive = true;
@@ -178,7 +177,7 @@ void Player_DarkShootingStar(Player *player) {
     }
 
     // P2W Mode Counter decrease.
-	if (DShSInfo->P2WActive == true) {
+	if (DShSInfo->P2WActive == true && player->state == Cruise) {
 		DShSInfo->P2WFrames -= 1;
 	}
 }

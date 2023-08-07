@@ -238,7 +238,7 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 					struct DarkShootingStarInfo *DShSInfo = &PlayerDarkShootingStarInfo[Player->index];
 
 					if (DShSInfo->P2WActive == true) {
-						color = 0x00CC00FF;
+						color = 0xFFBD2BFF;
 					}
 				}
 				break;

@@ -1,6 +1,6 @@
 #include "boostchainmultiplier.hpp"
 #include "cosmetics/player/exloads.hpp"
-
+#include "gears/SYB/darkshootingstar.hpp"
 
 ASMUsed void Player_BoostChainMultiplier(Player *player) {
 	const f32 currentBoostSpeed = player->gearStats[player->level].boostSpeed;
@@ -51,6 +51,14 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
                 if (player->level == 2) {
                     bcm += 0.07f;
                 }
+            }
+            else if (exLoads.gearExLoadID == SYBDarkShootingStarEXLoad) {
+
+                struct DarkShootingStarInfo *DShSInfo = &PlayerDarkShootingStarInfo[player->index];
+
+                if (DShSInfo->P2WActive == true) {
+					bcm += 0.10f;
+				}
             }
             break;
 
