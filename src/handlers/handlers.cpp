@@ -49,6 +49,7 @@
 #include "gears/SYB/roadstar.hpp" //SYB: I added this!
 #include "tweaks/player/archetype/SYB/collectorarchetype.hpp" //SYB: I added this. Highly experimental!
 #include "gears/SYB/darkshootingstar.hpp" //SYB: I added this!
+#include "gears/SYB/angryarnold.hpp" //SYB: I added this!
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -115,4 +116,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_RoadStar(player); //SYB: I added this!
     //Player_CollectorArchetype(player); //SYB: I added this!
     Player_DarkShootingStar(player); //SYB: I added this!
+    Player_AngryArnold(player); //SYB: I added this!
 }
