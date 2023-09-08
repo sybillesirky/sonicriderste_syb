@@ -3,7 +3,8 @@
 #include "context.hpp"
 
 struct AngryArnoldInfo {
-	u8 ArnoldLevel;
+	u8 CurrentArnoldLevel;
+    u8 LatestArnoldLevel; // SYB: Easiest way to handle level up behaviour.
 };
 
 extern AngryArnoldInfo PlayerAngryArnoldInfo[8];
