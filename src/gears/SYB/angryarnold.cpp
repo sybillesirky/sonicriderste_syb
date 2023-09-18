@@ -154,5 +154,30 @@ void Player_AngryArnold(Player *player) {
 		Player_CreateAngryArnoldParticles(player);
     }
 
+    // Arnold behaviours relating to current speed Ring loss/gain.
+    if (player->state == Cruise ||
+    player->speed > player->gearStats[player->level].boostSpeed) {
+        if (AAInfo->ArnoldClock == 0) {
+            player->rings += 1;
+        }
+    }
+
+    // Arnold Big Boost
+    if ((player->input->toggleFaceButtons & XButton) && (player->state == Cruise) && player->rings >= 25 &&
+		!(player->movementFlags & boosting)) {
+		if (player->rings < 25) return;
+		// if (!(player->currentAir < player->gearStats[player->level].boostCost))
+		// {
+		player->rings -= 25;
+		player->movementFlags & boosting;
+		player->speed += pSpeed(200);
+	}
+
     AAInfo->LatestArnoldLevel = AAInfo->CurrentArnoldLevel;
+    
+    // Easy frame clock.
+    AAInfo->ArnoldClock += 1;
+    if (AAInfo->ArnoldClock == 61) {
+        AAInfo->ArnoldClock = 0;
+    }
 }

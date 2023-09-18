@@ -5,6 +5,7 @@
 struct AngryArnoldInfo {
 	u8 CurrentArnoldLevel;
     u8 LatestArnoldLevel; // SYB: Easiest way to handle level up behaviour.
+    u16 ArnoldClock; // SYB: Easy frame clock
 };
 
 extern AngryArnoldInfo PlayerAngryArnoldInfo[8];
