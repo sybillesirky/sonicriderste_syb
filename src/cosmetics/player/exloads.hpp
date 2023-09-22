@@ -255,7 +255,7 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				EXLoadType,
 				SYBAngryArnoldEXLoad,
 				-1,
-				PowerfulGear,
+				AutoSlider,
 				0xC4,                 0x1A
 		}
 };

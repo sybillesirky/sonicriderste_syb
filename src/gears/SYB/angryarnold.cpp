@@ -5,6 +5,8 @@
 
 AngryArnoldInfo PlayerAngryArnoldInfo[8];
 
+global void lbl_Player_BoostEndFunction(Player *);
+
 constexpr GearLevelStats Level5 = {
 		200000, // max air
 		64, // air drain
@@ -108,25 +110,11 @@ void Player_CreateAngryArnoldParticles(Player *player) {
     particles->unk48 = &player->x;
 }
 
-void Player_AngryArnold(Player *player) {
-	EnabledEXLoads exLoads;
-	FetchEnabledEXLoadIDs(player, exLoads);
-
-	if (exLoads.gearExLoadID != SYBAngryArnoldEXLoad) return;
-	if (player->extremeGear != PowerfulGear) return;
+void Player_AngryArnold_LevelSwitch(Player *player) {
 
     AngryArnoldInfo *AAInfo = &PlayerAngryArnoldInfo[player->index];
 
-    if (player->state == StartLine) { // Initialising behaviours.
-		AAInfo->LatestArnoldLevel = 0;
-        AAInfo->CurrentArnoldLevel = 0;
-        Player_AngryArnold_SetStats(player);
-	}
-
-    Player_AngryArnold_LevelDeterminer(player);
-
-    if (AAInfo->CurrentArnoldLevel != AAInfo->LatestArnoldLevel) {
-        switch(AAInfo->CurrentArnoldLevel) {
+    switch(AAInfo->CurrentArnoldLevel) {
             case 4:
                 player->level = 2;
                 Player_AngryArnold_StatSetter(player, &Level5);
@@ -147,6 +135,27 @@ void Player_AngryArnold(Player *player) {
                 player->level = 0;
                 Player_AngryArnold_StatSetter(player, &Level1);
         }
+}
+
+void Player_AngryArnold(Player *player) {
+	EnabledEXLoads exLoads;
+	FetchEnabledEXLoadIDs(player, exLoads);
+
+	if (exLoads.gearExLoadID != SYBAngryArnoldEXLoad) return;
+	if (player->extremeGear != AutoSlider) return;
+
+    AngryArnoldInfo *AAInfo = &PlayerAngryArnoldInfo[player->index];
+
+    if (player->state == StartLine) { // Initialising behaviours.
+		AAInfo->LatestArnoldLevel = 0;
+        AAInfo->CurrentArnoldLevel = 0;
+        Player_AngryArnold_SetStats(player);
+	}
+
+    Player_AngryArnold_LevelDeterminer(player);
+
+    if (AAInfo->CurrentArnoldLevel != AAInfo->LatestArnoldLevel) {
+        Player_AngryArnold_LevelSwitch(player);
 
         if (AAInfo->CurrentArnoldLevel < AAInfo->LatestArnoldLevel) {
             player->currentAir = player->gearStats[player->level].maxAir;
@@ -155,22 +164,35 @@ void Player_AngryArnold(Player *player) {
     }
 
     // Arnold behaviours relating to current speed Ring loss/gain.
-    if (player->state == Cruise ||
+    if (player->state == Cruise &&
     player->speed > player->gearStats[player->level].boostSpeed) {
         if (AAInfo->ArnoldClock == 0) {
             player->rings += 1;
         }
     }
+    if (player->state == Cruise &&
+    player->speed < player->gearStats[player->level].topSpeed) {
+        if (AAInfo->ArnoldClock == 0) {
+            player->rings -= 1;
+        }
+    }
 
     // Arnold Big Boost
+    if (AAInfo->ArnoldBoostFlag == true) {
+        Player_AngryArnold_LevelSwitch(player);
+        AAInfo->ArnoldBoostFlag = false;
+        AAInfo->ArnoldBoostTimer = 0;
+        lbl_Player_BoostEndFunction(player);
+    }
+
     if ((player->input->toggleFaceButtons & XButton) && (player->state == Cruise) && player->rings >= 25 &&
 		!(player->movementFlags & boosting)) {
 		if (player->rings < 25) return;
-		// if (!(player->currentAir < player->gearStats[player->level].boostCost))
-		// {
 		player->rings -= 25;
 		player->movementFlags & boosting;
-		player->speed += pSpeed(200);
+		player->gearStats[player->level].boostCost = 0;
+        player->gearStats[player->level].boostSpeed = pSpeed(500);
+        AAInfo->ArnoldBoostFlag = true;
 	}
 
     AAInfo->LatestArnoldLevel = AAInfo->CurrentArnoldLevel;
