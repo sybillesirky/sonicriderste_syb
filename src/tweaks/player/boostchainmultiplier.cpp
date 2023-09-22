@@ -64,7 +64,7 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
 
         case AutoSlider:
             if (exLoads.gearExLoadID == SYBRoadStarEXLoad) {    // SYB: Road Star BCM based on Ring Count.
-                bcm += player->rings / 666.67f;
+                bcm += static_cast<f32>(player->rings) / 666.67f;
             }
 
         // case TurboStar: // experimental
