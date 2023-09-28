@@ -60,8 +60,9 @@ void Player_Airship(Player *player) {
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 
-	if (exLoads.gearExLoadID != SYBAirshipEXLoad) return;
-	if (player->extremeGear != LightBoard) return;
+	//if (exLoads.gearExLoadID != SYBAirshipEXLoad) return;
+	//if (player->extremeGear != LightBoard) return;
+    if (player->extremeGear != TestGear) return;
 
     AirshipInfo *AirshipInfo = &PlayerAirshipInfo[player->index];
 
@@ -82,8 +83,8 @@ void Player_Airship(Player *player) {
         }
     }
 
-    if (player->state == StartLine) { // Initialising behaviours.
-        Player_Airship_SetStats(player);
-	}
+    //if (player->state == StartLine) { // Initialising behaviours.
+    //    Player_Airship_SetStats(player);
+	//}
 
 }

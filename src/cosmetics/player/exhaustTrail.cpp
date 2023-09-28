@@ -224,6 +224,14 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				break;
 			}
 
+			case TestGear: {
+				struct AirshipInfo *AirshipInfo = &PlayerAirshipInfo[Player->index];
+
+				if (AirshipInfo->airdashCooldown != 0) {
+					color = 0xFF0000FF;
+				}
+			}
+
 			case DefaultGear: {
 				if (exLoads.gearExLoadID == SYBArchAngelEXLoad) {
 					if (Player->level == 0) { // Angel Cyan

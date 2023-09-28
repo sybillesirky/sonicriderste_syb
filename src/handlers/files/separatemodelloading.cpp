@@ -193,7 +193,9 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
         gearType = Board;
     }else if(player->extremeGear < Darkness){
         gearType = Bike;
-    }
+    }else if(player->extremeGear == TestGear){
+		gearType = Board; // TESTGEAR
+	}
 
 	switch(player->character) {
 		case Ulala:
@@ -399,6 +401,8 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 		gearType = Board;
 	}else if(player->extremeGear < Darkness){
 		gearType = Bike;
+	}else if(player->extremeGear == TestGear){
+		gearType = Board; // TESTGEAR
 	}
 
 	//if(player->extremeGear == HeavyBike){
@@ -484,6 +488,8 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
+	}else if(player->extremeGear == TestGear){
+		gearType = 0;	// TESTGEAR
 	}
 
 	switch(player->character) {
@@ -517,6 +523,8 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
+	}else if(player->extremeGear == TestGear){
+		gearType = 0;	// TESTGEAR
 	}
 
 	switch(player->character) {
