@@ -25719,7 +25719,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFF7F # Test Gear
+    .4byte 0xFFFFFF7F # TestGear
     .byte 0x00 # gear type
     .byte 0x19 # model id
     .2byte 0x012C # ring cost in gear shop
