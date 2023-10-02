@@ -4,10 +4,12 @@ As this project contains custom character/gear additions, all custom files added
 
 ## File Listing
 
+### Vanilla+
 - PPCO: Separated Super Sonic character model
 - PP00: Separated Super Sonic default gear model
 - PB25: New Gear Slot model
 
+### True Colors Characters
 - S1CO: Seelkadoom character model
 - S2CO: Shadow Android character model
 - S3CO: Christmas NiGHTS model
@@ -15,6 +17,7 @@ As this project contains custom character/gear additions, all custom files added
 - S5CO: TEMP Red Sonic model
 - S6CO: TEMP Blue Knuckles model
 
+### True Colors Gears
 - SG00: G.U.N. Bike EXLoad gear model
 - SG01: Reserve Tank model
 - SG02: Shooting Star model
@@ -23,6 +26,7 @@ As this project contains custom character/gear additions, all custom files added
 - SG05: Wind Star model
 - SG06: Road Star model
 
+### Music
 - 7E.ADX: Secret Song
 - SH11.ADX: SS Super Hang-On
 - SH14.ADX: Ulala Super Hang-On
