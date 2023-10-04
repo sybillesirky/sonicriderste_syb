@@ -193,8 +193,22 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
         gearType = Board;
     }else if(player->extremeGear < Darkness){
         gearType = Bike;
-    }else if(player->extremeGear == TestGear){
-		gearType = Board; // TESTGEAR
+    }
+
+	switch(player->extremeGear) { // New Gears functionality.
+		case TestGear:
+		case TGear2:
+		case TGear3:
+		case TGear4:
+		case TGear5:
+		case TGear6:
+		case TGear7:
+		case TGear8:
+		case TGear9:
+			gearType = Board;
+			break;
+		default:
+			break;
 	}
 
 	switch(player->character) {
@@ -401,8 +415,22 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 		gearType = Board;
 	}else if(player->extremeGear < Darkness){
 		gearType = Bike;
-	}else if(player->extremeGear == TestGear){
-		gearType = Board; // TESTGEAR
+	}
+
+	switch(player->extremeGear) { // New Gears functionality.
+		case TestGear:
+		case TGear2:
+		case TGear3:
+		case TGear4:
+		case TGear5:
+		case TGear6:
+		case TGear7:
+		case TGear8:
+		case TGear9:
+			gearType = Board;
+			break;
+		default:
+			break;
 	}
 
 	//if(player->extremeGear == HeavyBike){
@@ -488,8 +516,22 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
-	}else if(player->extremeGear == TestGear){
-		gearType = 0;	// TESTGEAR
+	}
+
+	switch(player->extremeGear) { // New Gears functionality.
+		case TestGear:
+		case TGear2:
+		case TGear3:
+		case TGear4:
+		case TGear5:
+		case TGear6:
+		case TGear7:
+		case TGear8:
+		case TGear9:
+			gearType = 0;
+			break;
+		default:
+			break;
 	}
 
 	switch(player->character) {
@@ -523,8 +565,22 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 		gearType = 0;
 	}else if(player->extremeGear < Darkness){
 		gearType = 2;
-	}else if(player->extremeGear == TestGear){
-		gearType = 0;	// TESTGEAR
+	}
+
+	switch(player->extremeGear) { // New Gears functionality.
+		case TestGear:
+		case TGear2:
+		case TGear3:
+		case TGear4:
+		case TGear5:
+		case TGear6:
+		case TGear7:
+		case TGear8:
+		case TGear9:
+			gearType = 0;
+			break;
+		default:
+			break;
 	}
 
 	switch(player->character) {
