@@ -25719,7 +25719,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFF7F # TestGear
+    .4byte 0xFFFFFF7F # Airship
     .byte 0x00 # gear type
     .byte 0x19 # model id
     .2byte 0x012C # ring cost in gear shop
@@ -25840,16 +25840,16 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFF7F # TGear2
+    .4byte 0xFFFFFF7F # Blue Star Zero
     .byte 0x00 # gear type
-    .byte 0x19 # model id
+    .byte 0x1A # model id
     .2byte 0x012C # ring cost in gear shop
     .4byte 0x00000000 # unknown
-    .4byte 0xB9CA4587 # acceleration
-    .4byte 0xBCBDA12F # top speed (additive)
+    .4byte 0x3A48CAC6 # acceleration
+    .4byte 0x3e897b42 # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBF000000 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -25866,7 +25866,7 @@ Gears:
     .4byte 0x00000000 # air gain multiplier (tricks)
     .4byte 0x00000000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
-    .4byte 0x00000000 # special flags
+    .4byte 0x00000110 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
     .4byte 0x000186A0 # level 1 max air
     .4byte 0x00000010 # level 1 passive air drain

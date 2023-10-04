@@ -196,8 +196,8 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
     }
 
 	switch(player->extremeGear) { // New Gears functionality.
-		case TestGear:
-		case TGear2:
+		case Airship:
+		case BlueStarZero:
 		case TGear3:
 		case TGear4:
 		case TGear5:
@@ -418,8 +418,8 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 	}
 
 	switch(player->extremeGear) { // New Gears functionality.
-		case TestGear:
-		case TGear2:
+		case Airship:
+		case BlueStarZero:
 		case TGear3:
 		case TGear4:
 		case TGear5:
@@ -519,8 +519,8 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 	}
 
 	switch(player->extremeGear) { // New Gears functionality.
-		case TestGear:
-		case TGear2:
+		case Airship:
+		case BlueStarZero:
 		case TGear3:
 		case TGear4:
 		case TGear5:
@@ -568,8 +568,8 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 	}
 
 	switch(player->extremeGear) { // New Gears functionality.
-		case TestGear:
-		case TGear2:
+		case Airship:
+		case BlueStarZero:
 		case TGear3:
 		case TGear4:
 		case TGear5:

@@ -2,13 +2,18 @@
 #include "cosmetics/player/exloads.hpp"
 #include "gears/eggsterminator.hpp"
 
+#include "gears/SYB/bluestarzero.hpp"
+
 void lbl_FastFall(Player *player){
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 	// EggInfo *EggInfo = &PlayerEggsterminator[player->index];
 
+    BSZInfo *BSZInfo = &PlayerBSZInfo[player->index];
+
 	if(!(player->state >= Jump && player->state <= TurbulenceTrick2)){ return; }
 	if(!(player->input->holdFaceButtons & BButton)){ return; }// B button
+	if(BSZInfo->GravDiveState == true){ return; }
 	player->verticalSpeed += -0.0115741F;
 
 	if(player->specialFlags & ringGear){

@@ -224,7 +224,7 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				break;
 			}
 
-			case TestGear: {
+			case Airship: {
 				struct AirshipInfo *AirshipInfo = &PlayerAirshipInfo[Player->index];
 
 				if (AirshipInfo->airdashCooldown != 0) {

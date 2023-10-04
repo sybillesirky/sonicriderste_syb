@@ -40,16 +40,17 @@
 //#include "gears/turbostar.hpp"
 //#include "gears/airtank.hpp"
 //#include "gears/eggsterminator.hpp"
-#include "gears/SYB/test_gunbike.hpp" //SYB: I added this!
-#include "gears/SYB/reservetank.hpp" //SYB: I added this!
-#include "gears/SYB/shootingstar.hpp" //SYB: I added this!
-#include "gears/SYB/airship.hpp" //SYB: I added this!
-#include "gears/SYB/archangel.hpp" //SYB: I added this!
-#include "gears/SYB/windstar.hpp" //SYB: I added this!
-#include "gears/SYB/roadstar.hpp" //SYB: I added this!
-#include "tweaks/player/archetype/SYB/collectorarchetype.hpp" //SYB: I added this. Highly experimental!
-#include "gears/SYB/darkshootingstar.hpp" //SYB: I added this!
-#include "gears/SYB/angryarnold.hpp" //SYB: I added this!
+#include "gears/SYB/test_gunbike.hpp"
+#include "gears/SYB/reservetank.hpp"
+#include "gears/SYB/shootingstar.hpp"
+#include "gears/SYB/airship.hpp"
+#include "gears/SYB/archangel.hpp"
+#include "gears/SYB/windstar.hpp"
+#include "gears/SYB/roadstar.hpp"
+#include "tweaks/player/archetype/SYB/collectorarchetype.hpp"
+#include "gears/SYB/darkshootingstar.hpp"
+#include "gears/SYB/angryarnold.hpp"
+#include "gears/SYB/bluestarzero.hpp"
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -107,14 +108,15 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_IgnoreTurbulenceHandler(player);
     Player_AirOutButton(player);
     Player_Afterburner(player);
-    SYB_Player_GunBike(player);
-    Player_ReserveTank(player); //SYB: I added this!
-    Player_ShootingStar(player); //SYB: I added this!
-    Player_Airship(player); //SYB: I added this!
-    Player_ArchAngel(player); //SYB: I added this!
-    Player_WindStar(player); //SYB: I added this!
-    Player_RoadStar(player); //SYB: I added this!
-    //Player_CollectorArchetype(player); //SYB: I added this!
-    Player_DarkShootingStar(player); //SYB: I added this!
-    Player_AngryArnold(player); //SYB: I added this!
+    SYB_Player_GunBike(player); //SYB: my shit starts here
+    Player_ReserveTank(player);
+    Player_ShootingStar(player);
+    Player_Airship(player);
+    Player_ArchAngel(player);
+    Player_WindStar(player);
+    Player_RoadStar(player);
+    //Player_CollectorArchetype(player);
+    Player_DarkShootingStar(player);
+    Player_AngryArnold(player);
+    Player_BSZ(player);
 }
