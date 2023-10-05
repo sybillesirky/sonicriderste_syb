@@ -7,7 +7,8 @@ As this project contains custom character/gear additions, all custom files added
 ### Vanilla+
 - PPCO: Separated Super Sonic character model
 - PP00: Separated Super Sonic default gear model
-- PB25: New Gear Slot model
+- PB25: New Gear Slot model (Airship)
+- PB25: New Gear Slot model (Blue Star Zero)
 
 ### True Colors Characters
 - S1CO: Seelkadoom character model
