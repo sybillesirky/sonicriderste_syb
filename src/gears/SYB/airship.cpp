@@ -29,7 +29,7 @@ void Player_Airship(Player *player) {
     }else{
         if (AirshipInfo->airdashCharge == 0) return;
         if (player->state == Fall || player->state == Jump || player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp) {
-            if (AirshipInfo->airdashCharge < 45) {
+            if (AirshipInfo->airdashCharge > 45) {
                 if (AirshipInfo->airdashCooldown == 0 && player->currentAir > player->gearStats[player->level].boostCost * 2) {
                     if (AirshipInfo->airdashCharge >= 90) {
 					    player->speed += pSpeed(350);
@@ -39,6 +39,7 @@ void Player_Airship(Player *player) {
                     }
                     if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
                     player->currentAir -= player->gearStats[player->level].boostCost * 2;
+                    player->verticalSpeed -= 0.2;
                     AirshipInfo->airdashCooldown = 180;
                 }
                 AirshipInfo->airdashCharge = 0;
