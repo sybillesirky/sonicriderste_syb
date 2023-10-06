@@ -150,9 +150,6 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		case SYBShootingStarEXLoad:
 			sprintf(filename.data(), "SG02");
 			break;
-		case SYBAirshipEXLoad:
-			sprintf(filename.data(), "SG03");
-			break;
 		case SYBArchAngelEXLoad:
 			sprintf(filename.data(), "SG04");
 			break;
@@ -198,13 +195,6 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
-		case TGear3:
-		case TGear4:
-		case TGear5:
-		case TGear6:
-		case TGear7:
-		case TGear8:
-		case TGear9:
 			gearType = Board;
 			break;
 		default:
@@ -337,9 +327,6 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 		case SYBShootingStarEXLoad:
 			sprintf(CSS_BoardFilename[index], "SG02");
 			break;
-		case SYBAirshipEXLoad:
-			sprintf(CSS_BoardFilename[index], "SG03");
-			break;
 		case SYBArchAngelEXLoad:
 			sprintf(CSS_BoardFilename[index], "SG04");
 			break;
@@ -420,13 +407,6 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
-		case TGear3:
-		case TGear4:
-		case TGear5:
-		case TGear6:
-		case TGear7:
-		case TGear8:
-		case TGear9:
 			gearType = Board;
 			break;
 		default:
@@ -521,13 +501,6 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
-		case TGear3:
-		case TGear4:
-		case TGear5:
-		case TGear6:
-		case TGear7:
-		case TGear8:
-		case TGear9:
 			gearType = 0;
 			break;
 		default:
@@ -570,13 +543,6 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
-		case TGear3:
-		case TGear4:
-		case TGear5:
-		case TGear6:
-		case TGear7:
-		case TGear8:
-		case TGear9:
 			gearType = 0;
 			break;
 		default:

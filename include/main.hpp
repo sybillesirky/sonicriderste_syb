@@ -211,7 +211,7 @@ enum ExtremeGear : u8 {
 	Accelerator, TrapGear, LightBoard, SlideBooster, Legend, MagicCarpet, AirBroom, Hovercraft, ChaosEmerald, Faster,
 	Gambler, PowerGear, OpaOpa, TheCrazy, Berserker, ERider, AirTank, HeavyBike, Destroyer, Omnipotence, CoverS, CoverF,
 	CoverP, HangOn, SuperHangOn, Darkness, Grinder, AdvantageS, AdvantageF, AdvantageP, Cannonball,
-	Airship, BlueStarZero, TGear3, TGear4, TGear5, TGear6, TGear7, TGear8, TGear9, TotalGearAmount
+	Airship, BlueStarZero, TotalGearAmount
 };
 
 enum GearType : u8 {
@@ -330,7 +330,7 @@ enum EXLoads {NoneEXLoad,
         TheBeastEXLoad, E10BEXLoad, HatsuneMikuEXLoad, MetalSonicScarfEXLoad,
         RealaEXLoad, GonGonEXLoad, SYBSuperSonicEXLoad, SYBSeelkadoomEXLoad,
 		SYBGunBikeEXLoad, SYBAndroidEXLoad, SYBReserveTankEXLoad,
-		SYBShootingStarEXLoad, SYBAirshipEXLoad, SYBArchAngelEXLoad,
+		SYBShootingStarEXLoad, SYBArchAngelEXLoad,
 		SYBWindStarEXLoad, SYBRoadStarEXLoad, SYBChristmasNightsEXLoad, 
 		SYBMetalSonic30EXLoad, SYBRedSonicEXLoad, SYBBlueKnucklesEXLoad, 
 		SYBDarkShootingStarEXLoad, SYBAngryArnoldEXLoad, EXLoadCount};

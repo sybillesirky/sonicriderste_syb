@@ -220,10 +220,10 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				}
 
 				if (AirshipInfo->airdashCharge != 0) {
-					if (AirshipInfo->airdashCharge >= 120) {
+					if (AirshipInfo->airdashCharge >= 90) {
 						color = 0xFFFFFFFF;
 					}
-					else if (AirshipInfo->airdashCharge >= 60) {
+					else if (AirshipInfo->airdashCharge >= 45) {
 						color = 0x00FFFFFF;
 					}
 					else if (AirshipInfo->airdashCharge >= 1) {

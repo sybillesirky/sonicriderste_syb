@@ -52,10 +52,6 @@ inline f32 CustomTopSpeeds(Player *player, f32 topSpeed, s32 level) {
 		}
 	}
 
-	if (exLoads.gearExLoadID == SYBAirshipEXLoad) { // SYB: Airship set base top speed to 185.
-		topSpeed += pSpeed(40);
-	}
-
 	if (exLoads.gearExLoadID == SYBShootingStarEXLoad || exLoads.gearExLoadID == SYBDarkShootingStarEXLoad) { // SYB: Shooting Star set base top speed to 185.
 		topSpeed -= pSpeed(10);
 	}
@@ -190,10 +186,6 @@ inline u32 CustomSpecialFlags(Player *player, u32 specialFlags) {
 inline f32 CustomAcceleration(Player *player, f32 acceleration) {
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
-
-	if (exLoads.gearExLoadID == SYBAirshipEXLoad) { // SYB: Airship bonus acceleration.
-		acceleration = 0.0010f;
-	}
 
 	if (player->extremeGear == ChaosEmerald) {
 		switch (player->character) {

@@ -26382,7 +26382,6 @@ EXLoadHUDColors:
     .4byte 0xBD9322FF # SYB: Android
     .long 0x0 # SYB: Reserve Tank
     .long 0x0 # SYB: Shooting Star
-    .long 0x0 # SYB: Airship
     .long 0x0 # SYB: ArchAngel
     .long 0x0 # SYB: Wind Star
     .long 0x0 # SYB: Road Star
@@ -27098,16 +27097,6 @@ EXLoadBoostColors:
     .single -1
 
     # SYB: Shooting Star
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-
-    # SYB: Airship
     .single -1
     .single -1
     .single -1

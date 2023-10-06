@@ -29,9 +29,9 @@ void Player_Airship(Player *player) {
     }else{
         if (AirshipInfo->airdashCharge == 0) return;
         if (player->state == Fall || player->state == Jump || player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp) {
-            if (AirshipInfo->airdashCharge < 60) {
+            if (AirshipInfo->airdashCharge < 45) {
                 if (AirshipInfo->airdashCooldown == 0 && player->currentAir > player->gearStats[player->level].boostCost * 2) {
-                    if (AirshipInfo->airdashCharge >= 120) {
+                    if (AirshipInfo->airdashCharge >= 90) {
 					    player->speed += pSpeed(350);
 					}
                     else {

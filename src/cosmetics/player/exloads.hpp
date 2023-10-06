@@ -4,7 +4,7 @@
 #include "containers/graphicalobject.hpp"
 
 #define CharacterEXLoadSlots 15 //SYB: WE CHANGED THIS FROM 8!
-#define GearEXLoadSlots 14 //SYB: WE CHANGED THIS FROM 5!
+#define GearEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -218,13 +218,6 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 		},
                 {
 				EXLoadType,
-				SYBAirshipEXLoad,
-				-1,
-				LightBoard,
-				0xF5,                 0x1A
-		},
-                {
-				EXLoadType,
 				SYBArchAngelEXLoad,
 				-1,
 				DefaultGear,
@@ -285,7 +278,6 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F, // SYB: Android
         -1.0F, // SYB: Reserve Tank
         -1.0F, // SYB: Shooting Star
-        -1.0F, // SYB: Airship
         -1.0F, // SYB: ArchAngel
         -1.0F, // SYB: Wind Star
         -1.0F, // SYB: Road Star
@@ -321,7 +313,6 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
 	AttunedArchetype, //SYB: Android
         NoEXLoadArchetype, //SYB: Reserve Tank
         NoEXLoadArchetype, //SYB: Shooting Star
-        NoEXLoadArchetype, //SYB: Airship
         NoEXLoadArchetype, //SYB: ArchAngel
         NoEXLoadArchetype, //SYB: Wind Star
         NoEXLoadArchetype, //SYB: Road Star
