@@ -212,23 +212,23 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				break;
 			}
 
-			case LightBoard: {
-				if (exLoads.gearExLoadID == SYBAirshipEXLoad) {
-
-					struct AirshipInfo *AirshipInfo = &PlayerAirshipInfo[Player->index];
-
-					if (AirshipInfo->airdashCooldown != 0) {
-						color = 0xFF0000FF;
-					}
-				}
-				break;
-			}
-
 			case Airship: {
 				struct AirshipInfo *AirshipInfo = &PlayerAirshipInfo[Player->index];
 
 				if (AirshipInfo->airdashCooldown != 0) {
 					color = 0xFF0000FF;
+				}
+
+				if (AirshipInfo->airdashCharge != 0) {
+					if (AirshipInfo->airdashCharge >= 120) {
+						color = 0xFFFFFFFF;
+					}
+					else if (AirshipInfo->airdashCharge >= 60) {
+						color = 0x00FFFFFF;
+					}
+					else if (AirshipInfo->airdashCharge >= 1) {
+						color = 0x00FF00FF;
+					}
 				}
 			}
 
