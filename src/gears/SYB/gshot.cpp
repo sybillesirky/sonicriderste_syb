@@ -14,14 +14,17 @@ void Player_GShot_ResetBoostSpeed(Player *player, int inputLevel) {
 }
 
 void Player_GShot(Player *player) {
+    
     if (player->extremeGear != GShot) return;
-
     GShotInfo *GShotInfo = &PlayerGShotInfo[player->index];
+    f32 newSpeed;
 
     if (player->movementFlags & 0x1000) { // Charging Jump
-        GShotInfo->chargeFrames += 1;
+        if (GShotInfo->chargeFrames < 1000) {
+            GShotInfo->chargeFrames += 1;
+        }
     }
-
+    
     if (!(player->movementFlags & boosting)) { // Emergency Exit in case the Boost Control flag doesn't update.
         GShotInfo->GBoostControl = FALSE;
     }
@@ -29,12 +32,13 @@ void Player_GShot(Player *player) {
     if (player->state != Cruise) { // Boost retention blocker.
         GShotInfo->GBoostControl = FALSE;
     }
-
+    
     if (GShotInfo->GBoostControl == TRUE) {
         if (GShotInfo->GBoostBonus < 100) {
             GShotInfo->GBoostBonus += 0.05;
         }
-        player->gearStats[player->level].boostSpeed = player->gearStats[player->level].boostSpeed + pSpeed(GShotInfo->GBoostBonus);
+        newSpeed = GShot_DefaultBoostSpeeds[player->level] + pSpeed(GShotInfo->GBoostBonus);
+        player->gearStats[player->level].boostSpeed = newSpeed;
     }
 
     if (GShotInfo->GBoostBonus != 0 && GShotInfo->GBoostControl == FALSE) {
