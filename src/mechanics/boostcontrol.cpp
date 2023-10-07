@@ -72,7 +72,6 @@ ASMUsed void Player_BoostControl(Player *player) {
 
                         isBoostControlActive = TRUE;
                         GShotInfo->chargeFrames -= 1;
-                        player->currentAir += 50;
                         break;
                     // case SuperHangOn:
                     //     // if (exLoads.gearExLoadID == E99EXLoad)
@@ -134,6 +133,8 @@ ASMUsed void Player_BoostControl(Player *player) {
             }
         }
     }
+
+    GShotInfo->GBoostControl = isBoostControlActive;
 
     if (!isBoostControlActive) {
         player->boostDuration -= 1;

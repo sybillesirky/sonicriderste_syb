@@ -4,6 +4,8 @@
 
 struct GShotInfo {
 	u16 chargeFrames;
+	BOOL GBoostControl;
+	f32 GBoostBonus;
 };
 
 extern GShotInfo PlayerGShotInfo[8];
