@@ -34,11 +34,12 @@ void Player_GShot(Player *player) {
     }
     
     if (GShotInfo->GBoostControl == TRUE) {
-        if (GShotInfo->GBoostBonus < 100) {
-            GShotInfo->GBoostBonus += 0.05;
+        if (GShotInfo->GBoostBonus < 100.0) {
+            GShotInfo->GBoostBonus += 0.5;
+            player->speed += pSpeed(0.5);
         }
-        newSpeed = GShot_DefaultBoostSpeeds[player->level] + pSpeed(GShotInfo->GBoostBonus);
-        player->gearStats[player->level].boostSpeed = newSpeed;
+        newSpeed = GShot_DefaultBoostSpeeds[player->level] + GShotInfo->GBoostBonus;
+        player->gearStats[player->level].boostSpeed = pSpeed(newSpeed);
     }
 
     if (GShotInfo->GBoostBonus != 0 && GShotInfo->GBoostControl == FALSE) {
