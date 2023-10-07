@@ -1,6 +1,7 @@
 #include "context.hpp"
 #include "cosmetics/player/exloads.hpp"
 #include "lib/stdlib.hpp"
+#include "gears/SYB/gshot.hpp"
 
 constexpr s16 BoostControl_PowerGearAir[3] = {0xA5, 0x14A, 0x1F4}; // for each level
 
@@ -18,6 +19,9 @@ ASMUsed void Player_BoostControl(Player *player) {
 	u8 controllerPort = player->input->port;
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
+
+    GShotInfo *GShotInfo = &PlayerGShotInfo[player->index];
+
 	// struct HHOInfo *hhoInfo = &PlayerHHOInfo[player->index];
 
 	if (player->boostDuration == 1) {
@@ -63,6 +67,13 @@ ASMUsed void Player_BoostControl(Player *player) {
                         player->currentAir = newAir;
                         break;
 
+                    case GShot:
+                        if (GShotInfo->chargeFrames <= 0) break;
+
+                        isBoostControlActive = TRUE;
+                        GShotInfo->chargeFrames -= 1;
+                        player->currentAir += 50;
+                        break;
                     // case SuperHangOn:
                     //     // if (exLoads.gearExLoadID == E99EXLoad)
                     //     // {

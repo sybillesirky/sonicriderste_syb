@@ -211,7 +211,7 @@ enum ExtremeGear : u8 {
 	Accelerator, TrapGear, LightBoard, SlideBooster, Legend, MagicCarpet, AirBroom, Hovercraft, ChaosEmerald, Faster,
 	Gambler, PowerGear, OpaOpa, TheCrazy, Berserker, ERider, AirTank, HeavyBike, Destroyer, Omnipotence, CoverS, CoverF,
 	CoverP, HangOn, SuperHangOn, Darkness, Grinder, AdvantageS, AdvantageF, AdvantageP, Cannonball,
-	Airship, BlueStarZero, TotalGearAmount
+	Airship, BlueStarZero, GShot, TotalGearAmount
 };
 
 enum GearType : u8 {

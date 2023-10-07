@@ -176,7 +176,8 @@ set(DOL_SOURCES     # main
 		src/tweaks/player/archetype/SYB/collectorarchetype.cpp 
 		src/gears/SYB/darkshootingstar.cpp 
 		src/gears/SYB/angryarnold.cpp
-		src/gears/SYB/bluestarzero.cpp )           # main
+		src/gears/SYB/bluestarzero.cpp
+		src/gears/SYB/gshot.cpp )           # main
 
 #====================================================================================
 # Extra plumbing stuff. Hopefully nothing in here will need to be changed

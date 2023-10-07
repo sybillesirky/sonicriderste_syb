@@ -195,6 +195,7 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
+		case GShot:
 			gearType = Board;
 			break;
 		default:
@@ -407,6 +408,7 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
+		case GShot:
 			gearType = Board;
 			break;
 		default:
@@ -501,6 +503,7 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
+		case GShot:
 			gearType = 0;
 			break;
 		default:
@@ -543,6 +546,7 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
 		case BlueStarZero:
+		case GShot:
 			gearType = 0;
 			break;
 		default:

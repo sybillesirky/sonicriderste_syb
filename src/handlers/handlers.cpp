@@ -51,6 +51,7 @@
 #include "gears/SYB/darkshootingstar.hpp"
 #include "gears/SYB/angryarnold.hpp"
 #include "gears/SYB/bluestarzero.hpp"
+#include "gears/SYB/gshot.hpp"
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -119,4 +120,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_DarkShootingStar(player);
     Player_AngryArnold(player);
     Player_BSZ(player);
+    Player_GShot(player);
 }
