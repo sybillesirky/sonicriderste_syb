@@ -26044,7 +26044,7 @@ Gears:
     .4byte 0x00000000 # Fourth exhaust X offset (32 float)
     .4byte 0x00000000 # Fourth exhaust Y offset (32 float)
     .4byte 0x00000000 # Fourth exhaust Z offset (32 float)
-    .4byte 0x0202022A # Bones to apply trails to? (almost always 02)
+    .4byte 0x0202022A # Bones to apply trails to (almost always 02)
     .4byte 0x0202022A # Bones to apply trails to? (almost always 02)
     .4byte 0x00000000
     .4byte 0x000A0001
@@ -26077,7 +26077,7 @@ Gears:
     .4byte 0x00000000 # Fourth exhaust X offset during tricks (32 float)
     .4byte 0x00000000 # Fourth exhaust Y offset during tricks (32 float)
     .4byte 0x00000000 # Fourth exhaust Z offset during tricks (32 float)
-    .4byte 0x02020202 # Bones to apply trails to? (almost always 02)
+    .4byte 0x02020202 # Bones to apply trails to (almost always 02)
     .4byte 0x02020202 # Bones to apply trails to? (almost always 02)
     .4byte 0x3DA3D70A
     .4byte 0x00280100
