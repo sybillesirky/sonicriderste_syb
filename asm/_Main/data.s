@@ -25960,14 +25960,14 @@ Gears:
     .4byte 0x02000000
     .4byte 0x3DA3D70A
     .4byte 0x00280100
-    .4byte 0x02010000
+    .4byte 0x02000000
     .4byte 0xFFFFFF7F # GShot
     .byte 0x00 # gear type
     .byte 0x1B # model id
     .2byte 0x012C # ring cost in gear shop
     .4byte 0x00000000 # unknown
     .4byte 0x3A48CAC6 # acceleration
-    .4byte 0x3d7684be # top speed (additive)
+    .4byte 0xbdd097b4 # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
     .4byte 0x00000000 # weight
@@ -25987,7 +25987,7 @@ Gears:
     .4byte 0x00000000 # air gain multiplier (tricks)
     .4byte 0x00000000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
-    .4byte 0x00000000 # special flags
+    .4byte 0x00000100 # special flags
     .4byte 0x00000000 # air cost multiplier when charging jump
     .4byte 0x000186A0 # level 1 max air
     .4byte 0x00000050 # level 1 passive air drain
@@ -26016,7 +26016,10 @@ Gears:
     .byte 0x02 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
-    .4byte 0x3F000000
+    .4byte 0x3e4ccccd # Main exhaust width (32 float)
+    .4byte 0x3e4ccccd # Secondary exhaust width (32 float)
+    .4byte 0x3e4ccccd # Tertiary exhaust width (32 float)
+    .4byte 0x3e4ccccd # Fourth exhaust width (32 float)
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000
@@ -26029,27 +26032,27 @@ Gears:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0xBD4CCCCD
-    .4byte 0xBF266666
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x02000000
-    .4byte 0x02000000
+    .4byte 0x3E3851EC # Main exhaust X offset (32 float) 
+    .4byte 0xbdcccccd # Main exhaust Y offset (32 float)
+    .4byte 0xbee66666 # Main exhaust Z offset (32 float)
+    .4byte 0xBE3851EC # Secondary exhaust X offset (32 float)
+    .4byte 0xbdcccccd # Secondary exhaust Y offset (32 float)
+    .4byte 0xbee66666 # Secondary exhaust Z offset (32 float)
+    .4byte 0x00000000 # Tertiary exhaust X offset (32 float)
+    .4byte 0xbe99999a # Tertiary exhaust Y offset (32 float)
+    .4byte 0xbf000000 # Tertiary exhaust Z offset (32 float)
+    .4byte 0x00000000 # Fourth exhaust X offset (32 float)
+    .4byte 0x00000000 # Fourth exhaust Y offset (32 float)
+    .4byte 0x00000000 # Fourth exhaust Z offset (32 float)
+    .4byte 0x0202022A # Bones to apply trails to? (almost always 02)
+    .4byte 0x0202022A # Bones to apply trails to? (almost always 02)
     .4byte 0x00000000
     .4byte 0x000A0001
-    .4byte 0x00010000
-    .4byte 0x3F000000
+    .4byte 0x00030000 # Amount of exhaust trails
+    .4byte 0x3e4ccccd # Main exhaust width during trick (32 float)
+    .4byte 0x3e4ccccd # Secondary exhaust width during trick (32 float)
+    .4byte 0x3e4ccccd # Tertiary exhaust width during trick (32 float)
+    .4byte 0x00000000 # Fourth exhaust width during trick (32 float)
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000
@@ -26062,26 +26065,23 @@ Gears:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0xBD4CCCCD
-    .4byte 0xBF266666
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x00000000
-    .4byte 0x02000000
-    .4byte 0x02000000
+    .4byte 0x3E3851EC # Main exhaust X offset during tricks (32 float)
+    .4byte 0xbdcccccd # Main exhaust Y offset during tricks (32 float)
+    .4byte 0xbee66666 # Main exhaust Z offset during tricks (32 float)
+    .4byte 0xBE3851EC # Secondary exhaust X offset during tricks (32 float)
+    .4byte 0xbdcccccd # Secondary exhaust Y offset during tricks (32 float)
+    .4byte 0xbee66666 # Secondary exhaust Z offset during tricks (32 float)
+    .4byte 0x00000000 # Tertiary exhaust X offset during tricks (32 float)
+    .4byte 0xbe99999a # Tertiary exhaust Y offset during tricks (32 float)
+    .4byte 0xbf000000 # Tertiary exhaust Z offset during tricks (32 float)
+    .4byte 0x00000000 # Fourth exhaust X offset during tricks (32 float)
+    .4byte 0x00000000 # Fourth exhaust Y offset during tricks (32 float)
+    .4byte 0x00000000 # Fourth exhaust Z offset during tricks (32 float)
+    .4byte 0x02020202 # Bones to apply trails to? (almost always 02)
+    .4byte 0x02020202 # Bones to apply trails to? (almost always 02)
     .4byte 0x3DA3D70A
     .4byte 0x00280100
-    .4byte 0x02010000
+    .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
 
 .global gsParFullParam_MagicCarpet
 gsParFullParam_MagicCarpet:

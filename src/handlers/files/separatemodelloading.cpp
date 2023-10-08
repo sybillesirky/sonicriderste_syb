@@ -76,7 +76,7 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 		player->character == E10G ||
 		player->character == E10R ||
 		player->character == SuperSonic) {
-			if (player->extremeGear >= ERider) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
+			if (player->extremeGear >= ERider && player->extremeGear <= Cannonball) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
 				switch(player->extremeGear) {
 					case ERider:
 						sprintf(filename.data(), "RB40");
@@ -255,7 +255,7 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 			player->character == E10G ||
 			player->character == E10R ||
 			player->character == SuperSonic) {
-				if (player->extremeGear >= ERider) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
+				if (player->extremeGear >= ERider && player->extremeGear <= Cannonball) {	//SYB: We can just do it like this because Ulala + Skates will never run this anyway.
 					switch(player->extremeGear) {
 						case ERider:
 							sprintf(CSS_BoardFilename[index], "RB40");
