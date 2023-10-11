@@ -13,6 +13,8 @@ ASMUsed u32 HUD_GearsCanHoldMoreRings(Player *player) {
             return 130;
         case CoverP:
             return 300;
+        case Wanted:
+            return 125;
 		default:
 			break;
     }

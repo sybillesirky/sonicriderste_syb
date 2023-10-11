@@ -52,6 +52,7 @@
 #include "gears/SYB/angryarnold.hpp"
 #include "gears/SYB/bluestarzero.hpp"
 #include "gears/SYB/gshot.hpp"
+#include "gears/SYB/wanted.hpp"
 
 // global void Player_Autopilot(struct Player *player); // _Main/text.s ; C240F4D8
 
@@ -121,4 +122,5 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_AngryArnold(player);
     Player_BSZ(player);
     Player_GShot(player);
+    Player_Wanted(player);
 }

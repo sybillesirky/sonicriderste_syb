@@ -196,6 +196,7 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 		case Airship:
 		case BlueStarZero:
 		case GShot:
+		case Wanted:
 			gearType = Board;
 			break;
 		default:
@@ -409,6 +410,7 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 		case Airship:
 		case BlueStarZero:
 		case GShot:
+		case Wanted:
 			gearType = Board;
 			break;
 		default:
@@ -504,6 +506,7 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 		case Airship:
 		case BlueStarZero:
 		case GShot:
+		case Wanted:
 			gearType = 0;
 			break;
 		default:
@@ -547,6 +550,7 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 		case Airship:
 		case BlueStarZero:
 		case GShot:
+		case Wanted:
 			gearType = 0;
 			break;
 		default:

@@ -19,6 +19,13 @@ void Player_GShot(Player *player) {
     GShotInfo *GShotInfo = &PlayerGShotInfo[player->index];
     f32 newSpeed;
 
+    // Clear everything at Start Line.
+    if (player->state == StartLine) {
+        GShotInfo->chargeFrames = 0;
+        GShotInfo->GBoostBonus = 0;
+        GShotInfo->GBoostControl = FALSE;
+    }
+
     if (player->movementFlags & 0x1000) { // Charging Jump
         if (GShotInfo->chargeFrames < 1000) {
             GShotInfo->chargeFrames += 1;
