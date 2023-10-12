@@ -178,7 +178,8 @@ set(DOL_SOURCES     # main
 		src/gears/SYB/angryarnold.cpp
 		src/gears/SYB/bluestarzero.cpp
 		src/gears/SYB/gshot.cpp
-		src/gears/SYB/wanted.cpp )           # main
+		src/gears/SYB/wanted.cpp 
+		src/gears/SYB/supersonic2.cpp )           # main
 
 #====================================================================================
 # Extra plumbing stuff. Hopefully nothing in here will need to be changed

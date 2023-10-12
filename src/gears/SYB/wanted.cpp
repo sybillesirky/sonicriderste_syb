@@ -4,7 +4,7 @@
 
 WantedInfo PlayerWantedInfo[8];
 
-constexpr s16 Wanted_BoostSpeeds[5] = {200, 230, 250, 260, 270}; // for each level
+constexpr s16 Wanted_BoostSpeeds[5] = {200, 230, 250, 260, 265}; // for each level
 
 // TODO: Fix base stats in the ASM.
 

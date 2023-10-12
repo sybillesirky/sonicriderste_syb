@@ -118,7 +118,8 @@ USED f32 Player_MISpeedAirGain(Player *player, f32 airGain){
 		if(player->specialFlags & ringGear){
 			if(player->character == SuperSonic
 			   && player->shortcutAirGainMultiplier > 0
-			   && exLoads.gearExLoadID != HyperSonicEXLoad){
+			   && exLoads.gearExLoadID != HyperSonicEXLoad
+			   && exLoads.gearExLoadID != SuperSonic2EXLoad){
 				s32 newBlastGaugeValue = player->shortcutAirGainMultiplier + static_cast<s32>(GrindRailDashAirCosts[1]);
 				player->shortcutAirGainMultiplier = clamp(newBlastGaugeValue, 0);
 			}else{
@@ -162,7 +163,8 @@ f32 Player_MIFlyAirGain(Player *player, f32 airGain){
 		if (player->specialFlags & ringGear){
 				if(player->character == SuperSonic
 					   && player->shortcutAirGainMultiplier > 0
-					   && exLoads.gearExLoadID != HyperSonicEXLoad){
+					   && exLoads.gearExLoadID != HyperSonicEXLoad
+					   && exLoads.gearExLoadID != SuperSonic2EXLoad){
 						// See the air section below, same logic
 						player->shortcutAirGainMultiplier -= FlyHoopDashInitialCosts[player->level];
 						if(player->shortcutAirGainMultiplier < 0) player->shortcutAirGainMultiplier = 0;
@@ -192,7 +194,8 @@ f32 Player_MIFlyAirGain(Player *player, f32 airGain){
 		if(player->specialFlags & ringGear){
 			if(player->character == SuperSonic
 			   && player->shortcutAirGainMultiplier > 0
-			   && exLoads.gearExLoadID != HyperSonicEXLoad){
+			   && exLoads.gearExLoadID != HyperSonicEXLoad
+			   && exLoads.gearExLoadID != SuperSonic2EXLoad){
 				newBlastGaugeValue = player->shortcutAirGainMultiplier + static_cast<s32>(FlyHoopDashAirLoss[1]);
 				// player->shortcutAirGainMultiplier -= FlyHoopDashAirLoss[player->level];
 				if(newBlastGaugeValue < 0) newBlastGaugeValue = 0;
@@ -228,6 +231,7 @@ USED f32 Player_MIPowerObjectAirGain(Player *player, f32 airGain){
 	if(player->character == SuperSonic
 	   && player->shortcutAirGainMultiplier > 0
 	   && exLoads.gearExLoadID != HyperSonicEXLoad
+	   && exLoads.gearExLoadID != SuperSonic2EXLoad
 	   && player->movementFlags & boosting) // if blast gauge is available, subtract half a trick
 	{
 		newBlastGaugeValue = player->shortcutAirGainMultiplier - 10000;
@@ -253,6 +257,7 @@ USED f32 Player_MITrickAirGain(Player *player, f32 airGain){
 		HyperSonicInfo *hsInfo = &PlayerHyperSonicInfo[player->index];
 		EnabledEXLoads exLoads;
 		FetchEnabledEXLoadIDs(player, exLoads);
+		if (exLoads.gearExLoadID == SuperSonic2EXLoad) return 0;
 		if(exLoads.gearExLoadID == HyperSonicEXLoad && hsInfo->hyperdriveEnabled){
 			//player->shortcutAirGainMultiplier += player->trickCount * 0;
 		//}else if(exLoads.gearExLoadID == HyperSonicEXLoad && !hsInfo->hyperdriveEnabled){

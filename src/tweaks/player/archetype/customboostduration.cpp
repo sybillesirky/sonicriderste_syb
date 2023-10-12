@@ -77,7 +77,8 @@ ASMUsed u32 CustomBoostDuration(Player *player, u32 currentBoostDuration) {
         //         }
         // if (exLoads.gearExLoadID == HyperHangOnEXLoad)
         // {if (hhoInfo->saturnMegadriveStatus != 2) currentBoostDuration /= 2;}
-        if (player->character == SuperSonic && exLoads.gearExLoadID != HyperSonicEXLoad) {
+        if (player->character == SuperSonic && exLoads.gearExLoadID != HyperSonicEXLoad
+            && exLoads.gearExLoadID != SuperSonic2EXLoad) {
             currentBoostDuration = 150;
         }
 		// todo replace with new super check

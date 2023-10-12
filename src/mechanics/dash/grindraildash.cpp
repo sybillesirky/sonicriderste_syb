@@ -85,7 +85,8 @@ void Player_GrindRailDashHandler(Player *player){
 				if(player->specialFlags & ringGear){
 					if(player->character == SuperSonic
 					   && player->shortcutAirGainMultiplier > 0
-					   && exLoads.gearExLoadID != HyperSonicEXLoad){
+					   && exLoads.gearExLoadID != HyperSonicEXLoad
+					   && exLoads.gearExLoadID != SuperSonic2EXLoad){
 						player->shortcutAirGainMultiplier -= GrindRailDashInitialCosts[player->level];
 						if(player->shortcutAirGainMultiplier < 0) player->shortcutAirGainMultiplier = 0;
 					}else{
@@ -101,7 +102,8 @@ void Player_GrindRailDashHandler(Player *player){
 					f32 newMI;
 					if(player->character == SuperSonic
 					   && player->shortcutAirGainMultiplier > 0
-					   && exLoads.gearExLoadID != HyperSonicEXLoad){
+					   && exLoads.gearExLoadID != HyperSonicEXLoad
+					   && exLoads.gearExLoadID != SuperSonic2EXLoad){
 						newMI = player->magneticImpulse_timer; // essentially does nothing with blast gauge
 					}else{
 						newMI = player->magneticImpulse_timer - 6.0f;

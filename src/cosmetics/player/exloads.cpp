@@ -365,6 +365,9 @@ USED const char *GetEXLoadFilenameSuperForm(Player *player, const char filename[
 		case DarkSonicEXLoad:
 			filename = "PG18";
 			break;
+		case SuperSonic2EXLoad:
+			filename = "PP18";
+			break;
 		default:
 			break;
 	}

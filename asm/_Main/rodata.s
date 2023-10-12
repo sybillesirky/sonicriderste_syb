@@ -26390,6 +26390,8 @@ EXLoadHUDColors:
     .4byte 0xAA2828FF # Red Sonic
     .4byte 0x64C8D2FF # Blue Knuckles
     .long 0x0 # SYB: Dark Shooting Star
+    .long 0x0 # SYB: Arnold
+    .4byte 0xAA2828FF # SYB: Super Sonic 2
 
 .global AllCharacterBoostColors
 AllCharacterBoostColors:
@@ -27185,6 +27187,26 @@ EXLoadBoostColors:
     .single -1
     .single -1
     .single -1
+
+    # SYB: Arnold
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+    .single -1
+
+    # Super Sonic 2
+    .4byte 0x3F6BEBEC
+    .4byte 0x3CA0A0A1
+    .4byte 0x00000000
+    .4byte 0x3F800000
+    .4byte 0x00000000
+    .4byte 0x3F66E6E7
+    .4byte 0x3F6BEBEC
+    .4byte 0x3F800000
 
 .global data_C24D08B0
 data_C24D08B0:

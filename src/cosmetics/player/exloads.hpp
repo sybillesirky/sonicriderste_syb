@@ -4,7 +4,7 @@
 #include "containers/graphicalobject.hpp"
 
 #define CharacterEXLoadSlots 15 //SYB: WE CHANGED THIS FROM 8!
-#define GearEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 5!
+#define GearEXLoadSlots 14 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -250,7 +250,14 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				-1,
 				AutoSlider,
 				0xC4,                 0x1A
-		}
+		},
+                {
+				EXLoadType,
+				SuperSonic2EXLoad,
+				Sonic,
+				ChaosEmerald,
+				0xC4,                 0x1A
+		},
 };
 
 constexpr f32 EXLoadWeights[EXLoadCount] = {
@@ -286,6 +293,8 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
         -1.0F, // SYB: Red Sonic
         -1.0F, // SYB: Blue Knuckles
         -1.0F, // SYB: Dark Shooting Star
+        -1.0F, // SYB: Arnold
+        -1.0F, // SYB: Super Sonic 2
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
@@ -321,6 +330,8 @@ constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
         CollectorArchetype, //SYB: Red Sonic
         CollectorArchetype, //SYB: Blue Knuckles
         NoEXLoadArchetype, //SYB: Dark Shooting Star
+        NoEXLoadArchetype, //SYB: Arnold
+        NoEXLoadArchetype, //SYB: Super Sonic 2
 };
 
 ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads);

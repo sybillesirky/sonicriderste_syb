@@ -112,7 +112,8 @@ ASMUsed u32 PowerObjectSpeed(Player *player, Object *object, Object *digitalObje
 					case SuperSonic:
 						if(player->movementFlags & boosting
 						   && player->shortcutAirGainMultiplier > 0
-						   && exLoads.gearExLoadID != HyperSonicEXLoad) {
+						   && exLoads.gearExLoadID != HyperSonicEXLoad
+						   && exLoads.gearExLoadID != SuperSonic2EXLoad) {
 							newSpeed += pSpeed(10.0f);
 						}
 						break;
