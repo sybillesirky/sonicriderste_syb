@@ -27244,6 +27244,7 @@ CSS_GearPortraitID:
     .4byte 0xB0B1B2B3
     .4byte 0xB4B5B6B7
     .4byte 0xB8B9BABB
+    .byte 0x9A // Airship
     .4byte 0x86878889 # from here starts different default gear portraits
     .4byte 0x8A8B8C8C
     .4byte 0x8E8DCE8C
@@ -27264,6 +27265,7 @@ CSS_GearTextTextureID:
     .4byte 0x2A2B2C2D
     .4byte 0x2E2F3031
     .4byte 0x32333435
+    .byte 0x14 // Airship
     .4byte 0x00010203 # from here starts different default gear texts
     .4byte 0x04050606
     .4byte 0x08070606
