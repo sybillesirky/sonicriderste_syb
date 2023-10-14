@@ -8,11 +8,7 @@ void Player_StardustSpeederII(Player *player) {
 	s32 boostCost;
 	//u32 playerTopSpeed = u32(player->gearStats[player->level].topSpeed * SPEED_DIVISOR);
 	//u8 controllerPort = player->input->port;
-	EnabledEXLoads exLoads{};
-	FetchEnabledEXLoadIDs(player, exLoads);
-
-	if (exLoads.gearExLoadID != StardustSpeederEXLoad) return;
-	if (player->extremeGear != HighBooster) return;
+	if (player->extremeGear != GunGear) return;
 
 	// player->specialFlags |= lowerDecel;
 	if (player->state == StartLine) player->currentAir = player->gearStats[1].maxAir;
@@ -50,9 +46,8 @@ void Player_StardustSpeederII(Player *player) {
 void Player_SSIIRingBoost(Player *player) {
 	//s32 newAir;
 	//u8 controllerPort = player->input->port;
-	EnabledEXLoads exLoads{};
-	FetchEnabledEXLoadIDs(player, exLoads);
-	if (exLoads.gearExLoadID != StardustSpeederEXLoad) return;
+
+	if (player->extremeGear != GunGear) return;
 
 	if ((player->input->toggleFaceButtons & XButton) && (player->state == Cruise) && player->rings >= 25 &&
 		!(player->movementFlags & boosting)) {

@@ -138,9 +138,6 @@ ASMUsed void DumpBoardModel(Player *player, const u32 index){
 	}
 	
 	switch(exLoads.gearExLoadID){ // SYB: We added this for Heavy Bike experimentation, and it's MUCH cleaner.
-		case StardustSpeederEXLoad:
-			sprintf(filename.data(), "EB2");
-			break;
 		case SYBGunBikeEXLoad:
 			sprintf(filename.data(), "SYB3");
 			break;
@@ -194,7 +191,7 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
-		case BlueStarZero:
+		case GunGear:
 		case GShot:
 		case Wanted:
 			gearType = Board;
@@ -317,9 +314,6 @@ ASMUsed void DumpBoardModelCSS(Player *player, const u32 index){
 	}
 	
 	switch(exLoads.gearExLoadID){ // SYB: We added this for Heavy Bike experimentation, and it's MUCH cleaner.
-		case StardustSpeederEXLoad:
-			sprintf(CSS_BoardFilename[index], "EB2");
-			break;
 		case SYBGunBikeEXLoad:
 			sprintf(CSS_BoardFilename[index], "SYB3");
 			break;
@@ -408,7 +402,7 @@ ASMUsed void SetupCharacterModelCSS(Player *player, char filename[]){
 
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
-		case BlueStarZero:
+		case GunGear:
 		case GShot:
 		case Wanted:
 			gearType = Board;
@@ -504,7 +498,7 @@ RenderBoardModelTimeTrial(Player *player, void *objectDataInfo, void *boneVisibi
 
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
-		case BlueStarZero:
+		case GunGear:
 		case GShot:
 		case Wanted:
 			gearType = 0;
@@ -548,7 +542,7 @@ ASMUsed void RenderBoardModel(Player *player, void *objectDataInfo, void *boneVi
 
 	switch(player->extremeGear) { // New Gears functionality.
 		case Airship:
-		case BlueStarZero:
+		case GunGear:
 		case GShot:
 		case Wanted:
 			gearType = 0;

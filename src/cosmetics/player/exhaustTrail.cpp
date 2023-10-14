@@ -203,11 +203,9 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				break;
 			}
 
-			case HighBooster: {
-				if (exLoads.gearExLoadID == StardustSpeederEXLoad) {
-					if (Player->rings >= 25) {
-						color = 0xEBD63DFF;
-					}
+			case GunGear: {
+				if (Player->rings >= 25) {
+					color = 0xEBD63DFF;
 				}
 				break;
 			}

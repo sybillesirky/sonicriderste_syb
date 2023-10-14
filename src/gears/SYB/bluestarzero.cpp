@@ -6,7 +6,8 @@
 BSZInfo PlayerBSZInfo[8];
 
 void Player_BSZ(Player *player) {
-    if (player->extremeGear != BlueStarZero) return;
+    // if (player->extremeGear != BlueStarZero) return;
+    return;
 
     BSZInfo *BSZInfo = &PlayerBSZInfo[player->index];
 

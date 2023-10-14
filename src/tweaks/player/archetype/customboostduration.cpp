@@ -93,13 +93,10 @@ ASMUsed u32 CustomBoostDuration(Player *player, u32 currentBoostDuration) {
         }
 
         switch (player->extremeGear) {
-            case HighBooster:
+            case GunGear:
             {
-                if (exLoads.gearExLoadID == StardustSpeederEXLoad)
-                {
-                    if ((player->input->toggleFaceButtons & XButton) && (player->fastest_superCruise == TRUE)) 
+                if ((player->input->toggleFaceButtons & XButton) && (player->fastest_superCruise == TRUE)) 
                     {currentBoostDuration = 1;}
-                }
                 break;
             }
             case ERider:

@@ -10,7 +10,6 @@ ASMUsed u32 Player_NonLevelupGears(Player *player, u32 specialFlags) {
         player->extremeGear == CoverF ||
         player->extremeGear == CoverS ||
         player->extremeGear == CoverP ||
-        exLoads.gearExLoadID == StardustSpeederEXLoad ||
         exLoads.gearExLoadID == SYBReserveTankEXLoad || // SYB: I added this.
         exLoads.gearExLoadID == SYBShootingStarEXLoad || // SYB: I added this.
         exLoads.gearExLoadID == SYBArchAngelEXLoad || // SYB: I added this.
@@ -18,7 +17,8 @@ ASMUsed u32 Player_NonLevelupGears(Player *player, u32 specialFlags) {
         exLoads.gearExLoadID == SYBRoadStarEXLoad || // SYB: I added this.
         exLoads.gearExLoadID == SYBDarkShootingStarEXLoad ||
         exLoads.gearExLoadID == SYBAngryArnoldEXLoad ||
-        player->extremeGear == Wanted
+        player->extremeGear == Wanted ||
+        player->extremeGear == GunGear
         // exLoads.gearExLoadID == E99EXLoad ||
         // exLoads.gearExLoadID == TheBeastEXLoad
         )

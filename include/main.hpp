@@ -211,7 +211,7 @@ enum ExtremeGear : u8 {
 	Accelerator, TrapGear, LightBoard, SlideBooster, Legend, MagicCarpet, AirBroom, Hovercraft, ChaosEmerald, Faster,
 	Gambler, PowerGear, OpaOpa, TheCrazy, Berserker, ERider, AirTank, HeavyBike, Destroyer, Omnipotence, CoverS, CoverF,
 	CoverP, HangOn, SuperHangOn, Darkness, Grinder, AdvantageS, AdvantageF, AdvantageP, Cannonball,
-	Airship, BlueStarZero, GShot, Wanted, TotalGearAmount
+	Airship, GunGear, GShot, Wanted, TotalGearAmount
 };
 
 enum GearType : u8 {
@@ -325,7 +325,7 @@ enum GRStates {
 // add ex loads before the EXLoadCount enum please kthx
 enum EXLoads {NoneEXLoad,
         PerfectNazo, E10REXLoad, DarkSonicEXLoad, HyperSonicEXLoad,
-        StardustSpeederEXLoad, HyperHangOnEXLoad, TheProfessionalEXLoad,
+        HyperHangOnEXLoad, TheProfessionalEXLoad,
         OllieKingGearEXLoad, WindmasterJetEXLoad, NeoMetalEXLoad, E99EXLoad,
         TheBeastEXLoad, E10BEXLoad, HatsuneMikuEXLoad, MetalSonicScarfEXLoad,
         RealaEXLoad, GonGonEXLoad, SYBSuperSonicEXLoad, SYBSeelkadoomEXLoad,

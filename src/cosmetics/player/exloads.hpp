@@ -4,7 +4,7 @@
 #include "containers/graphicalobject.hpp"
 
 #define CharacterEXLoadSlots 15 //SYB: WE CHANGED THIS FROM 8!
-#define GearEXLoadSlots 14 //SYB: WE CHANGED THIS FROM 5!
+#define GearEXLoadSlots 13 //SYB: WE CHANGED THIS FROM 5!
 
 #define NotLockedGearSelectionID 0x1A
 #define LockedGearSelectionID 0x1B
@@ -120,28 +120,28 @@ constexpr EXLoadInfo CharacterEXLoadDataSlots[CharacterEXLoadSlots] = {
                 SYBSeelkadoomEXLoad,
                 Shadow,
                 -1,
-                0xC7,                 static_cast<u16>(-1)
+                0x101,                 static_cast<u16>(-1)
         },
 		{
                 EXLoadType,
                 SYBAndroidEXLoad,
                 Shadow,
                 -1,
-                0xD6,                 static_cast<u16>(-1)
+                0x102,                 static_cast<u16>(-1)
         },
                 {
                 EXLoadType,
                 SYBChristmasNightsEXLoad,
                 Nights,
                 -1,
-                0xC1,                 static_cast<u16>(-1)
+                0x103,                 static_cast<u16>(-1)
         },
         {
                 EXLoadType,
                 SYBMetalSonic30EXLoad,
                 MetalSonic,
                 -1,
-                0xC1,                 static_cast<u16>(-1)
+                0x104,                 static_cast<u16>(-1)
         },
         {
                 EXLoadType,
@@ -189,13 +189,6 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				0xF1,                 0x1A
 		},
 		{
-				EXLoadType,
-				StardustSpeederEXLoad,
-				-1,
-				HighBooster,
-				0xF5,                 0xF6
-		},
-		{
 				LLoadType,
 				SYBGunBikeEXLoad,
 				-1,
@@ -207,61 +200,60 @@ constexpr EXLoadInfo GearEXLoadDataSlots[GearEXLoadSlots] = {
 				SYBReserveTankEXLoad,
 				-1,
 				AirTank,
-				0xED,                 0x1A
+				0xFC,                 0x1A
 		},
                 {
 				EXLoadType,
 				SYBShootingStarEXLoad,
 				-1,
 				DefaultGear,
-				0xF1,                 0x1A
+				0xFB,                 0x1A
 		},
                 {
 				EXLoadType,
 				SYBArchAngelEXLoad,
 				-1,
 				DefaultGear,
-				0xF5,                 0x1A
+				0xFF,                 0x1A
 		},
                 {
                                 EXLoadType,
 				SYBWindStarEXLoad,
 				-1,
 				AutoSlider,
-				0xF5,                 0x1A
+				0xFD,                 0x1A
 		},
                 {
                                 EXLoadType,
 				SYBRoadStarEXLoad,
 				-1,
 				AutoSlider,
-				0xF1,                 0x1A
+				0xFE,                 0x1A
 		},
                 {
 				EXLoadType,
 				SYBDarkShootingStarEXLoad,
 				-1,
 				DefaultGear,
-				0xC4,                 0x1A
+				0x100,                 0x1A
 		},
                 {
 				EXLoadType,
 				SYBAngryArnoldEXLoad,
 				-1,
-				AutoSlider,
+				TotalGearAmount,
 				0xC4,                 0x1A
 		},
                 {
 				EXLoadType,
 				SuperSonic2EXLoad,
 				Sonic,
-				ChaosEmerald,
+				TotalGearAmount,
 				0xC4,                 0x1A
 		},
 };
 
 constexpr f32 EXLoadWeights[EXLoadCount] = {
-        -1.0F,
         -1.0F,
         -1.0F,
         -1.0F,
@@ -298,7 +290,6 @@ constexpr f32 EXLoadWeights[EXLoadCount] = {
 };
 
 constexpr CharacterArchetypes EXLoadArchetypes[EXLoadCount] = {
-        NoEXLoadArchetype,
         NoEXLoadArchetype,
         NoEXLoadArchetype,
         NoEXLoadArchetype,

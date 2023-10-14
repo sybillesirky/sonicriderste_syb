@@ -26363,7 +26363,6 @@ EXLoadHUDColors:
     .long 0xcf4731ff # e10r
     .long 0x101010FF # dark sonic
     .long 0xC0C0C0FF # hyper sonic
-    .long 0x0 # Stardust Speeder II
     .long 0x0 # Hyper Hang-On
     .long 0x0 # The Professional
     .long 0x0 # Ollie King Gear
@@ -26917,16 +26916,6 @@ EXLoadBoostColors:
     .single -1
     .single -1
 
-    # Stardust Speeder II
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-    .single -1
-
     # Hyper Hang-On
     .single -1
     .single -1
@@ -27244,7 +27233,10 @@ CSS_GearPortraitID:
     .4byte 0xB0B1B2B3
     .4byte 0xB4B5B6B7
     .4byte 0xB8B9BABB
-    .byte 0x9A // Airship
+    .byte 0xF8 // Airship
+    .byte 0xF5 // GUN Gear
+    .byte 0xF9 // GShot
+    .byte 0xFA // Wanted
     .4byte 0x86878889 # from here starts different default gear portraits
     .4byte 0x8A8B8C8C
     .4byte 0x8E8DCE8C
@@ -27266,6 +27258,9 @@ CSS_GearTextTextureID:
     .4byte 0x2E2F3031
     .4byte 0x32333435
     .byte 0x14 // Airship
+    .byte 0xF6 // GUN Gear
+    .byte 0x12 // GShot
+    .byte 0x1C // Wanted
     .4byte 0x00010203 # from here starts different default gear texts
     .4byte 0x04050606
     .4byte 0x08070606

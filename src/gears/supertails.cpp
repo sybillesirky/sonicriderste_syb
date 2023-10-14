@@ -63,7 +63,7 @@ ASMUsed void SuperTails_SpawnMagnetAfterDeath(Player *player){
 	// }
 	if(player->extremeGear == CoverF
 	   || player->extremeGear == CoverS
-	   || exLoads.gearExLoadID == StardustSpeederEXLoad){ // temporary, move to different function later
+	   || player->extremeGear == GunGear){ // temporary, move to different function later
 		player->level = 1;
 		player->currentAir = player->gearStats[player->level].maxAir;
 	}
