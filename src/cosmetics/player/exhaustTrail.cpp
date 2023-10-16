@@ -216,18 +216,6 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				if (AirshipInfo->airdashCooldown != 0) {
 					color = 0xFF0000FF;
 				}
-
-				if (AirshipInfo->airdashCharge != 0) {
-					if (AirshipInfo->airdashCharge >= 90) {
-						color = 0xFFFFFFFF;
-					}
-					else if (AirshipInfo->airdashCharge >= 45) {
-						color = 0x00FFFFFF;
-					}
-					else if (AirshipInfo->airdashCharge >= 1) {
-						color = 0x00FF00FF;
-					}
-				}
 			}
 
 			case DefaultGear: {

@@ -4,7 +4,6 @@
 
 struct AirshipInfo {
 	u8 airdashCooldown;
-    u16 airdashCharge;
 };
 
 extern AirshipInfo PlayerAirshipInfo[8];

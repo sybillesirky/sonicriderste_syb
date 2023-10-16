@@ -20960,38 +20960,38 @@ lbl_001D37BC:
     .4byte 0x20212422
     .4byte 0x23000000
 .global lbl_001D37F8
-lbl_001D37F8:
+lbl_001D37F8: // GEARTEXT Struct is here.
     # 0x1D37F8
-    .4byte 0x02130214
-    .4byte 0x02150216
-    .4byte 0x02170218
-    .4byte 0x0219021A
-    .4byte 0x021B021C
-    .4byte 0x021D021E
-    .4byte 0x021F0220
-    .4byte 0x02210222
-    .4byte 0x02230224
-    .4byte 0x02250226
-    .4byte 0x02270228
-    .4byte 0x0229022F
-    .4byte 0x02300231
-    .4byte 0x02320233
-    .4byte 0x02340235
-    .4byte 0x02360237
-    .4byte 0x02380239
-    .4byte 0x023A023B
-    .4byte 0x023C023D
-    .4byte 0x023E023F
-    .4byte 0x020A020B
-    .4byte 0x020C020D
-    .4byte 0x020E020F
-    .4byte 0x0210020A
-    .4byte 0x02120211
-    .4byte 0x020A020A
-    .4byte 0x022A022B
-    .4byte 0x022E022C
-    .4byte 0x022D0000
-    .4byte 0x00000000
+    .4byte 0x02130214 // HiB AutoSlider
+    .4byte 0x02150216 // Powerful Fastest
+    .4byte 0x02170218 // Turbo Balancer
+    .4byte 0x0219021A // BS2 Access
+    .4byte 0x021B021C // Beginner Accelerator
+    .4byte 0x021D021E // TrapGear LightB
+    .4byte 0x021F0220 // SlideB Legend
+    .4byte 0x02210222 // Carpet Broom
+    .4byte 0x02230224 // Cloud Supers
+    .4byte 0x02250226 // Faster Gambler
+    .4byte 0x02270228 // PowerG OpaOpa
+    .4byte 0x0229022F // Taxi Berserker
+    .4byte 0x02300231 // ERider AirTank
+    .4byte 0x02320233 // HeB Destroyer
+    .4byte 0x02340235 // Omni CoverS
+    .4byte 0x02360237 // CoverF CoverP
+    .4byte 0x02380239 // HangOn SHO
+    .4byte 0x023A023B // Darkness Grinder
+    .4byte 0x023C023D // AdvS AdvF
+    .4byte 0x023E023F // AdvP Cannonball
+    .4byte 0x020A020B // Sonic Tails ----- Defaults start here
+    .4byte 0x020C020D // Knuckles Amy
+    .4byte 0x020E020F // Jet Storm
+    .4byte 0x0210020A // Wave Eggman
+    .4byte 0x02120211 // Cream Rouge
+    .4byte 0x020A020A // Shadow SuperS
+    .4byte 0x022A022B // NiGHTS AiAi
+    .4byte 0x022E022C // Ulala E10G
+    .4byte 0x022D0000 // E10R
+    .4byte 0x00000000 // I have no idea what any of the data here is.
     .4byte 0xBDA1CAC1
     .4byte 0x3D50E560
     .4byte 0xBCB43958
@@ -27683,3 +27683,11 @@ UlalaAssetsStructure:
     .4byte 0x00070004
     .4byte 0x000F0004
     .4byte 0x00030000
+
+.global NewGearTextID
+NewGearTextID:
+    .2byte 0x21E // Airship
+    .2byte 0x213 // GunGear
+    .2byte 0x21C // GShot
+    .2byte 0x226 // Wanted
+    .balign 4
