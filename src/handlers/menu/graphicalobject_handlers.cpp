@@ -264,6 +264,20 @@ constexpr std::array<u16, 7> ExtraDefaultGearTextID = {
         522, // variable character, add new characters' IDs before this
 };
 
+constexpr std::array<u16, 10> NewGearTextID = {
+        760, // G.U.N. Gear
+        760, // Airship
+        760, // G-Shot
+        760, // Wanted
+        760, // Shooting Star
+        760, // Wind Star
+        760, // Road Star
+        760, // Archangel
+        760, // Reserve Tank
+        760, // Shinobi
+};
+
+
 // decompiled
 ASMUsed void GraphicalObjectHandler_CSSInformationText(GraphicalObject* gobject) {
     const u8 playerIndex = gobject->idStruct.idIndex;
@@ -291,6 +305,9 @@ ASMUsed void GraphicalObjectHandler_CSSInformationText(GraphicalObject* gobject)
                 if (player->character > E10R && player->extremeGear == ExtremeGear::Default) {
                     // any new characters
                     text = ExtraDefaultGearTextID[player->character - Silver];
+                } else if (player->extremeGear > ExtremeGear::Cannonball) {
+                    // new gears
+                    text = NewGearTextID[player->extremeGear - ExtremeGear::GunGear];
                 } else {
                     text = lbl_001D37F8[((static_cast<s8>(player->character) + 0x29) * static_cast<int>(gear == 0) - 1) + gear];
                 }

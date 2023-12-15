@@ -26852,6 +26852,16 @@ CSS_GearPortraitID:
     .8byte 0x00B000B100B200B3
     .8byte 0x00B400B500B600B7
     .8byte 0x00B800B900BA00BB
+    .2byte 0x00F5 // GunGear
+    .2byte 0x00EC // Airship
+    .2byte 0x00C7 // G-Shot
+    .2byte 0x00C2 // Wanted
+    .2byte 0x00C5 // Shooting Star
+    .2byte 0x00CB // Wind Star
+    .2byte 0x00CC // Road Star
+    .2byte 0x00CC // Archangel
+    .2byte 0x00CC // Reserve Tank
+    .2byte 0x00CC // Shinobi
     .8byte 0x0086008700880089 # from here starts different default gear portraits
     .8byte 0x008A008B008C0108 # eggman is 108
     .8byte 0x008E008D00CE0086 # SS is 0086 to mimic blue star
@@ -26872,6 +26882,16 @@ CSS_GearTextTextureID:
     .8byte 0x002A002B002C002D
     .8byte 0x002E002F00300031
     .8byte 0x0032003300340035
+    .2byte 0x001C // GunGear
+    .2byte 0x001C // Airship
+    .2byte 0x001C // G-Shot
+    .2byte 0x001C // Wanted
+    .2byte 0x001C // Shooting Star
+    .2byte 0x001C // Wind Star
+    .2byte 0x001C // Road Star
+    .2byte 0x001C // Archangel
+    .2byte 0x001C // Reserve Tank
+    .2byte 0x001C // Shinobi
     .8byte 0x0000000100020003 # from here starts different default gear texts
     .8byte 0x0004000500060109 # eggman is 0109
     .8byte 0x0008000700FB0000 # SS is 00 to mimic blue star

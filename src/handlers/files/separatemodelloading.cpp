@@ -212,6 +212,24 @@ std::bitset<MaxPlayerCount> IsSeparateBoardModelActive;
  * @return A new gear type.
  */
 [[nodiscard]] inline GearType GetGearTypeCSSExceptions(Player *player, GearType gearType) {
+    switch(player->extremeGear) {
+        case ExtremeGear::GunGear:
+        case ExtremeGear::Airship:
+        case ExtremeGear::GShot:
+        case ExtremeGear::Wanted:
+        case ExtremeGear::ShootingStar:
+        case ExtremeGear::WindStar:
+        case ExtremeGear::RoadStar:
+        case ExtremeGear::Archangel:
+            gearType = Board;
+            break;
+        case ExtremeGear::ReserveTank:
+            gearType = Bike;
+            break;
+        default:
+            break;
+    }
+
     switch(player->character) {
         case Ulala:
             if (gearType == Bike) {

@@ -15,7 +15,8 @@ namespace ExtremeGear{
 		Default, HighBooster, AutoSlider, PowerfulGear, Fastest, TurboStar, SpeedBalancer, BlueStar2, Access, Beginner,
 		Accelerator, TrapGear, LightBoard, SlideBooster, Legend, MagicCarpet, AirBroom, Hovercraft, ChaosEmerald, Faster,
 		Gambler, PowerGear, OpaOpa, TheCrazy, Berserker, ERider, AirTank, HeavyBike, Destroyer, Omnipotence, CoverS, CoverF,
-		CoverP, HangOn, SuperHangOn, Darkness, Grinder, AdvantageS, AdvantageF, AdvantageP, Cannonball,
+		CoverP, HangOn, SuperHangOn, Darkness, Grinder, AdvantageS, AdvantageF, AdvantageP, Cannonball, GunGear, Airship,
+		GShot, Wanted, ShootingStar, WindStar, RoadStar, Archangel, ReserveTank, Shinobi,
 
 		TotalGearAmount
 	};
