@@ -6,6 +6,8 @@
 #include "exloads.hpp"
 #include "gears/gambler.hpp"
 #include "gears/hangon.hpp"
+#include "gears/airship.hpp"
+#include "gears/windstar.hpp"
 #include "handlers/player/initgeardata.hpp"
 #include "lib/ASMHelper.hpp"
 #include "riders/gamemode.hpp"
@@ -230,6 +232,24 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 			case GunGear: {
 				if(Player->rings >= 25) {
 					color = 0xFF0000FF;
+				}
+				break;
+			}
+
+			case Airship: {
+				AirshipInfo *AirshipInfo = &PlayerAirshipInfo[Player->index];
+
+				if (AirshipInfo->airdashCooldown != 0) {
+					color = 0xFF0000FF;
+				}
+				break;
+			}
+
+			case WindStar: {
+				WindStarInfo *WindStarInfo = &PlayerWindStarInfo[Player->index];
+
+				if (WindStarInfo->tailwindActive == true) {
+					color = 0x00FF00FF;
 				}
 				break;
 			}
