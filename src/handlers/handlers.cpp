@@ -44,6 +44,7 @@
 // #include "gears/airtank.hpp"
 //#include "gears/eggsterminator.hpp"
 #include "handlers/menu/debugmenu/debugmenu_handlers.hpp"
+#include "mechanics/tricklevelling.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -59,9 +60,6 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_TimerHandler(*player);
     Player_Autopilot(player);
     Player_MagneticImpulseTimer(*player);
-    Player_BeginnerOmegaBoost(player);
-    Player_CoverF(player);
-    Player_Fastest(player);
     Player_SuperTailsTransformation(*player);
     Player_SuperMetalTransformation(*player);
     Player_CheckBeginnerAirOut(player);
@@ -71,16 +69,7 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_GRHandler(player);
     Player_DriftTips(player);
     Player_LimiterCut(player);
-    Player_CrazyStop(player);
-    Player_HangOn(player);
-    Player_AdvantageF(player);
-    Player_MagicCarpet(player);
-    Player_CoverS(player);
-    Player_CoverP(player);
-    Player_PowerGear(player);
     Player_RingGearLevels(player);
-    Player_StardustSpeederII(player);
-    Player_SSIIRingBoost(player);
     Player_BoostArchetypeJCBC(player);
     Player_SpeedBalancerResetBoostSpeed(player);
     CustomCodehandler_Player(player);
@@ -88,13 +77,10 @@ ASMUsed void PlayerHandler(Player *player) {
     Player_HyperSonicUpdatePlayerStats(player);
     Player_HyperSonicTotalLinkCalc(player);
     Player_HyperSonicRingStream(player);
-    Player_Faster(player);
     // Player_HyperHangOn(player);
     // Player_TheProfessional(player);
-    Player_SlideBooster(player);
     // Player_OllieKingGear(player);
     // Player_Dynamo(player);
-    Player_TurboStar(player);
     // Player_AirTank(player);
     // Player_Eggsterminator(player);
     // Player_TheBeast(player);
@@ -108,11 +94,69 @@ ASMUsed void PlayerHandler(Player *player) {
     // Player_NeoII(player);
     // Player_SuperStorm(player);
     Player_lightBoardEffect(player);
-    Player_moneyCrisis(player);
     Player_storeFlagInfo(player);
     Player_checkGearIfUsesBlastGauge(player);
     Player_resetGauge(player);
     Player_TornadoBoostApplications(player);
     DebugMenuHandler_InfiniteAir(player);
     DebugMenuHandler_InfiniteRings(player);
+
+    switch(player->extremeGear) {
+        using namespace ExtremeGear;
+        case ExtremeGear::TurboStar:
+            Player_TurboStar(player);
+            break;
+        case PowerGear:
+            Player_PowerGear(player);
+            break;
+        case Fastest:
+            Player_Fastest(player);
+            break;
+        case Faster:
+            Player_Faster(player);
+            break;
+        case Beginner:
+            Player_BeginnerOmegaBoost(player);
+            break;
+        case SlideBooster:
+            Player_SlideBooster(player);
+            break;
+        case TheCrazy:
+            Player_CrazyStop(player);
+            break;
+        case MagicCarpet:
+        	Player_MagicCarpet(player);
+            break;
+        case CoverS:
+            Player_CoverS(player);
+            break;
+        case CoverF:
+            Player_CoverF(player);
+            break;
+        case CoverP:
+            Player_CoverP(player);
+            Player_moneyCrisis(player);
+            break;
+        case ExtremeGear::HangOn:
+            Player_HangOn(player);
+            break;
+        case AdvantageF:
+            Player_AdvantageF(player);
+            break;
+        case GunGear:
+            Player_StardustSpeederII(player);
+            Player_SSIIRingBoost(player);
+            break;
+        case ShootingStar:
+            Player_TrickLevelling(player);
+            break;
+        case WindStar:
+            Player_TrickLevelling(player);
+            break;
+        case RoadStar:
+            Player_TrickLevelling(player);
+            break;
+        default:
+            break;
+    }
 }

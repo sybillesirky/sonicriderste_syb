@@ -171,7 +171,8 @@ set(DOL_SOURCES     # main
 		src/lib/thread.cpp src/lib/thread.hpp
 		src/handlers/player/specialflagtweaks.cpp
         src/handlers/files/load_deduplicated.cpp
-		src/gears/tweaks/newgearselect.cpp) # main
+		src/gears/tweaks/newgearselect.cpp
+		src/mechanics/tricklevelling.cpp ) # main
 
 set(STANDALONE_HEADERS # This is only here to make sure that headers actually include the things it needs, by "compiling" them standalone.
 		include/compare_many.hpp

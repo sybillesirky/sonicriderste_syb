@@ -191,7 +191,7 @@ inline void GetCustomEXLoadWeight(const u16 &exLoadID, f32 &weight) {
 
 inline bool isLevel2Gear(const Player &player, std::optional<const EnabledEXLoads> exLoads = std::nullopt) {
 	const auto &enabledExLoad = exLoads.value_or(FetchEnabledEXLoadIDs(player));
-	return player.extremeGear == ExtremeGear::CoverF || player.extremeGear == ExtremeGear::CoverP || player.extremeGear == ExtremeGear::CoverS || (player.extremeGear == ExtremeGear::HighBooster && enabledExLoad.gearExLoadID == StardustSpeederEXLoad);
+	return player.extremeGear == ExtremeGear::CoverF || player.extremeGear == ExtremeGear::CoverP || player.extremeGear == ExtremeGear::CoverS || (player.extremeGear == ExtremeGear::GunGear);
 }
 
 ASMUsed void InitPlayerData(Player &player) {

@@ -5,8 +5,6 @@
 ASMDefined void lbl_Player_BoostEndFunction(Player *);
 
 void Player_StardustSpeederII(Player *player) {
-	if(FetchEnabledEXLoadIDs(*player).gearExLoadID != StardustSpeederEXLoad) { return; }
-
 	if(player->state == StartLine) { player->currentAir = player->gearStats[1].maxAir; }
 	player->level = 1;
 
@@ -30,8 +28,6 @@ void Player_StardustSpeederII(Player *player) {
 }
 
 void Player_SSIIRingBoost(Player *player) {
-	if(FetchEnabledEXLoadIDs(*player).gearExLoadID != StardustSpeederEXLoad) { return; }
-
 	if (player->input->toggleFaceButtons.hasAny(XButton) &&
 	   player->state == Cruise &&
 	   player->rings >= 25 &&

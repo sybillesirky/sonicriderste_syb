@@ -285,7 +285,7 @@ constexpr std::array<EXLoadInfo, GearEXLoadSlots> GearEXLoadDataSlots = {
                         EXLoadType,
                         StardustSpeederEXLoad,
                         -1,
-                        ExtremeGear::HighBooster,
+                        ExtremeGear::TotalGearAmount, // I love dependencies
                         0xF5, 0xF6,
                         static_cast<u16>(-1), static_cast<u16>(-1),
                         DefaultTypeCharacter

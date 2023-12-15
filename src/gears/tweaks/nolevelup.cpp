@@ -8,9 +8,12 @@ ASMUsed u32 Player_NonLevelupGears(Player *player, u32 specialFlags) {
         player->extremeGear == ExtremeGear::CoverF ||
         player->extremeGear == ExtremeGear::CoverS ||
         player->extremeGear == ExtremeGear::CoverP ||
-        exLoads.gearExLoadID == StardustSpeederEXLoad ||
+        player->extremeGear == ExtremeGear::GunGear ||
         exLoads.gearExLoadID == E99EXLoad ||
-        exLoads.gearExLoadID == HangOnATEXLoad
+        exLoads.gearExLoadID == HangOnATEXLoad ||
+        player->extremeGear == ExtremeGear::ShootingStar ||
+        player->extremeGear == ExtremeGear::WindStar ||
+        player->extremeGear == ExtremeGear::RoadStar
         //||
         // exLoads.gearExLoadID == TheBeastEXLoad
         ) {
