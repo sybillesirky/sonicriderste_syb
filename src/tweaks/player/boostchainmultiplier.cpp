@@ -58,6 +58,10 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
 			}
             break;
 
+        case RoadStar:
+            bcm += static_cast<f32>(player->rings) / 666.67f;
+            break;
+
         // case TurboStar: // experimental
         // if (exLoads.gearExLoadID == OllieKingGearEXLoad) break;
         //         switch (player->level) {
