@@ -108,4 +108,15 @@ void Player_TrickLevelling(Player *player) {
         // Specify that the player is no longer in trick state.
         TrLInfo->isTricking = false;
     }
+
+    if (player->previousState == Death) { // Apply Level again on death.
+		if (TrLInfo->trickAccumulator >= Tricks4Level[1]) { // Level 3
+			player->level = 2;
+		} else if (TrLInfo->trickAccumulator >= Tricks4Level[0]) { // Level 2
+			player->level = 1;
+		} else { // Level 1
+			player->level = 0;
+		}
+		player->previousState = Cruise;
+	}
 }

@@ -45,6 +45,7 @@
 //#include "gears/eggsterminator.hpp"
 #include "handlers/menu/debugmenu/debugmenu_handlers.hpp"
 #include "mechanics/tricklevelling.hpp"
+#include "gears/windstar.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -152,6 +153,7 @@ ASMUsed void PlayerHandler(Player *player) {
             break;
         case WindStar:
             Player_TrickLevelling(player);
+            Player_WindStar(player);
             break;
         case RoadStar:
             Player_TrickLevelling(player);

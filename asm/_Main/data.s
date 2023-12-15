@@ -25788,7 +25788,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x00000000 # Airship
+    .4byte 0xFFFFFF7F # Airship
     .byte 0x00 # gear type
     .byte 0x1A # model id
     .2byte 0x012C # ring cost in gear shop
@@ -25909,7 +25909,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0x00000000 # GShot
+    .4byte 0xFFFFFF7F # GShot
     .byte 0x00 # gear type
     .byte 0x1B # model id
     .2byte 0x012C # ring cost in gear shop
@@ -26030,7 +26030,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0x00000000 # Wanted
+    .4byte 0xFFFFFF7F # Wanted
     .byte 0x00 # gear type
     .byte 0x1C # model id
     .2byte 0x012C # ring cost in gear shop
@@ -26514,7 +26514,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x00000000 # Archangel
+    .4byte 0xFFFFFF7F # Archangel
     .byte 0x00 # gear type
     .byte 0x20 # model id
     .2byte 0x0000 # ring cost in gear shop

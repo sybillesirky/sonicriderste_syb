@@ -209,6 +209,9 @@ ASMUsed f32 Player_DecelModifier(Player *player) {
 		case AirBroom:
 			DecelModifier += 0.02f;
 			break;
+		case ShootingStar:
+			DecelModifier += 0.04f;
+			break;
 		default: break;
 	}
 
