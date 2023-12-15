@@ -3,6 +3,7 @@
 #include "gears/blastGaugeGears.hpp"
 #include "gears/hypersonic.hpp"
 #include "gears/hangon.hpp"
+#include "gears/gshot.hpp"
 
 constexpr std::array<s16, 3> BoostControl_PowerGearAir = {0xA5, 0x14A, 0x1F4}; // for each level
 constexpr std::array<s16, 3> BoostControl_AdvantageSAir = {0xF5, 0x1AA, 0x1F4};// for each level
@@ -80,6 +81,15 @@ ASMUsed void Player_BoostControl(Player *player) {
 							break;
 						}
 						break;
+                    case GShot: {
+                        GShotInfo *GShotInfo = &PlayerGShotInfo[player->index];
+                        if (GShotInfo->chargeFrames <= 0) break;
+                        isBoostControlActive = TRUE;
+                        GShotInfo->chargeFrames -= 1;
+                        GShotInfo->GBoostControl = isBoostControlActive;
+                        break;
+                    }
+
 					default:
 						break;
 				}

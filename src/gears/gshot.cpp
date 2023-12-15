@@ -5,7 +5,7 @@
 std::array<GShotInfo, MaxPlayerCount> PlayerGShotInfo;
 
 void Player_GShot_ResetBoostSpeed(Player *player, int inputLevel) {
-    player->gearStats[inputLevel].boostSpeed = pSpeed(Gears[ExtremeGear::GShot].levelStats[inputLevel].boostSpeed);
+    player->gearStats[inputLevel].boostSpeed = Gears[ExtremeGear::GShot].levelStats[inputLevel].boostSpeed;
     if (player->characterArchetype == BoostArchetype) {
 		player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
 	}
@@ -41,8 +41,8 @@ void Player_GShot(Player *player) {
             GShotInfo->GBoostBonus += 0.5;
             player->speed += pSpeed(0.5);
         }
-        newSpeed = GShot_DefaultBoostSpeeds[player->level] + GShotInfo->GBoostBonus;
-        player->gearStats[player->level].boostSpeed = pSpeed(newSpeed);
+        newSpeed = Gears[ExtremeGear::GShot].levelStats[player->level].boostSpeed + pSpeed(GShotInfo->GBoostBonus);
+        player->gearStats[player->level].boostSpeed = newSpeed;
     }
 
     if (GShotInfo->GBoostBonus != 0 && GShotInfo->GBoostControl == FALSE) {
