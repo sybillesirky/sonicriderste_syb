@@ -47,6 +47,7 @@
 #include "mechanics/tricklevelling.hpp"
 #include "gears/windstar.hpp"
 #include "gears/airship.hpp"
+#include "gears/gshot.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -161,6 +162,9 @@ ASMUsed void PlayerHandler(Player *player) {
             break;
         case Airship:
             Player_Airship(player);
+            break;
+        case GShot:
+            Player_GShot(player);
             break;
         default:
             break;

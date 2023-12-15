@@ -25,9 +25,9 @@ void Player_WindStar(Player *player) {
 
 	// Tailwind Mode Deactivation.
 	if (WdSInfo->tailwindActive == true && player->rings == 0) {
-		player->gearStats[0].boostSpeed -= pSpeed(20);
-		player->gearStats[1].boostSpeed -= pSpeed(20);
-		player->gearStats[2].boostSpeed -= pSpeed(20);
+		player->gearStats[0].boostSpeed = Gears[ExtremeGear::WindStar].levelStats[0].boostSpeed;
+		player->gearStats[1].boostSpeed = Gears[ExtremeGear::WindStar].levelStats[1].boostSpeed;
+		player->gearStats[2].boostSpeed = Gears[ExtremeGear::WindStar].levelStats[2].boostSpeed;
 		WdSInfo->tailwindActive = false;
 	}
 
