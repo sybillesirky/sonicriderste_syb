@@ -240,16 +240,17 @@ inline f32 SpecificFlyHoops(ObjectNode *object, Player *player, f32 currentHoopS
 				currentHoopSpeed *= 1.4f;
 			}
 			break;
-		case DarkDesert:
-			if((object_id >= 0xF6 && object_id <= 0xF8)
-				|| object_id == 0x2D0){
-				currentHoopSpeed *= 2.0f;
-			}
-			// BIGASS NOTE: THE OBJECT IDS CHANGE IF YOU CHANGE THE STAGE.
-			if(object_id >= 0x2D1 && object_id <= 0x2D3) {
-				currentHoopSpeed *= 0.875f;
-			}
-			break;
+		// case DarkDesert:
+		// 	if((object_id >= 0xF6 && object_id <= 0xF8)
+		// 		|| object_id == 0x2D0){
+		// 		currentHoopSpeed *= 2.0f;
+		// 	}
+		// 	// BIGASS NOTE: THE OBJECT IDS CHANGE IF YOU CHANGE THE STAGE.
+		// 	// BIGASS NOTE SYB: Suck my dick this shit sucks!
+		// 	if(object_id >= 0x2D1 && object_id <= 0x2D3) {
+		// 		currentHoopSpeed *= 0.875f;
+		// 	}
+		// 	break;
 		default:
 			break;
 	}
