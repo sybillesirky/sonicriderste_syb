@@ -62,6 +62,12 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
             bcm += static_cast<f32>(player->rings) / 666.67f;
             break;
 
+        case Archangel:
+            if (player->level == 2) {
+                bcm += 0.07f;
+            }
+            break;
+
         // case TurboStar: // experimental
         // if (exLoads.gearExLoadID == OllieKingGearEXLoad) break;
         //         switch (player->level) {

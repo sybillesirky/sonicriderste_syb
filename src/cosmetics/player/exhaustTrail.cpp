@@ -254,6 +254,16 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				break;
 			}
 
+			case Archangel: {
+				if (Player->level == 0) { // Angel Cyan
+					color = 0x00FFFFFF;
+				}
+				else if (Player->level == 2) { // Devil Red
+					color = 0xFF0000FF;
+				}
+				break;
+			}
+
 			case ExtremeGear::HangOn: {
 				HangOnInfo *hoInfo = &PlayerHangOnInfo[Player->index];
 				if(hoInfo->lockoutFrameCounter > 0 && Player->movementFlags.hasAny(boosting)) {

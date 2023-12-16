@@ -23,57 +23,6 @@ void Player_CreateArchAngelParticles(Player *player) {
 	particles->unk48 = &player->x;
 }
 
-constexpr GearLevelStats Genocide = { // Internally Level 3
-	200000, // max air
-	64, // air drain
-	0x0000014D, // drift cost
-	0x4E20, // boost cost
-	0x9C40, // tornado cost
-	pSpeed(100), // drift dash speed, unused
-	pSpeed(245) // boost speed
-};
-
-constexpr GearLevelStats Neutral = { // Internally Level 2
-	150000, // max air
-	16, // air drain
-	0x000000FA, // drift cost
-	0x4E20, // boost cost
-	0x7530, // tornado cost
-	pSpeed(100), // drift dash speed, unused
-	pSpeed(220) // boost speed
-};
-
-constexpr GearLevelStats Pacifist = { // Internally Level 1
-	200000, // max air
-	64, // air drain
-	0x0000014D, // drift cost
-	0x4E20, // boost cost
-	0x61A8, // tornado cost
-	pSpeed(100), // drift dash speed, unused
-	pSpeed(255) // boost speed
-};
-
-void Player_ArchAngel_LevelUpdater(Player *player, const GearLevelStats *stats, int inputLevel) {
-    player->gearStats[inputLevel].maxAir = stats->maxAir;
-    player->gearStats[inputLevel].airDrain = stats->passiveAirDrain;
-    player->gearStats[inputLevel].driftCost = stats->driftingAirCost;
-    player->gearStats[inputLevel].boostCost = stats->boostCost;
-    player->gearStats[inputLevel].tornadoCost = stats->tornadoCost;
-    player->gearStats[inputLevel].boostSpeed = stats->boostSpeed;
-    if (player->characterArchetype == BoostArchetype) {
-		player->gearStats[inputLevel].boostSpeed += BoostArchetypeBoostSpeeds[inputLevel];
-	}
-}
-
-void Player_ArchAngel_SetStats(Player *player) {
-    if (player->specialFlags != (noSpecialFlags)) { // ArchAngel should never have special flags at Start Line, so this check is fine.
-        player->specialFlags = (noSpecialFlags);
-        Player_ArchAngel_LevelUpdater(player, &Pacifist, 0);
-        Player_ArchAngel_LevelUpdater(player, &Neutral, 1);
-        Player_ArchAngel_LevelUpdater(player, &Genocide, 2);
-    }
-}
-
 void Player_ArchAngel_Detransform(Player *player) {
 
     ArchAngelInfo *ArAInfo = &PlayerArchAngelInfo[player->index];
