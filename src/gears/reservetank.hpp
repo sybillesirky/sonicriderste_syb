@@ -3,7 +3,7 @@
 #include "riders/player.hpp"
 #include "riders/gear.hpp"
 
-namespace Wanted{
+namespace ReserveTank{
 	enum GearSpecific{
 		Level4,
 	};
@@ -11,17 +11,15 @@ namespace Wanted{
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
-struct WantedInfo {
-	u8 ringTimer;
-    u8 wantedLevel;
-    u8 lastWantedLevel;
-    u8 storedPlacement;
+struct ReserveTankInfo {
+    u8 tankAmount;
+    bool refillActive;
 };
 #pragma GCC diagnostic pop
 
-extern std::array<WantedInfo, MaxPlayerCount> PlayerWantedInfo;
+extern std::array<ReserveTankInfo, MaxPlayerCount> PlayerReserveTankInfo;
 
-void Player_Wanted(Player *player);
+void Player_ReserveTank(Player *player);
 
 ASMDefined void func_Particle_Task();
 ASMDefined void* gpsTexList_Particle;

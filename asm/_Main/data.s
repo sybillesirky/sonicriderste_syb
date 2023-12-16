@@ -26636,12 +26636,12 @@ Gears:
     .4byte 0x00280100
     .4byte 0x02010000
     .4byte 0xFFFFFF7F # Reserve Tank
-    .byte 0x00 # gear type
+    .byte 0x02 # gear type
     .byte 0x32 # model id
     .2byte 0x0000 # ring cost in gear shop
     .4byte 0x00000000 # unknown
     .4byte 0x3A48CAC6 # acceleration
-    .4byte 0xbe800000 # top speed (additive)
+    .4byte 0xBD3DA12F # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
     .4byte 0x3eb33333 # weight
@@ -26658,32 +26658,32 @@ Gears:
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # how long it takes to generate a drift dash
-    .4byte 0xbf666666 # air gain multiplier (tricks)
-    .4byte 0xbf666666 # air gain multiplier (shortcuts)
+    .4byte 0xbf400000 # air gain multiplier (tricks)
+    .4byte 0xbf400000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
     .4byte 0x00000000 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
     .4byte 0x00030D40 # level 1 max air
-    .4byte 0x00000010 # level 1 passive air drain
+    .4byte 0x00000000 # level 1 passive air drain
     .4byte 0x0000014D # level 1 drift air cost
     .4byte 0x00009C40 # level 1 boost cost
     .4byte 0x00009C40 # level 1 tornado cost
     .4byte 0x3EED097B # level 1 speed gained from a drift dash
-    .4byte 0x3F9425ED # level 1 boost speed
+    .4byte 0x3f8e38e4 # level 1 boost speed
     .4byte 0x00030D40 # level 2 max air
-    .4byte 0x00000010 # level 2 passive air drain
+    .4byte 0x00000000 # level 2 passive air drain
     .4byte 0x0000014D # level 2 drift air cost
     .4byte 0x00009C40 # level 2 boost cost
     .4byte 0x00009C40 # level 2 tornado cost
     .4byte 0x3EED097B # level 2 speed gained from a drift dash
-    .4byte 0x3F9425ED # level 2 boost speed
+    .4byte 0x3f8e38e4 # level 2 boost speed
     .4byte 0x00030D40 # level 3 max air
-    .4byte 0x00000010 # level 3 passive air drain
+    .4byte 0x00000000 # level 3 passive air drain
     .4byte 0x0000014D # level 3 drift air cost
     .4byte 0x00009C40 # level 3 boost cost
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
-    .4byte 0x3F9425ED # level 3 boost speed
+    .4byte 0x3f8e38e4 # level 3 boost speed
     .byte 0x04 # shown dash (tempo) stat
     .byte 0x04 # shown limit (efficiency) stat
     .byte 0x03 # shown power (combat) stat
@@ -26756,7 +26756,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x00000000 # Shinobi
+    .4byte 0xFFFFFF7F # Shinobi
     .byte 0x01 # gear type
     .byte 0x4B # model id
     .2byte 0x0DAC # ring cost in gear shop
