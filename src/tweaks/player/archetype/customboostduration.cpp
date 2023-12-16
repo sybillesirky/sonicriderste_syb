@@ -17,6 +17,8 @@ constexpr m2darray<u8, ArchetypeCount, 3> Archetype_BoostDuration = {{
 		{0x00, 0x00, 0x00},// Windcatcher
 		{0x00, 0x00, 0x00},// Turning
 		{0x00, 0x00, 0x00},// Mechanic
+		{0x0A, 0x0A, 0x0A}, // ATN: Attuned
+        {0x0A, 0x0A, 0x0A}, // CLT: Collector
 }};
 
 ASMUsed u32 CustomBoostDuration(Player *player, u32 currentBoostDuration) {

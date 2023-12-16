@@ -26883,7 +26883,7 @@ Gears:
     .2byte 0x0000 # ring cost in gear shop
     .4byte 0x00000000 # unknown
     .4byte 0x3A48CAC6 # acceleration
-    .4byte 0x3E1C7DEA # top speed (additive)
+    .4byte 0x3c638e39 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
     .4byte 0x00000000 # weight
@@ -26911,7 +26911,7 @@ Gears:
     .4byte 0x000061A8 # level 1 boost cost
     .4byte 0x000061A8 # level 1 tornado cost
     .4byte 0x3E6D097B # level 1 speed gained from a drift dash
-    .4byte 0x3f78e38e # level 1 boost speed
+    .4byte 0x3F6D097B # level 1 boost speed
     .4byte 0x000249F0 # level 2 max air
     .4byte 0x00000010 # level 2 passive air drain
     .4byte 0x000000FA # level 2 drift air cost

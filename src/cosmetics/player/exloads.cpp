@@ -35,6 +35,11 @@ ASMUsed constexpr std::array<RGBA, EXLoadCount> EXLoadHUDColors = {
         RGBA(0x0), // dummy data
         RGBA(0x01056bFF), // seelkadoom
         RGBA(0x0), // super sonic ex load
+		RGBA(0x0), // Christmas NiGHTS
+		RGBA(0x0), // Shadow Android
+		RGBA(0x0), // Metal Sonic 3.0
+		RGBA(0x0), // Red Sonic
+		RGBA(0x0), // Blue Knuckles
 };
 
 ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = {
@@ -208,6 +213,36 @@ ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = 
                 },
 
                 // super sonic ex load
+                {
+                        RGBANormalized(true),
+                        RGBANormalized(true)
+                },
+
+				// Christmas NiGHTS
+                {
+                        RGBANormalized(true),
+                        RGBANormalized(true)
+                },
+
+				// Shadow Android
+                {
+                        RGBANormalized(true),
+                        RGBANormalized(true)
+                },
+
+				// Metal Sonic 3.0
+                {
+                        RGBANormalized(true),
+                        RGBANormalized(true)
+                },
+
+				// Red Sonic
+                {
+                        RGBANormalized(true),
+                        RGBANormalized(true)
+                },
+
+				// Blue Knuckles
                 {
                         RGBANormalized(true),
                         RGBANormalized(true)

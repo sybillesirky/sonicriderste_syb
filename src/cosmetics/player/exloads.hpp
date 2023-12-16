@@ -8,7 +8,7 @@
 #include "containers/rgba.hpp"
 #include "riders/player.hpp"
 
-constexpr auto CharacterEXLoadSlots = 10;
+constexpr auto CharacterEXLoadSlots = 15;
 constexpr auto GearEXLoadSlots = 5;
 
 constexpr auto NotLockedGearSelectionID = 0x1A;
@@ -47,6 +47,11 @@ enum EXLoads : u8 {
     HangOnATEXLoad,
     SelkadoomEXLoad,
     SSEXLoad,
+    ChristmasNiGHTSEXLoad,
+    AndroidEXLoad,
+    Metal30EXLoad,
+    RedSonicEXLoad,
+    BlueKnucklesEXLoad,
     // add ex loads before the EXLoadCount enum please kthx
     EXLoadCount
 };
@@ -240,6 +245,61 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                         static_cast<u16>(-1),
                         DefaultTypeCharacter
                 },
+                {
+                        EXLoadType,
+                        ChristmasNiGHTSEXLoad,
+                        Nights,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        DefaultTypeCharacter
+                },
+                {
+                        EXLoadType,
+                        AndroidEXLoad,
+                        Shadow,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        PowerCharacter
+                },
+                {
+                        EXLoadType,
+                        Metal30EXLoad,
+                        MetalSonic,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        FlyCharacter
+                },
+                {
+                        EXLoadType,
+                        RedSonicEXLoad,
+                        Sonic,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        PowerCharacter
+                },
+                {
+                        EXLoadType,
+                        BlueKnucklesEXLoad,
+                        Knuckles,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        SpeedCharacter
+                },
         }
 };
 
@@ -321,7 +381,13 @@ constexpr std::array<f32, EXLoadCount> EXLoadWeights = {
         -1.0f,
         -1.0f,
         -1.0f,
-        -1.0f // seelkadoom
+        -1.0f, // seelkadoom
+        -1.0f, // Super Sonic
+        -1.0f, // Christmas NiGHTS
+        -1.0f, // Shadow Android
+        -1.0f, // Metal Sonic 3.0
+        -1.0f, // Red Sonic
+        -1.0f // Blue Knuckles
 };
 
 constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {
@@ -352,8 +418,13 @@ constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {
         NoEXLoadArchetype,
         NoEXLoadArchetype,
         NoEXLoadArchetype,
-        NoEXLoadArchetype, // seelkadoom
-        SuperSonicArchetype // super sonic exload
+        Attuned, // seelkadoom
+        SuperSonicArchetype, // super sonic exload
+        Attuned, // Christmas NiGHTS
+        Attuned, // Shadow Android
+        Collector, // Metal Sonic 3.0
+        Collector, // Red Sonic
+        Collector //Blue Knuckles
 };
 
 ASMUsed const std::array<RGBA, EXLoadCount> EXLoadHUDColors;

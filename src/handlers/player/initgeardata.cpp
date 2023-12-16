@@ -286,6 +286,14 @@ ASMUsed void InitGearData(Player &player) {
 
 	if(exLoads.characterExLoadID == E10REXLoad) {
 		player.typeAttributes = gear.extraTypeAttributes | Type::Power;
+	} else if (exLoads.characterExLoadID == AndroidEXLoad) {
+		player.typeAttributes = gear.extraTypeAttributes | Type::Power;
+	} else if (exLoads.characterExLoadID == Metal30EXLoad) {
+		player.typeAttributes = gear.extraTypeAttributes | Type::Fly;
+	} else if (exLoads.characterExLoadID == RedSonicEXLoad) {
+		player.typeAttributes = gear.extraTypeAttributes | Type::Power;
+	} else if (exLoads.characterExLoadID == BlueKnucklesEXLoad) {
+		player.typeAttributes = gear.extraTypeAttributes | Type::Speed;
 	} else if(isSuperCharacter(player, MetalSonic)) {
 		player.typeAttributes = Type::Speed | Type::Power;
 	} else {
