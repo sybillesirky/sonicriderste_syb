@@ -16,10 +16,9 @@ bool Player_WarpDrive_CheckPlayerValidity(Player *player) {
 void Player_WarpDrive(Player *player) {
     
     WarpDriveInfo *WarpDriveInfo = &PlayerWarpDriveInfo[player->index];
-    s32 teleportCost = 0x5000;
 
     if (player->input->toggleFaceButtons.hasAny(DPadUp) &&
-    player->slipstream == true && player->currentAir > teleportCost && 
+    player->slipstream == true &&
     WarpDriveInfo->isTeleportChargeActive ==  false) {
         WarpDriveInfo->destinationPlayer = WarpDriveInfo->slipstreamPlayer;
         WarpDriveInfo->isTeleportChargeActive = true;
@@ -60,7 +59,7 @@ void Player_WarpDrive(Player *player) {
             }
 
             // Induce costs
-            player->currentAir -= teleportCost;
+            player->currentAir -= player->gearStats[player->level].boostCost * 2;
             if (player->currentAir < 0) {
                 player->currentAir = 0;
             }

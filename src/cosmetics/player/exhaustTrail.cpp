@@ -268,10 +268,11 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 			case WarpDrive: {
 				WarpDriveInfo *WarpDriveInfo = &PlayerWarpDriveInfo[Player->index];
 				if (Player->slipstream == true) {
-					color = 0x00FFFFFF;
+					color = 0xB300FFFF;
 				}
 				if (WarpDriveInfo->isTeleportChargeActive == true) {
-					color= 0xFFFFFFFF;
+					lbl_RainbowTrail(Player);
+					color = Player->exhaustTrailColor;
 				}
 			}
 
