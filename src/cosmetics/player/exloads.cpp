@@ -35,11 +35,11 @@ ASMUsed constexpr std::array<RGBA, EXLoadCount> EXLoadHUDColors = {
         RGBA(0x0), // dummy data
         RGBA(0x01056bFF), // seelkadoom
         RGBA(0x0), // super sonic ex load
-		RGBA(0x0), // Christmas NiGHTS
-		RGBA(0x0), // Shadow Android
-		RGBA(0x0), // Metal Sonic 3.0
-		RGBA(0x0), // Red Sonic
-		RGBA(0x0), // Blue Knuckles
+		RGBA(0xFF0000FF), // Christmas NiGHTS
+		RGBA(0xBD9322FF), // Shadow Android
+		RGBA(0x404040FF), // Metal Sonic 3.0
+		RGBA(0xAA2828FF), // Red Sonic
+		RGBA(0x64C8D2FF), // Blue Knuckles
 };
 
 ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = {
@@ -220,32 +220,32 @@ ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = 
 
 				// Christmas NiGHTS
                 {
-                        RGBANormalized(true),
-                        RGBANormalized(true)
+                        RGBANormalized(255, 0, 0),
+                        RGBANormalized(255, 255, 255)
                 },
 
 				// Shadow Android
                 {
-                        RGBANormalized(true),
-                        RGBANormalized(true)
+                        RGBANormalized(255, 235, 0),
+                        RGBANormalized(0, 0, 255)
                 },
 
 				// Metal Sonic 3.0
                 {
-                        RGBANormalized(true),
-                        RGBANormalized(true)
+                        RGBANormalized(255, 255, 0),
+                        RGBANormalized(0, 0, 255)
                 },
 
 				// Red Sonic
                 {
-                        RGBANormalized(true),
-                        RGBANormalized(true)
+                        RGBANormalized::fromNormalized(0.921568632126f, 0.0196078438312f, 0),
+                        RGBANormalized::fromNormalized(0, 0.901960790157f, 0.921568632126f)
                 },
 
 				// Blue Knuckles
                 {
-                        RGBANormalized(true),
-                        RGBANormalized(true)
+						RGBANormalized::fromNormalized(0.0666666701436f, 0, 0.996078431606f),
+                        RGBANormalized::fromNormalized(0.796078443527f, 0.670588254929f, 0)
                 },
         }
 };
@@ -821,6 +821,16 @@ USED const char *GetEXLoadFilenameSuperForm(Player *player, const char filename[
                 return "EC5B";
             }
             return "EC5";
+		case AndroidEXLoad:
+			return "S2CO";
+		case ChristmasNiGHTSEXLoad:
+			return "S3CO";
+		case Metal30EXLoad:
+			return "S4CO";
+		case RedSonicEXLoad:
+			return "S5CO";
+		case BlueKnucklesEXLoad:
+			return "S6CO";
 		default:
 			return nullptr;
 	}
@@ -846,6 +856,10 @@ USED const char *GetEXLoadFilenameSuperForm(Player *player, const char filename[
 			return "S3";
         case SelkadoomEXLoad:
             return "S5";
+		case ChristmasNiGHTSEXLoad:
+			return "CC";
+		case AndroidEXLoad:
+			return "CA";
 		default:
 			return nullptr;
 	}
