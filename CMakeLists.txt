@@ -175,7 +175,8 @@ set(DOL_SOURCES     # main
 		src/mechanics/tricklevelling.cpp
 		src/gears/windstar.cpp
 		src/gears/airship.cpp
-		src/gears/gshot.cpp ) # main
+		src/gears/gshot.cpp
+		src/gears/wanted.cpp ) # main
 
 set(STANDALONE_HEADERS # This is only here to make sure that headers actually include the things it needs, by "compiling" them standalone.
 		include/compare_many.hpp
