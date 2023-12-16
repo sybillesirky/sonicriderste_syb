@@ -22,6 +22,8 @@
             return 130;
         case CoverP:
             return 300;
+        case ExtremeGear::Wanted:
+            return 125;
         default:
             break;
     }

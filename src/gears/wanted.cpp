@@ -8,6 +8,7 @@ std::array<WantedInfo, MaxPlayerCount> PlayerWantedInfo;
 constexpr s16 Wanted_BoostSpeeds[5] = {200, 230, 250, 260, 265}; // for each level
 
 // TODO: Fix base stats in the ASM.
+// UPDATE: What the fuck did I mean by this
 
 void Player_Wanted_LevelDeterminer(Player *player) {
     WantedInfo *WantedInfo = &PlayerWantedInfo[player->index];

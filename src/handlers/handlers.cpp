@@ -49,6 +49,7 @@
 #include "gears/airship.hpp"
 #include "gears/gshot.hpp"
 #include "gears/wanted.hpp"
+#include "gears/archangel.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -169,6 +170,10 @@ ASMUsed void PlayerHandler(Player *player) {
             break;
         case ExtremeGear::Wanted:
             Player_Wanted(player);
+            break;
+        case Archangel:
+            Player_ArchAngel(player);
+            break;
         default:
             break;
     }

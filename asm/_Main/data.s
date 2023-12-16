@@ -26540,29 +26540,29 @@ Gears:
     .4byte 0x00000000 # air gain multiplier (tricks)
     .4byte 0x3DCCCCCD # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
-    .4byte 0x00020100 # special flags
+    .4byte 0x00000000 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
-    .4byte 0x000186A0 # level 1 max air
-    .4byte 0x00000010 # level 1 passive air drain
-    .4byte 0x000000A6 # level 1 drift air cost
-    .4byte 0x000061A8 # level 1 boost cost
+    .4byte 0x00030D40 # level 1 max air
+    .4byte 0x00000040 # level 1 passive air drain
+    .4byte 0x0000014D # level 1 drift air cost
+    .4byte 0x00004E20 # level 1 boost cost
     .4byte 0x000061A8 # level 1 tornado cost
     .4byte 0x3E6D097B # level 1 speed gained from a drift dash
-    .4byte 0x3F6D097B # level 1 boost speed
+    .4byte 0x3f971c72 # level 1 boost speed
     .4byte 0x000249F0 # level 2 max air
     .4byte 0x00000010 # level 2 passive air drain
     .4byte 0x000000FA # level 2 drift air cost
-    .4byte 0x00007530 # level 2 boost cost
+    .4byte 0x00004E20 # level 2 boost cost
     .4byte 0x00007530 # level 2 tornado cost
     .4byte 0x3EBDA12F # level 2 speed gained from a drift dash
-    .4byte 0x3F884BDA # level 2 boost speed
+    .4byte 0x3f825ed1 # level 2 boost speed
     .4byte 0x00030D40 # level 3 max air
-    .4byte 0x00000010 # level 3 passive air drain
+    .4byte 0x00000040 # level 3 passive air drain
     .4byte 0x0000014D # level 3 drift air cost
-    .4byte 0x00009C40 # level 3 boost cost
+    .4byte 0x00004E20 # level 3 boost cost
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
-    .4byte 0x3F9425ED # level 3 boost speed
+    .4byte 0x3f912f68 # level 3 boost speed
     .byte 0x04 # shown dash (tempo) stat
     .byte 0x04 # shown limit (efficiency) stat
     .byte 0x03 # shown power (combat) stat

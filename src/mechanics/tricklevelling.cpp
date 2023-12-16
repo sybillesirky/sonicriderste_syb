@@ -77,7 +77,7 @@ void Player_TrickLevelling(Player *player) {
             && player->level > 0
             && player->trickCount < 4
             && player->state == Cruise) { // No P2W if Fly/Grind.
-                player->speed += pSpeed(80);
+                player->speed += pSpeed(60);
                 if (player->rings >= 20) {
                     player->rings -= 20;
                     if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x39)); // Ring loss SFX
