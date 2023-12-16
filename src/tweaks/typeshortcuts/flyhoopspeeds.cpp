@@ -302,6 +302,14 @@ ASMUsed void CustomFlyHoopSpeeds(Player *player, ObjectNode *object, f32 current
 		}
 	}
 
+	if (player->characterArchetype == Attuned) { // ATN: Attuned Archetype speed bonus.
+		f32 MIPercentage; 
+		MIPercentage = player->magneticImpulse_timer / MI::MaximumCap * 100;
+		if (MIPercentage <= 50) {
+			newFlyHoopSpeed *= 1.085f;
+		}
+	}
+
 	switch(player->extremeGear) {
 		using namespace ExtremeGear;
 		case CoverS:

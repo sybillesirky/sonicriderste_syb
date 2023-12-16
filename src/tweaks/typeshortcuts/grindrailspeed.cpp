@@ -65,6 +65,14 @@ ASMUsed s16 lbl_GrindRailSpeed(s16 railSpeed, Player *player) {
 				railSpeed = 405;
 			}
 			break;
+		case DarkDesert:	// SYB: Dark Desert attempted Speed buffs.
+			if (player->railID == 0) {
+				railSpeed = 285;	// SYB: This is normally 255.
+			}
+			else if (player->railID == 1) {	// SYB: Normally slow as fuck!
+				railSpeed = 500;
+			}
+			break;
 		default:
 			break;
 	}
@@ -78,6 +86,14 @@ ASMUsed s16 lbl_GrindRailSpeed(s16 railSpeed, Player *player) {
 			} else if(typeCount < 3) {
 				railSpeed *= GR_TypeShortcutSpeedMultiplierDual;
 			}
+		}
+	}
+
+	if (player->characterArchetype == Attuned) { // ATN: Attuned Archetype bonus speed.
+		f32 MIPercentage; 
+		MIPercentage = player->magneticImpulse_timer / MI::MaximumCap * 100;
+		if (MIPercentage <= 50) {
+			railSpeed *= 1.085f;
 		}
 	}
 

@@ -354,7 +354,7 @@ ASMUsed void GraphicalObjectHandler_CSSInformationText(GraphicalObject* gobject)
                     if (exLoads.characterExLoadID != 0 && EXLoadArchetypes[exLoads.characterExLoadID] != NoEXLoadArchetype
                         && CheckIfEXLoadCanBeApplied(*player, exLoadSlot)) {
                         text = EXLoadArchetypes[exLoads.characterExLoadID];
-                        if (exLoads.characterExLoadID == SelkadoomEXLoad) {text = 10;} // Special version of combat text
+                        // if (exLoads.characterExLoadID == SelkadoomEXLoad) {text = 10;} // Special version of combat text
                     } else if (player->character == Emerl) {
                         text = 9;
                     } else if (player->character == Shadow) {

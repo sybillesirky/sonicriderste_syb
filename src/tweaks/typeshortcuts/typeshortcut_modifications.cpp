@@ -99,6 +99,10 @@ ASMUsed u32 PowerObjectSpeed(Player *player, ObjectNode *object, ObjectNode *dig
 			break;
 	}
 
+	if(player->characterArchetype == Attuned) { // ATN: Attuned Archetype Power Bonus.
+		newSpeed += pSpeed(10);
+	}
+
 	if(isSuperCharacter(*player, Knuckles)) {// super knuckles
 		newSpeed += pSpeed(10);
 	} else {
