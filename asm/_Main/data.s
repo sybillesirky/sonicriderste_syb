@@ -26879,7 +26879,7 @@ Gears:
     .4byte 0x02020000
     .4byte 0xFFFFFF7F # Warp Drive
     .byte 0x00 # gear type
-    .byte 0x1D # model id
+    .byte 0x21 # model id
     .2byte 0x0000 # ring cost in gear shop
     .4byte 0x00000000 # unknown
     .4byte 0x3A48CAC6 # acceleration
