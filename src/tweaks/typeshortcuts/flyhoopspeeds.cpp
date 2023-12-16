@@ -174,16 +174,16 @@ ASMUsed f32 CustomFlyHoopVerticalSpeeds(ObjectNode *object, Player *player, f32 
 					break;
 			}
 			break;
-		case DarkDesert:
-			switch(object->object_id) {
-				case 0xF6:
-					multiplier = 0.5f;
-					break;
-				case 0x2D0:
-					multiplier = 0.3f;
-					break;
-			}
-			break;
+		// case DarkDesert:
+		// 	switch(object->object_id) {
+		// 		case 0xF6:
+		// 			multiplier = 0.5f;
+		// 			break;
+		// 		case 0x2D0:
+		// 			multiplier = 0.3f;
+		// 			break;
+		// 	}
+		// 	break;
 		default:
 			break;
 	}

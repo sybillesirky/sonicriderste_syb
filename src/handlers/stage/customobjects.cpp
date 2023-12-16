@@ -39,10 +39,10 @@ USED void CustomGameObjectSpawner() {
 			break;
 		}
 		case DarkDesert: {
-			*static_cast<u32 *>(startOfGameObjects) = objectAmount + 5;
-			gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop1, gameObjectStructEnd);
-			gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop2, gameObjectStructEnd);
-			gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop3, gameObjectStructEnd);
+			*static_cast<u32 *>(startOfGameObjects) = objectAmount + 2;
+			//gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop1, gameObjectStructEnd);
+			//gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop2, gameObjectStructEnd);
+			//gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_flyhoop3, gameObjectStructEnd);
 
 			gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_itembox1, gameObjectStructEnd);
 			gameObjectStructEnd = CopyGameObjectStruct(&darkDesert_itembox2, gameObjectStructEnd);
