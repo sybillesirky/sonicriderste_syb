@@ -167,7 +167,7 @@ ASMUsed void PlayerHandler(Player *player) {
         case GShot:
             Player_GShot(player);
             break;
-        case Wanted:
+        case ExtremeGear::Wanted:
             Player_Wanted(player);
         default:
             break;

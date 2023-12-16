@@ -3,6 +3,13 @@
 #include "riders/player.hpp"
 #include "riders/gear.hpp"
 
+namespace Wanted{
+	enum GearSpecific{
+		Level4,
+
+	};
+}
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
 struct WantedInfo {

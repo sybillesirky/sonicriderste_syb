@@ -1,6 +1,7 @@
 #include "wanted.hpp"
 #include "handlers/player/initgeardata.hpp"
 #include "lib/sound.hpp"
+#include "riders/object.hpp"
 
 std::array<WantedInfo, MaxPlayerCount> PlayerWantedInfo;
 
@@ -46,8 +47,6 @@ void Player_CreateWantedParticles(Player *player) {
 }
 
 void Player_Wanted(Player *player) {
-    
-    if (player->extremeGear != Wanted) return;
     WantedInfo *WantedInfo = &PlayerWantedInfo[player->index];
     f32 newBoostSpeed;
     Player_Wanted_LevelDeterminer(player);
@@ -66,19 +65,19 @@ void Player_Wanted(Player *player) {
             case 4:
             case 3:
                 player->level = 2;
-                player->level4 = true;
+                player->gearSpecificFlags[Wanted::Level4] = true;
                 break;
             case 2:
                 player->level = 2;
-                player->level4 = false;
+                player->gearSpecificFlags[Wanted::Level4] = false;
                 break;
             case 1:
                 player->level = 1;
-                player->level4 = false;
+                player->gearSpecificFlags[Wanted::Level4] = false;
                 break;
             case 0:
                 player->level = 0;
-                player->level4 = false;
+                player->gearSpecificFlags[Wanted::Level4] = false;
                 break;
             default:
                 break;
