@@ -8,6 +8,7 @@
 #include "gears/hangon.hpp"
 #include "gears/airship.hpp"
 #include "gears/windstar.hpp"
+#include "gears/warpdrive.hpp"
 #include "handlers/player/initgeardata.hpp"
 #include "lib/ASMHelper.hpp"
 #include "riders/gamemode.hpp"
@@ -262,6 +263,16 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 					color = 0xFF0000FF;
 				}
 				break;
+			}
+
+			case WarpDrive: {
+				WarpDriveInfo *WarpDriveInfo = &PlayerWarpDriveInfo[Player->index];
+				if (Player->slipstream == true) {
+					color = 0x00FFFFFF;
+				}
+				if (WarpDriveInfo->isTeleportChargeActive == true) {
+					color= 0xFFFFFFFF;
+				}
 			}
 
 			case ExtremeGear::HangOn: {

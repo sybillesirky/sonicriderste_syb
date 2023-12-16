@@ -22,9 +22,9 @@ namespace DebugMenuOptions {
 		AlwaysMaxMI
 	};
 	constexpr auto PAGE1OPTIONCOUNT = 10;
-	constexpr auto DefaultPage1Options = 1 << MagneticImpulse
-	                                     | 1 << Autopilot
-	                                     | 1 << TornadoIgnore
+	constexpr auto DefaultPage1Options = 0 << MagneticImpulse
+	                                     | 0 << Autopilot
+	                                     | 0 << TornadoIgnore
 	                                     | 1 << TimerActivity_ActiveInSingleplayer
 	                                     | 1 << ExtremeDetach;
 }// namespace DebugMenuOptions

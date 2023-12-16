@@ -3,6 +3,7 @@
 #include "containers/vector3.hpp"
 #include "riders/gamemode.hpp"
 #include "riders/object.hpp"
+#include "gears/warpdrive.hpp"
 
 /**
  * Enables slipstream particles for a given player.
@@ -90,6 +91,11 @@ void lbl_Slipstream(Player *player) { // NOLINT(readability-function-cognitive-c
 				} else {
 					grInfo->slipstreamPlayer = &player2;
 				}
+			}
+
+			if (player->extremeGear == ExtremeGear::WarpDrive) {
+				WarpDriveInfo *WarpDriveInfo = &PlayerWarpDriveInfo[player->index];
+				WarpDriveInfo->slipstreamPlayer = &player2;
 			}
 
 			lbl_SlipstreamParticles(player->index);

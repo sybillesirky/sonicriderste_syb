@@ -178,7 +178,8 @@ set(DOL_SOURCES     # main
 		src/gears/gshot.cpp
 		src/gears/wanted.cpp
 		src/gears/archangel.cpp
-		src/gears/reservetank.cpp ) # main
+		src/gears/reservetank.cpp
+		src/gears/warpdrive.cpp ) # main
 
 set(STANDALONE_HEADERS # This is only here to make sure that headers actually include the things it needs, by "compiling" them standalone.
 		include/compare_many.hpp

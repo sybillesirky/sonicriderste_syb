@@ -51,6 +51,7 @@
 #include "gears/wanted.hpp"
 #include "gears/archangel.hpp"
 #include "gears/reservetank.hpp"
+#include "gears/warpdrive.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -177,6 +178,9 @@ ASMUsed void PlayerHandler(Player *player) {
             break;
         case ExtremeGear::ReserveTank:
             Player_ReserveTank(player);
+            break;
+        case WarpDrive:
+            Player_WarpDrive(player);
             break;
         default:
             break;

@@ -26756,7 +26756,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFF7F # Shinobi
+    .4byte 0x00000000 # Shinobi
     .byte 0x01 # gear type
     .byte 0x4B # model id
     .2byte 0x0DAC # ring cost in gear shop
@@ -26877,6 +26877,127 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
+    .4byte 0xFFFFFF7F # Warp Drive
+    .byte 0x00 # gear type
+    .byte 0x1D # model id
+    .2byte 0x0000 # ring cost in gear shop
+    .4byte 0x00000000 # unknown
+    .4byte 0x3A48CAC6 # acceleration
+    .4byte 0x3E1C7DEA # top speed (additive)
+    .4byte 0x00000000 # off road speed
+    .4byte 0x00000000 # speed and handling multiplier
+    .4byte 0x00000000 # weight
+    .4byte 0x00000000 # extra type attribute
+    .4byte 0x00000000 # speed loss by turning (?)
+    .4byte 0x00000000 # handling speed based? (also affects flight handling)
+    .4byte 0x00000000 # back axel handling (?)
+    .4byte 0x00000000 # front axel handling (?)
+    .4byte 0x00000000 # drifting radius
+    .4byte 0x00000000 # Drift Rotation (How much your momentum follows you during a drift)
+    .4byte 0x00000000 # initial drift rotation back axel (?)
+    .4byte 0x00000000 # initial drift rotation front axel (?)
+    .4byte 0x00000000 # unknown
+    .4byte 0x00000000 # unknown
+    .4byte 0x00000000 # unknown
+    .4byte 0x00000000 # how long it takes to generate a drift dash
+    .4byte 0x00000000 # air gain multiplier (tricks)
+    .4byte 0x00000000 # air gain multiplier (shortcuts)
+    .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
+    .4byte 0x00020001 # special flags
+    .4byte 0x40000000 # air cost multiplier when charging jump
+    .4byte 0x000186A0 # level 1 max air
+    .4byte 0x00000010 # level 1 passive air drain
+    .4byte 0x000000A6 # level 1 drift air cost
+    .4byte 0x000061A8 # level 1 boost cost
+    .4byte 0x000061A8 # level 1 tornado cost
+    .4byte 0x3E6D097B # level 1 speed gained from a drift dash
+    .4byte 0x3f78e38e # level 1 boost speed
+    .4byte 0x000249F0 # level 2 max air
+    .4byte 0x00000010 # level 2 passive air drain
+    .4byte 0x000000FA # level 2 drift air cost
+    .4byte 0x00007530 # level 2 boost cost
+    .4byte 0x00007530 # level 2 tornado cost
+    .4byte 0x3EBDA12F # level 2 speed gained from a drift dash
+    .4byte 0x3F884BDA # level 2 boost speed
+    .4byte 0x00030D40 # level 3 max air
+    .4byte 0x00000010 # level 3 passive air drain
+    .4byte 0x0000014D # level 3 drift air cost
+    .4byte 0x00009C40 # level 3 boost cost
+    .4byte 0x00009C40 # level 3 tornado cost
+    .4byte 0x3EED097B # level 3 speed gained from a drift dash
+    .4byte 0x3F9425ED # level 3 boost speed
+    .byte 0x04 # shown dash (tempo) stat
+    .byte 0x04 # shown limit (efficiency) stat
+    .byte 0x03 # shown power (combat) stat
+    .byte 0x00 # shown cornering (weight) stat
+    .4byte 0x42F00000
+    .4byte 0x42C80000
+    .4byte 0x3F000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0xBD4CCCCD
+    .4byte 0xBF266666
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x02000000
+    .4byte 0x02000000
+    .4byte 0x00000000
+    .4byte 0x000A0001
+    .4byte 0x00010000
+    .4byte 0x3F000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0xBD4CCCCD
+    .4byte 0xBF266666
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x00000000
+    .4byte 0x02000000
+    .4byte 0x02000000
+    .4byte 0x3DA3D70A
+    .4byte 0x00280100
+    .4byte 0x02010000
 .global gsParFullParam_MagicCarpet
 gsParFullParam_MagicCarpet:
     # 0x1EEC90

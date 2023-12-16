@@ -2,23 +2,6 @@
 #include "lib/sound.hpp"
 #include "riders/object.hpp"
 
-void Player_WarpDrive(Player *player) {
-    if (!(player->extremeGear == ExtremeGear::TotalGearAmount)) return;
-
-    if(player->input->toggleFaceButtons.hasAny(DPadUp)) {
-        Player *target;
-        std::array<f32, 3> PlayerPos = {player->x, player->y, player->z};
-
-        target = &players[player->index ^ 1];
-        player->x = target->x;
-        player->y = target->y;
-        player->z = target->z;
-        target->x = PlayerPos[0];
-        target->y = PlayerPos[1];
-        target->z = PlayerPos[2];
-    }
-}
-
 std::array<TrickLevelInfo, MaxPlayerCount> PlayerTrickLevelInfo;
 
 void Player_CreateTrickLevelUpParticles(Player *player) {

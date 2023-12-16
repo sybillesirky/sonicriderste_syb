@@ -26862,6 +26862,7 @@ CSS_GearPortraitID:
     .2byte 0x00CC // Archangel
     .2byte 0x00CC // Reserve Tank
     .2byte 0x00CC // Shinobi
+    .2byte 0x00F5 // Warp Drive
     .8byte 0x0086008700880089 # from here starts different default gear portraits
     .8byte 0x008A008B008C0108 # eggman is 108
     .8byte 0x008E008D00CE0086 # SS is 0086 to mimic blue star
@@ -26892,6 +26893,7 @@ CSS_GearTextTextureID:
     .2byte 0x001C // Archangel
     .2byte 0x001C // Reserve Tank
     .2byte 0x001C // Shinobi
+    .2byte 0x001C // Warp Drive
     .8byte 0x0000000100020003 # from here starts different default gear texts
     .8byte 0x0004000500060109 # eggman is 0109
     .8byte 0x0008000700FB0000 # SS is 00 to mimic blue star
