@@ -105,11 +105,20 @@ USED void CustomMusicRandomizer(const u32 mode) {
 			break;
 	}
 
+	if (gsActivePad.holdButtons & XButton && gsActivePad.holdButtons & BButton && gsActivePad.holdButtons & AButton) {
+        songID = 666;
+    }   
+
 	bss_CustomMusicID = songID;
 }
 
 USED bool CustomMusicPlayer(const u32 mode) {
 	const u32 &songID = bss_CustomMusicID;
+
+	if (songID == 666) {
+		PlayADX(gpasAdxtHandle_Bgm, "HAMMER.ADX");
+		return TRUE;
+	}
 
 	switch(mode) {
 		case 0:                              // play stage music

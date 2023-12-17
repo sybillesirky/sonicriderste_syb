@@ -19,14 +19,15 @@ namespace DebugMenuOptions {
 		DisableHUDFull,
 		InfiniteAir,
 		InfiniteRings,
-		AlwaysMaxMI
+		AlwaysMaxMI,
+		NegativeAir
 	};
-	constexpr auto PAGE1OPTIONCOUNT = 10;
+	constexpr auto PAGE1OPTIONCOUNT = 11;
 	constexpr auto DefaultPage1Options = 0 << MagneticImpulse
 	                                     | 0 << Autopilot
 	                                     | 0 << TornadoIgnore
 	                                     | 1 << TimerActivity_ActiveInSingleplayer
-	                                     | 1 << ExtremeDetach;
+	                                     | 0 << ExtremeDetach;
 }// namespace DebugMenuOptions
 
 struct DebugMenuData {

@@ -4,7 +4,7 @@
 #include "lib/lib.hpp"
 #include "lib/sound.hpp"
 
-constexpr auto HISTORY_MEGACOLLECTION_ID = 15;
+constexpr auto HISTORY_MEGACOLLECTION_ID = 19;
 
 constexpr auto DISABLEMUSIC_OPTIONCOUNT = 2;
 constexpr auto MAGNETICIMPULSE_OPTIONCOUNT = 2;
@@ -16,6 +16,7 @@ constexpr auto DISABLEHUD_OPTIONCOUNT = 3;
 constexpr auto INFINITEAIR_OPTIONCOUNT = 2;
 constexpr auto INFINITERINGS_OPTIONCOUNT = 2;
 constexpr auto MAXMI_OPTIONCOUNT = 2;
+constexpr auto NEGATIVEAIR_OPTIONCOUNT = 2;
 
 extern u32 lbl_001F1D80[];
 
@@ -34,6 +35,7 @@ std::array<u8, DISABLEHUD_OPTIONCOUNT> DebugMenu_DisableHUDOptions = {DebugMenuO
 std::array<u8, INFINITEAIR_OPTIONCOUNT> DebugMenu_InfiniteAirOptions = {DebugMenuOptions::InfiniteAir, 0xFF};
 std::array<u8, INFINITERINGS_OPTIONCOUNT> DebugMenu_InfiniteRingsOptions = {DebugMenuOptions::InfiniteRings, 0xFF};
 std::array<u8, MAXMI_OPTIONCOUNT> DebugMenu_MaxMIOptions = {DebugMenuOptions::AlwaysMaxMI, 0xFF};
+std::array<u8, NEGATIVEAIR_OPTIONCOUNT> DebugMenu_NegativeAirOptions = {DebugMenuOptions::NegativeAir, 0xFF};
 
 Text2dFileData DebugMenu_TextData;
 DebugMenuData DebugMenu_Data = {
@@ -47,7 +49,8 @@ DebugMenuData DebugMenu_Data = {
 				DebugMenu_DisableHUDOptions,
 				DebugMenu_InfiniteAirOptions,
 				DebugMenu_InfiniteRingsOptions,
-				DebugMenu_MaxMIOptions
+				DebugMenu_MaxMIOptions,
+				DebugMenu_NegativeAirOptions
 		}};
 
 bool DebugMenu_CheckOption(u32 option) {

@@ -1,5 +1,6 @@
 #include "fastfall.hpp"
 #include "cosmetics/player/exloads.hpp"
+#include "handlers/menu/debugmenu/debugmenu.hpp"
 // #include "gears/eggsterminator.hpp"
 
 void lbl_FastFall(Player *player){
@@ -47,6 +48,12 @@ void lbl_FastFall(Player *player){
 			player->currentAir -= static_cast<s32>(airCost);
 		}else{
 			player->currentAir -= (650 - (650 / 4 * static_cast<s32>(airReduction)));
+		}
+	}
+
+	if(!(DebugMenu_CheckOption(DebugMenuOptions::NegativeAir))) {
+		if (player->currentAir < 0) {
+			player->currentAir = 0;
 		}
 	}
 }

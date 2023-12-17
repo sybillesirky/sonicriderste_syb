@@ -60,7 +60,6 @@ void Player_ArchAngel(Player *player) {
         else { // Genocide Mode
             if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x1C)); // Roar SFX
             player->specialFlags |= berserkerEffect;
-            player->specialFlags |= noSpeedLossTurning;
             player->level = 2;
             player->unkBAC ^= 0x0100; //Handedness Swap!
             ArAInfo->isTransformed = true;
