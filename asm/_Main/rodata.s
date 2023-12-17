@@ -20962,26 +20962,26 @@ lbl_001D37BC:
 .global lbl_001D37F8
 lbl_001D37F8:
     # 0x1D37F8
-    .4byte 0x02130214
-    .4byte 0x02150216
-    .4byte 0x02170218
-    .4byte 0x0219021A
-    .4byte 0x021B021C
-    .4byte 0x021D021E
-    .4byte 0x021F0220
-    .4byte 0x02210222
-    .4byte 0x02230224
-    .4byte 0x02250226
-    .4byte 0x02270228
-    .4byte 0x0229022F
-    .4byte 0x02300231
-    .4byte 0x02320233
-    .4byte 0x02340235
-    .4byte 0x02360237
-    .4byte 0x02380239
-    .4byte 0x023A023B
-    .4byte 0x023C023D
-    .4byte 0x023E023F
+    .4byte 0x02130214 // HiB AutoSlider
+    .4byte 0x02150216 // Powerful Fastest
+    .4byte 0x02170218 // Turbo Balancer
+    .4byte 0x0219021A // BS2 Access
+    .4byte 0x021B021C // Beginner Accelerator
+    .4byte 0x021D021E // TrapGear LightB
+    .4byte 0x021F0220 // SlideB Legend
+    .4byte 0x02210222 // Carpet Broom
+    .4byte 0x02230224 // Cloud Supers
+    .4byte 0x02250226 // Faster Gambler
+    .4byte 0x02270228 // PowerG OpaOpa
+    .4byte 0x0229022F // Taxi Berserker
+    .4byte 0x02300231 // ERider AirTank
+    .4byte 0x02320233 // HeB Destroyer
+    .4byte 0x02340235 // Omni CoverS
+    .4byte 0x02360237 // CoverF CoverP
+    .4byte 0x02380239 // HangOn SHO
+    .4byte 0x023A023B // Darkness Grinder
+    .4byte 0x023C023D // AdvS AdvF
+    .4byte 0x023E023F // AdvP Cannonball
     .4byte 0x020A020B
     .4byte 0x020C020D
     .4byte 0x020E020F
@@ -26883,17 +26883,17 @@ CSS_GearTextTextureID:
     .8byte 0x002A002B002C002D
     .8byte 0x002E002F00300031
     .8byte 0x0032003300340035
-    .2byte 0x001C // GunGear
-    .2byte 0x001C // Airship
-    .2byte 0x001C // G-Shot
+    .2byte 0x00F6 // GunGear
+    .2byte 0x0014 // Airship
+    .2byte 0x0009 // G-Shot
     .2byte 0x001C // Wanted
-    .2byte 0x001C // Shooting Star
-    .2byte 0x001C // Wind Star
-    .2byte 0x001C // Road Star
-    .2byte 0x001C // Archangel
-    .2byte 0x001C // Reserve Tank
+    .2byte 0x0016 // Shooting Star
+    .2byte 0x000A // Wind Star
+    .2byte 0x000F // Road Star
+    .2byte 0x0011 // Archangel
+    .2byte 0x0027 // Reserve Tank
     .2byte 0x001C // Shinobi
-    .2byte 0x001C // Warp Drive
+    .2byte 0x0030 // Warp Drive
     .8byte 0x0000000100020003 # from here starts different default gear texts
     .8byte 0x0004000500060109 # eggman is 0109
     .8byte 0x0008000700FB0000 # SS is 00 to mimic blue star
