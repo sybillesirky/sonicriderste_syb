@@ -265,17 +265,17 @@ constexpr std::array<u16, 7> ExtraDefaultGearTextID = {
 };
 
 constexpr std::array<u16, 11> NewGearTextID = {
-        760, // G.U.N. Gear
-        760, // Airship
-        760, // G-Shot
-        760, // Wanted
-        760, // Shooting Star
-        760, // Wind Star
-        760, // Road Star
-        760, // Archangel
-        760, // Reserve Tank
-        760, // Shinobi
-        760, // Warp Drive
+        767, // G.U.N. Gear
+        768, // Airship
+        769, // G-Shot
+        770, // Wanted
+        771, // Shooting Star
+        772, // Wind Star
+        773, // Road Star
+        774, // Archangel
+        775, // Reserve Tank
+        776, // Shinobi
+        777, // Warp Drive
 };
 
 
@@ -358,7 +358,7 @@ ASMUsed void GraphicalObjectHandler_CSSInformationText(GraphicalObject* gobject)
                     } else if (player->character == Emerl) {
                         text = 9;
                     } else if (player->character == Shadow) {
-                        text = 10;
+                        text = 15;
                     } else {
                         u32 index;
                         if (player->character == E10G &&

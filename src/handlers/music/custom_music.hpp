@@ -57,11 +57,11 @@ constexpr std::array<const char *, RACE_END_MUSIC_COUNT> raceEndMusic = {
 		"A0.ADX", "A1.ADX", "A2.ADX"
 };
 
-constexpr std::array<const char *, BATTLE_MUSIC_COUNT> battleMusic = {
-		"70.ADX", "71.ADX", "72.ADX", "73.ADX",
-		"74.ADX", "75.ADX", "76.ADX", "77.ADX",
-		"78.ADX", "79.ADX", "7A.ADX", "7B.ADX"
-};
+// constexpr std::array<const char *, BATTLE_MUSIC_COUNT> battleMusic = {
+// 		"70.ADX", "71.ADX", "72.ADX", "73.ADX",
+// 		"74.ADX", "75.ADX", "76.ADX", "77.ADX",
+// 		"78.ADX", "79.ADX", "7A.ADX", "7B.ADX"
+// };
 
 constexpr const char *easterEgg = "7C.ADX";
 
