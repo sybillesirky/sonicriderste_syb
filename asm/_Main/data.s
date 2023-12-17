@@ -26298,7 +26298,7 @@ Gears:
     .4byte 0x00000000 # air gain multiplier (tricks)
     .4byte 0x00000000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
-    .4byte 0x00000000 # special flags
+    .4byte 0x00000080 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
     .4byte 0x000186A0 # level 1 max air
     .4byte 0x00000010 # level 1 passive air drain
@@ -26965,8 +26965,8 @@ Gears:
     .4byte 0x00000000
     .4byte 0x000A0001
     .4byte 0x00020000 # Amount of exhaust trails
-    .4byte 0x3f666666 # Main exhaust width during trick (32 float)
-    .4byte 0x00000000 # Secondary exhaust width during trick (32 float)
+    .4byte 0x3e99999a # Main exhaust width during trick (32 float)
+    .4byte 0x3e99999a # Secondary exhaust width during trick (32 float)
     .4byte 0x00000000 # Tertiary exhaust width during trick (32 float)
     .4byte 0x00000000 # Fourth exhaust width during trick (32 float)
     .4byte 0x00000000
@@ -26981,12 +26981,12 @@ Gears:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000 # Fourth exhaust rotation during tricks??
-    .4byte 0x00000000 # Main exhaust X offset during tricks (32 float) 
-    .4byte 0xbe0f5c29 # Main exhaust Y offset during tricks (32 float)
-    .4byte 0xbf000000 # Main exhaust Z offset during tricks (32 float)
-    .4byte 0x00000000 # Secondary exhaust X offset during tricks (32 float)
-    .4byte 0x00000000 # Secondary exhaust Y offset during tricks (32 float)
-    .4byte 0x00000000 # Secondary exhaust Z offset during tricks (32 float)
+    .4byte 0x3e4ccccd # Main exhaust X offset during tricks (32 float) 
+    .4byte 0xbe800000 # Main exhaust Y offset during tricks (32 float)
+    .4byte 0xbecccccd # Main exhaust Z offset during tricks (32 float)
+    .4byte 0xbe4ccccd # Secondary exhaust X offset during tricks (32 float)
+    .4byte 0xbe800000 # Secondary exhaust Y offset during tricks (32 float)
+    .4byte 0xbecccccd # Secondary exhaust Z offset during tricks (32 float)
     .4byte 0x00000000 # Tertiary exhaust X offset during tricks (32 float)
     .4byte 0xbcf5c28f # Tertiary exhaust Y offset during tricks (32 float)
     .4byte 0xbf000000 # Tertiary exhaust Z offset during tricks (32 float)

@@ -41,6 +41,11 @@ void Player_TrickLevelling(Player *player) {
             break;
     }
 
+    if (player->state == StartLine) {
+        TrLInfo->trickAccumulator = 0;
+        TrLInfo->isTricking = false;
+    }
+
     if (player->state == FrontflipRamp || player->state == BackflipRamp || player->state == ManualRamp || player->state == HalfPipeTrick) {
         TrLInfo->isTricking = true; // This makes sure trick landing behaviours only fire once.
     }

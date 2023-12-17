@@ -60,6 +60,31 @@ void Player_Wanted(Player *player) {
         WantedInfo->storedPlacement = 0;
     }
 
+    // Death reapply Level
+    if (player->previousState == Death) {
+        switch (WantedInfo->wantedLevel) {
+            case 4:
+            case 3:
+                player->level = 2;
+                player->gearSpecificFlags[Wanted::Level4] = true;
+                break;
+            case 2:
+                player->level = 2;
+                player->gearSpecificFlags[Wanted::Level4] = false;
+                break;
+            case 1:
+                player->level = 1;
+                player->gearSpecificFlags[Wanted::Level4] = false;
+                break;
+            case 0:
+                player->level = 0;
+                player->gearSpecificFlags[Wanted::Level4] = false;
+                break;
+            default:
+                break;
+        player->previousState = Cruise;
+    }
+
     // Set level and stats.
     if (WantedInfo->wantedLevel != WantedInfo->lastWantedLevel) {
         switch (WantedInfo->wantedLevel) {

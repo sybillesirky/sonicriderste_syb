@@ -8,8 +8,7 @@ bool Player_WarpDrive_CheckPlayerValidity(Player *player) {
     bool validity = (player->state == Cruise ||
             player->state == Fall ||
             player->state == Jump ||
-            player->state == Fly ||
-            player->state == RailGrind);
+            player->state == Fly);
     return validity;
 }
 
@@ -51,10 +50,10 @@ void Player_WarpDrive(Player *player) {
             WarpDriveInfo->destinationPlayer->z = WarpDriveInfo->PlayerPos[2];
 
             // Set player states if necessary.
-            if (player->state == Fly || player->state == RailGrind) {
+            if (player->state == Fly) {
                 player->state = Fall;
             }
-            if (WarpDriveInfo->destinationPlayer->state == Fly || WarpDriveInfo->destinationPlayer->state == RailGrind) {
+            if (WarpDriveInfo->destinationPlayer->state == Fly) {
                 WarpDriveInfo->destinationPlayer->state = Fall;
             }
 

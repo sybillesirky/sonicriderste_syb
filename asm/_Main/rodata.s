@@ -26853,16 +26853,16 @@ CSS_GearPortraitID:
     .8byte 0x00B400B500B600B7
     .8byte 0x00B800B900BA00BB
     .2byte 0x00F5 // GunGear
-    .2byte 0x00EC // Airship
-    .2byte 0x00C7 // G-Shot
-    .2byte 0x00C2 // Wanted
-    .2byte 0x00C5 // Shooting Star
-    .2byte 0x00CB // Wind Star
-    .2byte 0x00CC // Road Star
-    .2byte 0x00CC // Archangel
-    .2byte 0x00CC // Reserve Tank
+    .2byte 0x010A // Airship
+    .2byte 0x010B // G-Shot
+    .2byte 0x010C // Wanted
+    .2byte 0x010D // Shooting Star
+    .2byte 0x010E // Wind Star
+    .2byte 0x010F // Road Star
+    .2byte 0x0110 // Archangel
+    .2byte 0x0111 // Reserve Tank
     .2byte 0x00CC // Shinobi
-    .2byte 0x00F5 // Warp Drive
+    .2byte 0x0117 // Warp Drive
     .8byte 0x0086008700880089 # from here starts different default gear portraits
     .8byte 0x008A008B008C0108 # eggman is 108
     .8byte 0x008E008D00CE0086 # SS is 0086 to mimic blue star
