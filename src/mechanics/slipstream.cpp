@@ -98,6 +98,9 @@ void lbl_Slipstream(Player *player) { // NOLINT(readability-function-cognitive-c
 				WarpDriveInfo->slipstreamPlayer = &player2;
 			}
 
+			// Windcatcher True Colors: No slipstream
+			if (player->characterArchetype == Windcatcher) { return; }
+
 			lbl_SlipstreamParticles(player->index);
 
 			if(player->speed == 0.0F) { continue; }// if player's speed is 0

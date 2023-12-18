@@ -180,7 +180,8 @@ set(DOL_SOURCES     # main
 		src/gears/archangel.cpp
 		src/gears/reservetank.cpp
 		src/gears/warpdrive.cpp
-		src/tweaks/player/archetype/collectorarchetype.cpp ) # main
+		src/tweaks/player/archetype/collectorarchetype.cpp
+		src/gears/challenger.cpp ) # main
 
 set(STANDALONE_HEADERS # This is only here to make sure that headers actually include the things it needs, by "compiling" them standalone.
 		include/compare_many.hpp

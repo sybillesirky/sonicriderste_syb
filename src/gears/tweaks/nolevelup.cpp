@@ -16,7 +16,8 @@ ASMUsed u32 Player_NonLevelupGears(Player *player, u32 specialFlags) {
         player->extremeGear == ExtremeGear::RoadStar ||
         player->extremeGear == ExtremeGear::Wanted ||
         player->extremeGear == ExtremeGear::ReserveTank ||
-        player->extremeGear == ExtremeGear::Archangel
+        player->extremeGear == ExtremeGear::Archangel ||
+        player->extremeGear == ExtremeGear::Challenger
         //||
         // exLoads.gearExLoadID == TheBeastEXLoad
         ) {

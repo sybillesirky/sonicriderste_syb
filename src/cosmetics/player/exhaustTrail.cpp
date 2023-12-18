@@ -153,7 +153,7 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 			color = 0xD5BD56FF;
 		}
 
-		if(Player->character == Emerl || gear == ExtremeGear::CoverS) {
+		if(Player->character == Emerl || gear == ExtremeGear::CoverS || gear == ExtremeGear::Challenger) {
 			if(Player->typeAttributes == Type::Speed) {
 				color = 0x034EFDFF;
 			} else if(Player->typeAttributes == Type::Fly) {

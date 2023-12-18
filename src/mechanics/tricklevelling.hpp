@@ -15,7 +15,6 @@ extern std::array<TrickLevelInfo, MaxPlayerCount> PlayerTrickLevelInfo;
 
 void Player_TrickLevelling(Player *player);
 void Player_CreateTrickLevelUpParticles(Player *player);
-void Player_WarpDrive(Player *player);
 
 ASMDefined void func_Particle_Task();
 ASMDefined void* gpsTexList_Particle;

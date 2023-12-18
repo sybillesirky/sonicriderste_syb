@@ -76,4 +76,6 @@ constexpr std::array<f32, ArchetypeCount> Archetype_TopSpeedBonus = {
         pSpeed(0), // Windcatcher
         pSpeed(0), // Turning
         pSpeed(0), // Mechanic
+		pSpeed(0), // Attuned
+		pSpeed(0), // Collector
 };
