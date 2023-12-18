@@ -58,11 +58,14 @@ void Player_Wanted(Player *player) {
         WantedInfo->wantedLevel = 0;
         WantedInfo->lastWantedLevel = 0;
         WantedInfo->storedPlacement = 0;
+        // Assume we're in 1st at the start line in case of Time Trial
+        newBoostSpeed = Wanted_BoostSpeeds[WantedInfo->wantedLevel] - 15;
+        player->gearStats[player->level].boostSpeed = pSpeed(newBoostSpeed);
     }
 
     // Death reapply Level
     if (player->previousState == Death) {
-        WantedInfo->lastWantedLevel = 9;
+        WantedInfo->lastWantedLevel = 9; // Forces Level application to trigger.
         WantedInfo->storedPlacement = 9; // Forces Boost Speed determiner to trigger, saves lines.
         player->previousState = Cruise;
     }
@@ -92,7 +95,7 @@ void Player_Wanted(Player *player) {
         }
         player->currentAir = player->gearStats[player->level].maxAir;
         if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0xD)); // Levelling SFX
-    Player_CreateWantedParticles(player);
+        Player_CreateWantedParticles(player);
         WantedInfo->storedPlacement = 9; // Forces Boost Speed determiner to trigger, saves lines.
     }
 
@@ -109,14 +112,14 @@ void Player_Wanted(Player *player) {
     // Determine the desired Boost speed.
     if (player->placement != WantedInfo->storedPlacement) {
         if (player->placement == 0) {
-            newBoostSpeed = Wanted_BoostSpeeds[WantedInfo->wantedLevel] - 10;
+            newBoostSpeed = Wanted_BoostSpeeds[WantedInfo->wantedLevel] - 15;
             player->gearStats[player->level].boostSpeed = pSpeed(newBoostSpeed);
-            player->gearStats[player->level].airDrain = 15;
+            player->gearStats[player->level].airDrain = 5;
         }
         else {
             newBoostSpeed = Wanted_BoostSpeeds[WantedInfo->wantedLevel];
             player->gearStats[player->level].boostSpeed = pSpeed(newBoostSpeed);
-            player->gearStats[player->level].airDrain = 5;
+            player->gearStats[player->level].airDrain = 15;
         }
     }
 
