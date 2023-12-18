@@ -24,9 +24,9 @@ ASMUsed constexpr std::array<RGBA, EXLoadCount> EXLoadHUDColors = {
         RGBA(0x0), // metal sonic scarf
         RGBA(0x4a0015ff), // reala
         RGBA(0x210d00ff), // gongon
-        RGBA(0x0), // dummy data
-        RGBA(0x0), // dummy data
-        RGBA(0x0), // dummy data
+        RGBA(0x00FFFFFF), // WC Jet
+        RGBA(0x00FFFFFF), // WC Storm
+        RGBA(0x00FFFFFF), // WC Wave
         RGBA(0x0), // dummy data
         RGBA(0x0), // dummy data
         RGBA(0x0), // dummy data

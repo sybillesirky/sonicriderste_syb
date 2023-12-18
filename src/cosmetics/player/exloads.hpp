@@ -8,7 +8,7 @@
 #include "containers/rgba.hpp"
 #include "riders/player.hpp"
 
-constexpr auto CharacterEXLoadSlots = 15;
+constexpr auto CharacterEXLoadSlots = 18;
 constexpr auto GearEXLoadSlots = 5;
 
 constexpr auto NotLockedGearSelectionID = 0x1A;
@@ -247,6 +247,39 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                 },
                 {
                         EXLoadType,
+                        WCJet,
+                        Jet,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        DefaultTypeCharacter
+                },
+                {
+                        EXLoadType,
+                        WCStorm,
+                        Storm,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        DefaultTypeCharacter
+                },
+                {
+                        EXLoadType,
+                        WCWave,
+                        Wave,
+                        -1,
+                        0xA0,
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        static_cast<u16>(-1),
+                        DefaultTypeCharacter
+                },
+                {
+                        EXLoadType,
                         ChristmasNiGHTSEXLoad,
                         Nights,
                         -1,
@@ -372,15 +405,15 @@ constexpr std::array<f32, EXLoadCount> EXLoadWeights = {
         -1.0F,
         1.1F,// reala
         1.4F,// gongon
-        1.0F,
-        1.45F,
-        0.95f,
-        1.1f,
-        0.9f,
-        1.4f,
-        -1.0f,
-        -1.0f,
-        -1.0f,
+        1.0F, // Windcatcher Jet
+        1.45F, // Windcatcher Storm
+        0.95f, // Windcatcher Wave
+        1.1f, // Mechanic Sonic
+        0.9f, // Mechanic Tails
+        1.4f, // Mechanic Knuckles
+        -1.0f, // SuperStorm???????
+        -1.0f, // Pyro TF2???????
+        -1.0f, // Shang On Fuck you
         -1.0f, // seelkadoom
         -1.0f, // Super Sonic
         -1.0f, // Christmas NiGHTS
