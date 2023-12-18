@@ -25837,10 +25837,10 @@ Gears:
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3F0E38E4 # level 3 speed gained from a drift dash
     .4byte 0x3f8e38e4 # level 3 boost speed
-    .byte 0x07 # shown dash (tempo) stat
+    .byte 0x00 # shown dash (tempo) stat
     .byte 0x03 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
-    .byte 0x02 # shown cornering (weight) stat
+    .byte 0x02 # shown power (combat) stat
+    .byte 0xFB # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
     .4byte 0x3e99999a # Main exhaust width (32 float)
@@ -25959,9 +25959,9 @@ Gears:
     .4byte 0x3F0E38E4 # level 3 speed gained from a drift dash
     .4byte 0x3F9425ED # level 3 boost speed
     .byte 0x07 # shown dash (tempo) stat
-    .byte 0x03 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
-    .byte 0x02 # shown cornering (weight) stat
+    .byte 0x00 # shown limit (efficiency) stat
+    .byte 0x00 # shown power (combat) stat
+    .byte 0x00 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
     .4byte 0x3e4ccccd # Main exhaust width (32 float)
@@ -26079,10 +26079,10 @@ Gears:
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3F9425ED # level 3 boost speed
-    .byte 0x07 # shown dash (tempo) stat
-    .byte 0x03 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
-    .byte 0x02 # shown cornering (weight) stat
+    .byte 0x04 # shown dash (tempo) stat
+    .byte 0x01 # shown limit (efficiency) stat
+    .byte 0x05 # shown power (combat) stat
+    .byte 0x00 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
     .4byte 0x3ecccccd # Main exhaust width (32 float)
@@ -26200,9 +26200,9 @@ Gears:
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3F9425ED # level 3 boost speed
-    .byte 0x04 # shown dash (tempo) stat
-    .byte 0x04 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
+    .byte 0x07 # shown dash (tempo) stat
+    .byte 0x00 # shown limit (efficiency) stat
+    .byte 0xFC # shown power (combat) stat
     .byte 0x00 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
@@ -26321,9 +26321,9 @@ Gears:
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3f8e38e4 # level 3 boost speed
-    .byte 0x04 # shown dash (tempo) stat
-    .byte 0x04 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
+    .byte 0x00 # shown dash (tempo) stat
+    .byte 0x07 # shown limit (efficiency) stat
+    .byte 0x01 # shown power (combat) stat
     .byte 0x00 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
@@ -26442,9 +26442,9 @@ Gears:
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3f912f68 # level 3 boost speed
-    .byte 0x04 # shown dash (tempo) stat
-    .byte 0x04 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
+    .byte 0x05 # shown dash (tempo) stat
+    .byte 0x01 # shown limit (efficiency) stat
+    .byte 0x04 # shown power (combat) stat
     .byte 0x00 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
@@ -26563,9 +26563,9 @@ Gears:
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3f912f68 # level 3 boost speed
-    .byte 0x04 # shown dash (tempo) stat
-    .byte 0x04 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
+    .byte 0x07 # shown dash (tempo) stat
+    .byte 0xFE # shown limit (efficiency) stat
+    .byte 0x06 # shown power (combat) stat
     .byte 0x00 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
@@ -26684,10 +26684,10 @@ Gears:
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3f8e38e4 # level 3 boost speed
-    .byte 0x04 # shown dash (tempo) stat
-    .byte 0x04 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
-    .byte 0x00 # shown cornering (weight) stat
+    .byte 0x06 # shown dash (tempo) stat
+    .byte 0x08 # shown limit (efficiency) stat
+    .byte 0xFE # shown power (combat) stat
+    .byte 0x05 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000
     .4byte 0x3F000000
@@ -26927,8 +26927,8 @@ Gears:
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3F9425ED # level 3 boost speed
     .byte 0x04 # shown dash (tempo) stat
-    .byte 0x04 # shown limit (efficiency) stat
-    .byte 0x03 # shown power (combat) stat
+    .byte 0xFE # shown limit (efficiency) stat
+    .byte 0x06 # shown power (combat) stat
     .byte 0x00 # shown cornering (weight) stat
     .4byte 0x42F00000
     .4byte 0x42C80000

@@ -62,26 +62,8 @@ void Player_Wanted(Player *player) {
 
     // Death reapply Level
     if (player->previousState == Death) {
-        switch (WantedInfo->wantedLevel) {
-            case 4:
-            case 3:
-                player->level = 2;
-                player->gearSpecificFlags[Wanted::Level4] = true;
-                break;
-            case 2:
-                player->level = 2;
-                player->gearSpecificFlags[Wanted::Level4] = false;
-                break;
-            case 1:
-                player->level = 1;
-                player->gearSpecificFlags[Wanted::Level4] = false;
-                break;
-            case 0:
-                player->level = 0;
-                player->gearSpecificFlags[Wanted::Level4] = false;
-                break;
-            default:
-                break;
+        WantedInfo->lastWantedLevel = 9;
+        WantedInfo->storedPlacement = 9; // Forces Boost Speed determiner to trigger, saves lines.
         player->previousState = Cruise;
     }
 
