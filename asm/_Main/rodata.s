@@ -26885,17 +26885,17 @@ CSS_GearTextTextureID:
     .8byte 0x002E002F00300031
     .8byte 0x0032003300340035
     .2byte 0x00F6 // GunGear
-    .2byte 0x0014 // Airship
-    .2byte 0x0009 // G-Shot
-    .2byte 0x001C // Wanted
-    .2byte 0x0016 // Shooting Star
-    .2byte 0x000A // Wind Star
-    .2byte 0x000F // Road Star
-    .2byte 0x0011 // Archangel
-    .2byte 0x0027 // Reserve Tank
+    .2byte 0x0119 // Airship
+    .2byte 0x011A // G-Shot
+    .2byte 0x011B // Wanted
+    .2byte 0x011C // Shooting Star
+    .2byte 0x011D // Wind Star
+    .2byte 0x011E // Road Star
+    .2byte 0x011F // Archangel
+    .2byte 0x0121 // Reserve Tank
     .2byte 0x001C // Shinobi
-    .2byte 0x0030 // Warp Drive
-    .2byte 0x000D // Challenger
+    .2byte 0x0120 // Warp Drive
+    .2byte 0x0122 // Challenger
     .8byte 0x0000000100020003 # from here starts different default gear texts
     .8byte 0x0004000500060109 # eggman is 0109
     .8byte 0x0008000700FB0000 # SS is 00 to mimic blue star

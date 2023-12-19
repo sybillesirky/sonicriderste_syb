@@ -23,13 +23,11 @@ void Player_CreateChallengerParticles(Player *player) {
 	particles->unk48 = &player->x;
 }
 
-void Player_Challenger(Player *player) {
-    
+void Player_Challenger_Roll(Player *player) {
+
     ChallengerInfo *ChlInfo = &PlayerChallengerInfo[player->index];
 
-    if (ChlInfo->timerFrames == 0 && player->state != StartLine) {
-        // Randomise Level
-        switch (lbl_RNG_Number(4)) {
+    switch (lbl_RNG_Number(4)) {
             case 0:
                 player->level = 0;
                 player->gearSpecificFlags[Challenger::Level4] = false;
@@ -74,7 +72,16 @@ void Player_Challenger(Player *player) {
         }
 
         // Reset timer
-        ChlInfo->timerFrames = 1201;
+        ChlInfo->timerFrames = 901;     // 15 seconds + 1 
+}
+
+void Player_Challenger(Player *player) {
+    
+    ChallengerInfo *ChlInfo = &PlayerChallengerInfo[player->index];
+
+    // Roll Type and Level if necessary
+    if (ChlInfo->timerFrames == 0 && player->state != StartLine) {
+        Player_Challenger_Roll(player);
     }
 
     // Manual refill
@@ -93,8 +100,14 @@ void Player_Challenger(Player *player) {
 
     // Timer behaviour
     if (player->state == StartLine) {
-        ChlInfo->timerFrames = 1200;
+        ChlInfo->timerFrames = 900;     // 15 seconds
     } else {
         ChlInfo->timerFrames -= 1;
+    }
+
+    // Death reroll after 3 seconds
+    if (player->state == Death) {
+        ChlInfo->timerFrames = 181;
+        player->gearSpecificFlags[Challenger::Level4] = false;
     }
 }
