@@ -3,6 +3,7 @@
 #include "riders/gamemode.hpp"
 #include "riders/stage.hpp"
 #include "cosmetics/player/exloads.hpp"
+#include "lib/calculate_date.hpp"
 #include <format>
 
 struct ActivePad {
@@ -50,7 +51,7 @@ USED void CustomMusicRandomizer(const u32 mode) {
 				const Player &player = players[i];
 					if (player.extremeGear == ExtremeGear::HangOn) 
 					{HOCheck = true;}
-					if (player.extremeGear == ExtremeGear::SuperHangOn && SHOPlayer == nullptr)
+					if ((player.extremeGear == ExtremeGear::SuperHangOn && SHOPlayer == nullptr) || player.input->holdFaceButtons.hasAny(YButton))
 					{SHOPlayer = &player;}
 					// Feature: Hang-On/Super Hang-on music can now be suppressed by holding the X Button while the stage is loading.
 						// Credit: Sirky
@@ -78,6 +79,9 @@ USED void CustomMusicRandomizer(const u32 mode) {
 							break;
 						case HatsuneMikuEXLoad:
 							songID += 128; // SH142
+							break;
+						case ChristmasNiGHTSEXLoad:
+							songID += 110; // SH122
 							break;
 						default:
 							break;
@@ -141,6 +145,13 @@ USED bool CustomMusicPlayer(const u32 mode) {
 			PlayADX(gpasAdxtHandle_Bgm, stageMusic[(CurrentStage - 1) * 4 + songID]);
 			break;
 		case 1:// play menu music
+			if(Date::GetCurrentDate().CheckChristmas()) {
+				PlayADX(gpasAdxtHandle_Bgm, "SH122.ADX");
+				break;
+			} else if(Date::GetCurrentDate().CheckHalloween()) {
+				PlayADX(gpasAdxtHandle_Bgm, "EVENT2.ADX");
+				break;
+			}
 			if (songID == 0x7E) { // True Colors Secret Song
                 PlayADX(gpasAdxtHandle_Bgm, "7E.ADX");
                 break;

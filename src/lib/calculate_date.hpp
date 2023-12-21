@@ -16,6 +16,14 @@ struct Date {
 		return (day == 1 && month == 4);
 	}
 
+	[[nodiscard]] inline bool CheckChristmas() const{
+		return (day == 25 && month == 12);
+	}
+
+	[[nodiscard]] inline bool CheckHalloween() const{
+		return (day == 31 && month == 10);
+	}
+
 	// Tested to be functionally equivalent to the old implementation
 	static inline u32 ConvertGetTimeToSeconds() {
 		// gets time passed in seconds from 1st Jan 2000 until current time
