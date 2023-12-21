@@ -67,8 +67,12 @@ void Player_Challenger_Roll(Player *player) {
 
         // Sound and FX
         Player_CreateChallengerParticles(player);
-        if (InGamePlayerCount == 1) {
-            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::VSFX, 0x6)); // Start Line cheer
+        if (player->typeAttributes == Type::Speed) {
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3D)); // Speed Shoes SFX
+        } else if (player->typeAttributes == Type::Fly) {
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3C)); // Fly Hoop SFX
+        } else if (player->typeAttributes == Type::Power) {
+            if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x1C)); // Roar SFX
         }
 
         // Reset timer
@@ -93,7 +97,7 @@ void Player_Challenger(Player *player) {
 
     // 3 second countdown
     if (ChlInfo->timerFrames == 60 || ChlInfo->timerFrames == 120 || ChlInfo->timerFrames == 180) {
-        if (InGamePlayerCount == 1) {
+        if (InGamePlayerCount <= 2) {
             if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::VSFX, 0x5)); // Start Line beep
         }
     }
