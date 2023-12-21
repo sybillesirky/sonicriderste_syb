@@ -26635,7 +26635,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02020000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # Reserve Tank
+    .4byte 0xFFFE377F # Reserve Tank
     .byte 0x02 # gear type
     .byte 0x32 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -27119,23 +27119,23 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # G.U.N. Bike
+    .4byte 0xFFFE377F # G.U.N. Bike
     .byte 0x02 # gear type
     .byte 0x33 # model id
     .2byte 0x0000 # ring cost in gear shop
     .4byte 0x00000000 # unknown
-    .4byte 0x39CA4587 # acceleration
-    .4byte 0x3E060AA6 # top speed (additive)
-    .4byte 0x41200000 # off road speed
+    .4byte 0x3A48CAC6 # acceleration
+    .4byte 0x3E1C7DEA # top speed (additive)
+    .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EE66666 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
-    .4byte 0x3DCCCCCD # speed loss by turning (?)
+    .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
     .4byte 0x00000000 # back axel handling (?)
     .4byte 0x00000000 # front axel handling (?)
-    .4byte 0x3A64C388 # drifting radius
-    .4byte 0x3A64C388 # Drift Rotation (How much your momentum follows you during a drift)
+    .4byte 0x00000000 # drifting radius
+    .4byte 0x00000000 # Drift Rotation (How much your momentum follows you during a drift)
     .4byte 0x00000000 # initial drift rotation back axel (?)
     .4byte 0x00000000 # initial drift rotation front axel (?)
     .4byte 0x00000000 # unknown

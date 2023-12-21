@@ -31,10 +31,10 @@ void Player_TrickLevelling(Player *player) {
     switch(player->extremeGear) {
         using namespace ExtremeGear;
         case WindStar:
+        case RoadStar:
             Tricks4Level = {12, 24};
             break;
         case ShootingStar:
-        case RoadStar:
             Tricks4Level = {10, 20};
             break;
         default:
