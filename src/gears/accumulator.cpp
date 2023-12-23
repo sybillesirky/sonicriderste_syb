@@ -10,7 +10,12 @@ void Player_Accumulator(Player *player) {
     AccumulatorInfo *AccumInfo = &PlayerAccumulatorInfo[player->index];
     BlastGaugeInfo *bgInfo = &PlayerBlastGaugeInfo[player->index];
 
-    if (player->currentLap <= 3) {
+    if (player->state == StartLine) {
+        AccumInfo->collectedSpeed = 0;
+        AccumInfo->dashPanelCooldown = 0;
+    }
+
+    if (player->currentLap <= 3 && player->currentLap != 0) {
         player->level = player->currentLap - 1;
     }
 

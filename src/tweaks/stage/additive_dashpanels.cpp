@@ -117,10 +117,15 @@ ASMUsed void lbl_DashPanelSpeed(f32 dashPanelSpeed, Player *player, ObjectNode *
 			basePanelSpeed = player->speed + stage_additiveSpeed;
 		}
 		addedPanelSpeed = dashPanelSpeed - basePanelSpeed;
+		
+		// Remove pSpeed division
+		addedPanelSpeed = addedPanelSpeed * 216;
+		basePanelSpeed = basePanelSpeed * 216;
 
 		// Set the new dashPanelSpeed
 		dashPanelSpeed = basePanelSpeed;
 		dashPanelSpeed += addedPanelSpeed / 2;
+		dashPanelSpeed = pSpeed(dashPanelSpeed);
 
 		// Calculate Accumulator stacks
 		if (AccumInfo->dashPanelCooldown == 0) {
