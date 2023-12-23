@@ -20,6 +20,10 @@ ASMUsed void Player_checkGearIfUsesBlastGauge(Player *player) {
 				}
 				break;
 
+			case Accumulator:
+				player->isBlastGaugeGear = TRUE;
+				break;
+
 			default:
 				player->isBlastGaugeGear = FALSE;
 				break;

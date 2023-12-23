@@ -53,6 +53,7 @@
 #include "gears/reservetank.hpp"
 #include "gears/warpdrive.hpp"
 #include "gears/challenger.hpp"
+#include "gears/accumulator.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -185,6 +186,9 @@ ASMUsed void PlayerHandler(Player *player) {
             break;
         case ExtremeGear::Challenger:
             Player_Challenger(player);
+            break;
+        case ExtremeGear::Accumulator:
+            Player_Accumulator(player);
             break;
         default:
             break;

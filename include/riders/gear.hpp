@@ -17,6 +17,7 @@ namespace ExtremeGear{
 		Gambler, PowerGear, OpaOpa, TheCrazy, Berserker, ERider, AirTank, HeavyBike, Destroyer, Omnipotence, CoverS, CoverF,
 		CoverP, HangOn, SuperHangOn, Darkness, Grinder, AdvantageS, AdvantageF, AdvantageP, Cannonball, GunGear, Airship,
 		GShot, Wanted, ShootingStar, WindStar, RoadStar, Archangel, ReserveTank, Shinobi, WarpDrive, Challenger, GunBike,
+		Accumulator,
 
 		TotalGearAmount
 	};
