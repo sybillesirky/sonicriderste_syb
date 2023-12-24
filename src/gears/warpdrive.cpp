@@ -34,7 +34,7 @@ void Player_WarpDrive(Player *player) {
     if (WarpDriveInfo->countdownTeleportFrames == 0 && WarpDriveInfo->isTeleportChargeActive == true) {
 
         // Check validity
-        if (!(Player_WarpDrive_CheckPlayerValidity(player)) || !(Player_WarpDrive_CheckPlayerValidity(player))) {
+        if (!(Player_WarpDrive_CheckPlayerValidity(player)) || !(Player_WarpDrive_CheckPlayerValidity(WarpDriveInfo->destinationPlayer))) {
             WarpDriveInfo->isTeleportChargeActive = false;
             if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x0F)); // Superbad Buzz
         }
