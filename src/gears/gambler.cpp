@@ -28,6 +28,9 @@ ASMUsed void Gambler_GainTypeOnLevelup(Player *player) {
 			if (FetchEnabledEXLoadIDs(*player).characterExLoadID == E10REXLoad) {
 				player->typeAttributes = Type::Power;
 			}
+			else if (FetchEnabledEXLoadIDs(*player).characterExLoadID == E10YEXLoad) {
+				player->typeAttributes = Type::Fly;
+			}
 		} else if(player->level == 2) {
 			if(!player->gearSpecificFlags[Gambler::Level4]) { // level up to level 3
 				Flag<Type> newType = player->typeAttributes;
@@ -62,6 +65,9 @@ ASMUsed void Gambler_LoseTypeOnLeveldown(Player *player) {
 			player->typeAttributes = static_cast<Type>(1 << player->characterptr->type);
 			if (FetchEnabledEXLoadIDs(*player).characterExLoadID == E10REXLoad) {
 				player->typeAttributes = Type::Power;
+			}
+			else if (FetchEnabledEXLoadIDs(*player).characterExLoadID == E10YEXLoad) {
+				player->typeAttributes = Type::Fly;
 			}
 
 		} else if(player->level == 0) {

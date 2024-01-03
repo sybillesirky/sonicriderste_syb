@@ -8,7 +8,7 @@
 #include "containers/rgba.hpp"
 #include "riders/player.hpp"
 
-constexpr auto CharacterEXLoadSlots = 18;
+constexpr auto CharacterEXLoadSlots = 19;
 constexpr auto GearEXLoadSlots = 5;
 
 constexpr auto NotLockedGearSelectionID = 0x1A;
@@ -52,6 +52,7 @@ enum EXLoads : u8 {
     Metal30EXLoad,
     RedSonicEXLoad,
     BlueKnucklesEXLoad,
+    E10YEXLoad,
     // add ex loads before the EXLoadCount enum please kthx
     EXLoadCount
 };
@@ -333,6 +334,16 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                         static_cast<u16>(-1),
                         SpeedCharacter
                 },
+                {
+                        EXLoadType,
+                        E10YEXLoad,
+                        E10G,
+                        -1,
+                        0x107,
+                        static_cast<u16>(-1),
+                        0x100, 0x102,
+                        FlyCharacter
+                }
         }
 };
 
@@ -420,7 +431,8 @@ constexpr std::array<f32, EXLoadCount> EXLoadWeights = {
         -1.0f, // Shadow Android
         -1.0f, // Metal Sonic 3.0
         -1.0f, // Red Sonic
-        -1.0f // Blue Knuckles
+        -1.0f, // Blue Knuckles
+        -1.0f // E10Y
 };
 
 constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {
@@ -457,7 +469,8 @@ constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {
         Collector, // Shadow Android
         LateBooster, // Metal Sonic 3.0
         Collector, // Red Sonic
-        Collector //Blue Knuckles
+        Collector, //Blue Knuckles
+        NoEXLoadArchetype // E10Y
 };
 
 ASMUsed const std::array<RGBA, EXLoadCount> EXLoadHUDColors;

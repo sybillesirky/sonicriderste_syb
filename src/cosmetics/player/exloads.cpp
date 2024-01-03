@@ -40,6 +40,7 @@ ASMUsed constexpr std::array<RGBA, EXLoadCount> EXLoadHUDColors = {
 		RGBA(0x404040FF), // Metal Sonic 3.0
 		RGBA(0xAA2828FF), // Red Sonic
 		RGBA(0x64C8D2FF), // Blue Knuckles
+		RGBA(0xFFDC0FFF), // E10Y
 };
 
 ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = {
@@ -247,6 +248,12 @@ ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = 
 						RGBANormalized::fromNormalized(0.0666666701436f, 0, 0.996078431606f),
                         RGBANormalized::fromNormalized(0.796078443527f, 0.670588254929f, 0)
                 },
+
+				// E10Y
+                {
+						RGBANormalized(255, 220, 15),
+                        RGBANormalized(26, 18, 255)
+                },
         }
 };
 
@@ -297,7 +304,9 @@ ASMUsed void FetchEnabledEXLoadIDs(const Player *player, EnabledEXLoads &exLoads
  */
 ASMUsed bool IsAnyE10EXLoad(const Player *player) {
 	auto exLoads = FetchEnabledEXLoadIDs(*player);
-	return (exLoads.characterExLoadID == E10BEXLoad || exLoads.characterExLoadID == E10REXLoad);
+	return (exLoads.characterExLoadID == E10BEXLoad ||
+			exLoads.characterExLoadID == E10REXLoad || 
+			exLoads.characterExLoadID == E10YEXLoad);
 }
 
 /**

@@ -224,7 +224,10 @@ ASMUsed void InitGearData(Player &player) {
 	const Gear &gear = *player.gearptr;
 
 	const EnabledEXLoads exLoads = FetchEnabledEXLoadIDs(player);
-	const TypeStats &typeStats = StatPresets[(exLoads.characterExLoadID == E10REXLoad ? 2 : character.statPreset)];
+	const TypeStats &typeStats = StatPresets[(
+		exLoads.characterExLoadID == E10REXLoad ? 2 : 
+		exLoads.characterExLoadID == E10YEXLoad ? 1 : 
+		character.statPreset)];
 	const f32 &speedMultiplier = character.speedMultiplier;
 	const f32 &speedHandlingMultiplier = gear.speedHandlingMultiplier;
 	const f32 handlingSpeed = 1.0f + speedMultiplier + speedHandlingMultiplier;
@@ -286,6 +289,8 @@ ASMUsed void InitGearData(Player &player) {
 
 	if(exLoads.characterExLoadID == E10REXLoad) {
 		player.typeAttributes = gear.extraTypeAttributes | Type::Power;
+	} else if(exLoads.characterExLoadID == E10YEXLoad) {
+		player.typeAttributes = gear.extraTypeAttributes | Type::Fly;
 	} else if (exLoads.characterExLoadID == AndroidEXLoad) {
 		player.typeAttributes = gear.extraTypeAttributes | Type::Power;
 	} else if (exLoads.characterExLoadID == Metal30EXLoad) {

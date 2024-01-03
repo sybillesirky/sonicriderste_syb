@@ -14,6 +14,9 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
     if (CharacterEXLoadDataSlots[exLoadIndex].exLoadID == E10REXLoad) {
         customTexture = (u8*)customTexture + 0x2E40; // skip to e10r textures
     }
+    else if (CharacterEXLoadDataSlots[exLoadIndex].exLoadID == E10YEXLoad) {
+        customTexture = (u8*)customTexture + 0x5C80; // SYB: skip to e10y textures
+    }
 
     if (textureID == 2) {
         gvrTexture = customTexture;
