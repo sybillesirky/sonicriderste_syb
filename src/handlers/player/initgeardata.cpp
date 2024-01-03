@@ -65,6 +65,7 @@ inline f32 CustomTopSpeeds(const Player &player, const f32 &topSpeed, const u32 
 		}
 		return topSpeed;// Retains previous behavior. todo: Should this return actually be here?
 	}
+
 	return player.gearptr->topSpeed + Archetype_TopSpeedBonus[player.characterArchetype];
 }
 
@@ -224,10 +225,25 @@ ASMUsed void InitGearData(Player &player) {
 	const Gear &gear = *player.gearptr;
 
 	const EnabledEXLoads exLoads = FetchEnabledEXLoadIDs(player);
-	const TypeStats &typeStats = StatPresets[(
-		exLoads.characterExLoadID == E10REXLoad ? 2 : 
-		exLoads.characterExLoadID == E10YEXLoad ? 1 : 
-		character.statPreset)];
+	u8 newStatPreset = 0;
+	switch (exLoads.characterExLoadID) {
+		case E10REXLoad: // Speed to Power
+		case AndroidEXLoad:
+			newStatPreset = 2;
+			break;
+		case E10YEXLoad: // Speed to Fly
+		case Metal30EXLoad:
+			newStatPreset = 1;
+			break;
+		default:
+			newStatPreset = character.statPreset;
+			break;
+	}
+	const TypeStats &typeStats = StatPresets[newStatPreset];
+	// const TypeStats &typeStats = StatPresets[(
+	// 	exLoads.characterExLoadID == E10REXLoad ? 2 : 
+	// 	exLoads.characterExLoadID == E10YEXLoad ? 1 : 
+	// 	character.statPreset)];
 	const f32 &speedMultiplier = character.speedMultiplier;
 	const f32 &speedHandlingMultiplier = gear.speedHandlingMultiplier;
 	const f32 handlingSpeed = 1.0f + speedMultiplier + speedHandlingMultiplier;

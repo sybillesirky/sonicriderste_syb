@@ -22884,7 +22884,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x00040407 # Chaos Emerald
+    .4byte 0x00000401 # Chaos Emerald
     .byte 0x00 # gear type
     .byte 0x12 # model id
     .2byte 0x0000 # ring cost in gear shop
