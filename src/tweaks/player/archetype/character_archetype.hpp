@@ -5,28 +5,28 @@
 
 constexpr std::array<CharacterArchetypes, TotalCharacterAmount> AllCharacterArchetypes = {
 		LateBooster, // sonic
-		CombatArchetype, // tails
+		LateBooster, // tails
 		CombatArchetype, // knuckles
-		DriftArchetype, // amy
+		Collector, // amy
 		TopSpeedArchetype, // jet
 		TopSpeedArchetype, // storm
-		LateBooster, // wave
+		TopSpeedArchetype, // wave
 		AllRounder, // eggman
 		AllRounder, // cream
-		DriftArchetype, // rouge
+		Collector, // rouge
 		CombatArchetype, // shadow
 		SuperSonicArchetype, // super sonic
 		TopSpeedArchetype, // nights
 		LateBooster, // aiai
-		AllRounder, // ulala
+		TopSpeedArchetype, // ulala
 		NoTypeArchetype, // e10g
-		DriftArchetype, // e10b/e10r
-		TricksterArchetype, // silver
-		BoostArchetype, // metal sonic
+		AllRounder, // e10b/e10r
+		CombatArchetype, // silver
+		LateBooster, // metal sonic
 		AllRounder, // emerl
-		TricksterArchetype, // blaze
-		BoostArchetype, // chaos
-		TricksterArchetype, // tikal
+		AllRounder, // blaze
+		TopSpeedArchetype, // chaos
+		CombatArchetype, // tikal
 };
 
 ASMUsed void Player_CharacterArchetype(Player *player);

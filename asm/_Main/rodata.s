@@ -12790,7 +12790,7 @@ lbl_001CC8E8:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x43160000
-    .single 120 // Amy's level 3 flatten stun timer, counts up 1 per frame
+    .single 70 // Amy's level 3 flatten stun timer, counts up 1 per frame
     .4byte 0x00000000
     .4byte 0x3F000000
     .4byte 0x3CD67750
@@ -23103,7 +23103,7 @@ lbl_001D5374:
 lbl_001D5398:
     # 0x1D5398
     .4byte 0x43340000
-    .4byte 0x43160000
+    .4byte 0x42c80000 // NiGHTS Daze timer
 .global lbl_001D53A0
 lbl_001D53A0:
     # 0x1D53A0
@@ -26971,7 +26971,7 @@ str_POX2:
 .global data_C24C9294
 data_C24C9294:
     .single 1 # berserker additive range
-    .single 4 # combat character attack range level 3
+    .single 3.5 # combat character attack range level 3
     .single 3.2 # super neo metal base form
     .single 4.1 # super neo metal super form
  
@@ -27015,7 +27015,7 @@ data_C248D9A0:
 .global asm_ShockAttackStunFrames
 asm_ShockAttackStunFrames:
     // all increment by 0.5 per frame
-    .single 65 // Tails stun frames
+    .single 25 // Tails stun frames
     .single 45 // Rouge stun frames
     .single 45 // Ulala stun frames
 
@@ -27491,10 +27491,14 @@ SuperKnucklesAuraParticles:
 
 .global asm_MikuFlattenTimer
 asm_MikuFlattenTimer:
-    .single 180 // increments by 1
+    .single 70 // increments by 1
 
 .global asm_SuperShadowAttackRange
 asm_SuperShadowAttackRange:
     .single 3 // lvl 1
     .single 3 // lvl 2
     .single 3 // lvl 3
+
+.global asm_JetTwistBoardTimer
+asm_JetTwistBoardTimer:
+    .single 60 // This is because he does not detach correctly on boards, apparently

@@ -19,14 +19,14 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
 
     switch (player->characterArchetype) {
         case CombatArchetype:
-            bcm += 0.03f;
+            bcm += 0.02f;
             break;
         case NoTypeArchetype:
             bcm += 0.04f;
             break;
 
         case AllRounder:
-            bcm += 0.02f;
+            bcm += 0.01f;
             break;
     }
 

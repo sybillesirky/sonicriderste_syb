@@ -17622,7 +17622,7 @@ lbl_001E73E4:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x42C80000
-    .4byte 0x40800000
+    .4byte 0x40400000 // Attack range lvl 1
     .4byte 0x00003FFF
     .4byte 0x00000A03
     .4byte 0x00000807
@@ -17635,7 +17635,7 @@ lbl_001E73E4:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x43480000
-    .4byte 0x40800000
+    .4byte 0x40400000 // Attack range lvl 2
     .4byte 0x00007FFF
     .4byte 0x00010A00
     .4byte 0x02000303
@@ -17648,7 +17648,7 @@ lbl_001E73E4:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000
-    .4byte 0x40800000
+    .4byte 0x40400000 // Attack range lvl 3
     .4byte 0x00003FFF
     .4byte 0x00020A00
     .4byte 0xFF000807

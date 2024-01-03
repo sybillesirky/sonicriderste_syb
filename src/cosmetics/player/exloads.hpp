@@ -440,8 +440,8 @@ constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {
         NoEXLoadArchetype,
         CombatArchetype,// hatsune miku
         NoEXLoadArchetype,
-        BoostArchetype,// reala
-        AllRounder,    // gongon
+        CombatArchetype,// reala
+        LateBooster,    // gongon
         Windcatcher,
         Windcatcher,
         Windcatcher,
@@ -451,11 +451,11 @@ constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {
         NoEXLoadArchetype,
         NoEXLoadArchetype,
         NoEXLoadArchetype,
-        Attuned, // seelkadoom
+        Collector, // seelkadoom
         SuperSonicArchetype, // super sonic exload
-        Attuned, // Christmas NiGHTS
-        Attuned, // Shadow Android
-        Collector, // Metal Sonic 3.0
+        Collector, // Christmas NiGHTS
+        Collector, // Shadow Android
+        LateBooster, // Metal Sonic 3.0
         Collector, // Red Sonic
         Collector //Blue Knuckles
 };
