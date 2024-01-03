@@ -248,7 +248,7 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                 {
                         EXLoadType,
                         WCJet,
-                        Jet,
+                        TotalCharacterAmount,
                         -1,
                         0xA0,
                         static_cast<u16>(-1),
@@ -259,7 +259,7 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                 {
                         EXLoadType,
                         WCStorm,
-                        Storm,
+                        TotalCharacterAmount,
                         -1,
                         0xA0,
                         static_cast<u16>(-1),
@@ -270,7 +270,7 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                 {
                         EXLoadType,
                         WCWave,
-                        Wave,
+                        TotalCharacterAmount,
                         -1,
                         0xA0,
                         static_cast<u16>(-1),
@@ -314,7 +314,7 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                 {
                         EXLoadType,
                         RedSonicEXLoad,
-                        Sonic,
+                        TotalCharacterAmount,
                         -1,
                         0x115,
                         static_cast<u16>(-1),
@@ -325,7 +325,7 @@ constexpr std::array<EXLoadInfo, CharacterEXLoadSlots> CharacterEXLoadDataSlots 
                 {
                         EXLoadType,
                         BlueKnucklesEXLoad,
-                        Knuckles,
+                        TotalCharacterAmount,
                         -1,
                         0x116,
                         static_cast<u16>(-1),

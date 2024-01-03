@@ -12790,7 +12790,7 @@ lbl_001CC8E8:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x43160000
-    .single 70 // Amy's level 3 flatten stun timer, counts up 1 per frame
+    .single 120 // Amy's level 3 flatten stun timer, counts up 1 per frame
     .4byte 0x00000000
     .4byte 0x3F000000
     .4byte 0x3CD67750
@@ -27491,7 +27491,7 @@ SuperKnucklesAuraParticles:
 
 .global asm_MikuFlattenTimer
 asm_MikuFlattenTimer:
-    .single 70 // increments by 1
+    .single 120 // increments by 1
 
 .global asm_SuperShadowAttackRange
 asm_SuperShadowAttackRange:
