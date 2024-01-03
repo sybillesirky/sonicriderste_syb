@@ -20836,7 +20836,7 @@ Gears:
     .4byte 0xBCBDA12F # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E19999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -20948,7 +20948,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Auto Slider
+    .4byte 0x00000000 # Auto Slider
     .byte 0x00 # gear type
     .byte 0x02 # model id
     .2byte 0x0258 # ring cost in gear shop
@@ -20957,7 +20957,7 @@ Gears:
     .4byte 0x3D3DA12F # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3D4CCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -21078,7 +21078,7 @@ Gears:
     .4byte 0x3D8E5129 # top speed (additive)
     .4byte 0x430C0000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E99999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -21199,7 +21199,7 @@ Gears:
     .4byte 0x3E639A5C # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBD4CCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBE4CCCCD # speed loss by turning (?)
     .4byte 0xBB64C388 # handling speed based? (also affects flight handling)
@@ -21320,7 +21320,7 @@ Gears:
     .4byte 0x3D8E5129 # top speed (additive)
     .4byte 0xC1F00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E4CCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -21432,7 +21432,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Speed Balancer
+    .4byte 0x00000000 # Speed Balancer
     .byte 0x00 # gear type
     .byte 0x06 # model id
     .2byte 0x05DC # ring cost in gear shop
@@ -21441,7 +21441,7 @@ Gears:
     .4byte 0x3E0E38EB # top speed (additive)
     .4byte 0xC1A00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3DCCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBE4CCCCD # speed loss by turning (?)
     .4byte 0xBCB2B8C2 # handling speed based? (also affects flight handling)
@@ -21562,7 +21562,7 @@ Gears:
     .4byte 0x3CBDA12F # top speed (additive)
     .4byte 0xC1A00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3D4CCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0xBAE4C388 # handling speed based? (also affects flight handling)
@@ -21674,7 +21674,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFF7FFFF # Access
+    .4byte 0x00000000 # Access
     .byte 0x00 # gear type
     .byte 0x08 # model id
     .2byte 0x05DC # ring cost in gear shop
@@ -21683,7 +21683,7 @@ Gears:
     .4byte 0xBD3DA12F # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E4CCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000002 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -21795,7 +21795,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Beginner
+    .4byte 0x00000000 # Beginner
     .byte 0x00 # gear type
     .byte 0x09 # model id
     .2byte 0x012C # ring cost in gear shop
@@ -21804,7 +21804,7 @@ Gears:
     .4byte 0x3D7684BE # top speed (additive) 0xBCBDA12F
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBDCCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -21916,7 +21916,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Accelerator
+    .4byte 0x00000000 # Accelerator
     .byte 0x00 # gear type
     .byte 0x0A # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -21925,7 +21925,7 @@ Gears:
     .4byte 0x3E638E6D # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E19999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -22037,7 +22037,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Trap Gear
+    .4byte 0x00000000 # Trap Gear
     .byte 0x00 # gear type
     .byte 0x0B # model id
     .2byte 0x09C4 # ring cost in gear shop
@@ -22046,7 +22046,7 @@ Gears:
     .4byte 0x3E1C7DEA # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE19999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -22279,7 +22279,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Slide Booster
+    .4byte 0x00000000 # Slide Booster
     .byte 0x00 # gear type
     .byte 0x0D # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -22288,7 +22288,7 @@ Gears:
     .4byte 0xBD3DA12F # top speed (additive)
     .4byte 0xC1A00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE19999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -22409,7 +22409,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0xC1A00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE800000 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0xBAE4C388 # handling speed based? (also affects flight handling)
@@ -22521,7 +22521,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Magic Carpet
+    .4byte 0x00000000 # Magic Carpet
     .byte 0x00 # gear type
     .byte 0x0F # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -22530,7 +22530,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBEE66666 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0xBAE4C388 # handling speed based? (also affects flight handling)
@@ -22642,7 +22642,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Air Broom
+    .4byte 0x00000000 # Air Broom
     .byte 0x00 # gear type
     .byte 0x10 # model id
     .2byte 0x09C4 # ring cost in gear shop
@@ -22651,7 +22651,7 @@ Gears:
     .4byte 0x3D3DA12F # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE4CCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -22772,7 +22772,7 @@ Gears:
     .4byte 0x3E1C7DEA # top speed (additive)
     .4byte 0x41200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBEE66666 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3DCCCCCD # speed loss by turning (?)
     .4byte 0x3AE4C388 # handling speed based? (also affects flight handling)
@@ -23005,7 +23005,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Faster
+    .4byte 0x00000000 # Faster
     .byte 0x00 # gear type
     .byte 0x13 # model id
     .2byte 0x0320 # ring cost in gear shop
@@ -23014,7 +23014,7 @@ Gears:
     .4byte 0x3E3DAD52 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3DCCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0xBAE4C388 # handling speed based? (also affects flight handling)
@@ -23135,7 +23135,7 @@ Gears:
     .4byte 0x3DBDA12F # top speed (additive) OG: 0x3E0E38E4
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E800000 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0xBAE4C388 # handling speed based? (also affects flight handling)
@@ -23247,7 +23247,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Power Gear
+    .4byte 0x00000000 # Power Gear
     .byte 0x00 # gear type
     .byte 0x15 # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -23256,7 +23256,7 @@ Gears:
     .4byte 0xBD3DA14B # top speed (additive)
     .4byte 0x43160000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E800000 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -23377,7 +23377,7 @@ Gears:
     .4byte 0x3E3425F2 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE800000 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -23489,7 +23489,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFFFF # The Crazy
+    .4byte 0x00000000 # The Crazy
     .byte 0x00 # gear type
     .byte 0x17 # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -23498,7 +23498,7 @@ Gears:
     .4byte 0x3DDA12F6 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE4CCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -23619,7 +23619,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E99999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3E28F5C3 # speed loss by turning (?)
     .4byte 0x3C9372B1 # handling speed based? (also affects flight handling)
@@ -23731,7 +23731,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFFFF # E-Rider
+    .4byte 0x00000000 # E-Rider
     .byte 0x02 # gear type
     .byte 0x28 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -23740,7 +23740,7 @@ Gears:
     .4byte 0x3E060AA6 # top speed (additive)
     .4byte 0x41200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EE66666 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3DCCCCCD # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -23852,7 +23852,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Air Tank
+    .4byte 0x00000000 # Air Tank
     .byte 0x02 # gear type
     .byte 0x29 # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -23861,7 +23861,7 @@ Gears:
     .4byte 0xBD3DA12F # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EB33333 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3E800000 # speed loss by turning (?)
     .4byte 0xBBE4C388 # handling speed based? (also affects flight handling)
@@ -24094,7 +24094,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFF7FFFF # Destroyer
+    .4byte 0x00000000 # Destroyer
     .byte 0x02 # gear type
     .byte 0x2B # model id
     .2byte 0x0DAC # ring cost in gear shop
@@ -24103,7 +24103,7 @@ Gears:
     .4byte 0x3CBE0247 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EE66666 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000004 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -24215,7 +24215,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFF7FFFF # Omnipotence
+    .4byte 0x00000000 # Omnipotence
     .byte 0x02 # gear type
     .byte 0x2C # model id
     .2byte 0x1388 # ring cost in gear shop
@@ -24224,7 +24224,7 @@ Gears:
     .4byte 0x3D3DA12F # top speed (additive) #  0xBD3DA12F
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EE66666 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000007 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -24336,7 +24336,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFF7FFFF # Cover-S
+    .4byte 0x00000000 # Cover-S
     .byte 0x02 # gear type
     .byte 0x2D # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -24345,7 +24345,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0x40A00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EB33333 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3DCCCCCD # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -24457,7 +24457,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Cover-F
+    .4byte 0x00000000 # Cover-F
     .byte 0x02 # gear type
     .byte 0x2E # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -24466,7 +24466,7 @@ Gears:
     .4byte 0x3D3DA12F # top speed (additive)
     .4byte 0x41200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EB33333 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -24578,7 +24578,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Cover-P
+    .4byte 0x00000000 # Cover-P
     .byte 0x02 # gear type
     .byte 0x2F # model id
     .2byte 0x01F4 # ring cost in gear shop
@@ -24587,7 +24587,7 @@ Gears:
     .4byte 0x3E3425ED # top speed (additive) # OG line: 0x3E6D159E, 0x3DDA12F6
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3ECCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3DCCCCCD # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -24699,7 +24699,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Hang-On
+    .4byte 0x00000000 # Hang-On
     .byte 0x02 # gear type
     .byte 0x30 # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -24708,7 +24708,7 @@ Gears:
     .4byte 0x3DDA12F6 # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3ECCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -24829,7 +24829,7 @@ Gears:
     .4byte 0x3D3DA12F # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3EE66666 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3E28F5C3 # speed loss by turning (?)
     .4byte 0x3CA3D4F1 # handling speed based? (also affects flight handling)
@@ -24950,7 +24950,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBEB33333 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -25062,7 +25062,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFF7FFFF # Grinder
+    .4byte 0x00000000 # Grinder
     .byte 0x01 # gear type
     .byte 0x47 # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -25071,7 +25071,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE99999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000001 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -25192,7 +25192,7 @@ Gears:
     .4byte 0x3E0E4506 # top speed (additive)
     .4byte 0xC1A00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBEB33333 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -25313,7 +25313,7 @@ Gears:
     .4byte 0x3E638E39 # top speed (additive) # Top speed now 210, OG line: 0xBD3DA12F
     .4byte 0xC1A00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBECCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0x3C3FAEB3 # handling speed based? (also affects flight handling)
@@ -25434,7 +25434,7 @@ Gears:
     .4byte 0x3DED21C1 # top speed (additive)
     .4byte 0x42200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBE99999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0xBDCCCCCD # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -25555,7 +25555,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0xC1F00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBECCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x3F866666 # speed loss by turning (?)
     .4byte 0x3DEA938E # handling speed based? (also affects flight handling)
@@ -25667,7 +25667,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFF7F # G.U.N. Gear
+    .4byte 0x00000000 # G.U.N. Gear
     .byte 0x00 # gear type
     .byte 0x19 # model id
     .2byte 0x012C # ring cost in gear shop
@@ -25676,7 +25676,7 @@ Gears:
     .4byte 0xBCBDA12F # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3E19999A # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -25797,7 +25797,7 @@ Gears:
     .4byte 0xbc17b426 # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBF000000 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -26039,7 +26039,7 @@ Gears:
     .4byte 0x3c638e39 # top speed (additive)
     .4byte 0xC1200000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBF000000 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -26644,7 +26644,7 @@ Gears:
     .4byte 0xBD3DA12F # top speed (additive)
     .4byte 0x00000000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0x3eb33333 # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
@@ -26765,7 +26765,7 @@ Gears:
     .4byte 0x00000000 # top speed (additive)
     .4byte 0xC1F00000 # off road speed
     .4byte 0x00000000 # speed and handling multiplier
-    .4byte 0xBECCCCCD # weight
+    .4byte 0x00000000 # weight
     .4byte 0x00000000 # extra type attribute
     .4byte 0x00000000 # speed loss by turning (?)
     .4byte 0x00000000 # handling speed based? (also affects flight handling)
