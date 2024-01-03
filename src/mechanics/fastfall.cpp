@@ -3,12 +3,18 @@
 #include "handlers/menu/debugmenu/debugmenu.hpp"
 // #include "gears/eggsterminator.hpp"
 
+std::array<f32, MaxPlayerCount> PlayerFastfallDebts;
+
 void lbl_FastFall(Player *player){
 	EnabledEXLoads exLoads;
 	FetchEnabledEXLoadIDs(player, exLoads);
 	// EggInfo *EggInfo = &PlayerEggsterminator[player->index];
 
-	if(player->state < Jump || player->state > TurbulenceTrick2){ return; }
+	if(player->state < Jump || player->state > TurbulenceTrick2){
+		f32* FastfallDebt = &PlayerFastfallDebts[player->index];
+		*FastfallDebt = 0;
+		return; 
+	}
 	if(!player->input->holdFaceButtons.hasAny(BButton)){ return; }// B button
 	if (player->characterArchetype == Windcatcher) {
 		player->verticalSpeed += -0.0231482F;
@@ -53,7 +59,20 @@ void lbl_FastFall(Player *player){
 
 	if(!(DebugMenu_CheckOption(DebugMenuOptions::NegativeAir))) {
 		if (player->currentAir < 0) {
+			f32* FastfallDebt = &PlayerFastfallDebts[player->index];
+			*FastfallDebt += player->currentAir;
 			player->currentAir = 0;
 		}
 	}
+}
+
+ASMUsed f32 Player_Fastfall_AirDebt(Player *player, f32 airGain) {
+	f32* FastfallDebt = &PlayerFastfallDebts[player->index];
+	airGain += *FastfallDebt;
+	if (airGain < 0) {
+		airGain = 0;
+	}
+
+	*FastfallDebt = 0;
+	return airGain;
 }
