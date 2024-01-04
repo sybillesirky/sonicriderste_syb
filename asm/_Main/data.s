@@ -26661,7 +26661,7 @@ Gears:
     .4byte 0xbf400000 # air gain multiplier (tricks)
     .4byte 0xbf400000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
-    .4byte 0x00000000 # special flags
+    .4byte 0x00004000 # special flags SYB: No pits.
     .4byte 0x40000000 # air cost multiplier when charging jump
     .4byte 0x00030D40 # level 1 max air
     .4byte 0x00000000 # level 1 passive air drain

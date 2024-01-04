@@ -24,7 +24,6 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
         case NoTypeArchetype:
             bcm += 0.04f;
             break;
-
         case AllRounder:
             bcm += 0.01f;
             break;
