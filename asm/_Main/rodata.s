@@ -12790,7 +12790,7 @@ lbl_001CC8E8:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x43160000
-    .single 120 // Amy's level 3 flatten stun timer, counts up 1 per frame
+    .single 100 // Amy's level 3 flatten stun timer, counts up 1 per frame
     .4byte 0x00000000
     .4byte 0x3F000000
     .4byte 0x3CD67750
@@ -14009,7 +14009,7 @@ lbl_001CD898:
 lbl_001CD8F0:
     # 0x1CD8F0
     .4byte 0x43160000
-    .4byte 0x43160000
+    .single 100 // Storm Level 3 Daze Timer (increments by 1)
     .4byte 0x00000000
     .4byte 0x3F000000
     .4byte 0x3CD67750
@@ -21576,7 +21576,7 @@ lbl_001D3EC8:
 lbl_001D3F58:
     # 0x1D3F58
     .4byte 0x43340000
-    .4byte 0x43160000
+    .single 100 // E10R Daze Timer
 .global lbl_001D3F60
 lbl_001D3F60:
     # 0x1D3F60
@@ -23103,7 +23103,7 @@ lbl_001D5374:
 lbl_001D5398:
     # 0x1D5398
     .4byte 0x43340000
-    .4byte 0x42c80000 // NiGHTS Daze timer
+    .single 100 // NiGHTS Daze timer
 .global lbl_001D53A0
 lbl_001D53A0:
     # 0x1D53A0
@@ -27491,7 +27491,7 @@ SuperKnucklesAuraParticles:
 
 .global asm_MikuFlattenTimer
 asm_MikuFlattenTimer:
-    .single 120 // increments by 1
+    .single 100 // increments by 1
 
 .global asm_SuperShadowAttackRange
 asm_SuperShadowAttackRange:
