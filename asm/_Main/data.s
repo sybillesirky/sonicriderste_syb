@@ -25448,32 +25448,32 @@ Gears:
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # how long it takes to generate a drift dash
-    .4byte 0x3E19999A # air gain multiplier (tricks)
+    .4byte 0x00000000 # air gain multiplier (tricks)
     .4byte 0x00000000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
     .4byte 0x00002000 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
     .4byte 0x000186A0 # level 1 max air
     .4byte 0x00000010 # level 1 passive air drain
-    .4byte 0x00000074 # level 1 drift air cost
-    .4byte 0x000061A8 # level 1 boost cost OG: 0x000055F0
+    .4byte 0x000000A6 # level 1 drift air cost
+    .4byte 0x000061A8 # level 1 boost cost
     .4byte 0x000061A8 # level 1 tornado cost
     .4byte 0x3E6D097B # level 1 speed gained from a drift dash
-    .4byte 0x3F78E38E # level 1 boost speed
+    .4byte 0x3F6D097B # level 1 boost speed
     .4byte 0x000249F0 # level 2 max air
     .4byte 0x00000010 # level 2 passive air drain
-    .4byte 0x000000C8 # level 2 drift air cost
-    .4byte 0x00007530 # level 2 boost cost OG: 0x00006978
+    .4byte 0x000000FA # level 2 drift air cost
+    .4byte 0x00007530 # level 2 boost cost
     .4byte 0x00007530 # level 2 tornado cost
     .4byte 0x3EBDA12F # level 2 speed gained from a drift dash
-    .4byte 0x3F8E38E4 # level 2 boost speed
+    .4byte 0x3F884BDA # level 2 boost speed
     .4byte 0x00030D40 # level 3 max air
     .4byte 0x00000010 # level 3 passive air drain
-    .4byte 0x0000011B # level 3 drift air cost
-    .4byte 0x00009C40 # level 3 boost cost OG: 0x00009088
+    .4byte 0x0000014D # level 3 drift air cost
+    .4byte 0x00009C40 # level 3 boost cost
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
-    .4byte 0x3F9A12F7 # level 3 boost speed
+    .4byte 0x3F9425ED # level 3 boost speed
     .byte 0x05 # shown dash (tempo) stat
     .byte 0x03 # shown limit (efficiency) stat
     .byte 0x04 # shown power (combat) stat

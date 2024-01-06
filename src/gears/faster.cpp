@@ -1,10 +1,6 @@
 #include "faster.hpp"
 
 void Player_Faster(Player *player) {
-	if (player->character == E10G && player->extremeGear == ExtremeGear::AdvantageP) {
-		player->trickAirGainMultiplier = 0.9;
-	}
-
 	if(player->extremeGear != ExtremeGear::Faster) { return; }
 	if(player->characterArchetype == BoostArchetype) {
 		player->gearStats[0].boostSpeed = pSpeed(240.0f);

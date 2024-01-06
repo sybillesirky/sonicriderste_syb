@@ -19,7 +19,7 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
 
     switch (player->characterArchetype) {
         case CombatArchetype:
-            bcm += 0.02f;
+            bcm += 0.04f;
             break;
         case NoTypeArchetype:
             bcm += 0.04f;
@@ -36,13 +36,8 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
             bcm += 0.07f;
             break;
 
-        // case DefaultGear:
-        //     if (exLoads.gearExLoadID == WindmasterJetEXLoad) bcm += 0.10f;
-        //     break;
-
         case HangOn:
             if (player->hangOn_infiniteRingTimer > 0) bcm += 0.11f;
-        //     bcm += 0.11f;
             break;
 
         case AdvantageF:
@@ -57,6 +52,15 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
 			}
             break;
 
+        case AdvantageP:
+            if (player->characterArchetype == CombatArchetype) {
+                bcm += 0.02f;
+            }
+            else if (player->characterArchetype == AllRounder) {
+                bcm += 0.001f;
+            }
+            break;
+
         case RoadStar:
             bcm += static_cast<f32>(player->rings) / 666.67f;
             break;
@@ -67,23 +71,6 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
             }
             break;
 
-        // case TurboStar: // experimental
-        // if (exLoads.gearExLoadID == OllieKingGearEXLoad) break;
-        //         switch (player->level) {
-        //             case 0:
-        //             bcm += 0.07f;
-        //             break;
-
-        //             case 1:
-        //             bcm += 0.05f;
-        //             break;
-
-        //             case 2:
-        //             if (player->level4 == 0)
-        //             {bcm += 0.03f;} else bcm += 0.0f;
-        //             break;
-        //         }
-        //     break;
 		default:
 			break;
     }

@@ -7,7 +7,7 @@ constexpr m2darray<u8, ArchetypeCount, 3> Archetype_BoostDuration = {{
 		{0x14, 0x14, 0x14},// all rounder
 		{0x00, 0x3c, 0x3c},// late booster
 		{0x1E, 0x1E, 0x1E}, // top speed
-		{0x46, 0x46, 0x00},// combat
+		{0x00, 0x00, 0x00},// combat
 		{0x00, 0x00, 0x00},// drift
 		{0x46, 0x46, 0x46},// no type
 		{0x00, 0x00, 0x00},// super sonic
@@ -18,7 +18,7 @@ constexpr m2darray<u8, ArchetypeCount, 3> Archetype_BoostDuration = {{
 		{0x00, 0x00, 0x00},// Turning
 		{0x00, 0x00, 0x00},// Mechanic
 		{0x0A, 0x0A, 0x0A}, // ATN: Attuned
-        {0x0A, 0x0A, 0x0A}, // CLT: Collector
+        {0x00, 0x00, 0x00}, // CLT: Collector
 }};
 
 ASMUsed u32 CustomBoostDuration(Player *player, u32 currentBoostDuration) {
@@ -132,6 +132,15 @@ ASMUsed u32 CustomBoostDuration(Player *player, u32 currentBoostDuration) {
 				if(exLoads.gearExLoadID == HangOnATEXLoad) {
 					currentBoostDuration += player->rings;
 					player->rings = 0;
+				}
+				break;
+			}
+			case AdvantageP: {
+				if (player->characterArchetype == LateBooster) {
+					currentBoostDuration += addBoostDuration / 2;
+				}
+				else if (player->characterArchetype == AllRounder) {
+					currentBoostDuration += addBoostDuration / 10;
 				}
 				break;
 			}

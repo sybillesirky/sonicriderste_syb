@@ -576,25 +576,6 @@ ASMUsed f32 Player_MITrickLandingSpeed(Player *player, f32 currentTrickSpeed) {
 		currentTrickSpeed += MIspeed;
 	}
 
-	// if (exLoads.gearExLoadID == OllieKingGearEXLoad)
-	// {
-	//     switch (player->characterArchetype)
-	//     {
-	//         case TopSpeedArchetype:
-	//             currentTrickSpeed += pSpeed(30.0f);
-	//             break;
-	//         case AllRounder:
-	//             currentTrickSpeed += pSpeed(20.0f);
-	//             break;
-	//         case CombatArchetype:
-	//         case LateBooster:
-	//             currentTrickSpeed += pSpeed(10.0f);
-	//             break;
-	//     }
-	//     player->gearStats[player->level].boostSpeed = currentTrickSpeed;
-	//     okgInfo->OllieBurstStatus = 1;
-	// }
-
 	return currentTrickSpeed;
 }
 

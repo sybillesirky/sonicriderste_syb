@@ -292,6 +292,10 @@ ASMUsed void Player_ArchetypeTierAccelBuffs(Player *player) {
             default:
                 break;
         }
+
+		if (player->extremeGear == ExtremeGear::AdvantageP) {
+			accelBuff *= 1.5f;
+		}
     }
 
     if (player->characterArchetype == Windcatcher){
