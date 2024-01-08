@@ -360,8 +360,6 @@ ASMUsed void GraphicalObjectHandler_CSSInformationText(GraphicalObject* gobject)
                         // if (exLoads.characterExLoadID == SelkadoomEXLoad) {text = 10;} // Special version of combat text
                     } else if (player->character == Emerl) {
                         text = 9;
-                    } else if (player->character == Shadow) {
-                        text = 15;
                     } else {
                         u32 index;
                         if (player->character == E10G &&
