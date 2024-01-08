@@ -41,6 +41,7 @@ ASMUsed constexpr std::array<RGBA, EXLoadCount> EXLoadHUDColors = {
 		RGBA(0xAA2828FF), // Red Sonic
 		RGBA(0x64C8D2FF), // Blue Knuckles
 		RGBA(0xFFDC0FFF), // E10Y
+		RGBA(0xA595E6FF), // Neptune
 };
 
 ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = {
@@ -253,6 +254,12 @@ ASMUsed constexpr std::array<EXLoadBoostColor, EXLoadCount> EXLoadBoostColors = 
                 {
 						RGBANormalized(255, 220, 15),
                         RGBANormalized(26, 18, 255)
+                },
+
+				// Neptune
+                {
+						RGBANormalized(165, 149, 230),
+                        RGBANormalized(255, 255, 255)
                 },
         }
 };
@@ -857,6 +864,8 @@ USED const char *GetEXLoadFilenameSuperForm(Player *player, const char filename[
 			return "S5CO";
 		case BlueKnucklesEXLoad:
 			return "S6CO";
+		case NeptuneEXLoad:
+			return "S7CO";
 		default:
 			return nullptr;
 	}
