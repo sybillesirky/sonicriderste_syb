@@ -768,3 +768,7 @@ void DebugMenuHandler_InfiniteRings(Player *player) {
 		}
     }
 }
+
+ASMUsed bool DebugMenuHandler_AddAFriend() {
+	return (DebugMenu_CheckOption(DebugMenuOptions::AddAFriend));
+}

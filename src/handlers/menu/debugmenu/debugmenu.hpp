@@ -20,9 +20,10 @@ namespace DebugMenuOptions {
 		InfiniteAir,
 		InfiniteRings,
 		AlwaysMaxMI,
-		NegativeAir
+		NegativeAir,
+		AddAFriend
 	};
-	constexpr auto PAGE1OPTIONCOUNT = 11;
+	constexpr auto PAGE1OPTIONCOUNT = 12;
 	constexpr auto DefaultPage1Options = 0 << MagneticImpulse
 	                                     | 0 << Autopilot
 	                                     | 0 << TornadoIgnore

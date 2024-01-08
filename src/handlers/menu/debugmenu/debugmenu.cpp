@@ -17,6 +17,7 @@ constexpr auto INFINITEAIR_OPTIONCOUNT = 2;
 constexpr auto INFINITERINGS_OPTIONCOUNT = 2;
 constexpr auto MAXMI_OPTIONCOUNT = 2;
 constexpr auto NEGATIVEAIR_OPTIONCOUNT = 2;
+constexpr auto ADDAFRIEND_OPTIONCOUNT = 2;
 
 extern u32 lbl_001F1D80[];
 
@@ -36,6 +37,7 @@ std::array<u8, INFINITEAIR_OPTIONCOUNT> DebugMenu_InfiniteAirOptions = {DebugMen
 std::array<u8, INFINITERINGS_OPTIONCOUNT> DebugMenu_InfiniteRingsOptions = {DebugMenuOptions::InfiniteRings, 0xFF};
 std::array<u8, MAXMI_OPTIONCOUNT> DebugMenu_MaxMIOptions = {DebugMenuOptions::AlwaysMaxMI, 0xFF};
 std::array<u8, NEGATIVEAIR_OPTIONCOUNT> DebugMenu_NegativeAirOptions = {DebugMenuOptions::NegativeAir, 0xFF};
+std::array<u8, ADDAFRIEND_OPTIONCOUNT> DebugMenu_AddAFriendOptions = {DebugMenuOptions::AddAFriend, 0xFF};
 
 Text2dFileData DebugMenu_TextData;
 DebugMenuData DebugMenu_Data = {
@@ -50,7 +52,8 @@ DebugMenuData DebugMenu_Data = {
 				DebugMenu_InfiniteAirOptions,
 				DebugMenu_InfiniteRingsOptions,
 				DebugMenu_MaxMIOptions,
-				DebugMenu_NegativeAirOptions
+				DebugMenu_NegativeAirOptions,
+				DebugMenu_AddAFriendOptions
 		}};
 
 bool DebugMenu_CheckOption(u32 option) {
