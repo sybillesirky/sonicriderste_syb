@@ -400,6 +400,7 @@ constexpr std::array<EXLoadInfo, GearEXLoadSlots> GearEXLoadDataSlots = {
 constexpr std::array<f32, EXLoadCount> EXLoadWeights = {
         -1.0F,
         -1.0F,
+        1.1F,   // E10R
         -1.0F,
         -1.0F,
         -1.0F,
@@ -411,11 +412,10 @@ constexpr std::array<f32, EXLoadCount> EXLoadWeights = {
         -1.0F,
         -1.0F,
         -1.0F,
+        1.25F,  // Hatsune Miku
         -1.0F,
-        0.95F,// hatsune miku
-        -1.0F,
-        1.1F,// reala
-        1.4F,// gongon
+        1.15F,  // Reala
+        1.3F,   // GonGon
         1.0F, // Windcatcher Jet
         1.45F, // Windcatcher Storm
         0.95f, // Windcatcher Wave
@@ -425,14 +425,14 @@ constexpr std::array<f32, EXLoadCount> EXLoadWeights = {
         -1.0f, // SuperStorm???????
         -1.0f, // Pyro TF2???????
         -1.0f, // Shang On Fuck you
-        -1.0f, // seelkadoom
-        -1.0f, // Super Sonic
-        -1.0f, // Christmas NiGHTS
-        -1.0f, // Shadow Android
-        -1.0f, // Metal Sonic 3.0
-        -1.0f, // Red Sonic
-        -1.0f, // Blue Knuckles
-        -1.0f // E10Y
+        1.05F,  // Seelkadoom
+        -1.0f,  // Super Sonic
+        0.95F,  // Christmas NiGHTS
+        1.35F,  // Shadow Android
+        1.1F,   // Metal Sonic 3.0
+        -1.0f,  // Red Sonic
+        -1.0f,  // Blue Knuckles
+        1.1F   // E10Y
 };
 
 constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {

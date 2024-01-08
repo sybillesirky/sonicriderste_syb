@@ -145,6 +145,8 @@ inline s32 CustomDriftDashFrames(const Player &player, const s32 &driftFrames) {
 
 inline Flag<SpecialFlags> CustomSpecialFlags(const Player &player, const Flag<SpecialFlags> &specialFlags) {
 	Flag<SpecialFlags> newSpecialFlags = specialFlags;
+	const EnabledEXLoads exLoads = FetchEnabledEXLoadIDs(player);
+
 	if(player.extremeGear == ExtremeGear::ChaosEmerald) {
 		switch(player.character) {
 			case Tails:
@@ -162,6 +164,7 @@ inline Flag<SpecialFlags> CustomSpecialFlags(const Player &player, const Flag<Sp
 			default: break;
 		}
 	}
+
 	return newSpecialFlags;
 }
 

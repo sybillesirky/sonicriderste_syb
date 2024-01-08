@@ -319,6 +319,23 @@ ASMUsed bool SYBIsSuperSonicEXLoad(const Player *player) {
 	return (exLoads.characterExLoadID == SSEXLoad);
 }
 
+ASMUsed void setEXLoadHandedness(Player *player) {
+	auto exLoads = FetchEnabledEXLoadIDs(*player);
+
+	const u8 &controllerPort = player->index;
+	const u8 &exLoadIndex = Player_EXLoadData[controllerPort][CharacterEXLoadMode].exLoadIndex;
+	const EXLoadInfo &info = CharacterEXLoadDataSlots[exLoadIndex];
+
+	if (!CheckIfEXLoadCanBeApplied(*player, info)) return;
+
+	if (exLoads.characterExLoadID == AndroidEXLoad ||
+		exLoads.characterExLoadID == Metal30EXLoad ||
+		exLoads.characterExLoadID == E10YEXLoad ||
+		exLoads.characterExLoadID == ChristmasNiGHTSEXLoad) {
+		player->unkBAC ^= 0x0100;
+	}
+}
+
 /**
  * Checks a Player for if the currently selected EX load has any custom HUD colors available.
  *

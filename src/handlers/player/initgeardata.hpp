@@ -29,29 +29,29 @@ constexpr std::array<TypeStats, 3> StatPresets = {{
 }};
 
 constexpr std::array<f32, TotalCharacterAmount> CharacterWeights = {
-		1.1F, //sonic
-		0.9F, //tails
-		1.4F, //knuckles
-		1.05F,//amy
-		1,    //jet
-		1.45F,//storm
-		0.95F,//wave
-		1.55F,//eggman
-		0.8F, //cream
-		1.3F, //rouge
-		1.15F,//shadow
-		0.75F,//super sonic
-		0.85F,//nights
-		1.02F,//aiai
-		1.2F, //ulala
-		1.25F,//e10g
-		1.35F,//e10r
-		1.05F,// silver
-		1.1F, // metal sonic
-		1.15F,// emerl
-		1.05F,// blaze
-		1.4F, // chaos
-		0.9F, // tikal
+		1, 		// Sonic
+		0.9F,	// Tails
+		1.35F,	// Knuckles
+		1.15F,	// Amy
+		0.95F,	// Jet
+		1.25F,	// Storm
+		1.05F,	// Wave
+		1.3F,	// Eggman
+		0.9F,	// Cream
+		1.15F,	// Rouge
+		1.05F,	// Shadow
+		0.75F,	// Super Sonic
+		0.85F,	// NiGHTS
+		1.1F,	// AiAi
+		1.15F,	// Ulala
+		1.25F,	// E10G
+		1.2F,	// E10B
+		0.95F,	// Silver
+		1.2F,	// Metal Sonic
+		1.15F,	// Emerl
+		1,		// Blaze
+		1.05F,	// Chaos
+		1.15F,	// Tikal
 };
 
 constexpr std::array<f32, 3> BoostArchetypeBoostSpeeds = {
