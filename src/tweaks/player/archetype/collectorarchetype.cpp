@@ -10,7 +10,7 @@ ASMUsed void Collector_RingSpeedGain(Player *player) {
     if (player->extremeGear == ExtremeGear::AdvantageP) {
         player->speed += pSpeed(2.5);
     }
-    if (~player->specialFlags & ringGear) { // SYB: Otherwise these fuckers get 3x Ring pickup.
-        player->currentAir += 2000;
-    }
+    // if (~player->specialFlags & ringGear) { // SYB: Otherwise these fuckers get 3x Ring pickup.
+    //     player->currentAir += 2000;
+    // }
 }

@@ -31,16 +31,16 @@ ASMUsed void *Player_DriftCap(Player *player, f32 return_array[2], f32 currentDr
 				f3 += addCap;
 				break;
 
-			case AllRounder:
-				if(player->specialFlags.hasAny(static_cast<SpecialFlags>(0x00200000U))) {
-					addCap = pSpeed(5);
-				} else {
-					addCap = pSpeed(10);
-				}
+			// case AllRounder:
+			// 	if(player->specialFlags.hasAny(static_cast<SpecialFlags>(0x00200000U))) {
+			// 		addCap = pSpeed(5);
+			// 	} else {
+			// 		addCap = pSpeed(10);
+			// 	}
 
-				currentDriftCap += addCap;
-				f3 += addCap;
-				break;
+			// 	currentDriftCap += addCap;
+			// 	f3 += addCap;
+			// 	break;
 			default:
 				break;
 		}

@@ -198,9 +198,9 @@ ASMUsed f32 Player_DecelModifier(Player *player) {
         case TopSpeedArchetype:
             DecelModifier += 0.01f;
             break;
-		case LateBooster:
-			if (player->movementFlags.hasAny(boosting)) {DecelModifier += 0.025f;}
-			break;
+		// case LateBooster:
+		// 	if (player->movementFlags.hasAny(boosting)) {DecelModifier += 0.025f;}
+		// 	break;
 		default: break;
 	}
 
@@ -279,15 +279,15 @@ ASMUsed void Player_ArchetypeTierAccelBuffs(Player *player) {
     if (player->characterArchetype == TopSpeedArchetype) {
         switch (player->level) {
             case 0:
-                accelBuff = 1.15f;
+                accelBuff = 1.2f;
                 break;
             case 1:
-                accelBuff = 1.25f;
+                accelBuff = 1.3f;
 				if (player->extremeGear == ExtremeGear::CoverP && player->specialFlags.hasAny(moneyCrisis))
 				{accelBuff = 1.0f;}
                 break;
             case 2:
-                accelBuff = 1.35f;
+                accelBuff = 1.4f;
                 break;
             default:
                 break;
