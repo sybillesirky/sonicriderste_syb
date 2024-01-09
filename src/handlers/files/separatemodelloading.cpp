@@ -4,6 +4,7 @@
 #include "lib/stdlib.hpp"
 #include "packman_handlers.hpp"
 #include "riders/gamemode.hpp"
+#include "cosmetics/player/defaultgearrotation.hpp"
 
 #include <cstdio>
 #include <cstring>
@@ -38,7 +39,13 @@ std::bitset<MaxPlayerCount> IsSeparateBoardModelActive;
     if(player->extremeGear == ExtremeGear::Default) {
         // for default boards
 
-        const Character &character = Characters[player->character];
+        //const Character &character = Characters[player->character];
+        u16* playerDefaultID = &PlayerDefaultIDs[player->index];
+        if (!(player->isRealPlayer())) {
+            *playerDefaultID = player->character;
+        }
+        
+        const Character &character = Characters[*playerDefaultID];
 
         // default case
         sprintf(filename.data(), "P%c00", character.model);
