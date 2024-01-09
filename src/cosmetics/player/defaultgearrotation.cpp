@@ -11,13 +11,11 @@ USED void InitFirstDefaultGear(Player *player) {
 
     *playerDefaultID = player->character;
 
-    if (player->character == SuperSonic) {
+    if (player->character == SuperSonic || player->character == TotalCharacterAmount) {
         *playerDefaultID = 0;
     }
-    else if (player->character == TotalCharacterAmount) {
-        *playerDefaultID = 0;
-    } else if (player->character == Eggman) {
-        *playerDefaultID = 7;
+    else if (player->character == Eggman) {   // This should be fine as rotating Defaults
+        *playerDefaultID = 7;                   // is not possible if Eggman is selected.
     }
 }
 
@@ -40,7 +38,7 @@ USED void RotateNextDefaultGear(GraphicalObject *object) {
     u16* playerDefaultID = &PlayerDefaultIDs[player.index];
 
     // Update what ID we're on if pressing X (forward)
-    if (player.input->toggleFaceButtons.hasAny(XButton)) {
+    if (player.input->toggleFaceButtons.hasAny(XButton) && object->idStruct.graphicalDataID == NotLockedGearSelectionID) {
         *playerDefaultID += 1;
         if (*playerDefaultID >= TotalCharacterAmount) {
             *playerDefaultID = 0;
@@ -51,7 +49,7 @@ USED void RotateNextDefaultGear(GraphicalObject *object) {
     }
 
     // Update what ID we're on if pressing Y (backward)
-    if (player.input->toggleFaceButtons.hasAny(YButton)) {
+    if (player.input->toggleFaceButtons.hasAny(YButton) && object->idStruct.graphicalDataID == NotLockedGearSelectionID) {
         if (*playerDefaultID == 0) {
             *playerDefaultID = TotalCharacterAmount - 1;
         }
