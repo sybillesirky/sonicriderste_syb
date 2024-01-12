@@ -20730,7 +20730,7 @@ Gears:
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # how long it takes to generate a drift dash
     .4byte 0x00000000 # air gain multiplier (tricks)
-    .4byte 0x3DCCCCCD # air gain multiplier (shortcuts)
+    .4byte 0x00000000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
     .4byte 0x00020100 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
@@ -21598,7 +21598,7 @@ Gears:
     .4byte 0x00030D40 # level 3 max air
     .4byte 0x00000014 # level 3 passive air drain
     .4byte 0x0000014D # level 3 drift air cost
-    .4byte 0x0000A7F8 # level 3 boost cost
+    .4byte 0x0000A028 # level 3 boost cost
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3EED097B # level 3 speed gained from a drift dash
     .4byte 0x3F9425ED # level 3 boost speed
@@ -22279,7 +22279,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x00000000 # Slide Booster
+    .4byte 0xFFFFFFFF # Slide Booster
     .byte 0x00 # gear type
     .byte 0x0D # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -23005,7 +23005,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x00000000 # Faster
+    .4byte 0xFFFFFFFF # Faster
     .byte 0x00 # gear type
     .byte 0x13 # model id
     .2byte 0x0320 # ring cost in gear shop
@@ -23996,8 +23996,8 @@ Gears:
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # how long it takes to generate a drift dash
-    .4byte 0xBE19999A # air gain multiplier (tricks)
-    .4byte 0xBE19999A # air gain multiplier (shortcuts)
+    .4byte 0x00000000 # air gain multiplier (tricks)
+    .4byte 0x00000000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
     .4byte 0x00020001 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
@@ -25788,7 +25788,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFF7F # Airship
+    .4byte 0xFFFFFFFF # Airship
     .byte 0x00 # gear type
     .byte 0x1A # model id
     .2byte 0x012C # ring cost in gear shop
@@ -25909,7 +25909,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # GShot
+    .4byte 0xFFFFFFFF # GShot
     .byte 0x00 # gear type
     .byte 0x1B # model id
     .2byte 0x012C # ring cost in gear shop
@@ -26030,7 +26030,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # Wanted
+    .4byte 0xFFFFFFFF # Wanted
     .byte 0x00 # gear type
     .byte 0x1C # model id
     .2byte 0x012C # ring cost in gear shop
@@ -26151,7 +26151,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02020000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # Shooting Star
+    .4byte 0xFFFFFFFF # Shooting Star
     .byte 0x00 # gear type
     .byte 0x1D # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -26272,7 +26272,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02010000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # Wind Star
+    .4byte 0xFFFFFFFF # Wind Star
     .byte 0x00 # gear type
     .byte 0x1E # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -26393,7 +26393,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # Road Star
+    .4byte 0xFFFFFFFF # Road Star
     .byte 0x00 # gear type
     .byte 0x1F # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -26514,7 +26514,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02010000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFFFF7F # Archangel
+    .4byte 0xFFFFFFFF # Archangel
     .byte 0x00 # gear type
     .byte 0x20 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -26635,7 +26635,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02020000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFE377F # Reserve Tank
+    .4byte 0xFFFFFFFF # Reserve Tank
     .byte 0x02 # gear type
     .byte 0x32 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -26877,7 +26877,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFF7F # Warp Drive
+    .4byte 0xFFFFFFFF # Warp Drive
     .byte 0x00 # gear type
     .byte 0x21 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -26998,7 +26998,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02020000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFF77F7F # Challenger
+    .4byte 0xFFFFFFFF # Challenger
     .byte 0x00 # gear type
     .byte 0x22 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -27119,7 +27119,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFFE377F # G.U.N. Bike
+    .4byte 0xFFFFFFFF # G.U.N. Bike
     .byte 0x02 # gear type
     .byte 0x33 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -27143,7 +27143,7 @@ Gears:
     .4byte 0x00000000 # unknown
     .4byte 0x00000000 # how long it takes to generate a drift dash
     .4byte 0x00000000 # air gain multiplier (tricks)
-    .4byte 0x3DCCCCCD # air gain multiplier (shortcuts)
+    .4byte 0x00000000 # air gain multiplier (shortcuts)
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
     .4byte 0x00020100 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump

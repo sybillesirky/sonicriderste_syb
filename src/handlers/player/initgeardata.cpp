@@ -13,34 +13,21 @@
 
 inline f32 CustomBoostSpeeds(const Player &player, const f32 &boostSpeed, const u32 &level) {
 	f32 newBoostSpeed = boostSpeed;
-	if(player.extremeGear == ExtremeGear::LightBoard) {
-		switch(player.characterArchetype) {
-			case CombatArchetype:
-				newBoostSpeed += pSpeed(2);
+	if(player.extremeGear == ExtremeGear::ChaosEmerald) {
+		switch(player.character) {
+			case Tails:
+				newBoostSpeed = pSpeed(200);
 				break;
-			case LateBooster:
-			case NoTypeArchetype:
-				newBoostSpeed += pSpeed(5);
+			case Knuckles:
+				newBoostSpeed = pSpeed(250);
+				break;
+			case Shadow:
+				newBoostSpeed = pSpeed(300);
+				break;
+			case MetalSonic:
+				newBoostSpeed = pSpeed(235);
 				break;
 			default: break;
-		}
-	} else {
-		if(player.extremeGear == ExtremeGear::ChaosEmerald) {
-			switch(player.character) {
-				case Tails:
-					newBoostSpeed = pSpeed(200);
-					break;
-				case Knuckles:
-					newBoostSpeed = pSpeed(250);
-					break;
-				case Shadow:
-					newBoostSpeed = pSpeed(300);
-					break;
-				case MetalSonic:
-					newBoostSpeed = pSpeed(235);
-					break;
-				default: break;
-			}
 		}
 	}
 

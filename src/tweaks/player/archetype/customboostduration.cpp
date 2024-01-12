@@ -140,7 +140,7 @@ ASMUsed u32 CustomBoostDuration(Player *player, u32 currentBoostDuration) {
 					currentBoostDuration += addBoostDuration / 2;
 				}
 				else if (player->characterArchetype == AllRounder) {
-					currentBoostDuration += addBoostDuration / 10;
+					currentBoostDuration += addBoostDuration / 4;
 				}
 				break;
 			}

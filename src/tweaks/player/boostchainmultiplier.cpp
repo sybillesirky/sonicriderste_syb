@@ -57,7 +57,7 @@ ASMUsed void Player_BoostChainMultiplier(Player *player) {
                 bcm += 0.02f;
             }
             else if (player->characterArchetype == AllRounder) {
-                bcm += 0.001f;
+                bcm += 0.005f;
             }
             break;
 

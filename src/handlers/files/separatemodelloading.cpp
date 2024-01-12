@@ -105,6 +105,10 @@ std::bitset<MaxPlayerCount> IsSeparateBoardModelActive;
                     using namespace ExtremeGear;
                     case ERider ... SuperHangOn:
                         break;
+                    case ReserveTank:
+                        break;
+                    case GunBike:
+                        break;
                     default:
                         // anything but the bikes use eggman's replica gear, egg meister
                         sprintf(filename.data(), "PE00");
@@ -148,8 +152,14 @@ std::bitset<MaxPlayerCount> IsSeparateBoardModelActive;
  * @return true if separate Eggmeister textures are needed, otherwise false
  */
 [[nodiscard]] bool PlayerIsEggmeister(Player *player) {
-    return player->character == Eggman &&
-    (player->extremeGear < ExtremeGear::ERider || player->extremeGear > ExtremeGear::SuperHangOn);
+    bool EggmeisterState = (player->character == Eggman &&
+    (player->extremeGear < ExtremeGear::ERider || player->extremeGear > ExtremeGear::SuperHangOn));
+
+    if (player->extremeGear == ExtremeGear::ReserveTank || player->extremeGear == ExtremeGear::GunBike) {
+        EggmeisterState = false;
+    }
+
+    return EggmeisterState;
 }
 
 /**
@@ -166,6 +176,38 @@ std::bitset<MaxPlayerCount> IsSeparateBoardModelActive;
     u32 gearID = player->extremeGear;
     if (gearID > ExtremeGear::ERider) {
         gearID -= ExtremeGear::BIKE_COUNT; // subtract all bikes
+    }
+
+    switch (player->extremeGear) {
+        case ExtremeGear::Airship:
+            gearID = ExtremeGear::Hovercraft;
+            break;
+        case ExtremeGear::GShot:
+            gearID = ExtremeGear::HighBooster;
+            break;
+        case ExtremeGear::Wanted:
+            gearID = ExtremeGear::Gambler;
+            break;
+        case ExtremeGear::ShootingStar:
+            gearID = ExtremeGear::LightBoard;
+            break;
+        case ExtremeGear::WindStar:
+            gearID = ExtremeGear::SlideBooster;
+            break;
+        case ExtremeGear::RoadStar:
+            gearID = ExtremeGear::Gambler;
+            break;
+        case ExtremeGear::Archangel:
+            gearID = ExtremeGear::PowerfulGear;
+            break;
+        case ExtremeGear::WarpDrive:
+            gearID = ExtremeGear::HighBooster;
+            break;
+        case ExtremeGear::Challenger:
+            gearID = ExtremeGear::TurboStar;
+            break;
+        default:
+            break;
     }
 
     return gearID;

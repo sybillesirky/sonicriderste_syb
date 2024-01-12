@@ -3,7 +3,7 @@
 #include "handlers/player/initgeardata.hpp"
 
 constexpr std::array AdvantageF_BoostSpeeds = {pSpeed(200.0f), pSpeed(210.0f), pSpeed(220.0f), pSpeed(230.0f),
-                                               pSpeed(240.0f), pSpeed(250.0f), pSpeed(260.0f)};
+                                               pSpeed(240.0f), pSpeed(250.0f), pSpeed(255.0f)};
 
 void Player_AdvantageF(Player *player) {
 	// if(player->movementFlags.hasAny(0x0400)) { return; }
@@ -11,7 +11,7 @@ void Player_AdvantageF(Player *player) {
 	if(player->extremeGear != ExtremeGear::AdvantageF || FetchEnabledEXLoadIDs(*player).gearExLoadID == TheProfessionalEXLoad) {
 		return;
 	}
-	player->specialFlags |= (ringGear | noSpeedLossChargingJump | iceImmunity);
+	player->specialFlags |= (ringGear);
 
 	f32 boostSpeed;
 	if(player->rings <= 9) {
