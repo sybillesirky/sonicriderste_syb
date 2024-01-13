@@ -26,7 +26,7 @@ USED void RotateNextDefaultGear(GraphicalObject *object) {
 	const u8 &controllerPort = player.input->port;
 
     if (player.extremeGear != ExtremeGear::Default) return;
-    if (player.character == Eggman) return;
+    if (player.character == Eggman || player.character == E10R) return;
 
     // SYB: I dunno what this does but I'm copying it for safety reasons
     #pragma clang diagnostic push
