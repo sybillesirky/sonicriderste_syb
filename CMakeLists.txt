@@ -182,7 +182,7 @@ set(DOL_SOURCES     # main
 		src/gears/warpdrive.cpp
 		src/tweaks/player/archetype/collectorarchetype.cpp
 		src/gears/challenger.cpp
-		src/gears/accumulator.cpp
+		src/gears/projektred.cpp
 		src/cosmetics/player/defaultgearrotation.cpp ) # main
 
 set(STANDALONE_HEADERS # This is only here to make sure that headers actually include the things it needs, by "compiling" them standalone.

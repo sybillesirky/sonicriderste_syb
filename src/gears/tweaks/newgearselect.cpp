@@ -16,7 +16,7 @@ constexpr std::array<u8, customBoardAmount> newBoardIDs = { // added boards
     ExtremeGear::Archangel,
     ExtremeGear::WarpDrive,
     ExtremeGear::Challenger,
-    ExtremeGear::Accumulator,
+    ExtremeGear::ProjektRed,
     };
 
 constexpr std::array<u8, customBikeAmount> newBikeIDs = { // added bikes

@@ -9,6 +9,7 @@
 #include "gears/airship.hpp"
 #include "gears/windstar.hpp"
 #include "gears/warpdrive.hpp"
+#include "gears/projektred.hpp"
 #include "handlers/player/initgeardata.hpp"
 #include "lib/ASMHelper.hpp"
 #include "riders/gamemode.hpp"
@@ -273,6 +274,13 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				if (WarpDriveInfo->isTeleportChargeActive == true) {
 					lbl_RainbowTrail(Player);
 					color = Player->exhaustTrailColor;
+				}
+			}
+
+			case ProjektRed: {
+				ProjektRedInfo *RedInfo = &PlayerProjektRedInfo[Player->index];
+				if (RedInfo->redeployState == true) {
+					color = 0xFF0000FF;
 				}
 			}
 

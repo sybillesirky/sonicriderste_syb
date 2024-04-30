@@ -1,6 +1,5 @@
 #include "additive_dashpanels.hpp"
 #include "mechanics/magneticimpulse.hpp"
-#include "gears/accumulator.hpp"
 #include "riders/stage.hpp"
 
 ASMUsed void lbl_DashPanelSpeed(f32 dashPanelSpeed, Player *player, ObjectNode *object) {
@@ -102,43 +101,6 @@ ASMUsed void lbl_DashPanelSpeed(f32 dashPanelSpeed, Player *player, ObjectNode *
 
 		const f32 MIpercentage = player->magneticImpulse_timer / MI::MaximumCap;
 		dashPanelSpeed += (pSpeed(30.0f) * MIpercentage) * isNoType;
-	}
-
-	// Accumulator behaviours
-	if (player->extremeGear == ExtremeGear::Accumulator) {
-		AccumulatorInfo *AccumInfo = &PlayerAccumulatorInfo[player->index];
-
-		// Calculate the "added" speed
-		f32 basePanelSpeed;
-		f32 addedPanelSpeed;
-		if(player->speed < (setSpeed - stage_additiveSpeed)) {
-			basePanelSpeed = setSpeed;
-		} else {
-			basePanelSpeed = player->speed + stage_additiveSpeed;
-		}
-		addedPanelSpeed = dashPanelSpeed - basePanelSpeed;
-		
-		// Remove pSpeed division
-		addedPanelSpeed = addedPanelSpeed * 216;
-		basePanelSpeed = basePanelSpeed * 216;
-
-		// Set the new dashPanelSpeed
-		dashPanelSpeed = basePanelSpeed;
-		dashPanelSpeed += addedPanelSpeed / 2;
-		dashPanelSpeed = pSpeed(dashPanelSpeed);
-
-		// Calculate Accumulator stacks
-		if (AccumInfo->dashPanelCooldown == 0) {
-			if (addedPanelSpeed >= 50) {
-				addedPanelSpeed = addedPanelSpeed / 4;
-			} else {
-				addedPanelSpeed = addedPanelSpeed / 2;
-			}
-			AccumInfo->collectedSpeed += addedPanelSpeed;
-			if (AccumInfo->collectedSpeed > 100) {
-				AccumInfo->collectedSpeed = 100;
-			}
-		}
 	}
 
 	player->speed = dashPanelSpeed;
