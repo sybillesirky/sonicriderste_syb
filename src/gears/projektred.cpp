@@ -30,7 +30,7 @@ void Player_ProjektRed(Player *player) {
         RedInfo->redeployState = true;
         player->level = 2;
         player->currentAir = player->gearStats[player->level].maxAir;
-        if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
+        if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::SFX, 0x1A)); // Test SFX
     }
 
     if (RedInfo->redeployState == true) {
