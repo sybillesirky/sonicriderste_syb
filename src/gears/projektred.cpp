@@ -34,7 +34,7 @@ void Player_ProjektRed(Player *player) {
     }
 
     if (RedInfo->redeployState == true) {
-        if (RedInfo->ringTimer == 0) {
+        if (RedInfo->ringTimer == 0 && player->state == Cruise) {
             player->rings -= 1;
         }
         player->level = 2;
@@ -48,7 +48,7 @@ void Player_ProjektRed(Player *player) {
     }
 
     RedInfo->ringTimer += 1;
-    if (RedInfo->ringTimer == 15) {
+    if (RedInfo->ringTimer == 10) {
         RedInfo->ringTimer = 0;
     }
 }

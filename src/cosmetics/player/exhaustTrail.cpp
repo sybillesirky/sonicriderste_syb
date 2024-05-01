@@ -282,6 +282,9 @@ ASMUsed u32 Player_ExhaustTrailColors(Player *Player) {
 				if (RedInfo->redeployState == true) {
 					color = 0xFF0000FF;
 				}
+				else {
+					color = 0xFFFFFFFF;
+				}
 			}
 
 			case ExtremeGear::HangOn: {
