@@ -278,7 +278,7 @@ constexpr std::array<u16, 14> NewGearTextID = {
         777, // Warp Drive
         778, // Challenger
         779, // GunBike
-        522, // ProjektRed
+        780, // ProjektRed
 };
 
 
