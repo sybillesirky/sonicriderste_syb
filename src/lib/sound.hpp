@@ -39,6 +39,7 @@ namespace Sound{
 			Tikal 			= 0xA938,
 			MSFX			= 0xA939,
 			Nights 			= 0xA93A,
+			GearVirtuoso	= 0xA999,
 			// exloads below
 			NeoMetalSonic	= 0xA97B,
 			HyperSonic		= 0xA97C,

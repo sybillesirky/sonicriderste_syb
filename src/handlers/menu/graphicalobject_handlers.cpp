@@ -264,7 +264,7 @@ constexpr std::array<u16, 7> ExtraDefaultGearTextID = {
         522, // variable character, add new characters' IDs before this
 };
 
-constexpr std::array<u16, 14> NewGearTextID = {
+constexpr std::array<u16, 15> NewGearTextID = {
         767, // G.U.N. Gear
         768, // Airship
         769, // G-Shot
@@ -279,6 +279,7 @@ constexpr std::array<u16, 14> NewGearTextID = {
         778, // Challenger
         779, // GunBike
         780, // ProjektRed
+        768, // Virtuoso
 };
 
 

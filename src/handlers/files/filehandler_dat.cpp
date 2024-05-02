@@ -10,4 +10,5 @@ ASMUsed void LoadDATFileDynamic(const char filename[]) {
 
 ASMUsed void DATFileHandler() {
 	LoadDATFileDynamic("SFX.DAT");
+	LoadDATFileDynamic("Virtuoso.DAT");
 }

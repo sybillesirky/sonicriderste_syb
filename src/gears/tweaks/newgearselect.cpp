@@ -1,7 +1,7 @@
 #include "newgearselect.hpp"
 
 // The amount of custom Gears we have for each Gear Type:
-constexpr u8 customBoardAmount = 11;
+constexpr u8 customBoardAmount = 12;
 constexpr u8 customBikeAmount = 2;
 constexpr u8 customSkateAmount = 1;
 
@@ -17,6 +17,7 @@ constexpr std::array<u8, customBoardAmount> newBoardIDs = { // added boards
     ExtremeGear::WarpDrive,
     ExtremeGear::Challenger,
     ExtremeGear::ProjektRed,
+    ExtremeGear::Virtuoso
     };
 
 constexpr std::array<u8, customBikeAmount> newBikeIDs = { // added bikes

@@ -7,6 +7,7 @@ constexpr auto TRANSPARENCY_FLAG = 0x2000;
 void Player_Autopilot(Player *player) {
     if (!DebugMenu_CheckOption(DebugMenuOptions::Autopilot)) return;
     if (player->playerType != 0) return;
+    if (player->extremeGear == ExtremeGear::Virtuoso) return;
 
     player->unkBAC &= ~TRANSPARENCY_FLAG;
     player->unkBAC |= TRANSPARENCY_FLAG * player->aiControl;

@@ -1,7 +1,6 @@
 #include "projektred.hpp"
 #include "handlers/player/initgeardata.hpp"
 #include "lib/sound.hpp"
-#include "blastGaugeGears.hpp"
 
 std::array<ProjektRedInfo, MaxPlayerCount> PlayerProjektRedInfo;
 
@@ -30,7 +29,7 @@ void Player_ProjektRed(Player *player) {
         RedInfo->redeployState = true;
         player->level = 2;
         player->currentAir = player->gearStats[player->level].maxAir;
-        if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::SFX, 0x1A)); // Wolf SFX
+        if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::GearVirtuoso, 0x0C)); // Wolf SFX
     }
 
     if (RedInfo->redeployState == true) {
