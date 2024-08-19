@@ -7,6 +7,9 @@
 #pragma GCC diagnostic ignored "-Wpadded"
 struct VirtuosoInfo {
 	bool performanceMode;
+	u16 timeSinceLastNote;
+	u16 totalNotesPlayed;
+	u16 performanceDuration;
 };
 #pragma GCC diagnostic pop
 

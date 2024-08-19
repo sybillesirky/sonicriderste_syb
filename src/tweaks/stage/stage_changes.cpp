@@ -4,6 +4,7 @@
 #include "riders/object.hpp"
 #include "riders/player.hpp"
 #include "riders/stage.hpp"
+#include "lib/stdlib.hpp"
 
 // this structure for object1 will be specifically used for this code
 #pragma GCC diagnostic push
@@ -254,5 +255,14 @@ ASMUsed void func_StageChanges(ObjectNode *currentObject) {
 		}
 		default:
 			break;
+	}
+
+	if (currentObject->item_id == RNG) {
+		if (lbl_RNG_Number(2) == 0) {
+			lbl_update_item(currentObject, TenRings);
+		}
+		else {
+			lbl_update_item(currentObject, ThirtyAir);
+		}
 	}
 }

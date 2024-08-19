@@ -21069,7 +21069,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Powerful Gear
+    .4byte 0x00000000 # Powerful Gear
     .byte 0x00 # gear type
     .byte 0x03 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -21190,7 +21190,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Fastest
+    .4byte 0x00000000 # Fastest
     .byte 0x00 # gear type
     .byte 0x04 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -21311,7 +21311,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Turbo Star
+    .4byte 0x00000000 # Turbo Star
     .byte 0x00 # gear type
     .byte 0x05 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -22158,7 +22158,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Light Board
+    .4byte 0x00000000 # Light Board
     .byte 0x00 # gear type
     .byte 0x0C # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -22279,7 +22279,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Slide Booster
+    .4byte 0x00000000 # Slide Booster
     .byte 0x00 # gear type
     .byte 0x0D # model id
     .2byte 0x07D0 # ring cost in gear shop
@@ -22763,7 +22763,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Hovercraft
+    .4byte 0x00000000 # Hovercraft
     .byte 0x00 # gear type
     .byte 0x11 # model id
     .2byte 0x05DC # ring cost in gear shop
@@ -22884,7 +22884,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0x00000401 # Chaos Emerald
+    .4byte 0x00000000 # Chaos Emerald
     .byte 0x00 # gear type
     .byte 0x12 # model id
     .2byte 0x0000 # ring cost in gear shop
@@ -23005,7 +23005,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Faster
+    .4byte 0x00000000 # Faster
     .byte 0x00 # gear type
     .byte 0x13 # model id
     .2byte 0x0320 # ring cost in gear shop
@@ -23126,7 +23126,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFF7FFFF # Gambler
+    .4byte 0x00000000 # Gambler
     .byte 0x00 # gear type
     .byte 0x14 # model id
     .2byte 0x0FA0 # ring cost in gear shop
@@ -23368,7 +23368,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Opa Opa
+    .4byte 0x00000000 # Opa Opa
     .byte 0x00 # gear type
     .byte 0x16 # model id
     .2byte 0x09C4 # ring cost in gear shop
@@ -23610,7 +23610,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFFFF # Berserker
+    .4byte 0x00000000 # Berserker
     .byte 0x00 # gear type
     .byte 0x18 # model id
     .2byte 0x09C4 # ring cost in gear shop
@@ -24820,7 +24820,7 @@ Gears:
     .4byte 0x3DA3D70A
     .4byte 0x00280100
     .4byte 0x02010000
-    .4byte 0xFFFFFFFF # Super Hang-On
+    .4byte 0x00000000 # Super Hang-On
     .byte 0x02 # gear type
     .byte 0x31 # model id
     .2byte 0x09C4 # ring cost in gear shop
@@ -25183,7 +25183,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFFFF # Advantage-S
+    .4byte 0x00000000 # Advantage-S
     .byte 0x01 # gear type
     .byte 0x48 # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -25304,7 +25304,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFFFFFFF # Advantage-F
+    .4byte 0x00000000 # Advantage-F
     .byte 0x01 # gear type
     .byte 0x49 # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -25425,7 +25425,7 @@ Gears:
     .4byte 0xBDA3D70A
     .4byte 0x00280100
     .4byte 0x02020000
-    .4byte 0xFFF7FFFF # Advantage-P
+    .4byte 0x00000000 # Advantage-P
     .byte 0x01 # gear type
     .byte 0x4A # model id
     .2byte 0x03E8 # ring cost in gear shop
@@ -27361,7 +27361,7 @@ Gears:
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
     .4byte 0x02040000 # Exhaust mode (?) followed by amount of trails during tricks
-    .4byte 0xFFF77F7F # Virtuoso
+    .4byte 0x00000000 # Virtuoso
     .byte 0x00 # gear type
     .byte 0x1A # model id
     .2byte 0x012C # ring cost in gear shop
