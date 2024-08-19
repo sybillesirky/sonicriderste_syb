@@ -257,7 +257,7 @@ ASMUsed void func_StageChanges(ObjectNode *currentObject) {
 			break;
 	}
 
-	if (currentObject->item_id == RNG) {
+	if (currentObject->item_id == RNG && CurrentGameMode != TimeTrial) {
 		if (lbl_RNG_Number(2) == 0) {
 			lbl_update_item(currentObject, TenRings);
 		}
