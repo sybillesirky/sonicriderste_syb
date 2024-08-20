@@ -19,14 +19,15 @@ constexpr std::array<RGBA, 7> CustomMenuColors = {{
  */
 ASMUsed void RandomizeCustomMenuColors(GraphicalObject *graphicalObject, MainMenuObject1 *object) {
     // originally coded by joe a tron as gecko code, ported to C++
-	constexpr auto vanillaColorCount = 6;
-	constexpr auto customColorCount = CustomMenuColors.size();
+	// constexpr auto vanillaColorCount = 6;
+	// constexpr auto customColorCount = CustomMenuColors.size();
     //const u32 random = lbl_RNG_Number(customColorCount + vanillaColorCount); // +6 to account for vanilla colors
-    const u32 random = lbl_RNG_Number(customColorCount);
+    // const u32 random = lbl_RNG_Number(customColorCount);
     // if (random >= vanillaColorCount) {
     //     object->colorPreset = 0x3; // set it to gray to tint it better
     //     graphicalObject->tint = CustomMenuColors[random - vanillaColorCount];
     // }
-    object->colorPreset = 0x3;
-    graphicalObject->tint = CustomMenuColors[random];
+    // object->colorPreset = 0x3;
+    graphicalObject->tint = {0x00, 0x00, 0x00};
+    // graphicalObject->tint = CustomMenuColors[random];
 }

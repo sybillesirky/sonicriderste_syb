@@ -55,6 +55,7 @@
 #include "gears/challenger.hpp"
 #include "gears/projektred.hpp"
 #include "gears/virtuoso.hpp"
+#include "gears/greed.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -193,6 +194,9 @@ ASMUsed void PlayerHandler(Player *player) {
             break;
         case ExtremeGear::Virtuoso:
             Player_Virtuoso(player);
+            break;
+        case ExtremeGear::Greed:
+            Player_Greed(player);
             break;
         default:
             break;

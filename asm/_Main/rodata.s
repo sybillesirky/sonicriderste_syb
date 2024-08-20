@@ -26867,6 +26867,8 @@ CSS_GearPortraitID:
     .2byte 0x0124 // GunBike
     .2byte 0x0126 // ProjektRed
     .2byte 0x010A // Virtuoso
+    .2byte 0x010A // Greed
+    .2byte 0x010B // SkillLink
     .8byte 0x0086008700880089 # from here starts different default gear portraits
     .8byte 0x008A008B008C0108 # eggman is 108
     .8byte 0x008E008D00CE0086 # SS is 0086 to mimic blue star
@@ -26902,6 +26904,8 @@ CSS_GearTextTextureID:
     .2byte 0x0123 // GunBike
     .2byte 0x0125 // ProjektRed
     .2byte 0x001E // Virtuoso
+    .2byte 0x00F6 // Greed
+    .2byte 0x00F6 // SkillLink
     .8byte 0x0000000100020003 # from here starts different default gear texts
     .8byte 0x0004000500060109 # eggman is 0109
     .8byte 0x0008000700FB0000 # SS is 00 to mimic blue star

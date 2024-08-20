@@ -274,6 +274,8 @@ std::bitset<MaxPlayerCount> IsSeparateBoardModelActive;
         case ExtremeGear::Challenger:
         case ExtremeGear::ProjektRed:
         case ExtremeGear::Virtuoso:
+        case ExtremeGear::Greed:
+        case ExtremeGear::SkillLink:
             gearType = Board;
             break;
         case ExtremeGear::ReserveTank:

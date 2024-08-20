@@ -212,8 +212,14 @@ ASMUsed void func_StageChanges(ObjectNode *currentObject) {
 				lbl_update_item(currentObject, TenRings);
 			}
 			switch(object_id) {
+				case 0x189:
+					lbl_update_item(currentObject, TwentyRings);
+					break;
+				case 0x18A:
+					lbl_update_item(currentObject, TenRings);
+					break;
 				case 0x18C:
-					lbl_update_item(currentObject, ThirtyAir);
+					lbl_update_item(currentObject, FiftyAir);
 					break;
 				case 0x18D:
 					lbl_update_item(currentObject, FiftyAir);

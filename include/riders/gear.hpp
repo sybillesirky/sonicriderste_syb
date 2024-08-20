@@ -18,6 +18,7 @@ namespace ExtremeGear{
 		CoverP, HangOn, SuperHangOn, Darkness, Grinder, AdvantageS, AdvantageF, AdvantageP, Cannonball, GunGear, Airship,
 		GShot, Wanted, ShootingStar, WindStar, RoadStar, Archangel, ReserveTank, Shinobi, WarpDrive, Challenger, GunBike,
 		ProjektRed, Virtuoso,
+		Greed, SkillLink,
 
 		TotalGearAmount
 	};
