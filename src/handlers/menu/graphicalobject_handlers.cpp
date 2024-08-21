@@ -280,8 +280,8 @@ constexpr std::array<u16, 17> NewGearTextID = {
         779, // GunBike
         780, // ProjektRed
         768, // Virtuoso
-        780, // Greed
-        780, // SkillLink
+        781, // Greed
+        782, // SkillLink
 };
 
 

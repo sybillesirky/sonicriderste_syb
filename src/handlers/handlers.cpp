@@ -56,6 +56,7 @@
 #include "gears/projektred.hpp"
 #include "gears/virtuoso.hpp"
 #include "gears/greed.hpp"
+#include "gears/skilllink.hpp"
 
 // ASMDefined void Player_Autopilot(Player *player); // _Main/text.s ; C240F4D8
 
@@ -197,6 +198,9 @@ ASMUsed void PlayerHandler(Player *player) {
             break;
         case ExtremeGear::Greed:
             Player_Greed(player);
+            break;
+        case ExtremeGear::SkillLink:
+            Player_SkillLink(player);
             break;
         default:
             break;

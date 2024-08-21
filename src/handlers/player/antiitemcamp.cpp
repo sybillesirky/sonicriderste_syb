@@ -4,6 +4,7 @@
 #include "lib/stdlib.hpp"
 #include "riders/gamemode.hpp"
 #include "riders/object.hpp"
+#include "gears/skilllink.hpp"
 
 ASMUsed u32 AntiItemCampHandler(Player *player, u32 item) {
 	EnabledEXLoads exLoads;
@@ -20,6 +21,16 @@ ASMUsed u32 AntiItemCampHandler(Player *player, u32 item) {
                 && exLoads.gearExLoadID != HangOnATEXLoad) {
                 // experimental, replaces speed shoes with ten ring box instead
                 item = TenRings; 
+            }
+
+            if (player->extremeGear == ExtremeGear::SkillLink) {
+                SkillLinkInfo *SkLInfo = &PlayerSkillLinkInfo[player->index];
+
+                if (item == SkLInfo->prevItem) {
+                    player->speed += pSpeed(100);
+                    if(!player->aiControl) PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B)); //Dash panel SFX
+                }
+                SkLInfo->prevItem = item;
             }
 
             if (exLoads.gearExLoadID == TheBeastEXLoad && player->state == Run && (item == ThirtyAir || item == FiftyAir || item == HundredAir))
