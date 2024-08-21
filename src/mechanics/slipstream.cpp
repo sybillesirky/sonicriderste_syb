@@ -44,6 +44,7 @@ void lbl_Slipstream(Player *player) { // NOLINT(readability-function-cognitive-c
 	const u32 gamemode = CurrentGameMode;
 	if(gamemode == FreeRace || gamemode == WorldGrandPrix || gamemode == StoryMode) {
 		player->slipstream = FALSE;
+		player->fastest_superCruise = FALSE; // SYB: Bodge
 		if(player->placement == 0 || player->state != Cruise || player->statusEffectFlags.hasAny(BallAndChainStatus)) { return; }
 
 		for(auto &player2: players) {
@@ -81,6 +82,7 @@ void lbl_Slipstream(Player *player) { // NOLINT(readability-function-cognitive-c
 
 			if(angle > 0.3F || alignment > 0.35F) { continue; } // NOLINT(readability-magic-numbers)
 			player->slipstream = TRUE;
+			player->fastest_superCruise = TRUE; // SYB: Bodge
 
 			if(player->character == Emerl) {
 				GizoidReplicationInfo *grInfo = &PlayerGizoidReplication[player->index];

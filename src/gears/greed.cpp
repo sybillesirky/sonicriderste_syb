@@ -10,4 +10,5 @@ void Player_Greed(Player *player) {
     }
 
     // Additive Boost Speed based on Rings
+    player->gearStats[player->level].boostSpeed = Gears[ExtremeGear::Greed].levelStats[player->level].boostSpeed + pSpeed(player->rings / 2);
 }

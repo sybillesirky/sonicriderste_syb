@@ -27484,7 +27484,7 @@ Gears:
     .4byte 0x02040000 # Exhaust mode (?) followed by amount of trails during tricks
     .4byte 0xFFFFFFFF # Greed
     .byte 0x00 # gear type
-    .byte 0x1A # model id
+    .byte 0x24 # model id
     .2byte 0x012C # ring cost in gear shop
     .4byte 0x00000000 # unknown
     .4byte 0xB9CA4587 # acceleration
@@ -27510,27 +27510,27 @@ Gears:
     .4byte 0x00000000 # air gain multiplier (control stick event/QTE)
     .4byte 0x00000000 # special flags
     .4byte 0x40000000 # air cost multiplier when charging jump
-    .4byte 0x000186A0 # level 1 max air
+    .4byte 0x000249F0 # level 1 max air
     .4byte 0x00000010 # level 1 passive air drain
-    .4byte 0x000000A6 # level 1 drift air cost
-    .4byte 0x00003A98 # level 1 boost cost
+    .4byte 0x000000FA # level 1 drift air cost
+    .4byte 0x00004E20 # level 1 boost cost
     .4byte 0x000061A8 # level 1 tornado cost
     .4byte 0x3EA5ED09 # level 1 speed gained from a drift dash
-    .4byte 0x3f612f68 # level 1 boost speed
+    .4byte 0x3f7ed098 # level 1 boost speed
     .4byte 0x000249F0 # level 2 max air
     .4byte 0x00000010 # level 2 passive air drain
     .4byte 0x000000FA # level 2 drift air cost
     .4byte 0x00004E20 # level 2 boost cost
     .4byte 0x00007530 # level 2 tornado cost
     .4byte 0x3EED097B # level 2 speed gained from a drift dash
-    .4byte 0x3f825ed1 # level 2 boost speed
+    .4byte 0x3f7ed098 # level 2 boost speed
     .4byte 0x00030D40 # level 3 max air
     .4byte 0x00000010 # level 3 passive air drain
     .4byte 0x0000014D # level 3 drift air cost
     .4byte 0x00007530 # level 3 boost cost
     .4byte 0x00009C40 # level 3 tornado cost
     .4byte 0x3F0E38E4 # level 3 speed gained from a drift dash
-    .4byte 0x3f8e38e4 # level 3 boost speed
+    .4byte 0x3f7ed098 # level 3 boost speed
     .byte 0x00 # shown dash (tempo) stat
     .byte 0x03 # shown limit (efficiency) stat
     .byte 0x02 # shown power (combat) stat
@@ -27553,12 +27553,12 @@ Gears:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000 # Fourth exhaust rotation?
-    .4byte 0x3df5c28f # Main exhaust X offset (32 float) 
-    .4byte 0xbe0f5c29 # Main exhaust Y offset (32 float)
-    .4byte 0xbee66666 # Main exhaust Z offset (32 float)
-    .4byte 0xbdf5c28f # Secondary exhaust X offset (32 float)
-    .4byte 0xbe0f5c29 # Secondary exhaust Y offset (32 float)
-    .4byte 0xbee66666 # Secondary exhaust Z offset (32 float)
+    .4byte 0x3e4ccccd # Main exhaust X offset (32 float) 
+    .4byte 0xbdcccccd # Main exhaust Y offset (32 float)
+    .4byte 0xbe3851ec # Main exhaust Z offset (32 float)
+    .4byte 0xbe4ccccd # Secondary exhaust X offset (32 float)
+    .4byte 0xbdcccccd # Secondary exhaust Y offset (32 float)
+    .4byte 0xbe3851ec # Secondary exhaust Z offset (32 float)
     .4byte 0x00000000 # Tertiary exhaust X offset (32 float)
     .4byte 0xbcf5c28f # Tertiary exhaust Y offset (32 float)
     .4byte 0xbf000000 # Tertiary exhaust Z offset (32 float)
@@ -27569,7 +27569,7 @@ Gears:
     .4byte 0x02020200 # Bones to apply trails to? (almost always 02)
     .4byte 0x00000000
     .4byte 0x000A0001
-    .4byte 0x00030000 # Amount of exhaust trails
+    .4byte 0x00020000 # Amount of exhaust trails
     .4byte 0x3e99999a # Main exhaust width during trick (32 float)
     .4byte 0x3e99999a # Secondary exhaust width during trick (32 float)
     .4byte 0x3e99999a # Tertiary exhaust width during trick (32 float)
@@ -27586,12 +27586,12 @@ Gears:
     .4byte 0x00000000
     .4byte 0x00000000
     .4byte 0x00000000 # Fourth exhaust rotation during tricks??
-    .4byte 0x3df5c28f # Main exhaust X offset during tricks (32 float) 
-    .4byte 0xbe0f5c29 # Main exhaust Y offset during tricks (32 float)
-    .4byte 0xbee66666 # Main exhaust Z offset during tricks (32 float)
-    .4byte 0xbdf5c28f # Secondary exhaust X offset during tricks (32 float)
-    .4byte 0xbe0f5c29 # Secondary exhaust Y offset during tricks (32 float)
-    .4byte 0xbee66666 # Secondary exhaust Z offset during tricks (32 float)
+    .4byte 0x3e4ccccd # Main exhaust X offset during tricks (32 float) 
+    .4byte 0xbdcccccd # Main exhaust Y offset during tricks (32 float)
+    .4byte 0xbe3851ec # Main exhaust Z offset during tricks (32 float)
+    .4byte 0xbe4ccccd # Secondary exhaust X offset during tricks (32 float)
+    .4byte 0xbdcccccd # Secondary exhaust Y offset during tricks (32 float)
+    .4byte 0xbe3851ec # Secondary exhaust Z offset during tricks (32 float)
     .4byte 0x00000000 # Tertiary exhaust X offset during tricks (32 float)
     .4byte 0xbcf5c28f # Tertiary exhaust Y offset during tricks (32 float)
     .4byte 0xbf000000 # Tertiary exhaust Z offset during tricks (32 float)
@@ -27602,7 +27602,7 @@ Gears:
     .4byte 0x02020202 # Bones to apply trails to? (almost always 02)
     .4byte 0x3DA3D70A # Trail scale during tricks?
     .4byte 0x00280100
-    .4byte 0x02030000 # Exhaust mode (?) followed by amount of trails during tricks
+    .4byte 0x02020000 # Exhaust mode (?) followed by amount of trails during tricks
     .4byte 0xFFFFFFFF # SkillLink
     .byte 0x00 # gear type
     .byte 0x1A # model id
