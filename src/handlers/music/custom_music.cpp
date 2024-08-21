@@ -145,19 +145,19 @@ USED bool CustomMusicPlayer(const u32 mode) {
 			PlayADX(gpasAdxtHandle_Bgm, stageMusic[(CurrentStage - 1) * 4 + songID]);
 			break;
 		case 1:// play menu music
-			if(Date::GetCurrentDate().CheckChristmas()) {
-				PlayADX(gpasAdxtHandle_Bgm, "SH122.ADX");
-				break;
-			} else if(Date::GetCurrentDate().CheckHalloween()) {
-				PlayADX(gpasAdxtHandle_Bgm, "EVENT2.ADX");
-				break;
-			}
+			// if(Date::GetCurrentDate().CheckChristmas()) {
+			// 	PlayADX(gpasAdxtHandle_Bgm, "SH122.ADX");
+			// 	break;
+			// } else if(Date::GetCurrentDate().CheckHalloween()) {
+			// 	PlayADX(gpasAdxtHandle_Bgm, "EVENT2.ADX");
+			// 	break;
+			// }
 			if (songID == 0x7E) { // True Colors Secret Song
                 PlayADX(gpasAdxtHandle_Bgm, "7E.ADX");
                 break;
             }
 			if(songID >= MENU_MUSIC_COUNT) { return FALSE; }
-			PlayADX(gpasAdxtHandle_Bgm, menuMusic[songID]);
+			PlayADX(gpasAdxtHandle_Bgm, "HEALTH.ADX");
 			break;
 		case 2:// play race end music
 			if(songID >= RACE_END_MUSIC_COUNT) { return FALSE; }
