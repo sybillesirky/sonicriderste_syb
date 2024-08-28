@@ -38,15 +38,19 @@ constexpr std::array<const char *, STAGE_MUSIC_COUNT> stageMusic = {
 		"3C.ADX", "3D.ADX", "3E.ADX", "3F.ADX"
 };
 
-constexpr std::array<const char *, MENU_MUSIC_COUNT> menuMusic = {
-		"40.ADX", "41.ADX", "42.ADX", "43.ADX",
-		"44.ADX", "45.ADX", "46.ADX", "47.ADX",
-		"48.ADX", "49.ADX", "4A.ADX", "4B.ADX",
-		"4C.ADX", "4D.ADX", "4E.ADX", "4F.ADX",
-		"50.ADX", "51.ADX", "52.ADX", "53.ADX",
-		"54.ADX", "55.ADX", "56.ADX", "57.ADX",
-		"58.ADX", "59.ADX", "5A.ADX", "5B.ADX",
-		"5C.ADX", "5D.ADX", "5E.ADX"
+// constexpr std::array<const char *, MENU_MUSIC_COUNT> menuMusic = {
+// 		"40.ADX", "41.ADX", "42.ADX", "43.ADX",
+// 		"44.ADX", "45.ADX", "46.ADX", "47.ADX",
+// 		"48.ADX", "49.ADX", "4A.ADX", "4B.ADX",
+// 		"4C.ADX", "4D.ADX", "4E.ADX", "4F.ADX",
+// 		"50.ADX", "51.ADX", "52.ADX", "53.ADX",
+// 		"54.ADX", "55.ADX", "56.ADX", "57.ADX",
+// 		"58.ADX", "59.ADX", "5A.ADX", "5B.ADX",
+// 		"5C.ADX", "5D.ADX", "5E.ADX"
+// };
+
+constexpr std::array<const char *, 1> menuMusic = {
+	"HEALTH.ADX"
 };
 
 constexpr std::array<const char *, RACE_END_MUSIC_COUNT> raceEndMusic = {

@@ -483,7 +483,7 @@ constexpr std::array<CharacterArchetypes, EXLoadCount> EXLoadArchetypes = {
         LateBooster, // Metal Sonic 3.0
         Collector, // Red Sonic
         Collector, //Blue Knuckles
-        NoEXLoadArchetype, // E10Y
+        AllRounder, // E10Y
         Collector // Neptune
 };
 
