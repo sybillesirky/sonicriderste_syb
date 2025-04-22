@@ -39,6 +39,8 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
         return gvrTexture;
     }
 
+    // Skin system code from here
+
     void* customTexture = gvrTexture;
 
     switch (player->character) {
@@ -56,6 +58,54 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                         break;
                     }
                     customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        case Tails: {
+            customTexture = DumpFile("ZSKT", 0);
+
+            switch (textureID) {
+                case 1:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = gvrTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                case 2:
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        case Knuckles: {
+            customTexture = DumpFile("ZSKK", 0);
+
+            switch (textureID) {
+                case 1:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = gvrTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                case 2:
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture;
                     break;
                 default:
                     customTexture = gvrTexture;
