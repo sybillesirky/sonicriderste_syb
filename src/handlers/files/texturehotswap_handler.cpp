@@ -44,54 +44,32 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
     void* customTexture = gvrTexture;
 
     switch (player->character) {
-        case Sonic: {
+        case Sonic:
             customTexture = DumpFile("ZSKS", 0);
-
-            switch (textureID) {
-                case 2:
-                    customTexture = (u8*)customTexture;
-                    break;
-                case 1:
-                    if (player->extremeGear >= ExtremeGear::Darkness &&
-                        player->extremeGear < ExtremeGear::GunGear) {
-                        customTexture = gvrTexture;
-                        break;
-                    }
-                    customTexture = (u8*)customTexture + 0x8010;
-                    break;
-                default:
-                    customTexture = gvrTexture;
-                    break;
-            }
-            break;   
-        }
-        case Tails: {
+            break;
+        case Tails:
             customTexture = DumpFile("ZSKT", 0);
-
-            switch (textureID) {
-                case 1:
-                    if (player->extremeGear >= ExtremeGear::Darkness &&
-                        player->extremeGear < ExtremeGear::GunGear) {
-                        customTexture = gvrTexture;
-                        break;
-                    }
-                    customTexture = (u8*)customTexture + 0x8010;
-                    break;
-                case 2:
-                    customTexture = (u8*)customTexture;
-                    break;
-                case 3:
-                    customTexture = (u8*)customTexture;
-                    break;
-                default:
-                    customTexture = gvrTexture;
-                    break;
-            }
-            break;   
-        }
-        case Knuckles: {
+            break;
+        case Knuckles:
             customTexture = DumpFile("ZSKK", 0);
+            break;
+        case Amy:
+            customTexture = DumpFile("ZSKA", 0);
+            break;
+        case Shadow:
+            customTexture = DumpFile("ZSKD", 0);
+            break;
+        case Nights:
+            customTexture = DumpFile("ZSK0", 0);
+            break;
+        default:
+            break;
+    }
 
+    switch (player->character) {
+        case Sonic:
+        case Tails:
+        case Knuckles: {
             switch (textureID) {
                 case 1:
                     if (player->extremeGear >= ExtremeGear::Darkness &&
@@ -113,9 +91,9 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
             }
             break;   
         }
-        case Shadow: {
-            customTexture = DumpFile("ZSKD", 0);
-
+        case Amy:
+        case Shadow:
+        case Nights: {
             switch (textureID) {
                 case 1:
                     if (player->extremeGear >= ExtremeGear::Darkness &&
@@ -129,27 +107,6 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                     customTexture = (u8*)customTexture;
                     break;
                 case 3:
-                    customTexture = (u8*)customTexture;
-                    break;
-                default:
-                    customTexture = gvrTexture;
-                    break;
-            }
-            break;   
-        }
-        case Nights: {
-            customTexture = DumpFile("ZSK0", 0);
-
-            switch (textureID) {
-                case 1:
-                    if (player->extremeGear >= ExtremeGear::Darkness &&
-                        player->extremeGear < ExtremeGear::GunGear) {
-                        customTexture = gvrTexture;
-                        break;
-                    }
-                    customTexture = (u8*)customTexture;
-                    break;
-                case 2:
                     customTexture = (u8*)customTexture;
                     break;
                 default:
