@@ -35,9 +35,11 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
         return gvrTexture;
     }
 
-    void* customTexture = gvrTexture;
+    if (CharacterEXLoadDataSlots[exLoadIndex].exLoadID != NoneEXLoad) {
+        return gvrTexture;
+    }
 
-    PlayAudioFromDAT(Sound::ComposeSound(Sound::ID::IDKSFX, 0x3B));
+    void* customTexture = gvrTexture;
 
     switch (player->character) {
         case Sonic: {
@@ -54,6 +56,51 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                         break;
                     }
                     customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        case Shadow: {
+            customTexture = DumpFile("ZSKD", 0);
+
+            switch (textureID) {
+                case 1:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = gvrTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 2:
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        case Nights: {
+            customTexture = DumpFile("ZSK0", 0);
+
+            switch (textureID) {
+                case 1:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = gvrTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 2:
+                    customTexture = (u8*)customTexture;
                     break;
                 default:
                     customTexture = gvrTexture;
