@@ -43,28 +43,11 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
 
     void* customTexture = gvrTexture;
 
-    switch (player->character) {
-        case Sonic:
-            customTexture = DumpFile("ZSKS", 0);
-            break;
-        case Tails:
-            customTexture = DumpFile("ZSKT", 0);
-            break;
-        case Knuckles:
-            customTexture = DumpFile("ZSKK", 0);
-            break;
-        case Amy:
-            customTexture = DumpFile("ZSKA", 0);
-            break;
-        case Shadow:
-            customTexture = DumpFile("ZSKD", 0);
-            break;
-        case Nights:
-            customTexture = DumpFile("ZSK0", 0);
-            break;
-        default:
-            break;
-    }
+    const Character &character = Characters[player->character];
+    std::string skinFilename = "ZSK";
+    skinFilename += character.model;
+    skinFilename += std::to_string(*playerSkinID);
+    customTexture = DumpFile(skinFilename.c_str(), 0);
 
     switch (player->character) {
         case Sonic:

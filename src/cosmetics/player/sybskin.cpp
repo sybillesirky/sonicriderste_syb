@@ -16,6 +16,9 @@ ASMUsed void SetPlayerSkin(Player *player) {
     if(player->input->holdFaceButtons.hasAny(XButton)) {
         *playerSkinID = 1;
     }
+    else if(player->input->holdFaceButtons.hasAny(YButton)) {
+        *playerSkinID = 2;
+    }
     else {
         *playerSkinID = 0;
     }
