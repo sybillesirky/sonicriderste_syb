@@ -7,7 +7,8 @@ ASMUsed void SetPlayerSkin(Player *player) {
     u8* playerSkinID = &PlayerSkinIDs[player->index];
     
     if (player->character == E10R ||
-        player->character == E10G
+        player->character == E10G ||
+        player->character == SuperSonic
     ) {
         *playerSkinID = 0;
         return;

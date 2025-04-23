@@ -76,7 +76,8 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
         }
         case Amy:
         case Shadow:
-        case Nights: {
+        case Nights:
+        case Ulala: {
             switch (textureID) {
                 case 1:
                     if (player->extremeGear >= ExtremeGear::Darkness &&
@@ -88,6 +89,107 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                     break;
                 case 2:
                     customTexture = (u8*)customTexture;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        // Jet is weird because his MAIN texture (one with eye) is actually 64x64 instead of 128x128.
+        // (In comparison, it's the other way around for other characters.)
+        case Jet: {
+            switch (textureID) {
+                case 1:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = gvrTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 2:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = (u8*)customTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        case Wave:
+        case Storm: {
+            switch (textureID) {
+                case 1:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = gvrTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                case 2:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = (u8*)customTexture + 0x8010;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 4:
+                    customTexture = (u8*)customTexture;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        // Eggman doesn't want Skate exceptions, otherwise actually works like Jet does.
+        case Eggman: {
+            switch (textureID) {
+                case 1:
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 2:
+                    customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture + 0x8010;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        case MetalSonic:
+        case Chaos: {
+            switch (textureID) {
+                case 1:
+                    if (player->extremeGear >= ExtremeGear::Darkness &&
+                        player->extremeGear < ExtremeGear::GunGear) {
+                        customTexture = gvrTexture;
+                        break;
+                    }
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 2:
+                    customTexture = (u8*)customTexture + 0x8010;
                     break;
                 case 3:
                     customTexture = (u8*)customTexture;
