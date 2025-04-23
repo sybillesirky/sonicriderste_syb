@@ -60,7 +60,7 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                         customTexture = gvrTexture;
                         break;
                     }
-                    customTexture = (u8*)customTexture + 0x8010;
+                    customTexture = (u8*)customTexture + 0x2020;
                     break;
                 case 2:
                     customTexture = (u8*)customTexture;
@@ -117,10 +117,10 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                         customTexture = (u8*)customTexture;
                         break;
                     }
-                    customTexture = (u8*)customTexture + 0x8010;
+                    customTexture = (u8*)customTexture + 0x2020;
                     break;
                 case 3:
-                    customTexture = (u8*)customTexture + 0x8010;
+                    customTexture = (u8*)customTexture + 0x2020;
                     break;
                 default:
                     customTexture = gvrTexture;
@@ -137,12 +137,12 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                         customTexture = gvrTexture;
                         break;
                     }
-                    customTexture = (u8*)customTexture + 0x8010;
+                    customTexture = (u8*)customTexture + 0x2020;
                     break;
                 case 2:
                     if (player->extremeGear >= ExtremeGear::Darkness &&
                         player->extremeGear < ExtremeGear::GunGear) {
-                        customTexture = (u8*)customTexture + 0x8010;
+                        customTexture = (u8*)customTexture + 0x2020;
                         break;
                     }
                     customTexture = (u8*)customTexture;
@@ -166,10 +166,37 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                     customTexture = (u8*)customTexture;
                     break;
                 case 2:
-                    customTexture = (u8*)customTexture + 0x8010;
+                    customTexture = (u8*)customTexture + 0x2020;
                     break;
                 case 3:
-                    customTexture = (u8*)customTexture + 0x8010;
+                    customTexture = (u8*)customTexture + 0x2020;
+                    break;
+                default:
+                    customTexture = gvrTexture;
+                    break;
+            }
+            break;   
+        }
+        // Silver has a LOT of textures (2 normal, 2 glow). This means he is more complex than anyone else.
+        // Order of his textures is as follows:
+        // 1. Clothes/Eye emission
+        // 2. Clothes/Eye
+        // 3. Body
+        // 4. Body Emission
+        // I'm not including the glasses because FUCK THEM THIS TOOK 2 HOURS AND A CHANGE IN COMPRESSION FORMAT.
+        case Silver: {
+            switch (textureID) {
+                case 1:
+                    customTexture = (u8*)customTexture;
+                    break;
+                case 2:
+                    customTexture = (u8*)customTexture + 0x2020;
+                    break;
+                case 3:
+                    customTexture = (u8*)customTexture + 0x4040;
+                    break;
+                case 4:
+                    customTexture = (u8*)customTexture + 0x4860;
                     break;
                 default:
                     customTexture = gvrTexture;
@@ -189,7 +216,7 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
                     customTexture = (u8*)customTexture;
                     break;
                 case 2:
-                    customTexture = (u8*)customTexture + 0x8010;
+                    customTexture = (u8*)customTexture + 0x2020;
                     break;
                 case 3:
                     customTexture = (u8*)customTexture;
