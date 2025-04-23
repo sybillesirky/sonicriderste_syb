@@ -1,6 +1,7 @@
 #include "cosmetics/player/exloads.hpp"
 #include "filehandler_dat.hpp"
 #include "cosmetics/player/sybskin.hpp"
+#include "lib/stdlib.hpp"
 
 ASMDefined void* tex_HotswapTextures;
 
@@ -31,28 +32,35 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
         return gvrTexture;
     }
 
-    if (*playerSkinID == 0) {
-        return gvrTexture;
-    }
+    // Skin system code from here
 
+    // No skins allowed if on an EX-Load
     if (CharacterEXLoadDataSlots[exLoadIndex].exLoadID != NoneEXLoad) {
         return gvrTexture;
     }
 
-    // Skin system code from here
+    // Return normal texture if no skin
+    if (*playerSkinID == 0) {
+        return gvrTexture;
+    }
 
     void* customTexture = gvrTexture;
 
+    // Determine the filename of the skin archive to load
     const Character &character = Characters[player->character];
     std::string skinFilename = "ZSK";
     skinFilename += character.model;
     skinFilename += std::to_string(*playerSkinID);
     customTexture = DumpFile(skinFilename.c_str(), 0);
 
+    // Rules pertaining to how the new textures get applied to the character.
+    // These change depending on Gear (Skates) and the amount of textures a character has.
+    // Plus, some are just weird!
     switch (player->character) {
         case Sonic:
         case Tails:
-        case Knuckles: {
+        case Knuckles:
+        case Cream: {
             switch (textureID) {
                 case 1:
                     if (player->extremeGear >= ExtremeGear::Darkness &&
@@ -75,9 +83,12 @@ ASMUsed void* TextureHotswapHandler(Player *player, void* gvrTexture, u32 textur
             break;   
         }
         case Amy:
+        case Rouge:
         case Shadow:
         case Nights:
-        case Ulala: {
+        case Aiai:
+        case Ulala:
+        case Blaze: {
             switch (textureID) {
                 case 1:
                     if (player->extremeGear >= ExtremeGear::Darkness &&
